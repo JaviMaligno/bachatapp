@@ -14,9 +14,13 @@ export const MainMenu: React.FC<MainMenuProps> = ({ sections, onSectionSelect })
       <button
         key={section.id}
         onClick={() => onSectionSelect(section.id)}
-        className={`w-full p-6 rounded-xl ${section.color} hover:opacity-90 transition-all group`}
+        className={`w-full p-6 rounded-xl ${section.color} hover:opacity-90 transition-all group flex justify-between items-center`}
       >
-        {/* ... rest of your main menu button content ... */}
+        <div>
+          <h2 className="text-xl font-semibold text-black mb-2">{section.title}</h2>
+          <p className="text-black/80">{section.description}</p>
+        </div>
+        <ChevronRight className="text-black w-6 h-6 opacity-70 group-hover:opacity-100 transition-opacity" />
       </button>
     ))}
   </div>

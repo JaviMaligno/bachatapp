@@ -7,6 +7,7 @@ export interface Lesson {
 export interface Section {
   id: string;
   title: string;
+  description: string;
   icon: any; // We'll use Lucide icon type
   color: string;
   lessons: Lesson[];
