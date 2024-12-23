@@ -1,0 +1,14 @@
+node_modules
+package-lock.json
+.env
+.DS_Store
+*.mp3
+*.mp4
+*.wav
+*.ogg
+*.webm
+*.webp
+*.png
+*.jpg
+*.jpeg
+*.gif
