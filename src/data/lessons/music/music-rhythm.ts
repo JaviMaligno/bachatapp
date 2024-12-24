@@ -136,6 +136,6 @@ export const musicRhythmLesson: MusicLesson = {
       }
     }
   ],
-  note: 'Across all rhythms in bachata, the bongos and guíra may play rolls and other ad libs, particularly at the end of a phrase and anticipating the "1" of each bar. These embellishments add texture, subtle variety, and excitement to the music, enhancing its expressiveness and providing cues for dancers to interpret dynamically.',
+  note: 'Across all rhythms in bachata, the bongos and guíra may play rolls and other ad libs, particularly at the end of a phrase and anticipating the "1" of each bar. These embellishments add texture, subtle variety, and excitement to the music, enhancing its expressiveness and providing cues for dancers to interpret dynamically. Dramatic breaks are also used accross the songs to add more variety and excitement to the music.',
   summary: 'Understanding these rhythms allows bachata dancers to adapt their movements to the music\'s energy and structure. Whether flowing smoothly with the **derecho**, grooving with the **majao**, or bursting with energy during the **mambo**, recognizing these patterns deepens your connection to the music and enhances your dance experience.\n\nPractice listening to each rhythm individually with the provided audio samples and notice how they interact within a full song.'
 }; 

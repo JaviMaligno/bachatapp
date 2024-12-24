@@ -5,6 +5,7 @@ import { BackButton } from '../common/BackButton';
 import { QuizSection } from './QuizSection';
 import { musicRhythmLesson } from '../../data/lessons/music/music-rhythm';
 import { musicInstrumentsLesson } from '../../data/lessons/music/music-instruments';
+import { musicStructureLesson } from '../../data/lessons/music/music-structure';
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
 
@@ -25,6 +26,9 @@ export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack 
     }
     if (section.id === 'music' && lesson.id === 'instruments') {
       return musicInstrumentsLesson;
+    }
+    if (section.id === 'music' && lesson.id === 'structure') {
+      return musicStructureLesson;
     }
     return null;
   };
