@@ -1,9 +1,10 @@
 import React from 'react';
 import { Play } from 'lucide-react';
-import { Section, Lesson } from '../../types';
+import { Section, Lesson } from '../../types/Lesson';
 import { BackButton } from '../common/BackButton';
 import { QuizSection } from './QuizSection';
-import { musicRhythmLesson } from '../../data/lessons/music-rhythm';
+import { musicRhythmLesson } from '../../data/lessons/music/music-rhythm';
+import { musicInstrumentsLesson } from '../../data/lessons/music/music-instruments';
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
 
@@ -22,10 +23,58 @@ export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack 
     if (section.id === 'music' && lesson.id === 'rhythm') {
       return musicRhythmLesson;
     }
+    if (section.id === 'music' && lesson.id === 'instruments') {
+      return musicInstrumentsLesson;
+    }
     return null;
   };
 
   const lessonContent = getLessonContent();
+
+  const renderSection = (section: Section) => (
+    <div key={section.id} className="mt-8">
+      <h2 className="text-xl font-semibold mb-4">{section.title}</h2>
+      <ReactMarkdown rehypePlugins={[rehypeRaw]}>{section.content}</ReactMarkdown>
+
+      {/* Render nested sections if they exist */}
+      {section.sections && (
+        <div className="ml-4 mt-4">
+          {section.sections.map((subSection) => (
+            <div key={subSection.id} className="mt-4">
+              <h3 className="text-lg font-semibold mb-2">{subSection.title}</h3>
+              <ReactMarkdown rehypePlugins={[rehypeRaw]}>{subSection.content}</ReactMarkdown>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Render media content if it exists */}
+      {section.media && (
+        <div className="mt-4">
+          {section.media.image && (
+            <img src={section.media.image} alt={section.title} className="rounded-lg mb-4" />
+          )}
+          
+          {section.media.audio && (
+            <div className="grid grid-cols-2 gap-4 mt-2">
+              {Object.entries(section.media.audio).map(([key, src]) => (
+                <div key={key} className="flex flex-col">
+                  <p className="font-medium capitalize mb-1">{key}:</p>
+                  <audio controls src={src} className="w-full" />
+                </div>
+              ))}
+            </div>
+          )}
+
+          {section.media.video && (
+            <div className="mt-4">
+              <video controls src={section.media.video} className="w-full rounded-lg" />
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
 
   return (
     <div className="p-6">
@@ -39,48 +88,25 @@ export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack 
 
         {lessonContent && (
           <div className="prose max-w-none">
-            <ReactMarkdown>{lessonContent.content.introduction}</ReactMarkdown>
+            {lessonContent.introduction && (
+              <ReactMarkdown rehypePlugins={[rehypeRaw]}>{lessonContent.introduction}</ReactMarkdown>
+            )}
             
-            {lessonContent.content.sections.map((section, index) => (
-              <div key={index} className="mt-8">
-                <h2 className="text-xl font-semibold mb-4">{section.title}</h2>
-                <ReactMarkdown>{section.content}</ReactMarkdown>
-                
-                <div className="mt-4">
-                  <h3 className="font-semibold">Instruments:</h3>
-                  {section.details.instruments.map((instrument, i) => (
-                    <div key={i} className="ml-4 mt-2">
-                      <p className="font-medium">{instrument.name}:</p>
-                      <p className="text-gray-600">{instrument.description}</p>
-                    </div>
-                  ))}
-                </div>
+            {lessonContent.sections.map(renderSection)}
 
-                <div className="mt-4">
-                  <h3 className="font-semibold">Audio Samples:</h3>
-                  <div className="grid grid-cols-3 gap-4 mt-2">
-                    {Object.entries(section.details.audioSamples).map(([key, src]) => (
-                      <div key={key}>
-                        <p className="font-medium capitalize">{key}:</p>
-                        <audio controls src={src} className="w-full" />
-                      </div>
-                    ))}
-                  </div>
-                </div>
+            {lessonContent.note && (
+              <div className="mt-8">
+                <h2 className="text-xl font-semibold mb-4">Note</h2>
+                <ReactMarkdown rehypePlugins={[rehypeRaw]}>{lessonContent.note}</ReactMarkdown>
               </div>
-            ))}
+            )}
 
-            <div className="mt-8">
-              <h2 className="text-xl font-semibold mb-4">Note</h2>
-              <ReactMarkdown>{lessonContent.content.note}</ReactMarkdown>
-            </div>
-
-            <div className="mt-8">
-              <h2 className="text-xl font-semibold mb-4">Summary</h2>
-              <ReactMarkdown rehypePlugins={[rehypeRaw]}>
-                {lessonContent.content.summary}
-              </ReactMarkdown>
-            </div>
+            {lessonContent.summary && (
+              <div className="mt-8">
+                <h2 className="text-xl font-semibold mb-4">Summary</h2>
+                <ReactMarkdown rehypePlugins={[rehypeRaw]}>{lessonContent.summary}</ReactMarkdown>
+              </div>
+            )}
           </div>
         )}
       </div>

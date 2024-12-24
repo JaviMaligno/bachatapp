@@ -21,9 +21,11 @@ export const sections: Section[] = [
     icon: Music2,
     color: 'bg-rose-100',
     lessons: [
-      { id: 'rhythm', title: 'Basic Rhythm & Structure', progress: 100 },
+      { id: 'rhythm', title: 'Basic Rhythms', progress: 100 },
+      { id: 'structure', title: 'Song Structure', progress: 0 },
       { id: 'instruments', title: 'Key Instruments', progress: 60 },
-      { id: 'artists', title: 'Influential Artists', progress: 0 }
+      { id: 'artists', title: 'Influential Artists', progress: 0 },
+      { id: 'theory', title: 'Music Theory (Additional)', progress: 0 }
     ]
   },
   {
