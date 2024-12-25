@@ -15,6 +15,11 @@ interface LessonViewProps {
   onBack: () => void;
 }
 
+const AUDIO_DISPLAY_NAMES: Record<string, string> = {
+  'bongos_guira': 'Bongos & Güira',
+  // Add other mappings as needed
+};
+
 export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack }) => {
   const handleQuizAnswer = (isCorrect: boolean) => {
     console.log('Answer is:', isCorrect ? 'correct' : 'incorrect');
@@ -77,7 +82,9 @@ export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack 
                 console.log(`Audio ${key}:`, src);
                 return (
                   <div key={key} className="flex flex-col">
-                    <p className="font-medium capitalize mb-1">{key}:</p>
+                    <p className="font-medium capitalize mb-1">
+                      {AUDIO_DISPLAY_NAMES[key] || key.replace(/_/g, ' ')}:
+                    </p>
                     <audio 
                       controls 
                       src={src} 

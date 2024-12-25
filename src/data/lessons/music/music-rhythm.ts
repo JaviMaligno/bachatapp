@@ -29,8 +29,8 @@ export const musicRhythmLesson: MusicLesson = {
             },
             {
               id: 'derecho-guira',
-              title: 'Guíra',
-              content: 'Adds a smooth, continuous scraping sound that maintains the tempo and complements the bongos. The guíra\'s rhythm is also steady and acts as a metronome for the band and dancers.'
+              title: 'Güira',
+              content: 'Adds a smooth, continuous scraping sound that maintains the tempo and complements the bongos. The güira\'s rhythm is also steady and acts as a metronome for the band and dancers.'
             }
           ]
         },
@@ -71,7 +71,7 @@ export const musicRhythmLesson: MusicLesson = {
             },
             {
               id: 'majao-guira',
-              title: 'Guíra',
+              title: 'Güira',
               content: 'Mirrors the bongos by playing directly on the beat, reinforcing the steady, metronomic feel.'
             }
           ]
@@ -113,8 +113,8 @@ export const musicRhythmLesson: MusicLesson = {
             },
             {
               id: 'mambo-guira',
-              title: 'Guíra',
-              content: 'The guíra is the determining factor in driving the energy of the mambo rhythm. It incorporates the "a caballo" (horse-like) rhythm, consisting of a rapid sequence of eighth notes in groups of 3.'
+              title: 'Güira',
+              content: 'The güira is the determining factor in driving the energy of the mambo rhythm. It incorporates the "a caballo" (horse-like) rhythm, consisting of a rapid sequence of eighth notes in groups of 3.'
             }
           ]
         },

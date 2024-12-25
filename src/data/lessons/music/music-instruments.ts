@@ -13,7 +13,7 @@ export const musicInstrumentsLesson: MusicLesson = {
     },
     {
       id: 'requinto',
-      title: '1. Requinto (Lead Guitar)',
+      title: 'Requinto (Lead Guitar)',
       content: 'The requinto is the centerpiece of bachata music, responsible for the intricate melodies and improvisations that characterize the genre. It is smaller than a standard guitar, producing a higher pitch that allows it to stand out prominently in the mix.',
       sections: [
         {
@@ -42,7 +42,7 @@ export const musicInstrumentsLesson: MusicLesson = {
     } as Section,
     {
       id: 'segunda',
-      title: '2. Segunda (Rhythmic Guitar)',
+      title: 'Segunda (Rhythmic Guitar)',
       content: 'The segunda provides the harmonic foundation and complements the requinto with steady rhythmic strumming.',
       sections: [
         {
@@ -71,7 +71,7 @@ export const musicInstrumentsLesson: MusicLesson = {
     } as Section,
     {
       id: 'bass',
-      title: '3. Bass Guitar',
+      title: 'Bass Guitar',
       content: 'The bass guitar provides depth and groove, anchoring the music with its low frequencies.',
       sections: [
         {
@@ -100,7 +100,7 @@ export const musicInstrumentsLesson: MusicLesson = {
     } as Section,
     {
       id: 'guira',
-      title: '4. Güira',
+      title: 'Güira',
       content: 'The güira is a metal scraper that provides a crisp, driving rhythm.',
       sections: [
         {
@@ -129,7 +129,7 @@ export const musicInstrumentsLesson: MusicLesson = {
     } as Section,
     {
       id: 'bongos',
-      title: '5. Bongos',
+      title: 'Bongos',
       content: 'The bongos bring a percussive element that enhances the rhythm and energy of bachata.',
       sections: [
         {
