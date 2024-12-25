@@ -47,8 +47,9 @@ export const musicRhythmLesson: MusicLesson = {
       ],
       media: {
         audio: {
-          bongos: '/assets/audio/derecho-bongos.mp3',
-          guira: '/assets/audio/derecho-guira.mp3',
+          //bongos: '/assets/audio/derecho-bongos.mp3',
+          //guira: '/assets/audio/derecho-guira.mp3',
+          bongos_guira: '/assets/audio/derecho-bongos-guira.mp3',
           full: '/assets/audio/derecho-full.mp3'
         }
       }
@@ -83,13 +84,14 @@ export const musicRhythmLesson: MusicLesson = {
         {
           id: 'majao-placement',
           title: 'Musical Placement',
-          content: 'Typically appears in **pre-chorus** sections or transitional moments in a song. It builds energy and sets the stage for more dynamic parts of the music.'
+          content: 'Typically appears in **chorus** and in the so-called "mambo" section (different from the mambo rhythm). It can also be found in **pre-chorus** sections or transitional moments in a song. It builds energy and sets the stage for more dynamic parts of the music.'
         }
       ],
       media: {
         audio: {
-          bongos: '/assets/audio/majao-bongos.mp3',
-          guira: '/assets/audio/majao-guira.mp3',
+          //bongos: '/assets/audio/majao-bongos.mp3',
+          //guira: '/assets/audio/majao-guira.mp3',
+          bongos_guira: '/assets/audio/majao-bongos-guira.mp3',
           full: '/assets/audio/majao-full.mp3'
         }
       }
@@ -107,12 +109,12 @@ export const musicRhythmLesson: MusicLesson = {
             {
               id: 'mambo-bongos',
               title: 'Bongos',
-              content: 'Take center stage with rapid, intricate patterns. The bongó solo (repique) is a hallmark of this rhythm, often incorporating the "a caballo" (horse-like) rhythm, which alternates between high and low tones to create a galloping effect.'
+              content: 'The bongo will typically accentuate the beats, but has a lot more freedom in the mambo rhythm. The bongó solo (repique) is a hallmark of this rhythm'
             },
             {
               id: 'mambo-guira',
               title: 'Guíra',
-              content: 'Matches the heightened intensity with a faster and more pronounced scraping pattern. The guíra\'s role is crucial in driving the energy of the section.'
+              content: 'The guíra is the determining factor in driving the energy of the mambo rhythm. It incorporates the "a caballo" (horse-like) rhythm, consisting of a rapid sequence of eighth notes in groups of 3.'
             }
           ]
         },
@@ -124,13 +126,14 @@ export const musicRhythmLesson: MusicLesson = {
         {
           id: 'mambo-placement',
           title: 'Musical Placement',
-          content: 'Primarily found in the **chorus**, instrumental breaks, or climax of the song. The mambo rhythm often signals a peak moment in the music, where dancers can incorporate more dramatic styling and movements.'
+          content: 'Primarily found in the **chorus**, instrumental breaks such as the "mambo" section, or climax of the song. The mambo rhythm often signals a peak moment in the music, where dancers can incorporate more dramatic styling and movements.'
         }
       ],
       media: {
         audio: {
-          bongos: '/assets/audio/mambo-bongos.mp3',
-          guira: '/assets/audio/mambo-guira.mp3',
+          //bongos: '/assets/audio/mambo-bongos.mp3',
+          //guira: '/assets/audio/mambo-guira.mp3',
+          bongos_guira: '/assets/audio/mambo-bongos-guira.mp3',
           full: '/assets/audio/mambo-full.mp3'
         }
       }

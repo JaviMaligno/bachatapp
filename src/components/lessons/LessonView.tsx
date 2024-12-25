@@ -42,11 +42,23 @@ export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack 
 
       {/* Render nested sections if they exist */}
       {section.sections && (
-        <div className="ml-4 mt-4">
+        <div className="ml-4 mt-4 space-y-4">
           {section.sections.map((subSection) => (
-            <div key={subSection.id} className="mt-4">
+            <div key={subSection.id}>
               <h3 className="text-lg font-semibold mb-2">{subSection.title}</h3>
               <ReactMarkdown rehypePlugins={[rehypeRaw]}>{subSection.content}</ReactMarkdown>
+
+              {/* Recursively render deeper nested sections */}
+              {subSection.sections && (
+                <div className="ml-4 mt-2 space-y-2">
+                  {subSection.sections.map((nestedSection) => (
+                    <div key={nestedSection.id}>
+                      <h4 className="text-md font-medium mb-1">{nestedSection.title}</h4>
+                      <ReactMarkdown rehypePlugins={[rehypeRaw]}>{nestedSection.content}</ReactMarkdown>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           ))}
         </div>
@@ -61,12 +73,20 @@ export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack 
           
           {section.media.audio && (
             <div className="grid grid-cols-2 gap-4 mt-2">
-              {Object.entries(section.media.audio).map(([key, src]) => (
-                <div key={key} className="flex flex-col">
-                  <p className="font-medium capitalize mb-1">{key}:</p>
-                  <audio controls src={src} className="w-full" />
-                </div>
-              ))}
+              {Object.entries(section.media.audio).map(([key, src]) => {
+                console.log(`Audio ${key}:`, src);
+                return (
+                  <div key={key} className="flex flex-col">
+                    <p className="font-medium capitalize mb-1">{key}:</p>
+                    <audio 
+                      controls 
+                      src={src} 
+                      className="w-full" 
+                      onError={(e) => console.error(`Error loading audio ${key}:`, e)}
+                    />
+                  </div>
+                );
+              })}
             </div>
           )}
 
