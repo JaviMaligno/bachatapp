@@ -73,7 +73,18 @@ export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack 
       {section.media && (
         <div className="mt-4">
           {section.media.image && (
-            <img src={section.media.image} alt={section.title} className="rounded-lg mb-4" />
+            <figure className="mb-4">
+              <img 
+                src={section.media.image.src} 
+                alt={section.media.image.caption || section.title} 
+                className="rounded-lg" 
+              />
+              {section.media.image.caption && (
+                <figcaption className="text-sm text-gray-600 mt-2 text-center italic">
+                  {section.media.image.caption}
+                </figcaption>
+              )}
+            </figure>
           )}
           
           {section.media.audio && (

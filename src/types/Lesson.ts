@@ -1,5 +1,8 @@
 export interface Media {
-  image?: string;
+  image?: {
+    src: string;
+    caption?: string;
+  };
   audio?: {
     [key: string]: string;  // Allows for multiple audio samples
   };

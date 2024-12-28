@@ -14,7 +14,7 @@ export const musicInstrumentsLesson: MusicLesson = {
     {
       id: 'requinto',
       title: 'Requinto (Lead Guitar)',
-      content: 'The requinto is the centerpiece of bachata music, responsible for the intricate melodies and improvisations that characterize the genre. It is smaller than a standard guitar, producing a higher pitch that allows it to stand out prominently in the mix.',
+      content: 'The requinto is the centerpiece of bachata music, responsible for the intricate melodies and improvisations that characterize the genre. It is smaller than a standard guitar, producing a higher pitch that allows it to stand out prominently in the mix. In modern bachata, the traditional requinto is often replaced by a standard electric guitar, but the name is still used to refer to the lead guitar part.',
       sections: [
         {
           id: 'requinto-sound',
@@ -33,7 +33,10 @@ export const musicInstrumentsLesson: MusicLesson = {
         }
       ],
       media: {
-        image: '[Placeholder for requinto image]',
+        image: {
+          src: '/public/assets/images/instruments/requinto.jpg',
+          caption: 'A classical guitar (left) and a requinto guitar (right)'
+        },
         audio: {
           sample: '[Placeholder for requinto audio sample]'
         },
@@ -43,7 +46,7 @@ export const musicInstrumentsLesson: MusicLesson = {
     {
       id: 'segunda',
       title: 'Segunda (Rhythmic Guitar)',
-      content: 'The segunda provides the harmonic foundation and complements the requinto with steady rhythmic strumming.',
+      content: 'The segunda is a regular guitar that provides the harmonic foundation and complements the requinto with steady rhythmic strumming.',
       sections: [
         {
           id: 'segunda-sound',
@@ -53,7 +56,7 @@ export const musicInstrumentsLesson: MusicLesson = {
         {
           id: 'segunda-role',
           title: 'Role',
-          content: 'It maintains the chord progression and rhythmic structure, ensuring the music stays cohesive.'
+          content: 'It maintains the chord progression and rhythmic structure, ensuring the music stays cohesive. Since it has a secondary role, it can easily be missed by the listener.'
         },
         {
           id: 'segunda-rhythms',
@@ -62,7 +65,10 @@ export const musicInstrumentsLesson: MusicLesson = {
         }
       ],
       media: {
-        image: '[Placeholder for segunda image]',
+        image: {
+          src: '/public/assets/images/instruments/segunda.png',
+          caption: 'A guitar that can be used as a segunda'
+        },
         audio: {
           pattern: '[Placeholder for segunda rhythm pattern]'
         },
@@ -91,7 +97,10 @@ export const musicInstrumentsLesson: MusicLesson = {
         }
       ],
       media: {
-        image: '[Placeholder for bass image]',
+        image: {
+          src: '/public/assets/images/instruments/bass.jpg',
+          caption: 'A bass guitar'
+        },
         audio: {
           pattern: '[Placeholder for bass pattern]'
         },
@@ -101,7 +110,7 @@ export const musicInstrumentsLesson: MusicLesson = {
     {
       id: 'guira',
       title: 'Güira',
-      content: 'The güira is a metal scraper that provides a crisp, driving rhythm.',
+      content: 'The güira is a cheesegrater-looking metal scraper that provides a crisp, driving rhythm. It is played by dragging a stick across its ridged surface in a rhythmic pattern.',
       sections: [
         {
           id: 'guira-sound',
@@ -120,7 +129,10 @@ export const musicInstrumentsLesson: MusicLesson = {
         }
       ],
       media: {
-        image: '[Placeholder for güira image]',
+        image: {
+          src: '/public/assets/images/instruments/guira.webp',
+          caption: 'A güira'
+        },
         audio: {
           pattern: '[Placeholder for güira pattern]'
         },
@@ -130,7 +142,7 @@ export const musicInstrumentsLesson: MusicLesson = {
     {
       id: 'bongos',
       title: 'Bongos',
-      content: 'The bongos bring a percussive element that enhances the rhythm and energy of bachata.',
+      content: 'The bongos bring a percussive element that enhances the rhythm and energy of bachata. They are a pair of drums that are played with the hands, each with a different pitch.',
       sections: [
         {
           id: 'bongos-sound',
@@ -149,8 +161,11 @@ export const musicInstrumentsLesson: MusicLesson = {
         }
       ],
       media: {
-        image: '[Placeholder for bongos image]',
-      audio: {
+        image: {
+          src: '/public/assets/images/instruments/bongos.jpg',
+          caption: 'A set of bongos'
+        },
+        audio: {
           pattern: '[Placeholder for bongos pattern]'
         },
         video: '[Placeholder for bongos technique]'
