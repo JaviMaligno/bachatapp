@@ -38,9 +38,9 @@ export const musicInstrumentsLesson: MusicLesson = {
           caption: 'A classical guitar (left) and a requinto guitar (right)'
         },
         audio: {
-          sample: '[Placeholder for requinto audio sample]'
+          sample: '/public/assets/audio/instruments/requinto.mp3'
         },
-        video: '[Placeholder for requinto technique video]'
+        video: '/public/assets/videos/instruments/requinto.mp4'
       }
     } as Section,
     {
@@ -70,9 +70,9 @@ export const musicInstrumentsLesson: MusicLesson = {
           caption: 'A guitar that can be used as a segunda'
         },
         audio: {
-          pattern: '[Placeholder for segunda rhythm pattern]'
+          pattern: '/public/assets/audio/instruments/segunda.mp3'
         },
-        video: '[Placeholder for segunda strumming technique]'
+        video: '/public/assets/videos/instruments/segunda.mp4'
       }
     } as Section,
     {
@@ -102,9 +102,9 @@ export const musicInstrumentsLesson: MusicLesson = {
           caption: 'A bass guitar'
         },
         audio: {
-          pattern: '[Placeholder for bass pattern]'
+          pattern: '/public/assets/audio/instruments/bass.mp3'
         },
-        video: '[Placeholder for bass technique]'
+        video: '/public/assets/videos/instruments/bass.mp4'
       }
     } as Section,
     {
@@ -134,9 +134,9 @@ export const musicInstrumentsLesson: MusicLesson = {
           caption: 'A güira'
         },
         audio: {
-          pattern: '[Placeholder for güira pattern]'
+          pattern: '/public/assets/audio/instruments/guira.wav'
         },
-        video: '[Placeholder for güira technique]'
+        video: '/public/assets/videos/instruments/guira.mp4'
       }
     } as Section,
     {
@@ -166,9 +166,9 @@ export const musicInstrumentsLesson: MusicLesson = {
           caption: 'A set of bongos'
         },
         audio: {
-          pattern: '[Placeholder for bongos pattern]'
+          pattern: '/public/assets/audio/instruments/bongos.wav'
         },
-        video: '[Placeholder for bongos technique]'
+        video: '/public/assets/videos/instruments/bongos.mp4'
       }
     } as Section,
     {
