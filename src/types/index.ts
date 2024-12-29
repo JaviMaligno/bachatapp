@@ -1,14 +1,16 @@
-export interface Lesson {
-  id: string;
-  title: string;
-  progress: number;
-}
+import { LucideIcon } from 'lucide-react';
 
-export interface Section {
+export interface Quiz {
   id: string;
   title: string;
   description: string;
-  icon: any; // We'll use Lucide icon type
-  color: string;
-  lessons: Lesson[];
-} 
+  progress: number;
+}
+
+export type { 
+  Section,
+  Lesson,
+  Media,
+  LessonSummary
+} from './Lesson'; 
+  

@@ -2,9 +2,11 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useParams, useNavigate } from 'react-router-dom';
 import { AppLayout } from './components/layout/AppLayout';
 import { MainMenu } from './components/main/MainMenu';
-import { LessonsList } from './components/lessons/LessonsList';
 import { LessonView } from './components/lessons/LessonView';
 import { sections } from './data/sections';
+import { SectionContent } from './components/sections/SectionContent';
+import { InstrumentQuiz } from './components/lessons/InstrumentQuiz';
+import { instrumentQuizQuestions } from './data/quizzes/instrument-quiz';
 
 const LessonsListWrapper = () => {
   const { sectionId } = useParams();
@@ -12,10 +14,11 @@ const LessonsListWrapper = () => {
   const section = sections.find(s => s.id === sectionId) || sections[0];
   
   return (
-    <LessonsList 
+    <SectionContent 
       section={section}
       onBack={() => navigate('/')}
       onSelectLesson={(lesson) => navigate(`/section/${sectionId}/lesson/${lesson.id}`)}
+      onSelectQuiz={(quiz) => navigate(`/section/${sectionId}/quiz/${quiz.id}`)}
     />
   );
 };
@@ -24,7 +27,7 @@ const LessonViewWrapper = () => {
   const { sectionId, lessonId } = useParams();
   const navigate = useNavigate();
   const section = sections.find(s => s.id === sectionId) || sections[0];
-  const lesson = section.lessons.find(l => l.id === lessonId) || section.lessons[0];
+  const lesson = section.lessons?.find(l => l.id === lessonId) || section.lessons?.[0] || null;
   
   return (
     <LessonView 
@@ -40,6 +43,22 @@ const MainMenuWrapper = () => {
   return <MainMenu sections={sections} onSectionSelect={(id) => navigate(`/section/${id}`)} />;
 };
 
+const QuizViewWrapper = () => {
+  const { sectionId, quizId } = useParams();
+  const navigate = useNavigate();
+  const section = sections.find(s => s.id === sectionId) || sections[0];
+  
+  return (
+    <InstrumentQuiz 
+      questions={instrumentQuizQuestions}
+      onComplete={(score) => {
+        console.log('Quiz completed with score:', score);
+        navigate(`/section/${sectionId}`);
+      }}
+    />
+  );
+};
+
 const App: React.FC = () => {
   return (
     <Router>
@@ -48,6 +67,7 @@ const App: React.FC = () => {
           <Route path="/" element={<MainMenuWrapper />} />
           <Route path="/section/:sectionId" element={<LessonsListWrapper />} />
           <Route path="/section/:sectionId/lesson/:lessonId" element={<LessonViewWrapper />} />
+          <Route path="/section/:sectionId/quiz/:quizId" element={<QuizViewWrapper />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </AppLayout>

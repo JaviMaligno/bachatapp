@@ -13,7 +13,12 @@ export interface Media {
 export interface Section {
   id: string;
   title: string;
-  content: string;
+  description?: string;
+  content?: string;
+  icon?: any;
+  color?: string;
+  lessons?: LessonSummary[];
+  quizzes?: any[];
   sections?: Section[];
   media?: Media;
 }
@@ -23,6 +28,7 @@ export interface Lesson {
   id: string;
   title: string;
   description: string;
+  progress?: number;
   introduction?: string;
   sections: Section[];
   note?: string;
@@ -31,4 +37,12 @@ export interface Lesson {
 
 export interface MusicLesson extends Lesson {
   type: 'rhythm' | 'instruments' | 'structure';
+}
+
+// Add this new interface
+export interface LessonSummary {
+  id: string;
+  title: string;
+  description?: string;
+  progress?: number;
 } 

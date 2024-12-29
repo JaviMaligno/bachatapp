@@ -1,25 +1,24 @@
 import React from 'react';
 import { CheckCircle, ChevronRight, Play } from 'lucide-react';
-import { Section, Lesson } from '../../types';
+import { Section, Lesson, LessonSummary } from '../../types';
 import { BackButton } from '../common/BackButton';
 import { ProgressBar } from '../common/ProgressBar';
 
 interface LessonsListProps {
   section: Section;
-  onBack: () => void;
-  onSelectLesson: (lesson: Lesson) => void;
+  onSelectLesson: (lesson: LessonSummary) => void;
 }
 
 export const LessonsList: React.FC<LessonsListProps> = ({ 
   section, 
-  onBack, 
   onSelectLesson 
 }) => (
   <div className="p-6">
-    <BackButton onClick={onBack} label="Back to Menu" />
+    <BackButton onClick={() => {}} label="Back to Menu" />
     <h1 className="text-2xl font-bold text-gray-800 mb-6">{section.title}</h1>
     <div className="space-y-4">
-      {section.lessons.map((lesson) => (
+      <h2 className="text-xl font-semibold text-gray-700">Lessons</h2>
+      {section.lessons?.map((lesson) => (
         <button
           key={lesson.id}
           onClick={() => onSelectLesson(lesson)}
@@ -36,7 +35,7 @@ export const LessonsList: React.FC<LessonsListProps> = ({
               )}
               <div className="text-left">
                 <h3 className="font-medium text-gray-800">{lesson.title}</h3>
-                <ProgressBar progress={lesson.progress} />
+                <ProgressBar progress={lesson.progress ?? 0} />
               </div>
             </div>
             <ChevronRight className="w-5 h-5 text-gray-400" />

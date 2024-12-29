@@ -1,5 +1,5 @@
 import { BookOpen, Music2, Users } from 'lucide-react';
-import { Section } from '../types';
+import { Section, LessonSummary } from '../types';
 
 export const sections: Section[] = [
   {
@@ -9,7 +9,12 @@ export const sections: Section[] = [
     icon: BookOpen,
     color: 'bg-amber-100',
     lessons: [
-      { id: 'origins', title: 'Origins of Bachata', progress: 80 },
+      {
+        id: 'origins',
+        title: 'Origins of Bachata',
+        description: 'Learn about the origins of Bachata music',
+        progress: 80
+      } as LessonSummary,
       { id: 'evolution', title: 'Evolution Through Decades', progress: 30 },
       { id: 'modern', title: 'Modern Bachata', progress: 0 }
     ]
@@ -26,6 +31,15 @@ export const sections: Section[] = [
       { id: 'instruments', title: 'Key Instruments', progress: 60 },
       { id: 'artists', title: 'Influential Artists', progress: 0 },
       { id: 'theory', title: 'Music Theory (Additional)', progress: 0 }
+    ],
+    quizzes: [
+      { 
+        id: 'instrument-recognition',
+        title: 'Instrument Recognition',
+        description: 'Test your ability to identify bachata instruments',
+        progress: 0
+      },
+      // Add more quizzes here
     ]
   },
   {

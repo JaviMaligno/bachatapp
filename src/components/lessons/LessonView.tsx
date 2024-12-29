@@ -1,6 +1,6 @@
 import React from 'react';
 import { Play } from 'lucide-react';
-import { Section, Lesson } from '../../types/Lesson';
+import { Section, Lesson, LessonSummary } from '../../types/Lesson';
 import { BackButton } from '../common/BackButton';
 import { QuizSection } from './QuizSection';
 import { musicRhythmLesson } from '../../data/lessons/music/music-rhythm';
@@ -11,7 +11,7 @@ import rehypeRaw from 'rehype-raw'
 
 interface LessonViewProps {
   section: Section;
-  lesson: Lesson;
+  lesson: Lesson | LessonSummary | null;
   onBack: () => void;
 }
 
@@ -26,6 +26,7 @@ export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack 
   };
 
   const getLessonContent = () => {
+    if (!lesson) return null;
     if (section.id === 'music' && lesson.id === 'rhythm') {
       return musicRhythmLesson;
     }
@@ -117,6 +118,8 @@ export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack 
       )}
     </div>
   );
+
+  if (!lesson) return null;
 
   return (
     <div className="p-6">
