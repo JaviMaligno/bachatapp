@@ -19,6 +19,7 @@ export const InstrumentQuiz: React.FC<InstrumentQuizProps> = ({ questions, onCom
   const [isPlaying, setIsPlaying] = useState(false);
   const [score, setScore] = useState(0);
   const [showSolution, setShowSolution] = useState(false);
+  const [isCorrect, setIsCorrect] = useState(false);
   const audioRef = React.useRef<HTMLAudioElement>(null);
 
   const instruments = ['Requinto', 'Segunda', 'Bass', 'Güira', 'Bongos'];
@@ -35,15 +36,15 @@ export const InstrumentQuiz: React.FC<InstrumentQuizProps> = ({ questions, onCom
 
   const handleSubmit = () => {
     if (!isSubmitted) {
-      const isCorrect = 
+      const correct = 
         selectedInstruments.length === questions[currentQuestion].correctInstruments.length &&
         selectedInstruments.every(instrument => 
           questions[currentQuestion].correctInstruments.includes(instrument)
         );
 
-      if (isCorrect) {
+      setIsCorrect(correct);
+      if (correct) {
         setScore(prev => prev + 1);
-        setShowSolution(true);
       }
       setIsSubmitted(true);
     }
@@ -55,6 +56,7 @@ export const InstrumentQuiz: React.FC<InstrumentQuizProps> = ({ questions, onCom
       setSelectedInstruments([]);
       setIsSubmitted(false);
       setShowSolution(false);
+      setIsCorrect(false);
     } else {
       onComplete(score);
     }
@@ -64,6 +66,7 @@ export const InstrumentQuiz: React.FC<InstrumentQuizProps> = ({ questions, onCom
     setSelectedInstruments([]);
     setIsSubmitted(false);
     setShowSolution(false);
+    setIsCorrect(false);
   };
 
   const togglePlay = () => {
@@ -132,6 +135,18 @@ export const InstrumentQuiz: React.FC<InstrumentQuizProps> = ({ questions, onCom
         ))}
       </div>
 
+      {isSubmitted && !showSolution && isCorrect && (
+        <div className="mt-4 p-4 bg-green-50 text-green-700 rounded-lg">
+          Well done! That's correct! 🎉
+        </div>
+      )}
+
+      {currentQuestion === questions.length - 1 && isSubmitted && (showSolution || isCorrect) && (
+        <div className="mt-4 p-4 bg-blue-50 text-blue-700 rounded-lg">
+          Final Score: {score} out of {questions.length} questions
+        </div>
+      )}
+
       <div className="mt-6 flex gap-4">
         {!isSubmitted ? (
           <button
@@ -143,7 +158,7 @@ export const InstrumentQuiz: React.FC<InstrumentQuizProps> = ({ questions, onCom
           </button>
         ) : (
           <>
-            {!showSolution && (
+            {!isCorrect && !showSolution && (
               <button
                 onClick={handleRetry}
                 className="px-6 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600"
@@ -152,7 +167,7 @@ export const InstrumentQuiz: React.FC<InstrumentQuizProps> = ({ questions, onCom
                 Retry
               </button>
             )}
-            {!showSolution && (
+            {!isCorrect && !showSolution && (
               <button
                 onClick={() => setShowSolution(true)}
                 className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
@@ -160,7 +175,7 @@ export const InstrumentQuiz: React.FC<InstrumentQuizProps> = ({ questions, onCom
                 Show Solution
               </button>
             )}
-            {showSolution && (
+            {(showSolution || isCorrect) && (
               <button
                 onClick={handleNext}
                 className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"

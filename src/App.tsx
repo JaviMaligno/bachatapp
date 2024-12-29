@@ -52,7 +52,6 @@ const QuizViewWrapper = () => {
     <InstrumentQuiz 
       questions={instrumentQuizQuestions}
       onComplete={(score) => {
-        console.log('Quiz completed with score:', score);
         navigate(`/section/${sectionId}`);
       }}
     />
