@@ -35,12 +35,15 @@ export const InstrumentQuiz: React.FC<InstrumentQuizProps> = ({ questions, onCom
 
   const handleSubmit = () => {
     if (!isSubmitted) {
-      const isCorrect = questions[currentQuestion].correctInstruments.every(
-        instrument => selectedInstruments.includes(instrument)
-      ) && selectedInstruments.length === questions[currentQuestion].correctInstruments.length;
+      const isCorrect = 
+        selectedInstruments.length === questions[currentQuestion].correctInstruments.length &&
+        selectedInstruments.every(instrument => 
+          questions[currentQuestion].correctInstruments.includes(instrument)
+        );
 
       if (isCorrect) {
         setScore(prev => prev + 1);
+        setShowSolution(true);
       }
       setIsSubmitted(true);
     }

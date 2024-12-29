@@ -6,40 +6,43 @@ interface QuizOption {
 }
 
 interface QuizSectionProps {
+  question: string;
   options: QuizOption[];
   correctAnswer: string;
-  onAnswer: (isCorrect: boolean) => void;
+  onComplete: (isCorrect: boolean) => void;
 }
 
 export const QuizSection: React.FC<QuizSectionProps> = ({
+  question,
   options,
   correctAnswer,
-  onAnswer,
+  onComplete,
 }) => {
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
 
-  const handleAnswer = (optionId: string) => {
+  const handleSubmit = (optionId: string) => {
     setSelectedAnswer(optionId);
-    onAnswer(optionId === correctAnswer);
+    onComplete(optionId === correctAnswer);
   };
 
   return (
-    <div className="mt-8 p-6 bg-gray-50 rounded-xl">
-      <h3 className="text-lg font-semibold mb-4">Quick Check</h3>
-      <div className="space-y-3">
+    <div className="mt-4 p-4 bg-gray-50 rounded-lg">
+      <h4 className="font-medium mb-3">{question}</h4>
+      <div className="space-y-2">
         {options.map((option) => (
           <button
             key={option.id}
-            onClick={() => handleAnswer(option.id)}
-            className={`w-full p-4 text-left rounded-lg bg-white border 
+            onClick={() => handleSubmit(option.id)}
+            disabled={selectedAnswer !== null}
+            className={`w-full p-3 text-left rounded border
               ${selectedAnswer === option.id 
-                ? option.id === correctAnswer 
-                  ? 'border-green-500 bg-green-50'
-                  : 'border-red-500 bg-red-50'
-                : 'border-gray-200 hover:border-gray-300'
-              } transition-all`}
+                ? selectedAnswer === correctAnswer
+                  ? 'bg-green-50 border-green-500'
+                  : 'bg-red-50 border-red-500'
+                : 'bg-white border-gray-200 hover:border-gray-300'
+              }`}
           >
-            <span className="font-medium">{option.text}</span>
+            {option.text}
           </button>
         ))}
       </div>
