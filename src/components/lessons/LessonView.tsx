@@ -2,7 +2,6 @@ import React from 'react';
 import { Play } from 'lucide-react';
 import { Section, Lesson, LessonSummary } from '../../types/Lesson';
 import { BackButton } from '../common/BackButton';
-import { QuizSection } from './QuizSection';
 import { musicRhythmLesson } from '../../data/lessons/music/music-rhythm';
 import { musicInstrumentsLesson } from '../../data/lessons/music/music-instruments';
 import { musicStructureLesson } from '../../data/lessons/music/music-structure';

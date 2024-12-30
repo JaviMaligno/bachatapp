@@ -1,6 +1,6 @@
 import React from 'react';
 import { CheckCircle, ChevronRight, Play } from 'lucide-react';
-import { Section, Lesson, LessonSummary } from '../../types';
+import { Section, LessonSummary } from '../../types';
 import { BackButton } from '../common/BackButton';
 import { ProgressBar } from '../common/ProgressBar';
 

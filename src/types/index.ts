@@ -5,6 +5,12 @@ export interface Quiz {
   title: string;
   description: string;
   progress: number;
+  type: 'present' | 'missing';
+  questions: {
+    id: number;
+    audioUrl: string;
+    correctInstruments: string[];
+  }[];
 }
 
 export type { 

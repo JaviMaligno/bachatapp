@@ -1,5 +1,5 @@
 import React from 'react';
-import { Quiz } from '../../types/types';
+import { Quiz } from '../../types';
 import { PresentInstrumentsQuiz } from '../lessons/PresentInstrumentsQuiz';
 import { MissingInstrumentsQuiz } from '../lessons/MissingInstrumentsQuiz';
 

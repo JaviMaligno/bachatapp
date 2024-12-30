@@ -1,8 +1,7 @@
 import React from 'react';
 import { ChevronRight, Play } from 'lucide-react';
-import { Quiz } from '../../types/types';
+import { Quiz } from '../../types';
 import { ProgressBar } from '../common/ProgressBar';
-import { QuizContent } from './QuizContent';
 
 interface QuizListProps {
   quizzes: Quiz[];

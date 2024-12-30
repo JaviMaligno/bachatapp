@@ -7,6 +7,6 @@ interface MarkdownRendererProps {
 }
 
 export function MarkdownRenderer({ content }: MarkdownRendererProps) {
-  const html = DOMPurify.sanitize(marked(content));
+  const html = DOMPurify.sanitize(marked.parse(content, { async: false }));
   return <div dangerouslySetInnerHTML={{ __html: html }} />;
 } 
