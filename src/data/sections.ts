@@ -1,5 +1,7 @@
 import { BookOpen, Music2, Users } from 'lucide-react';
 import { Section, LessonSummary } from '../types';
+import { instrumentQuizQuestions } from './quizzes/instrument-quiz';
+import { missingInstrumentsQuizQuestions } from './quizzes/missing-instruments-quiz';
 
 export const sections: Section[] = [
   {
@@ -33,13 +35,22 @@ export const sections: Section[] = [
       { id: 'theory', title: 'Music Theory (Additional)', progress: 0 }
     ],
     quizzes: [
-      { 
-        id: 'instrument-recognition',
+      {
+        id: 'present-instruments',
         title: 'Instrument Recognition',
-        description: 'Test your ability to identify bachata instruments',
-        progress: 0
+        description: 'Identify which instruments are playing',
+        type: 'present',
+        progress: 0,
+        questions: instrumentQuizQuestions
       },
-      // Add more quizzes here
+      {
+        id: 'missing-instruments',
+        title: 'Missing Instruments',
+        description: 'Identify which instruments are missing',
+        type: 'missing',
+        progress: 0,
+        questions: missingInstrumentsQuizQuestions
+      }
     ]
   },
   {

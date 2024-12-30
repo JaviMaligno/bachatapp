@@ -5,8 +5,7 @@ import { MainMenu } from './components/main/MainMenu';
 import { LessonView } from './components/lessons/LessonView';
 import { sections } from './data/sections';
 import { SectionContent } from './components/sections/SectionContent';
-import { InstrumentQuiz } from './components/lessons/InstrumentQuiz';
-import { instrumentQuizQuestions } from './data/quizzes/instrument-quiz';
+import { QuizContent } from './components/quizzes/QuizContent';
 
 const LessonsListWrapper = () => {
   const { sectionId } = useParams();
@@ -47,10 +46,16 @@ const QuizViewWrapper = () => {
   const { sectionId, quizId } = useParams();
   const navigate = useNavigate();
   const section = sections.find(s => s.id === sectionId) || sections[0];
+  const quiz = section.quizzes?.find(q => q.id === quizId);
   
+  if (!quiz) {
+    console.error('Quiz not found');
+    return null;
+  }
+
   return (
-    <InstrumentQuiz 
-      questions={instrumentQuizQuestions}
+    <QuizContent 
+      quiz={quiz}
       onComplete={(score) => {
         navigate(`/section/${sectionId}`);
       }}

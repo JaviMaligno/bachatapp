@@ -7,12 +7,13 @@ interface QuizQuestion {
   correctInstruments: string[];
 }
 
-interface InstrumentQuizProps {
+export interface InstrumentQuizProps {
   questions: QuizQuestion[];
   onComplete: (score: number) => void;
+  mode: 'present' | 'missing';
 }
 
-export const InstrumentQuiz: React.FC<InstrumentQuizProps> = ({ questions, onComplete }) => {
+export const InstrumentQuiz: React.FC<InstrumentQuizProps> = ({ questions, onComplete, mode }) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedInstruments, setSelectedInstruments] = useState<string[]>([]);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -34,13 +35,38 @@ export const InstrumentQuiz: React.FC<InstrumentQuizProps> = ({ questions, onCom
     }
   };
 
+  const getInstructions = () => {
+    return mode === 'present' 
+      ? 'Listen to the audio and select which instruments are playing.'
+      : 'Listen to the audio and select which instruments are missing from the recording.';
+  };
+
+  const checkAnswer = (selected: string[], correct: string[]) => {
+    if (mode === 'present') {
+      const isCorrect = selected.length === correct.length &&
+        selected.every(instrument => correct.includes(instrument)) &&
+        correct.every(instrument => selected.includes(instrument));
+      
+      return isCorrect;
+    } else {
+      const allInstruments = new Set(instruments);
+      const presentInstruments = new Set(correct);
+      const missingInstruments = [...allInstruments].filter(i => !presentInstruments.has(i));
+      
+      const isCorrect = selected.length === missingInstruments.length &&
+        selected.every(instrument => missingInstruments.includes(instrument)) &&
+        missingInstruments.every(instrument => selected.includes(instrument));
+      
+      return isCorrect;
+    }
+  };
+
   const handleSubmit = () => {
     if (!isSubmitted) {
-      const correct = 
-        selectedInstruments.length === questions[currentQuestion].correctInstruments.length &&
-        selectedInstruments.every(instrument => 
-          questions[currentQuestion].correctInstruments.includes(instrument)
-        );
+      const correct = checkAnswer(
+        selectedInstruments, 
+        questions[currentQuestion].correctInstruments
+      );
 
       setIsCorrect(correct);
       if (correct) {
@@ -113,6 +139,10 @@ export const InstrumentQuiz: React.FC<InstrumentQuizProps> = ({ questions, onCom
         Question {currentQuestion + 1} of {questions.length}
       </h3>
       
+      <p className="mb-4 text-gray-600">
+        {getInstructions()}
+      </p>
+
       <div className="mb-6">
         <audio
           ref={audioRef}
@@ -153,7 +183,7 @@ export const InstrumentQuiz: React.FC<InstrumentQuizProps> = ({ questions, onCom
       )}
 
       <div className="mt-6 flex gap-4">
-        {!isSubmitted ? (
+        {!isSubmitted && (
           <button
             onClick={handleSubmit}
             disabled={selectedInstruments.length === 0}
@@ -161,41 +191,40 @@ export const InstrumentQuiz: React.FC<InstrumentQuizProps> = ({ questions, onCom
           >
             Submit
           </button>
-        ) : (
+        )}
+        
+        {isSubmitted && !isCorrect && !showSolution && (
           <>
-            {!isCorrect && !showSolution && (
-              <button
-                onClick={handleRetry}
-                className="px-6 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600"
-              >
-                <RotateCcw className="w-4 h-4 inline mr-2" />
-                Retry
-              </button>
-            )}
-            {!isCorrect && !showSolution && (
-              <button
-                onClick={() => setShowSolution(true)}
-                className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
-              >
-                Show Solution
-              </button>
-            )}
-            {(showSolution || isCorrect) && (
-              <button
-                onClick={handleNext}
-                className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
-              >
-                {currentQuestion < questions.length - 1 ? (
-                  <>
-                    Next
-                    <ChevronRight className="w-4 h-4 inline ml-2" />
-                  </>
-                ) : (
-                  'Finish'
-                )}
-              </button>
-            )}
+            <button
+              onClick={handleRetry}
+              className="px-6 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600"
+            >
+              <RotateCcw className="w-4 h-4 inline mr-2" />
+              Retry
+            </button>
+            <button
+              onClick={() => setShowSolution(true)}
+              className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+            >
+              Show Solution
+            </button>
           </>
+        )}
+
+        {isSubmitted && (isCorrect || showSolution) && (
+          <button
+            onClick={handleNext}
+            className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+          >
+            {currentQuestion < questions.length - 1 ? (
+              <>
+                Next
+                <ChevronRight className="w-4 h-4 inline ml-2" />
+              </>
+            ) : (
+              'Finish'
+            )}
+          </button>
         )}
       </div>
     </div>
