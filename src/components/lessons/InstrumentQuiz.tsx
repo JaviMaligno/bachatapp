@@ -52,6 +52,11 @@ export const InstrumentQuiz: React.FC<InstrumentQuizProps> = ({ questions, onCom
 
   const handleNext = () => {
     if (currentQuestion < questions.length - 1) {
+      if (audioRef.current) {
+        audioRef.current.pause();
+      }
+      setIsPlaying(false);
+      
       setCurrentQuestion(prev => prev + 1);
       setSelectedInstruments([]);
       setIsSubmitted(false);
