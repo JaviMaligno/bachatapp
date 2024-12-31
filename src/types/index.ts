@@ -5,11 +5,11 @@ export interface Quiz {
   title: string;
   description: string;
   progress: number;
-  type: 'present' | 'missing';
+  type: 'present' | 'missing' | 'sections';
   questions: {
     id: number;
     audioUrl: string;
-    correctInstruments: string[];
+    correctAnswer: string[];
   }[];
 }
 

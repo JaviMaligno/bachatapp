@@ -4,16 +4,17 @@ import { Play, Pause, RotateCcw, ChevronRight } from 'lucide-react';
 interface QuizQuestion {
   id: number;
   audioUrl: string;
-  correctInstruments: string[];
+  correctAnswer: string[];
 }
 
 export interface InstrumentQuizProps {
   questions: QuizQuestion[];
   onComplete: (score: number) => void;
   mode: 'present' | 'missing';
+  options: string[];
 }
 
-export const InstrumentQuiz: React.FC<InstrumentQuizProps> = ({ questions, onComplete, mode }) => {
+export const InstrumentQuiz: React.FC<InstrumentQuizProps> = ({ questions, onComplete, mode, options }) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedInstruments, setSelectedInstruments] = useState<string[]>([]);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -22,8 +23,6 @@ export const InstrumentQuiz: React.FC<InstrumentQuizProps> = ({ questions, onCom
   const [showSolution, setShowSolution] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
   const audioRef = React.useRef<HTMLAudioElement>(null);
-
-  const instruments = ['Requinto', 'Segunda', 'Bass', 'Güira', 'Bongos'];
 
   const toggleInstrument = (instrument: string) => {
     if (!isSubmitted) {
@@ -51,7 +50,7 @@ export const InstrumentQuiz: React.FC<InstrumentQuizProps> = ({ questions, onCom
     if (!isSubmitted) {
       const correct = checkAnswer(
         selectedInstruments, 
-        questions[currentQuestion].correctInstruments
+        questions[currentQuestion].correctAnswer
       );
 
       setIsCorrect(correct);
@@ -105,7 +104,7 @@ export const InstrumentQuiz: React.FC<InstrumentQuizProps> = ({ questions, onCom
     }
 
     if (showSolution || selectedInstruments.includes(instrument)) {
-      const isCorrect = questions[currentQuestion].correctInstruments.includes(instrument);
+      const isCorrect = questions[currentQuestion].correctAnswer.includes(instrument);
       const wasSelected = selectedInstruments.includes(instrument);
 
       if (isCorrect) {
@@ -145,13 +144,13 @@ export const InstrumentQuiz: React.FC<InstrumentQuizProps> = ({ questions, onCom
       </div>
 
       <div className="space-y-3">
-        {instruments.map((instrument) => (
+        {options.map((option) => (
           <button
-            key={instrument}
-            onClick={() => toggleInstrument(instrument)}
-            className={`w-full p-4 text-left rounded-lg border transition-all ${getButtonClass(instrument)}`}
+            key={option}
+            onClick={() => toggleInstrument(option)}
+            className={`w-full p-4 text-left rounded-lg border transition-all ${getButtonClass(option)}`}
           >
-            <span className="font-medium">{instrument}</span>
+            <span className="font-medium">{option}</span>
           </button>
         ))}
       </div>

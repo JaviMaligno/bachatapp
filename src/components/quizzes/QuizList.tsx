@@ -24,9 +24,7 @@ export const QuizList: React.FC<QuizListProps> = ({ quizzes, onSelectQuiz }) => 
             </div>
             <div className="text-left">
               <h3 className="font-medium text-gray-800">{quiz.title}</h3>
-              <p className="text-sm text-gray-600">
-                {quiz.type === 'missing' ? 'Identify missing instruments' : 'Identify present instruments'}
-              </p>
+              <p className="text-sm text-gray-600">{quiz.description}</p>
               <ProgressBar progress={quiz.progress} />
             </div>
           </div>

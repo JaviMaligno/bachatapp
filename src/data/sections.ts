@@ -2,6 +2,7 @@ import { BookOpen, Music2, Users } from 'lucide-react';
 import { Section, LessonSummary } from '../types';
 import { instrumentQuizQuestions } from './quizzes/instrument-quiz';
 import { missingInstrumentsQuizQuestions } from './quizzes/missing-instruments-quiz';
+import { sectionQuizQuestions } from './quizzes/section-quiz';
 
 export const sections: Section[] = [
   {
@@ -50,6 +51,14 @@ export const sections: Section[] = [
         type: 'missing',
         progress: 0,
         questions: missingInstrumentsQuizQuestions
+      },
+      {
+        id: 'sections',
+        title: 'Section Recognition',
+        description: 'Identify which section is playing',
+        type: 'sections',
+        progress: 0,
+        questions: sectionQuizQuestions
       }
     ]
   },
