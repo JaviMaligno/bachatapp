@@ -1,19 +1,21 @@
-FROM node:18-alpine
+# Use the official Node.js LTS image as the base
+FROM node:18
 
-# Set working directory
+# Set the working directory in the container
 WORKDIR /app
 
-# Copy package files
+# Copy package.json and package-lock.json
 COPY package*.json ./
 
-# Install dependencies
-RUN npm install
+# Install project dependencies
+RUN npm install -g pnpm
+RUN pnpm install
 
-# Copy project files
+# Copy the rest of the application files
 COPY . .
 
-# Expose default React development port
-EXPOSE 5173
+# Expose the Vite dev server port
+EXPOSE 3000
 
-# Start the development server
-CMD ["npm", "run", "dev", "--", "--host"]
+# Start the Vite development server
+CMD ["pnpm", "run", "dev", "--", "--host"]

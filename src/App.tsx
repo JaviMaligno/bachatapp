@@ -1,53 +1,58 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import { ThemeProvider } from '@mui/material/styles';
-import { CssBaseline } from '@mui/material';
-import Header from './components/layout/Header';
-import { Route, Routes } from 'react-router-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import { createTheme } from '@mui/material/styles';
-import LessonPage from './pages/LessonPage';
-import LessonContent from './pages/LessonContent';
-import { CacheProvider } from '@emotion/react';
-import createCache from '@emotion/cache';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate, useParams, useNavigate } from 'react-router-dom';
+import { AppLayout } from './components/layout/AppLayout';
+import { MainMenu } from './components/main/MainMenu';
+import { LessonsList } from './components/lessons/LessonsList';
+import { LessonView } from './components/lessons/LessonView';
+import { sections } from './data/sections';
 
-// Create emotion cache
-const cache = createCache({
-  key: 'css',
-  prepend: true,
-});
-
-// Create theme without any custom configurations first
-const theme = createTheme();
-
-function App() {
+const LessonsListWrapper = () => {
+  const { sectionId } = useParams();
+  const navigate = useNavigate();
+  const section = sections.find(s => s.id === sectionId) || sections[0];
+  
   return (
-    <CacheProvider value={cache}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline enableColorScheme />
-        <Router>
-          <div className="app">
-            <Header />
-            <main style={{ padding: '2rem 0' }}>
-              <Routes>
-                <Route path="/" element={
-                  <div>
-                    <h1>Test Content</h1>
-                    <HomePage />
-                  </div>
-                } />
-                <Route path="/:sectionId" element={<LessonPage />} />
-                <Route path="/:sectionId/:lessonId" element={<LessonContent />} />
-              </Routes>
-            </main>
-          </div>
-        </Router>
-      </ThemeProvider>
-    </CacheProvider>
+    <LessonsList 
+      section={section}
+      onBack={() => navigate('/')}
+      onSelectLesson={(lesson) => navigate(`/section/${sectionId}/lesson/${lesson.id}`)}
+    />
   );
-}
+};
 
-export default App;
+const LessonViewWrapper = () => {
+  const { sectionId, lessonId } = useParams();
+  const navigate = useNavigate();
+  const section = sections.find(s => s.id === sectionId) || sections[0];
+  const lesson = section.lessons.find(l => l.id === lessonId) || section.lessons[0];
+  
+  return (
+    <LessonView 
+      section={section}
+      lesson={lesson}
+      onBack={() => navigate(`/section/${sectionId}`)}
+    />
+  );
+};
+
+const MainMenuWrapper = () => {
+  const navigate = useNavigate();
+  return <MainMenu sections={sections} onSectionSelect={(id) => navigate(`/section/${id}`)} />;
+};
+
+const App: React.FC = () => {
+  return (
+    <Router>
+      <AppLayout>
+        <Routes>
+          <Route path="/" element={<MainMenuWrapper />} />
+          <Route path="/section/:sectionId" element={<LessonsListWrapper />} />
+          <Route path="/section/:sectionId/lesson/:lessonId" element={<LessonViewWrapper />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </AppLayout>
+    </Router>
+  );
+};
+
+export default App; 
