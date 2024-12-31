@@ -6,6 +6,7 @@ export interface Quiz {
   description: string;
   progress: number;
   type: 'present' | 'missing' | 'sections';
+  sectionTitle: string;
   questions: {
     id: number;
     audioUrl: string;

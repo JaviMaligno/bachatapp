@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Play, Pause, RotateCcw, ChevronRight } from 'lucide-react';
+import { BackButton } from '../common/BackButton';
 
 interface QuizQuestion {
   id: number;
@@ -12,9 +13,18 @@ export interface InstrumentQuizProps {
   onComplete: (score: number) => void;
   mode: 'present' | 'missing';
   options: string[];
+  onBack: () => void;
+  sectionTitle: string;
 }
 
-export const InstrumentQuiz: React.FC<InstrumentQuizProps> = ({ questions, onComplete, mode, options }) => {
+export const InstrumentQuiz: React.FC<InstrumentQuizProps> = ({ 
+  questions, 
+  onComplete, 
+  mode, 
+  options,
+  onBack,
+  sectionTitle
+}) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedInstruments, setSelectedInstruments] = useState<string[]>([]);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -120,6 +130,8 @@ export const InstrumentQuiz: React.FC<InstrumentQuizProps> = ({ questions, onCom
 
   return (
     <div className="mt-8 p-6 bg-gray-50 rounded-xl">
+      <BackButton onClick={onBack} label={`Back to ${sectionTitle} Section`} />
+      
       <h3 className="text-lg font-semibold mb-4">
         Question {currentQuestion + 1} of {questions.length}
       </h3>

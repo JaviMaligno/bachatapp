@@ -59,6 +59,8 @@ const QuizViewWrapper = () => {
       onComplete={(score) => {
         navigate(`/section/${sectionId}`);
       }}
+      onBack={() => navigate(`/section/${sectionId}`)}
+      sectionTitle={section.title}
     />
   );
 };
