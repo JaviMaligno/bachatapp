@@ -1,8 +1,8 @@
 export const missingInstrumentsQuizQuestions = [
   {
     id: 1,
-    audioUrl: '/assets/audio/missing-instruments/quiz/derecho-bongos-guira.mp3',
-    correctInstruments: ['Bongos', 'Güira'] // These are the instruments that ARE playing
+    audioUrl: '/assets/audio/missing-instruments/quiz/bongos-guira.mp3',
+    correctInstruments: ['Güira','Bongos'] // These are the instruments that are NOT playing
   },
   {
     id: 2,
@@ -11,23 +11,23 @@ export const missingInstrumentsQuizQuestions = [
   },
   {
     id: 3,
-    audioUrl: '/assets/audio/missing-instruments/quiz/bongos-guira-bass.mp3',
-    correctInstruments: ['Bongos', 'Güira', 'Bass']
+    audioUrl: '/assets/audio/missing-instruments/quiz/bass-bongos-guira.mp3',
+    correctInstruments: ['Bass', 'Bongos', 'Güira']
   },
   {
     id: 4,
-    audioUrl: '/assets/audio/missing-instruments/quiz/bongos-guira-requinto.mp3',
-    correctInstruments: ['Bongos', 'Güira', 'Requinto']
+    audioUrl: '/assets/audio/missing-instruments/quiz/requinto-bongos-guira.mp3',
+    correctInstruments: ['Requinto', 'Bongos', 'Güira']
   },
   {
     id: 5,
     audioUrl: '/assets/audio/missing-instruments/quiz/segunda-requinto-bass.mp3',
-    correctInstruments: ['Segunda', 'Requinto', 'Bass']
+    correctInstruments: ['Requinto', 'Segunda', 'Bass']
   },
   {
     id: 6,
-    audioUrl: '/assets/audio/missing-instruments/quiz/segunda-requinto.mp3',
-    correctInstruments: ['Segunda', 'Requinto']
+    audioUrl: '/assets/audio/missing-instruments/quiz/requinto-segunda.mp3',
+    correctInstruments: ['Requinto', 'Segunda']
   },
   {
     id: 7,

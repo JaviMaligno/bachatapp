@@ -42,23 +42,9 @@ export const InstrumentQuiz: React.FC<InstrumentQuizProps> = ({ questions, onCom
   };
 
   const checkAnswer = (selected: string[], correct: string[]) => {
-    if (mode === 'present') {
-      const isCorrect = selected.length === correct.length &&
-        selected.every(instrument => correct.includes(instrument)) &&
-        correct.every(instrument => selected.includes(instrument));
-      
-      return isCorrect;
-    } else {
-      const allInstruments = new Set(instruments);
-      const presentInstruments = new Set(correct);
-      const missingInstruments = [...allInstruments].filter(i => !presentInstruments.has(i));
-      
-      const isCorrect = selected.length === missingInstruments.length &&
-        selected.every(instrument => missingInstruments.includes(instrument)) &&
-        missingInstruments.every(instrument => selected.includes(instrument));
-      
-      return isCorrect;
-    }
+    return selected.length === correct.length &&
+      selected.every(instrument => correct.includes(instrument)) &&
+      correct.every(instrument => selected.includes(instrument));
   };
 
   const handleSubmit = () => {
