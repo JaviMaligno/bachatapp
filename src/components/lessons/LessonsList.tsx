@@ -14,8 +14,6 @@ export const LessonsList: React.FC<LessonsListProps> = ({
   onSelectLesson 
 }) => (
   <div className="p-6">
-    <BackButton onClick={() => {}} label="Back to Menu" />
-    <h1 className="text-2xl font-bold text-gray-800 mb-6">{section.title}</h1>
     <div className="space-y-4">
       <h2 className="text-xl font-semibold text-gray-700">Lessons</h2>
       {section.lessons?.map((lesson) => (
