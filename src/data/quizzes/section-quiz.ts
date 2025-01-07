@@ -11,8 +11,8 @@ export const sectionQuizQuestions = [
   },
   {
     id: 3,
-    audioUrl: '/assets/audio/sections/quiz/non-bachata1.mp3',
-    correctAnswer: ['Non-Bachata']
+    audioUrl: '/assets/audio/sections/quiz/intro.mp3',
+    correctAnswer: ['Intro']
   },
   {
     id: 4,
@@ -26,7 +26,7 @@ export const sectionQuizQuestions = [
   },
   {
     id: 6,
-    audioUrl: '/assets/audio/sections/quiz/mambo3.mp3',
+    audioUrl: '/assets/audio/sections/quiz/mambo2.mp3',
     correctAnswer: ['Mambo']
   },
   {
@@ -36,8 +36,8 @@ export const sectionQuizQuestions = [
   },
   {
     id: 8,
-    audioUrl: '/assets/audio/sections/quiz/mambo2.mp3',
-    correctAnswer: ['Mambo']
+    audioUrl: '/assets/audio/sections/quiz/fake-mambo.mp3',
+    correctAnswer: ['Fake Mambo']
   },
   {
     id: 9,
@@ -46,7 +46,7 @@ export const sectionQuizQuestions = [
   },
   {
     id: 10,
-    audioUrl: '/assets/audio/sections/quiz/non-bachata3.mp3',
-    correctAnswer: ['Non-Bachata']
+    audioUrl: '/assets/audio/sections/quiz/outro.mp3',
+    correctAnswer: ['Outro']
   }
 ]; 

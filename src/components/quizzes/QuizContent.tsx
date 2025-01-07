@@ -10,7 +10,8 @@ interface QuizContentProps {
 }
 
 export const INSTRUMENT_OPTIONS = ['Requinto', 'Segunda', 'Bass', 'Güira', 'Bongos'];
-export const SECTION_OPTIONS = ['Derecho', 'Majao', 'Mambo', 'Non-Bachata'];
+export const SECTION_OPTIONS = ['Derecho', 'Majao', 'Mambo', 'Fake Mambo', 'Intro', 'Outro'];
+export const RHYTHM_OPTIONS = ['Derecho', 'Majao', 'Mambo', 'Non-Bachata'];
 
 export const QuizContent: React.FC<QuizContentProps> = ({ 
   quiz, 
@@ -51,6 +52,17 @@ export const QuizContent: React.FC<QuizContentProps> = ({
         onComplete={onComplete} 
         mode="present"
         options={SECTION_OPTIONS}
+        onBack={onBack}
+        sectionTitle={sectionTitle}
+      />
+    );
+  } else if (quiz.type === 'rhythms') {
+    return (
+      <InstrumentQuiz 
+        questions={quiz.questions} 
+        onComplete={onComplete} 
+        mode="present"
+        options={RHYTHM_OPTIONS}
         onBack={onBack}
         sectionTitle={sectionTitle}
       />

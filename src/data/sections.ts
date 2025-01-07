@@ -3,6 +3,7 @@ import { Section, LessonSummary } from '../types';
 import { instrumentQuizQuestions } from './quizzes/instrument-quiz';
 import { missingInstrumentsQuizQuestions } from './quizzes/missing-instruments-quiz';
 import { sectionQuizQuestions } from './quizzes/section-quiz';
+import { rhythmQuizQuestions } from './quizzes/rhythm-quiz';
 
 export const sections: Section[] = [
   {
@@ -59,6 +60,14 @@ export const sections: Section[] = [
         type: 'sections',
         progress: 0,
         questions: sectionQuizQuestions
+      },
+      {
+        id: 'rhythms',
+        title: 'Rhythm Recognition',
+        description: 'Identify which rhythm is playing',
+        type: 'rhythms',
+        progress: 0,
+        questions: rhythmQuizQuestions
       }
     ]
   },
