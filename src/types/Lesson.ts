@@ -4,7 +4,10 @@ export interface Media {
     caption?: string;
   };
   audio?: {
-    [key: string]: string;  // Allows for multiple audio samples
+    samples: {
+      name: string;
+      path: string;
+    }[];
   };
   video?: string;
 }

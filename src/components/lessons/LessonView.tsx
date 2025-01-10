@@ -87,24 +87,19 @@ export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack 
             </figure>
           )}
           
-          {section.media.audio && (
-            <div className="grid grid-cols-2 gap-4 mt-2">
-              {Object.entries(section.media.audio).map(([key, src]) => {
-                console.log(`Audio ${key}:`, src);
-                return (
-                  <div key={key} className="flex flex-col">
-                    <p className="font-medium capitalize mb-1">
-                      {AUDIO_DISPLAY_NAMES[key] || key.replace(/_/g, ' ')}:
-                    </p>
-                    <audio 
-                      controls 
-                      src={src} 
-                      className="w-full" 
-                      onError={(e) => console.error(`Error loading audio ${key}:`, e)}
-                    />
-                  </div>
-                );
-              })}
+          {section.media.audio?.samples && (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+              {section.media.audio.samples.map((sample, index) => (
+                <div key={index} className="flex flex-col">
+                  <p className="font-medium mb-1">{sample.name}:</p>
+                  <audio 
+                    controls 
+                    src={sample.path} 
+                    className="w-full" 
+                    onError={(e) => console.error(`Error loading audio ${sample.name}:`, e)}
+                  />
+                </div>
+              ))}
             </div>
           )}
 

@@ -25,7 +25,20 @@ export const musicStructureLesson: MusicLesson = {
       ],
       media: {
         audio: {
-          sample: '/assets/audio/intro-sample.mp3'
+          samples: [
+            {
+              name: 'Fusion Intro',
+              path: '/assets/audio/intro-fusion-sample.mp3'
+            },
+            {
+              name: 'Traditional Intro',
+              path: '/assets/audio/intro-traditional-sample.mp3'
+            },
+            {
+              name: 'Minimalist Intro',
+              path: '/assets/audio/intro-minimalist-sample.mp3'
+            }
+          ]
         }
       }
     },
@@ -42,7 +55,10 @@ export const musicStructureLesson: MusicLesson = {
       ],
       media: {
         audio: {
-          sample: '/assets/audio/verse-sample.mp3'
+          samples: [{
+            name: 'Verse Example',
+            path: '/assets/audio/verse-sample.mp3'
+          }]
         }
       }
     },
@@ -59,7 +75,15 @@ export const musicStructureLesson: MusicLesson = {
       ],
       media: {
         audio: {
-          sample: '/assets/audio/chorus-sample.mp3'
+          samples: [{
+            name: 'Chorus Example',
+            path: '/assets/audio/chorus-sample.mp3'
+          },
+          {
+            name: 'Pre-Chorus Example',
+            path: '/assets/audio/pre-chorus-sample.mp3'
+          }
+        ]
         }
       }
     },
@@ -81,7 +105,14 @@ export const musicStructureLesson: MusicLesson = {
       ],
       media: {
         audio: {
-          sample: '/assets/audio/mambo-sample.mp3'
+          samples: [{
+            name: 'Mambo Example',
+            path: '/assets/audio/mambo-sample.mp3'
+          },
+          {
+            name: 'Fake Mambo Example',
+            path: '/assets/audio/fake-mambo-sample.mp3'
+          }]
         }
       }
     },
@@ -91,7 +122,10 @@ export const musicStructureLesson: MusicLesson = {
       content: 'More common in fusion styles, the interlude breaks away from traditional bachata beats. It is often placed after the mambo and may resemble the structure of pop songs. A bridge may be used to connect the interlude with other bachata sections.',
       media: {
         audio: {
-          sample: '/assets/audio/interlude-sample.mp3'
+          samples: [{
+            name: 'Interlude Example',
+            path: '/assets/audio/interlude-sample.mp3'
+          }]
         }
       }
     },
@@ -108,11 +142,22 @@ export const musicStructureLesson: MusicLesson = {
       ],
       media: {
         audio: {
-          sample: '/assets/audio/outro-sample.mp3'
+          samples: [{
+            name: 'Minimalist Outro Example',
+            path: '/assets/audio/outro-minimalist-sample.mp3'
+          },
+          {
+            name: 'Traditional Outro Example',
+            path: '/assets/audio/outro-traditional-sample.mp3'
+          },
+          {
+            name: 'Fusion Outro Example',
+            path: '/assets/audio/outro-fusion-sample.mp3'
+          }]
         }
       }
     }
   ],
-  note: 'The terms "derecho" and "majao" can describe both rhythms and song sections. The mambo section is always called "mambo" regardless of whether it uses a mambo or majao rhythm.',
+  note: 'The terms "derecho" and "majao" can describe both rhythms and song sections in bachata where these rhythms are used, but notice that these are independent of terms used above, which refer to strucutral sections. In other words, a verse can be in derecho or majao, but it is still a verse. The mambo section is always called "mambo" regardless of whether it uses a mambo or majao rhythm.',
   summary: 'Understanding the structure of bachata songs helps dancers anticipate changes in energy and rhythm. Each section serves a specific purpose, from storytelling in the verses to high-energy expression in the mambo. This knowledge allows dancers to better interpret the music and adapt their movements accordingly.'
 };
