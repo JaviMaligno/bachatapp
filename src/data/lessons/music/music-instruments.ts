@@ -38,7 +38,10 @@ export const musicInstrumentsLesson: MusicLesson = {
           caption: 'A classical guitar (left) and a requinto guitar (right)'
         },
         audio: {
-          sample: '/public/assets/audio/instruments/requinto.mp3'
+          samples: [{
+            name: 'Requinto',
+            path: '/public/assets/audio/instruments/requinto.mp3'
+          }]
         },
         video: '/public/assets/videos/instruments/requinto.mp4'
       }
@@ -70,7 +73,10 @@ export const musicInstrumentsLesson: MusicLesson = {
           caption: 'A guitar that can be used as a segunda'
         },
         audio: {
-          pattern: '/public/assets/audio/instruments/segunda.mp3'
+          samples: [{
+            name: 'Segunda',
+            path: '/public/assets/audio/instruments/segunda.mp3'
+          }]
         },
         video: '/public/assets/videos/instruments/segunda.mp4'
       }
@@ -102,7 +108,10 @@ export const musicInstrumentsLesson: MusicLesson = {
           caption: 'A bass guitar'
         },
         audio: {
-          pattern: '/public/assets/audio/instruments/bass.mp3'
+          samples: [{
+            name: 'Bass',
+            path: '/public/assets/audio/instruments/bass.mp3'
+          }]
         },
         video: '/public/assets/videos/instruments/bass.mp4'
       }
@@ -134,7 +143,10 @@ export const musicInstrumentsLesson: MusicLesson = {
           caption: 'A güira'
         },
         audio: {
-          pattern: '/public/assets/audio/instruments/guira.wav'
+          samples: [{
+            name: 'Güira',
+            path: '/public/assets/audio/instruments/guira.wav'
+          }]
         },
         video: '/public/assets/videos/instruments/guira.mp4'
       }
@@ -166,7 +178,10 @@ export const musicInstrumentsLesson: MusicLesson = {
           caption: 'A set of bongos'
         },
         audio: {
-          pattern: '/public/assets/audio/instruments/bongos.wav'
+          samples: [{
+            name: 'Bongos',
+            path: '/public/assets/audio/instruments/bongos.wav'
+          }]
         },
         video: '/public/assets/videos/instruments/bongos.mp4'
       }

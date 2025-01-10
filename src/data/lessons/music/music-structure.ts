@@ -5,7 +5,7 @@ export const musicStructureLesson: MusicLesson = {
   type: 'structure',
   title: 'Bachata Song Structure',
   description: 'Understanding the different sections that make up a bachata song',
-  introduction: 'Bachata music follows a structured format that helps tell a story through both lyrics and instrumental arrangements. Each section serves a specific purpose, contributing to the overall flow and energy of the song.',
+  introduction: 'Bachata music follows a structured format that helps tell a story through both lyrics and instrumental arrangements. Each section serves a specific purpose, contributing to the overall flow and energy of the song. Some sections are optional, but they are often used to enhance the song and make it more interesting. Often, sections are associated to rhythms, but this is not always the case as they can transition from one rhythm to another. To know what section you are listening, you need to understand the role it plays in the song structure.',
   sections: [
     {
       id: 'intro',
@@ -15,7 +15,7 @@ export const musicStructureLesson: MusicLesson = {
         {
           id: 'intro-styles',
           title: 'Common Styles',
-          content: '- **Fusion Songs**: May begin with a non-bachata section\n- **Traditional Style**: Often features a guitar flick resembling a "fake mambo"\n- **Minimalist Approach**: Some songs skip the intro entirely'
+          content: '- **Fusion Songs**: May begin with a non-bachata section where some or all the bachata instruments are missing\n- **Traditional Style**: Often features a guitar flick resembling a "fake mambo"\n- **Minimalist Approach**: Some songs quickly transition to the verse or chorus without an intro'
         },
         {
           id: 'intro-characteristics',
@@ -28,15 +28,15 @@ export const musicStructureLesson: MusicLesson = {
           samples: [
             {
               name: 'Fusion Intro',
-              path: '/assets/audio/intro-fusion-sample.mp3'
+              path: '/assets/audio/sections/lesson/fusion-intro.mp3'
             },
             {
               name: 'Traditional Intro',
-              path: '/assets/audio/intro-traditional-sample.mp3'
+              path: '/assets/audio/sections/lesson/traditional-intro.mp3'
             },
             {
               name: 'Minimalist Intro',
-              path: '/assets/audio/intro-minimalist-sample.mp3'
+              path: '/assets/audio/sections/lesson/minimalist-intro.mp3'
             }
           ]
         }
@@ -57,7 +57,7 @@ export const musicStructureLesson: MusicLesson = {
         audio: {
           samples: [{
             name: 'Verse Example',
-            path: '/assets/audio/verse-sample.mp3'
+            path: '/assets/audio/sections/lesson/verse.mp3'
           }]
         }
       }
@@ -76,12 +76,16 @@ export const musicStructureLesson: MusicLesson = {
       media: {
         audio: {
           samples: [{
-            name: 'Chorus Example',
-            path: '/assets/audio/chorus-sample.mp3'
+            name: 'Pre-Chorus Example',
+            path: '/assets/audio/sections/lesson/pre-chorus.mp3'
           },
           {
-            name: 'Pre-Chorus Example',
-            path: '/assets/audio/pre-chorus-sample.mp3'
+            name: 'Chorus Example',
+            path: '/assets/audio/sections/lesson/chorus.mp3'
+          },
+          {
+            name: 'Both Together',
+            path: '/assets/audio/sections/lesson/pre-chorus-together.mp3'
           }
         ]
         }
@@ -95,7 +99,7 @@ export const musicStructureLesson: MusicLesson = {
         {
           id: 'fake-mambo',
           title: 'Fake Mambo',
-          content: 'Precedes the actual mambo and mimics it instrumentally, but with a **derecho rhythm** for slightly lower energy.'
+          content: 'Usually precedes the actual mambo and mimics it instrumentally, but with a **derecho rhythm** for slightly lower energy. This term is not used by everyone. Some people would call it just mambo and some people would say it is derecho.'
         },
         {
           id: 'mambo-characteristics',
@@ -107,11 +111,11 @@ export const musicStructureLesson: MusicLesson = {
         audio: {
           samples: [{
             name: 'Mambo Example',
-            path: '/assets/audio/mambo-sample.mp3'
+            path: '/assets/audio/sections/lesson/mambo.mp3'
           },
           {
             name: 'Fake Mambo Example',
-            path: '/assets/audio/fake-mambo-sample.mp3'
+            path: '/assets/audio/sections/lesson/fake-mambo.mp3'
           }]
         }
       }
@@ -124,7 +128,7 @@ export const musicStructureLesson: MusicLesson = {
         audio: {
           samples: [{
             name: 'Interlude Example',
-            path: '/assets/audio/interlude-sample.mp3'
+            path: '/assets/audio/sections/lesson/interlude.mp3'
           }]
         }
       }
@@ -137,22 +141,22 @@ export const musicStructureLesson: MusicLesson = {
         {
           id: 'outro-types',
           title: 'Common Endings',
-          content: '- **Minimalist Ending:** No distinct outro, simply fading out\n- **Traditional Conclusion:** A typical bachata ending\n- **Fusion Ending:** A non-bachata section where energy gradually diminishes'
+          content: '- **Minimalist Ending:** No distinct outro, simply fading out\n- **Traditional Conclusion:** An instrumental bachata ending\n- **Fusion Ending:** A non-bachata section where energy gradually diminishes'
         }
       ],
       media: {
         audio: {
           samples: [{
             name: 'Minimalist Outro Example',
-            path: '/assets/audio/outro-minimalist-sample.mp3'
+            path: '/assets/audio/sections/lesson/minimalist-outro.mp3'
           },
           {
             name: 'Traditional Outro Example',
-            path: '/assets/audio/outro-traditional-sample.mp3'
+            path: '/assets/audio/sections/lesson/traditional-outro.mp3'
           },
           {
             name: 'Fusion Outro Example',
-            path: '/assets/audio/outro-fusion-sample.mp3'
+            path: '/assets/audio/sections/lesson/fusion-outro.mp3'
           }]
         }
       }
