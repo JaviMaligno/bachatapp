@@ -3,7 +3,7 @@ export interface Quiz {
   title: string;
   description: string;
   progress: number;
-  type: 'present' | 'missing' | 'sections' | 'rhythms';
+  type: 'present' | 'missing' | 'sections' | 'rhythms' | 'parts';
   sectionTitle: string;
   questions: {
     id: number;

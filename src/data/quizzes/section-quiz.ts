@@ -2,7 +2,7 @@ export const sectionQuizQuestions = [
   {
     id: 1,
     audioUrl: '/assets/audio/sections/quiz/derecho1.mp3',
-    correctAnswer: ['Derecho']
+    correctAnswer: ['Verse']
   },
   {
     id: 2,
@@ -17,12 +17,12 @@ export const sectionQuizQuestions = [
   {
     id: 4,
     audioUrl: '/assets/audio/sections/quiz/majao1.mp3',
-    correctAnswer: ['Majao']
+    correctAnswer: ['Chorus']
   },
   {
     id: 5,
     audioUrl: '/assets/audio/sections/quiz/derecho2.mp3',
-    correctAnswer: ['Derecho']
+    correctAnswer: ['Verse']
   },
   {
     id: 6,
@@ -32,7 +32,7 @@ export const sectionQuizQuestions = [
   {
     id: 7,
     audioUrl: '/assets/audio/sections/quiz/majao2.mp3',
-    correctAnswer: ['Majao']
+    correctAnswer: ['Chorus']
   },
   {
     id: 8,
@@ -42,7 +42,7 @@ export const sectionQuizQuestions = [
   {
     id: 9,
     audioUrl: '/assets/audio/sections/quiz/derecho3.mp3',
-    correctAnswer: ['Derecho']
+    correctAnswer: ['Verse']
   },
   {
     id: 10,

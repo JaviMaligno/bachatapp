@@ -45,9 +45,14 @@ export const InstrumentQuiz: React.FC<InstrumentQuizProps> = ({
   };
 
   const getInstructions = () => {
-    return mode === 'present' 
-      ? 'Listen to the audio and select which instruments are playing.'
-      : 'Listen to the audio and select which instruments are missing from the recording.';
+    const instructions = {
+      present: 'Listen to the audio and select which instruments are playing.',
+      missing: 'Listen to the audio and select which instruments are missing from the recording.',
+      sections: 'Identify the musical section.',
+      parts: 'Identify derecho, majao and mambo sections.',
+      rhythms: 'Listen to the audio and identify the rhythm pattern.'
+    };
+    return instructions[mode] || instructions.present;
   };
 
   const checkAnswer = (selected: string[], correct: string[]) => {

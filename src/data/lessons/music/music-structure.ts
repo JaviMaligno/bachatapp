@@ -5,7 +5,7 @@ export const musicStructureLesson: MusicLesson = {
   type: 'structure',
   title: 'Bachata Song Structure',
   description: 'Understanding the different sections that make up a bachata song',
-  introduction: 'Bachata music follows a structured format that helps tell a story through both lyrics and instrumental arrangements. Each section serves a specific purpose, contributing to the overall flow and energy of the song. Some sections are optional, but they are often used to enhance the song and make it more interesting. Often, sections are associated to rhythms, but this is not always the case as they can transition from one rhythm to another. To know what section you are listening, you need to understand the role it plays in the song structure.',
+  introduction: 'Bachata music follows a structured format that helps tell a story through both lyrics and instrumental arrangements. Each section serves a specific purpose, contributing to the overall flow and energy of the song. Some sections are optional, but they are often used to enhance the song and make it more interesting. Often, sections are associated to rhythms, but this is not always the case as they can transition from one rhythm to another. To know what section you are listening, you need to understand the role it plays in the song structure.\n\nUnderstanding the structure of bachata songs helps dancers anticipate changes in energy and rhythm. Each section serves a specific purpose, from storytelling in the verses to high-energy expression in the mambo. This knowledge allows dancers to better interpret the music and adapt their movements accordingly.',
   sections: [
     {
       id: 'intro',
@@ -15,29 +15,29 @@ export const musicStructureLesson: MusicLesson = {
         {
           id: 'intro-styles',
           title: 'Common Styles',
-          content: '- **Fusion Songs**: May begin with a non-bachata section where some or all the bachata instruments are missing\n- **Traditional Style**: Often features a guitar flick resembling a "fake mambo"\n- **Minimalist Approach**: Some songs quickly transition to the verse or chorus without an intro'
+          content: '- **Traditional Style**: Often features a guitar flick resembling a "fake mambo"\n- **Fusion Songs**: May begin with a non-bachata section where some or all the bachata instruments are missing\n<!-- - **Minimalist Approach**: Some songs quickly transition to the verse or chorus without an intro -->'
         },
         {
           id: 'intro-characteristics',
           title: 'Characteristics',
-          content: 'Energy levels in the intro are typically on the lower end, creating a soft opening for the rest of the song.'
+          content: 'Energy levels in the intro are typically on the lower end, creating a soft opening for the rest of the song. However, this is not always the case, as some intros are very energetic and set the tone for the rest of the song.'
         }
       ],
       media: {
         audio: {
           samples: [
             {
-              name: 'Fusion Intro',
-              path: '/assets/audio/sections/lesson/fusion-intro.mp3'
-            },
-            {
               name: 'Traditional Intro',
               path: '/assets/audio/sections/lesson/traditional-intro.mp3'
             },
             {
-              name: 'Minimalist Intro',
-              path: '/assets/audio/sections/lesson/minimalist-intro.mp3'
-            }
+              name: 'Fusion Intro',
+              path: '/assets/audio/sections/lesson/fusion-intro.mp3'
+            },
+            // {
+            //   name: 'Minimalist Intro',
+            //   path: '/assets/audio/sections/lesson/minimalist-intro.mp3'
+            // }
           ]
         }
       }
@@ -45,7 +45,7 @@ export const musicStructureLesson: MusicLesson = {
     {
       id: 'verse',
       title: '2. Verse',
-      content: 'The verse is where the main story unfolds. It typically employs a **derecho rhythm**, maintaining a relatively low energy level to allow the narrative to take center stage.',
+      content: 'The verse is where the main story unfolds. It typically employs a **derecho rhythm**, maintaining a relatively low energy level to allow the narrative to take center stage. Instrumentally, the verse repeats accross the song, but the lyrics might change with each repetition.',
       sections: [
         {
           id: 'verse-characteristics',
@@ -65,7 +65,7 @@ export const musicStructureLesson: MusicLesson = {
     {
       id: 'pre-chorus-chorus',
       title: '3. Pre-Chorus and Chorus',
-      content: 'The pre-chorus, when present, builds up energy and transitions smoothly into the chorus. The chorus is the catchiest and most memorable part of the song, often using a **majao rhythm** to stand out and elevate the energy compared to the verse.',
+      content: 'The pre-chorus, when present, builds up energy and transitions smoothly into the chorus. The chorus is the catchiest and most memorable part of the song, often using a **majao rhythm** to stand out and elevate the energy compared to the verse. It also the part that is repeated more times, usually 3 or 4 times.',
       sections: [
         {
           id: 'chorus-characteristics',
@@ -94,7 +94,7 @@ export const musicStructureLesson: MusicLesson = {
     {
       id: 'mambo',
       title: '4. Mambo Section',
-      content: 'The mambo section is an instrumental break and the most energetic part of the song. A guitar solo is a defining feature here, and the rhythm can be either **majao** or **mambo**.',
+      content: 'The mambo section is an instrumental break and the most energetic part of the song. A guitar solo is a defining feature here, and the rhythm can be either **majao** or **mambo**. Most songs have only one mambo section, but some songs have multiple instances.',
       sections: [
         {
           id: 'fake-mambo',
@@ -136,20 +136,21 @@ export const musicStructureLesson: MusicLesson = {
     {
       id: 'outro',
       title: '6. Outro',
-      content: 'The outro wraps up the song and varies greatly:',
+      content: 'The outro wraps up the song and varies greatly. Some songs may even use the chorus as the outro.',
       sections: [
         {
           id: 'outro-types',
           title: 'Common Endings',
-          content: '- **Minimalist Ending:** No distinct outro, simply fading out\n- **Traditional Conclusion:** An instrumental bachata ending\n- **Fusion Ending:** A non-bachata section where energy gradually diminishes'
+          content: '- **Traditional Conclusion:** An instrumental bachata ending\n- **Fusion Ending:** A non-bachata section where energy gradually diminishes, mirroring the intro <!-- - **Minimalist Ending:** No distinct outro, simply fading out\n -->'
         }
       ],
       media: {
         audio: {
-          samples: [{
-            name: 'Minimalist Outro Example',
-            path: '/assets/audio/sections/lesson/minimalist-outro.mp3'
-          },
+          samples: [
+            // {
+            //   name: 'Minimalist Outro Example',
+            //   path: '/assets/audio/sections/lesson/minimalist-outro.mp3'
+            // },
           {
             name: 'Traditional Outro Example',
             path: '/assets/audio/sections/lesson/traditional-outro.mp3'
@@ -163,5 +164,5 @@ export const musicStructureLesson: MusicLesson = {
     }
   ],
   note: 'The terms "derecho" and "majao" can describe both rhythms and song sections in bachata where these rhythms are used, but notice that these are independent of terms used above, which refer to strucutral sections. In other words, a verse can be in derecho or majao, but it is still a verse. The mambo section is always called "mambo" regardless of whether it uses a mambo or majao rhythm.',
-  summary: 'Understanding the structure of bachata songs helps dancers anticipate changes in energy and rhythm. Each section serves a specific purpose, from storytelling in the verses to high-energy expression in the mambo. This knowledge allows dancers to better interpret the music and adapt their movements accordingly.'
+  summary: 'A typical bachata song consists of several key sections: an intro that sets the tone, verses that tell the story, a chorus that provides the memorable hook, and a high-energy mambo section featuring instrumental solos. Some songs may also include pre-chorus sections for building momentum, interludes that break from traditional bachata patterns, and outros that bring the song to a close.',
 };
