@@ -52,11 +52,11 @@ export const musicRhythmLesson: MusicLesson = {
           samples: [
             {
               name: 'Bongos & Güira',
-              path: '/assets/audio/rhythms/derecho-bongos-guira.mp3'
+              path: '/assets/audio/rhythms/lesson/derecho-bongos-guira.mp3'
             },
             {
               name: 'Full',
-              path: '/assets/audio/rhythms/derecho-full.mp3'
+              path: '/assets/audio/rhythms/lesson/derecho-full.mp3'
             }
           ]
         }
@@ -102,11 +102,11 @@ export const musicRhythmLesson: MusicLesson = {
           samples: [
             {
               name: 'Bongos & Güira',
-              path: '/assets/audio/rhythms/majao-bongos-guira.mp3'
+              path: '/assets/audio/rhythms/lesson/majao-bongos-guira.mp3'
             },
             {
               name: 'Full',
-              path: '/assets/audio/rhythms/majao-full.mp3'
+              path: '/assets/audio/rhythms/lesson/majao-full.mp3'
             }
           ]
         }
@@ -150,11 +150,11 @@ export const musicRhythmLesson: MusicLesson = {
           samples: [
             {
               name: 'Bongos & Güira',
-              path: '/assets/audio/rhythms/mambo-bongos-guira.mp3'
+              path: '/assets/audio/rhythms/lesson/mambo-bongos-guira.mp3'
             },
             {
               name: 'Full',
-              path: '/assets/audio/rhythms/mambo-full.mp3'
+              path: '/assets/audio/rhythms/lesson/mambo-full.mp3'
             }
           ]
         }

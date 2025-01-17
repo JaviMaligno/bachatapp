@@ -1,12 +1,12 @@
 export const sectionQuizQuestions = [
   {
     id: 1,
-    audioUrl: '/assets/audio/sections/quiz/derecho1.mp3',
+    audioUrl: '/assets/audio/sections/quiz/verse.mp3',
     correctAnswer: ['Verse']
   },
   {
     id: 2,
-    audioUrl: '/assets/audio/sections/quiz/mambo1.mp3',
+    audioUrl: '/assets/audio/sections/quiz/mambo.mp3',
     correctAnswer: ['Mambo']
   },
   {
@@ -16,7 +16,7 @@ export const sectionQuizQuestions = [
   },
   {
     id: 4,
-    audioUrl: '/assets/audio/sections/quiz/majao1.mp3',
+    audioUrl: '/assets/audio/sections/quiz/chorus.mp3',
     correctAnswer: ['Chorus']
   },
   {
