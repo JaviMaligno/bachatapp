@@ -11,7 +11,7 @@ interface QuizQuestion {
 export interface InstrumentQuizProps {
   questions: QuizQuestion[];
   onComplete: (score: number) => void;
-  mode: 'present' | 'missing';
+  mode: 'present' | 'missing' | 'sections' | 'rhythms' | 'parts';
   options: string[];
   onBack: () => void;
   sectionTitle: string;
