@@ -53,18 +53,40 @@ export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack 
           <h3 className="text-lg font-semibold mb-4 flex items-center text-blue-900">
             <span className="mr-2">🔑</span> Key Points to Remember
           </h3>
-          <div className="space-y-3">
+          <div className="space-y-4">
             {section.sections.map((subSection) => (
-              <div key={subSection.id} className="flex items-start">
-                <div className="flex-shrink-0 mt-1">
-                  <svg className="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <div className="ml-3">
-                  <h4 className="font-medium text-gray-900">{subSection.title}</h4>
-                  <div className="mt-1 text-gray-600">
-                    <ReactMarkdown rehypePlugins={[rehypeRaw]}>{subSection.content}</ReactMarkdown>
+              <div key={subSection.id} className="space-y-3">
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 mt-1">
+                    <svg className="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div className="ml-3">
+                    <h4 className="font-medium text-gray-900">{subSection.title}</h4>
+                    {subSection.content && (
+                      <div className="mt-1 text-gray-600">
+                        <ReactMarkdown rehypePlugins={[rehypeRaw]}>{subSection.content}</ReactMarkdown>
+                      </div>
+                    )}
+                    {/* Render nested sections */}
+                    {subSection.sections && (
+                      <div className="mt-2 ml-4 space-y-2">
+                        {subSection.sections.map((nestedSection) => (
+                          <div key={nestedSection.id} className="flex items-start">
+                            <div className="flex-shrink-0 mt-1">
+                              <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                            </div>
+                            <div className="ml-3">
+                              <h5 className="font-medium text-gray-800">{nestedSection.title}</h5>
+                              <div className="mt-1 text-gray-600">
+                                <ReactMarkdown rehypePlugins={[rehypeRaw]}>{nestedSection.content}</ReactMarkdown>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -148,16 +170,24 @@ export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack 
             {lessonContent.sections.map(renderSection)}
 
             {lessonContent.note && (
-              <div className="mt-8">
-                <h2 className="text-xl font-semibold mb-4">Note</h2>
-                <ReactMarkdown rehypePlugins={[rehypeRaw]}>{lessonContent.note}</ReactMarkdown>
+              <div className="mt-8 bg-amber-50 rounded-lg p-6 border border-amber-200">
+                <h2 className="text-xl font-semibold mb-4 text-amber-900 flex items-center">
+                  <span className="mr-2">📝</span> Note
+                </h2>
+                <div className="text-amber-900">
+                  <ReactMarkdown rehypePlugins={[rehypeRaw]}>{lessonContent.note}</ReactMarkdown>
+                </div>
               </div>
             )}
 
             {lessonContent.summary && (
-              <div className="mt-8">
-                <h2 className="text-xl font-semibold mb-4">Summary</h2>
-                <ReactMarkdown rehypePlugins={[rehypeRaw]}>{lessonContent.summary}</ReactMarkdown>
+              <div className="mt-8 bg-emerald-50 rounded-lg p-6 border border-emerald-200">
+                <h2 className="text-xl font-semibold mb-4 text-emerald-900 flex items-center">
+                  <span className="mr-2">📌</span> Summary
+                </h2>
+                <div className="text-emerald-900">
+                  <ReactMarkdown rehypePlugins={[rehypeRaw]}>{lessonContent.summary}</ReactMarkdown>
+                </div>
               </div>
             )}
           </div>
