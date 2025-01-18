@@ -7,6 +7,8 @@ export interface Media {
     samples: {
       name: string;
       path: string;
+      song?: string;
+      artist?: string;
     }[];
   };
   video?: string;

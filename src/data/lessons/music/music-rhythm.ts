@@ -42,7 +42,7 @@ export const musicRhythmLesson: MusicLesson = {
         {
           id: 'derecho-placement',
           title: 'Musical Placement',
-          content: 'Most commonly found in the **verses** or introduction sections of a bachata song. Its consistent and predictable nature allows dancers to settle into the music and focus on connection and basic steps.'
+          content: 'Most commonly found in the **verses** or introduction sections of a bachata song. Its consistent and low energy nature allows dancers to settle into the music and focus on connection and basic steps or smooth movements.'
         }
       ],
       media: {
@@ -52,11 +52,13 @@ export const musicRhythmLesson: MusicLesson = {
           samples: [
             {
               name: 'Bongos & Güira',
-              path: '/assets/audio/rhythms/lesson/derecho-bongos-guira.mp3'
+              path: '/assets/audio/rhythms/lesson/derecho-bongos-guira.mp3',
             },
             {
               name: 'Full',
-              path: '/assets/audio/rhythms/lesson/derecho-full.mp3'
+              path: '/assets/audio/rhythms/lesson/derecho-full.mp3',
+              song: 'Del Mar',
+              artist: 'Sia, DJ Dimen5ions & DJ Alejandro'
             }
           ]
         }
@@ -65,7 +67,7 @@ export const musicRhythmLesson: MusicLesson = {
     {
       id: 'majao',
       title: '2. Majao',
-      content: 'The **majao** rhythm adds complexity and groove to the music, encouraging dancers to be more playful with their movements.',
+      content: 'The **majao** rhythm adds intensity and groove to the music, encouraging dancers to be more playful with their movements.',
       sections: [
         {
           id: 'majao-instruments',
@@ -75,7 +77,7 @@ export const musicRhythmLesson: MusicLesson = {
             {
               id: 'majao-bongos',
               title: 'Bongos',
-              content: 'Play exactly on the beat notes, acting as a metronome with no syncopation. The rhythm is straightforward and steady.'
+              content: 'Play exactly on the beat notes, acting as a metronome for the most part. The rhythm is straightforward and steady. The 4th and 8th beats of each phrase are again accentuated with a lower pitch.'
             },
             {
               id: 'majao-guira',
@@ -87,12 +89,12 @@ export const musicRhythmLesson: MusicLesson = {
         {
           id: 'majao-characteristics',
           title: 'Characteristics',
-          content: 'Moderate to high energy level. The majao rhythm feels vibrant and slightly unpredictable, adding excitement to the music.'
+          content: 'Moderate to high energy level. The majao rhythm feels vibrant and upbeat, adding excitement to the music.'
         },
         {
           id: 'majao-placement',
           title: 'Musical Placement',
-          content: 'Typically appears in **chorus** and in the so-called "mambo" section (different from the mambo rhythm). It can also be found in **pre-chorus** sections or transitional moments in a song. It builds energy and sets the stage for more dynamic parts of the music.'
+          content: 'Typically appears in **chorus** and in the so-called "mambo" section (different from the mambo rhythm below). It can also be found in **pre-chorus** sections or transitional moments in a song. It builds energy and sets the stage for more dynamic parts of the music.'
         }
       ],
       media: {
@@ -106,7 +108,9 @@ export const musicRhythmLesson: MusicLesson = {
             },
             {
               name: 'Full',
-              path: '/assets/audio/rhythms/lesson/majao-full.mp3'
+              path: '/assets/audio/rhythms/lesson/majao-full.mp3',
+              song: 'Del Mar',
+              artist: 'Sia, DJ Dimen5ions & DJ Alejandro'
             }
           ]
         }
@@ -142,7 +146,7 @@ export const musicRhythmLesson: MusicLesson = {
         {
           id: 'mambo-placement',
           title: 'Musical Placement',
-          content: 'Primarily found in the **chorus**, instrumental breaks such as the "mambo" section, or climax of the song. The mambo rhythm often signals a peak moment in the music, where dancers can incorporate more dramatic styling and movements.'
+          content: 'Primarily found in instrumental breaks such as the "mambo" section, or climax of the song. The mambo rhythm often signals a peak moment in the music, where dancers can incorporate more playful styling and movements.'
         }
       ],
       media: {
@@ -154,7 +158,9 @@ export const musicRhythmLesson: MusicLesson = {
             },
             {
               name: 'Full',
-              path: '/assets/audio/rhythms/lesson/mambo-full.mp3'
+              path: '/assets/audio/rhythms/lesson/mambo-full.mp3',
+              song: 'Perdido',
+              artist: 'Yoskar Sarante'
             }
           ]
         }

@@ -15,7 +15,7 @@ export const musicStructureLesson: MusicLesson = {
         {
           id: 'intro-styles',
           title: 'Common Styles',
-          content: '- **Traditional Style**: Often features a guitar flick resembling a "fake mambo"\n- **Fusion Songs**: May begin with a non-bachata section where some or all the bachata instruments are missing\n<!-- - **Minimalist Approach**: Some songs quickly transition to the verse or chorus without an intro -->'
+          content: '- **Traditional Style**: Often features a guitar flick resembling a "fake mambo" (see section 4)\n- **Fusion Songs**: May begin with a non-bachata section where some or all the bachata instruments are missing\n<!-- - **Minimalist Approach**: Some songs quickly transition to the verse or chorus without an intro -->'
         },
         {
           id: 'intro-characteristics',
@@ -28,11 +28,15 @@ export const musicStructureLesson: MusicLesson = {
           samples: [
             {
               name: 'Traditional Intro',
-              path: '/assets/audio/sections/lesson/traditional-intro.mp3'
+              path: '/assets/audio/sections/lesson/traditional-intro.mp3',
+              song: 'Eso es Amor',
+              artist: 'Jiory'
             },
             {
               name: 'Fusion Intro',
-              path: '/assets/audio/sections/lesson/fusion-intro.mp3'
+              path: '/assets/audio/sections/lesson/fusion-intro.mp3',
+              song: 'Este Secreto',
+              artist: 'Melvin War'
             },
             // {
             //   name: 'Minimalist Intro',
@@ -57,7 +61,9 @@ export const musicStructureLesson: MusicLesson = {
         audio: {
           samples: [{
             name: 'Verse Example',
-            path: '/assets/audio/sections/lesson/verse.mp3'
+            path: '/assets/audio/sections/lesson/verse.mp3',
+            song: 'Suegra',
+            artist: 'Romeo Santos'
           }]
         }
       }
@@ -85,7 +91,9 @@ export const musicStructureLesson: MusicLesson = {
           },
           {
             name: 'Both Together',
-            path: '/assets/audio/sections/lesson/pre-chorus-together.mp3'
+            path: '/assets/audio/sections/lesson/pre-chorus-together.mp3',
+            song: 'Eso es Amor',
+            artist: 'Jiory'
           }
         ]
         }
@@ -104,18 +112,22 @@ export const musicStructureLesson: MusicLesson = {
         {
           id: 'mambo-characteristics',
           title: 'Key Characteristics',
-          content: '- High energy\n- Focus on instrumental solos (especially guitar)'
+          content: '- High energy\n- Focus on instrumental solos (especially guitar)\n- Can be in **majao** or **mambo** rhythm. Singers often do ad libs in this section.'
         }
       ],
       media: {
         audio: {
           samples: [{
             name: 'Mambo Example',
-            path: '/assets/audio/sections/lesson/mambo.mp3'
+            path: '/assets/audio/sections/lesson/mambo.mp3',
+            song: 'Eso es Amor',
+            artist: 'Jiory'
           },
           {
             name: 'Fake Mambo Example',
-            path: '/assets/audio/sections/lesson/fake-mambo.mp3'
+            path: '/assets/audio/sections/lesson/fake-mambo.mp3',
+            song: 'Besito a Besito',
+            artist: 'Luis Miguel del Amargue'
           }]
         }
       }
@@ -128,7 +140,9 @@ export const musicStructureLesson: MusicLesson = {
         audio: {
           samples: [{
             name: 'Interlude Example',
-            path: '/assets/audio/sections/lesson/interlude.mp3'
+            path: '/assets/audio/sections/lesson/interlude.mp3',
+            song: 'Del Mar',
+            artist: 'Sia, DJ Dimen5ions & DJ Alejandro'
           }]
         }
       }
@@ -153,16 +167,20 @@ export const musicStructureLesson: MusicLesson = {
             // },
           {
             name: 'Traditional Outro Example',
-            path: '/assets/audio/sections/lesson/traditional-outro.mp3'
+            path: '/assets/audio/sections/lesson/traditional-outro.mp3',
+            song: 'Besito a Besito',
+            artist: 'Luis Miguel del Amargue'
           },
           {
             name: 'Fusion Outro Example',
-            path: '/assets/audio/sections/lesson/fusion-outro.mp3'
+            path: '/assets/audio/sections/lesson/fusion-outro.mp3',
+            song: 'Bubalu',
+            artist: 'J-Style & DJ Tronky (feat Blaze & Stella)'
           }]
         }
       }
     }
   ],
-  note: 'The terms "derecho" and "majao" can describe both rhythms and song sections in bachata where these rhythms are used, but notice that these are independent of terms used above, which refer to strucutral sections. In other words, a verse can be in derecho or majao, but it is still a verse. The mambo section is always called "mambo" regardless of whether it uses a mambo or majao rhythm.',
+  note: 'The terms "derecho" and "majao" can describe both rhythms and song sections in bachata where these rhythms are used. However, that use is independent of terms used above, which refer to strucutral sections. In other words, a verse can be in derecho or majao, but it is still a verse. The mambo section is always called "mambo" regardless of the rhythm employed.',
   summary: 'A typical bachata song consists of several key sections: an intro that sets the tone, verses that tell the story, a chorus that provides the memorable hook, and a high-energy mambo section featuring instrumental solos. Some songs may also include pre-chorus sections for building momentum, interludes that break from traditional bachata patterns, and outros that bring the song to a close.',
 };

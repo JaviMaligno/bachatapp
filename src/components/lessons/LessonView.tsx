@@ -98,6 +98,13 @@ export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack 
                     className="w-full" 
                     onError={(e) => console.error(`Error loading audio ${sample.name}:`, e)}
                   />
+                  {(sample.song || sample.artist) && (
+                    <p className="text-sm text-gray-600 mt-1 italic">
+                      {sample.song && `"${sample.song}"`}
+                      {sample.song && sample.artist && " by "}
+                      {sample.artist}
+                    </p>
+                  )}
                 </div>
               ))}
             </div>
