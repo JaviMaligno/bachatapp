@@ -1,10 +1,120 @@
 import { BookOpen, Music2, Users } from 'lucide-react';
-import { Section, LessonSummary } from '../types';
+import { Section, LessonSummary, GlossarySection } from '../types/Lesson';
 import { instrumentQuizQuestions } from './quizzes/instrument-quiz';
 import { missingInstrumentsQuizQuestions } from './quizzes/missing-instruments-quiz';
 import { sectionQuizQuestions } from './quizzes/section-quiz';
 import { rhythmQuizQuestions } from './quizzes/rhythm-quiz';
 import { bachataPartsQuizQuestions } from './quizzes/bachata-parts-quiz';
+
+// Update glossary entries to match GlossarySection interface
+const historyGlossary: GlossarySection[] = [
+  {
+    category: 'General Terms',
+    terms: [
+      {
+        term: "Amargue",
+        definition: "A style of dancing and singing bachata characterized by a bitter, sorrowful expression of unrequited love"
+      },
+      {
+        term: "Bolero",
+        definition: "A Latin music genre that heavily influenced early bachata"
+      },
+      {
+        term: "Guitar Music",
+        definition: "The original name for bachata before it was formally recognized as a genre"
+      }
+    ]
+  }
+];
+
+const musicGlossary: GlossarySection[] = [
+  {
+    category: 'Instruments',
+    terms: [
+      { 
+        term: 'Requinto', 
+        definition: 'The lead guitar in bachata music that plays intricate melodies and improvisations. It has a higher pitch than standard guitar and is responsible for carrying the main melody and creating ornamentations throughout the song.'
+      },
+      { 
+        term: 'Segunda', 
+        definition: 'The rhythm guitar in bachata that provides the harmonic foundation with steady rhythmic strumming. It follows a syncopated pattern called "guajeo" and creates the iconic bachata rhythm through palm-muted playing.'
+      },
+      { 
+        term: 'Bass', 
+        definition: 'The bass guitar provides depth and groove by outlining chord progressions. It follows a distinctive syncopated pattern emphasizing beats 1 and 5, alternating between root and fifth notes.'
+      },
+      { 
+        term: 'Bongo', 
+        definition: 'A pair of drums played with hands that add rhythmic complexity to bachata. They typically follow a "martillo" pattern and are used for highlighting transitions and solos during instrumental breaks.'
+      },
+      { 
+        term: 'Guira', 
+        definition: 'A metal scraper percussion instrument that provides a crisp, driving rhythm with its high-pitched metallic sound. It acts as a timekeeper and its steady pulse is a hallmark of bachata music.'
+      },
+    ]
+  },
+  {
+    category: 'Rhythms',
+    terms: [
+      { 
+        term: 'Derecho', 
+        definition: 'The foundational bachata rhythm with low to moderate energy, characterized by steady, consistent patterns in the bongos and güira. Commonly found in verses and creates a calm, grounded feel ideal for smooth dancing.'
+      },
+      { 
+        term: 'Majao', 
+        definition: 'A moderate to high energy rhythm where bongos and güira play directly on the beat. Typically appears in chorus sections, adding vibrancy and excitement to the music.'
+      },
+      { 
+        term: 'Mambo', 
+        definition: 'The most energetic bachata rhythm, featuring rapid güira patterns ("a caballo") and expressive bongo solos. Common in traditional bachata during instrumental breaks and climactic moments.'
+      }
+    ]
+  },
+  {
+    category: 'Bachata Sections',
+    terms: [
+      { 
+        term: 'Verse', 
+        definition: 'The main body of a bachata song, typically containing the lyrics and melody. It is the most common section in bachata and often features a repeated structure.'
+      },
+      {
+        term: 'Chorus',
+        definition: 'The catchiest and most memorable part of the song, typically using a majao rhythm with higher energy than the verse. It repeats several times throughout the song and contains key lyrical phrases.'
+      },
+      {
+        term: 'Pre-Chorus',
+        definition: 'An optional section that builds momentum and energy while transitioning from the verse into the chorus.'
+      },
+      {
+        term: 'Mambo',
+        definition: 'A high-energy instrumental break featuring guitar solos and vocal ad libs. Can use either majao or mambo rhythm and is usually the most energetic part of the song.'
+      },
+      {
+        term: 'Interlude',
+        definition: 'A break from traditional bachata beats, common in fusion styles. Often placed after the mambo section and may incorporate elements from other music genres.'
+      },
+      {
+        term: 'Intro',
+        definition: 'The opening section that sets the tone for the song, usually instrumental. Can range from traditional guitar flicks to fusion-style arrangements.'
+      },
+      {
+        term: 'Outro',
+        definition: 'The closing section of the song that can take various forms, from traditional instrumental conclusions to fusion endings that mirror the intro.'
+      }
+    ]
+  }
+];
+
+const danceGlossary: GlossarySection[] = [
+  {
+    category: 'Basic Movements',
+    terms: [
+      { term: "Basic Step", definition: "The fundamental 8-count movement in bachata" },
+      { term: "Hip Motion", definition: "The characteristic hip movement on counts 4 and 8" },
+      { term: "Tap", definition: "The subtle foot tap on counts 4 and 8 in basic bachata steps" }
+    ]
+  }
+];
 
 export const sections: Section[] = [
   {
@@ -22,7 +132,8 @@ export const sections: Section[] = [
       } as LessonSummary,
       { id: 'evolution', title: 'Evolution Through Decades', progress: 30 },
       { id: 'modern', title: 'Modern Bachata', progress: 0 }
-    ]
+    ],
+    glossary: historyGlossary
   },
   {
     id: 'music',
@@ -78,7 +189,8 @@ export const sections: Section[] = [
         progress: 0,
         questions: bachataPartsQuizQuestions
       }
-    ]
+    ],
+    glossary: musicGlossary
   },
   {
     id: 'dance',
@@ -90,6 +202,7 @@ export const sections: Section[] = [
       { id: 'basic-steps', title: 'Basic Steps', progress: 90 },
       { id: 'turns', title: 'Basic Turns', progress: 40 },
       { id: 'combinations', title: 'Step Combinations', progress: 0 }
-    ]
+    ],
+    glossary: danceGlossary
   }
 ]; 

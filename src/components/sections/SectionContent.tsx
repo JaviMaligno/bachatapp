@@ -3,19 +3,41 @@ import { Section } from '../../types';
 import { LessonsList } from '../lessons/LessonsList';
 import { QuizList } from '../quizzes/QuizList';
 import { BackButton } from '../common/BackButton';
+import { GlossarySection } from '../../types/Lesson';
 
 interface SectionContentProps {
   section: Section;
   onBack: () => void;
   onSelectLesson: (lesson: any) => void;
   onSelectQuiz: (quiz: any) => void;
+  onSelectGlossary: (glossary: GlossarySection[]) => void;
 }
+
+const GlossaryPreview: React.FC<{ 
+  glossary?: GlossarySection[], 
+  onClick: () => void 
+}> = ({ glossary, onClick }) => {
+  if (!glossary?.length) return null;
+
+  const totalTerms = glossary.reduce((sum, section) => sum + section.terms.length, 0);
+
+  return (
+    <div 
+      onClick={onClick}
+      className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+    >
+      <h2 className="text-xl font-semibold text-gray-700 mb-2">Glossary</h2>
+      <p className="text-gray-600">{totalTerms} terms across {glossary.length} categories</p>
+    </div>
+  );
+};
 
 export const SectionContent: React.FC<SectionContentProps> = ({
   section,
   onBack,
   onSelectLesson,
-  onSelectQuiz
+  onSelectQuiz,
+  onSelectGlossary
 }) => (
   <div className="p-6">
     <BackButton onClick={onBack} label="Back to Menu" />
@@ -31,6 +53,13 @@ export const SectionContent: React.FC<SectionContentProps> = ({
         <QuizList 
           quizzes={section.quizzes} 
           onSelectQuiz={onSelectQuiz} 
+        />
+      )}
+
+      {section.glossary && (
+        <GlossaryPreview 
+          glossary={section.glossary} 
+          onClick={() => onSelectGlossary(section.glossary!)} 
         />
       )}
     </div>

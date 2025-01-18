@@ -14,6 +14,19 @@ export interface Media {
   video?: string;
 }
 
+export interface GlossaryItem {
+  term: string;
+  definition: string;
+}
+
+export interface GlossarySection {
+  category: string;
+  terms: {
+    term: string;
+    definition: string;
+  }[];
+}
+
 // Base section interface
 export interface Section {
   id: string;
@@ -26,6 +39,7 @@ export interface Section {
   quizzes?: any[];
   sections?: Section[];
   media?: Media;
+  glossary?: GlossarySection[];
 }
 
 // Core lesson structure
@@ -51,3 +65,4 @@ export interface LessonSummary {
   description?: string;
   progress?: number;
 } 
+
