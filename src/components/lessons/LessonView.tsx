@@ -41,78 +41,85 @@ export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack 
   const lessonContent = getLessonContent();
 
   const renderSection = (section: Section) => (
-    <div key={section.id} className="mt-8">
-      <h2 className="text-xl font-semibold mb-4">{section.title}</h2>
-      <ReactMarkdown rehypePlugins={[rehypeRaw]}>{section.content}</ReactMarkdown>
+    <div key={section.id} className="mt-8 space-y-6">
+      <h2 className="text-2xl font-semibold mb-6 text-gray-800">{section.title}</h2>
+      <div className="prose max-w-none bg-white rounded-lg p-6 shadow-sm">
+        <ReactMarkdown rehypePlugins={[rehypeRaw]}>{section.content}</ReactMarkdown>
+      </div>
 
-      {/* Render nested sections if they exist */}
+      {/* Key Points Section */}
       {section.sections && (
-        <div className="ml-4 mt-4 space-y-4">
-          {section.sections.map((subSection) => (
-            <div key={subSection.id}>
-              <h3 className="text-lg font-semibold mb-2">{subSection.title}</h3>
-              <ReactMarkdown rehypePlugins={[rehypeRaw]}>{subSection.content}</ReactMarkdown>
-
-              {/* Recursively render deeper nested sections */}
-              {subSection.sections && (
-                <div className="ml-4 mt-2 space-y-2">
-                  {subSection.sections.map((nestedSection) => (
-                    <div key={nestedSection.id}>
-                      <h4 className="text-md font-medium mb-1">{nestedSection.title}</h4>
-                      <ReactMarkdown rehypePlugins={[rehypeRaw]}>{nestedSection.content}</ReactMarkdown>
-                    </div>
-                  ))}
+        <div className="bg-blue-50 rounded-lg p-6">
+          <h3 className="text-lg font-semibold mb-4 flex items-center text-blue-900">
+            <span className="mr-2">🔑</span> Key Points to Remember
+          </h3>
+          <div className="space-y-3">
+            {section.sections.map((subSection) => (
+              <div key={subSection.id} className="flex items-start">
+                <div className="flex-shrink-0 mt-1">
+                  <svg className="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
                 </div>
-              )}
-            </div>
-          ))}
+                <div className="ml-3">
+                  <h4 className="font-medium text-gray-900">{subSection.title}</h4>
+                  <div className="mt-1 text-gray-600">
+                    <ReactMarkdown rehypePlugins={[rehypeRaw]}>{subSection.content}</ReactMarkdown>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       )}
 
-      {/* Render media content if it exists */}
+      {/* Media Section with improved styling */}
       {section.media && (
-        <div className="mt-4">
+        <div className="mt-6 space-y-6">
           {section.media.image && (
-            <figure className="mb-4">
+            <div className="bg-white rounded-lg overflow-hidden shadow-sm">
               <img 
                 src={section.media.image.src} 
                 alt={section.media.image.caption || section.title} 
-                className="rounded-lg" 
+                className="w-full object-cover h-64 md:h-96" 
               />
               {section.media.image.caption && (
-                <figcaption className="text-sm text-gray-600 mt-2 text-center italic">
+                <div className="p-4 bg-gray-50 text-sm text-gray-600 italic text-center">
                   {section.media.image.caption}
-                </figcaption>
+                </div>
               )}
-            </figure>
+            </div>
           )}
           
           {section.media.audio?.samples && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
-              {section.media.audio.samples.map((sample, index) => (
-                <div key={index} className="flex flex-col">
-                  <p className="font-medium mb-1">{sample.name}:</p>
-                  <audio 
-                    controls 
-                    src={sample.path} 
-                    className="w-full" 
-                    onError={(e) => console.error(`Error loading audio ${sample.name}:`, e)}
-                  />
-                  {(sample.song || sample.artist) && (
-                    <p className="text-sm text-gray-600 mt-1 italic">
-                      {sample.song && `"${sample.song}"`}
-                      {sample.song && sample.artist && " by "}
-                      {sample.artist}
-                    </p>
-                  )}
-                </div>
-              ))}
+            <div className="bg-white rounded-lg p-6 shadow-sm">
+              <h3 className="text-lg font-semibold mb-4">Audio Samples</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {section.media.audio.samples.map((sample, index) => (
+                  <div key={index} className="bg-gray-50 rounded-lg p-4">
+                    <p className="font-medium mb-2 text-gray-800">{AUDIO_DISPLAY_NAMES[sample.name] || sample.name}</p>
+                    <audio 
+                      controls 
+                      src={sample.path} 
+                      className="w-full" 
+                      onError={(e) => console.error(`Error loading audio ${sample.name}:`, e)}
+                    />
+                    {(sample.song || sample.artist) && (
+                      <p className="text-sm text-gray-600 mt-2 italic">
+                        {sample.song && `"${sample.song}"`}
+                        {sample.song && sample.artist && " by "}
+                        {sample.artist}
+                      </p>
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
           )}
 
           {section.media.video && (
-            <div className="mt-4">
-              <video controls src={section.media.video} className="w-full rounded-lg" />
+            <div className="bg-white rounded-lg overflow-hidden shadow-sm">
+              <video controls src={section.media.video} className="w-full" />
             </div>
           )}
         </div>
