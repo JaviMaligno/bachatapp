@@ -81,7 +81,7 @@ export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack 
               <img 
                 src={section.media.image.src} 
                 alt={section.media.image.caption || section.title} 
-                className="w-full object-cover h-64 md:h-96" 
+                className="w-full h-auto object-contain max-h-[600px]" 
               />
               {section.media.image.caption && (
                 <div className="p-4 bg-gray-50 text-sm text-gray-600 italic text-center">
