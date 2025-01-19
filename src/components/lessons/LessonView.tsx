@@ -57,7 +57,7 @@ export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack 
             {section.sections.map((subSection) => (
               <div key={subSection.id} className="space-y-3">
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 mt-1">
+                  <div className="flex-shrink-0 mt-6">
                     <svg className="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                     </svg>
@@ -74,7 +74,7 @@ export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack 
                       <div className="mt-2 ml-4 space-y-2">
                         {subSection.sections.map((nestedSection) => (
                           <div key={nestedSection.id} className="flex items-start">
-                            <div className="flex-shrink-0 mt-1">
+                            <div className="flex-shrink-0 mt-2.5">
                               <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
                             </div>
                             <div className="ml-3">
