@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useParams, useNavigate } from 'react-router-dom';
 import { AppLayout } from './components/layout/AppLayout';
 import { MainMenu } from './components/main/MainMenu';
@@ -7,6 +7,8 @@ import { sections } from './data/sections';
 import { SectionContent } from './components/sections/SectionContent';
 import { QuizContent } from './components/quizzes/QuizContent';
 import { GlossaryView } from './components/glossary/GlossaryView';
+import { DarkModeProvider } from './contexts/DarkModeContext';
+
 const LessonsListWrapper = () => {
   const { sectionId } = useParams();
   const navigate = useNavigate();
@@ -87,18 +89,20 @@ const GlossaryViewWrapper = () => {
 
 const App: React.FC = () => {
   return (
-    <Router>
-      <AppLayout>
-        <Routes>
-          <Route path="/" element={<MainMenuWrapper />} />
-          <Route path="/section/:sectionId" element={<LessonsListWrapper />} />
-          <Route path="/section/:sectionId/lesson/:lessonId" element={<LessonViewWrapper />} />
-          <Route path="/section/:sectionId/quiz/:quizId" element={<QuizViewWrapper />} />
-          <Route path="/section/:sectionId/glossary" element={<GlossaryViewWrapper />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
-      </AppLayout>
-    </Router>
+    <DarkModeProvider>
+      <Router>
+        <AppLayout>
+          <Routes>
+            <Route path="/" element={<MainMenuWrapper />} />
+            <Route path="/section/:sectionId" element={<LessonsListWrapper />} />
+            <Route path="/section/:sectionId/lesson/:lessonId" element={<LessonViewWrapper />} />
+            <Route path="/section/:sectionId/quiz/:quizId" element={<QuizViewWrapper />} />
+            <Route path="/section/:sectionId/glossary" element={<GlossaryViewWrapper />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </AppLayout>
+      </Router>
+    </DarkModeProvider>
   );
 };
 

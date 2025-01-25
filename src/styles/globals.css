@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities; 
+@tailwind utilities;
+
+/* You can keep custom CSS variables for non-Tailwind styles */
+:root {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --primary-color: #007bff;
+  /* Add other color variables as needed */
+}
+
+/* Dark mode colors */
+:root.dark {
+  --background-color: #121212;
+  --text-color: #ffffff;
+  --primary-color: #4dabf7;
+  /* Add other dark mode color variables */
+}
+
+/* Only use these variables for custom styles that can't be handled by Tailwind */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+} 

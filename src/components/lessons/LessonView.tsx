@@ -50,15 +50,15 @@ export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack 
 
   const renderSection = (section: Section) => (
     <div key={section.id} className="mt-8 space-y-6">
-      <h2 className="text-2xl font-semibold mb-6 text-gray-800">{section.title}</h2>
-      <div className="prose max-w-none bg-white rounded-lg p-6 shadow-sm">
+      <h2 className="text-2xl font-semibold mb-6 text-gray-800 dark:text-white">{section.title}</h2>
+      <div className="prose dark:prose-invert max-w-none bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
         <ReactMarkdown rehypePlugins={[rehypeRaw]}>{section.content}</ReactMarkdown>
       </div>
 
       {/* Key Points Section */}
       {section.sections && (
-        <div className="bg-blue-50 rounded-lg p-6">
-          <h3 className="text-lg font-semibold mb-4 flex items-center text-blue-900">
+        <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6">
+          <h3 className="text-lg font-semibold mb-4 text-blue-900 dark:text-blue-100 flex items-center">
             <span className="mr-2">🔑</span> Key Points to Remember
           </h3>
           <div className="space-y-4">
@@ -66,14 +66,14 @@ export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack 
               <div key={subSection.id} className="space-y-3">
                 <div className="flex items-start">
                   <div className="flex-shrink-0 mt-6">
-                    <svg className="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-blue-500 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
                   <div className="ml-3">
-                    <h4 className="font-medium text-gray-900">{subSection.title}</h4>
+                    <h4 className="font-medium text-gray-900 dark:text-white">{subSection.title}</h4>
                     {subSection.content && (
-                      <div className="mt-1 text-gray-600">
+                      <div className="mt-1 text-gray-600 dark:text-gray-300">
                         <ReactMarkdown rehypePlugins={[rehypeRaw]}>{subSection.content}</ReactMarkdown>
                       </div>
                     )}
@@ -83,11 +83,11 @@ export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack 
                         {subSection.sections.map((nestedSection) => (
                           <div key={nestedSection.id} className="flex items-start">
                             <div className="flex-shrink-0 mt-2.5">
-                              <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                              <div className="w-2 h-2 bg-blue-400 dark:bg-blue-500 rounded-full"></div>
                             </div>
                             <div className="ml-3">
-                              <h5 className="font-medium text-gray-800">{nestedSection.title}</h5>
-                              <div className="mt-1 text-gray-600">
+                              <h5 className="font-medium text-gray-800 dark:text-white">{nestedSection.title}</h5>
+                              <div className="mt-1 text-gray-600 dark:text-gray-300">
                                 <ReactMarkdown rehypePlugins={[rehypeRaw]}>{nestedSection.content}</ReactMarkdown>
                               </div>
                             </div>
@@ -171,14 +171,14 @@ export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack 
     <div className="p-6">
       <BackButton onClick={onBack} label={`Back to ${section.title}`} />
       <div className="max-w-3xl mx-auto">
-        <h1 className="text-2xl font-bold text-gray-800 mb-6">{lesson.title}</h1>
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">{lesson.title}</h1>
         
-        <div className="aspect-video bg-gray-100 rounded-lg mb-8 flex items-center justify-center">
-          <Play className="w-12 h-12 text-gray-400" />
+        <div className="aspect-video bg-gray-100 dark:bg-gray-800 rounded-lg mb-8 flex items-center justify-center">
+          <Play className="w-12 h-12 text-gray-400 dark:text-gray-500" />
         </div>
 
         {lessonContent && (
-          <div className="prose max-w-none">
+          <div className="prose dark:prose-invert max-w-none">
             {lessonContent.introduction && (
               <ReactMarkdown rehypePlugins={[rehypeRaw]}>{lessonContent.introduction}</ReactMarkdown>
             )}
@@ -186,22 +186,22 @@ export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack 
             {lessonContent.sections.map(renderSection)}
 
             {lessonContent.note && (
-              <div className="mt-8 bg-amber-50 rounded-lg p-6 border border-amber-200">
-                <h2 className="text-xl font-semibold mb-4 text-amber-900 flex items-center">
+              <div className="mt-8 bg-amber-50 dark:bg-amber-900/20 rounded-lg p-6 border border-amber-200 dark:border-amber-700">
+                <h2 className="text-xl font-semibold mb-4 text-amber-900 dark:text-amber-100 flex items-center">
                   <span className="mr-2">📝</span> Note
                 </h2>
-                <div className="text-amber-900">
+                <div className="text-amber-900 dark:text-amber-100">
                   <ReactMarkdown rehypePlugins={[rehypeRaw]}>{lessonContent.note}</ReactMarkdown>
                 </div>
               </div>
             )}
 
             {lessonContent.summary && (
-              <div className="mt-8 bg-emerald-50 rounded-lg p-6 border border-emerald-200">
-                <h2 className="text-xl font-semibold mb-4 text-emerald-900 flex items-center">
+              <div className="mt-8 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg p-6 border border-emerald-200 dark:border-emerald-700">
+                <h2 className="text-xl font-semibold mb-4 text-emerald-900 dark:text-emerald-100 flex items-center">
                   <span className="mr-2">📌</span> Summary
                 </h2>
-                <div className="text-emerald-900">
+                <div className="text-emerald-900 dark:text-emerald-100">
                   <ReactMarkdown rehypePlugins={[rehypeRaw]}>{lessonContent.summary}</ReactMarkdown>
                 </div>
               </div>

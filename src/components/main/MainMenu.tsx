@@ -9,7 +9,7 @@ interface MainMenuProps {
 
 export const MainMenu: React.FC<MainMenuProps> = ({ sections, onSectionSelect }) => (
   <div className="space-y-6 p-6">
-    <h1 className="text-3xl font-bold text-gray-800 mb-8">Learn Bachata</h1>
+    <h1 className="text-3xl font-bold text-gray-800 dark:text-white mb-8">Learn Bachata</h1>
     {sections.map((section) => (
       <button
         key={section.id}

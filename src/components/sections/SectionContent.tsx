@@ -24,10 +24,10 @@ const GlossaryPreview: React.FC<{
   return (
     <div 
       onClick={onClick}
-      className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+      className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer"
     >
-      <h2 className="text-xl font-semibold text-gray-700 mb-2">Glossary</h2>
-      <p className="text-gray-600">{totalTerms} terms across {glossary.length} categories</p>
+      <h2 className="text-xl font-semibold text-gray-700 dark:text-white mb-2">Glossary</h2>
+      <p className="text-gray-600 dark:text-gray-300">{totalTerms} terms across {glossary.length} categories</p>
     </div>
   );
 };
@@ -53,7 +53,7 @@ export const SectionContent: React.FC<SectionContentProps> = ({
   return (
     <div className="p-6">
       <BackButton onClick={onBack} label="Back to Menu" />
-      <h1 className="text-2xl font-bold text-gray-800 mb-6">{section.title}</h1>
+      <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">{section.title}</h1>
       
       <div className="space-y-6">
         <LessonsList

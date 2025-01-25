@@ -114,8 +114,8 @@ export const InstrumentQuiz: React.FC<InstrumentQuizProps> = ({
   const getButtonClass = (instrument: string) => {
     if (!isSubmitted) {
       return selectedInstruments.includes(instrument)
-        ? 'bg-orange-100 border-orange-500'
-        : 'bg-white border-gray-200 hover:border-gray-300';
+        ? 'bg-orange-100 dark:bg-orange-900/20 border-orange-500 dark:border-orange-400'
+        : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600';
     }
 
     if (showSolution || selectedInstruments.includes(instrument)) {
@@ -123,18 +123,18 @@ export const InstrumentQuiz: React.FC<InstrumentQuizProps> = ({
       const wasSelected = selectedInstruments.includes(instrument);
 
       if (isCorrect) {
-        return 'bg-green-50 border-green-500';
+        return 'bg-green-50 dark:bg-green-900 border-green-500';
       }
       if (wasSelected) {
-        return 'bg-red-50 border-red-500';
+        return 'bg-red-50 dark:bg-red-900 border-red-500';
       }
     }
 
-    return 'bg-white border-gray-200';
+    return 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700';
   };
 
   return (
-    <div className="mt-8 p-6 bg-gray-50 rounded-xl">
+    <div className="mt-8 p-6 bg-gray-50 dark:bg-gray-900 rounded-xl">
       <BackButton onClick={onBack} label={`Back to ${sectionTitle} Section`} />
       
       <h3 className="text-lg font-semibold mb-4">
@@ -153,10 +153,10 @@ export const InstrumentQuiz: React.FC<InstrumentQuizProps> = ({
         />
         <button
           onClick={togglePlay}
-          className="flex items-center gap-2 px-4 py-2 bg-white rounded-lg border border-gray-200 hover:border-gray-300"
+          className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600"
         >
-          {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
-          {isPlaying ? 'Pause' : 'Play'} Audio
+          {isPlaying ? <Pause className="w-4 h-4 text-gray-600 dark:text-gray-300" /> : <Play className="w-4 h-4 text-gray-600 dark:text-gray-300" />}
+          <span className="text-gray-600 dark:text-gray-300">{isPlaying ? 'Pause' : 'Play'} Audio</span>
         </button>
       </div>
 
