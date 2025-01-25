@@ -6,6 +6,7 @@ export const musicStructureLesson: MusicLesson = {
   title: 'Bachata Song Structure',
   description: 'Understanding the different sections that make up a bachata song',
   introduction: 'Bachata music follows a structured format that helps tell a story through both lyrics and instrumental arrangements. Each section serves a specific purpose, contributing to the overall flow and energy of the song. Some sections are optional, but they are often used to enhance the song and make it more interesting. Often, sections are associated to rhythms, but this is not always the case as they can transition from one rhythm to another. To know what section you are listening, you need to understand the role it plays in the song structure.\n\nUnderstanding the structure of bachata songs helps dancers anticipate changes in energy and rhythm. Each section serves a specific purpose, from storytelling in the verses to high-energy expression in the mambo. This knowledge allows dancers to better interpret the music and adapt their movements accordingly.',
+  video: 'https://www.youtube.com/watch?v=5JysgNEAe44',
   sections: [
     {
       id: 'intro',

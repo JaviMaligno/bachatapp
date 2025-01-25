@@ -6,6 +6,7 @@ export const musicRhythmLesson: MusicLesson = {
   title: 'Basic Rhythm & Structure',
   description: 'Musicality in Bachata: Understanding the Rhythms',
   introduction: 'Bachata is a deeply rhythmic and expressive genre, with its foundation built upon three main rhythms: **derecho**, **majao**, and **mambo**. These rhythms define the musical structure and guide dancers in interpreting the music.',
+  video: 'https://www.youtube.com/watch?v=YuvvdHBcPp0',
   sections: [
     {
       id: 'intro',

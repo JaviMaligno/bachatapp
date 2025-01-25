@@ -35,6 +35,7 @@ export interface Section {
   content?: string;
   icon?: any;
   color?: string;
+  comingSoon?: boolean;
   lessons?: LessonSummary[];
   quizzes?: any[];
   sections?: Section[];
@@ -52,6 +53,7 @@ export interface Lesson {
   sections: Section[];
   note?: string;
   summary?: string;
+  video?: string;
 }
 
 export interface MusicLesson extends Lesson {
@@ -64,5 +66,7 @@ export interface LessonSummary {
   title: string;
   description?: string;
   progress?: number;
+  comingSoon?: boolean;
+  video?: string;
 } 
 
