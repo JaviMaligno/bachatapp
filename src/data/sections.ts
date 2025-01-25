@@ -139,7 +139,7 @@ export const sections: Section[] = [
   {
     id: 'music',
     title: 'Music',
-    description: 'Learn the music of Bachata',
+    description: 'Learn the musical elements of Bachata',
     icon: Music2,
     color: 'bg-rose-100',
     lessons: [
@@ -196,13 +196,13 @@ export const sections: Section[] = [
   {
     id: 'dance',
     title: 'Dance',
-    description: 'Learn the dance of Bachata',
+    description: 'Learn the fundamentals of Bachata dance',
     icon: Users,
     color: 'bg-blue-100',
     lessons: [
       { id: 'basic-steps', title: 'Basic Steps', get progress() { return progressManager.getProgress('dance', 'basic-steps'); } },
       { id: 'turns', title: 'Basic Turns', get progress() { return progressManager.getProgress('dance', 'turns'); } },
-      { id: 'combinations', title: 'Step Combinations', get progress() { return progressManager.getProgress('dance', 'combinations'); } }
+      { id: 'hip-movement', title: 'Hip Movement', get progress() { return progressManager.getProgress('dance', 'hip-movement'); } }
     ],
     glossary: danceGlossary
   }
