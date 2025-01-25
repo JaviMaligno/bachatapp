@@ -21,7 +21,13 @@
     "noFallthroughCasesInSwitch": true,
 
     /* Output */
-    "outDir": "dist"
+    "outDir": "dist",
+
+    "rules": {
+      "@typescript-eslint/no-unused-vars": ["error", {
+        "varsIgnorePattern": "React"
+      }]
+    }
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
