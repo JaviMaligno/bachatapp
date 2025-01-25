@@ -110,9 +110,8 @@ const danceGlossary: GlossarySection[] = [
   {
     category: 'Basic Movements',
     terms: [
-      { term: "Basic Step", definition: "The fundamental 8-count movement in bachata" },
-      { term: "Hip Motion", definition: "The characteristic hip movement on counts 4 and 8" },
-      { term: "Tap", definition: "The subtle foot tap on counts 4 and 8 in basic bachata steps" }
+      { term: "Basic Step", definition: "The fundamental 8-count step sequence in bachata" },
+      { term: "Tap", definition: "The subtle foot tap without weight transfer on counts 4 and 8 in basic bachata steps" }
     ]
   }
 ];
