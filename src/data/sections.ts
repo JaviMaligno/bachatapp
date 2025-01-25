@@ -131,8 +131,8 @@ export const sections: Section[] = [
         description: 'Learn about the origins of Bachata music',
         get progress() { return progressManager.getProgress('history', 'origins'); }
       } as LessonSummary,
-      { id: 'evolution', title: 'Evolution Through Decades', progress: 30 },
-      { id: 'modern', title: 'Modern Bachata', progress: 0 }
+      { id: 'evolution', title: 'Evolution Through Decades', get progress() { return progressManager.getProgress('history', 'evolution'); } },
+      { id: 'modern', title: 'Modern Bachata', get progress() { return progressManager.getProgress('history', 'modern'); } }
     ],
     glossary: historyGlossary
   },
@@ -155,7 +155,7 @@ export const sections: Section[] = [
         title: 'Instrument Recognition',
         description: 'Identify which instruments are playing',
         type: 'present',
-        progress: 0,
+        progress: 0, //will be set by progressManager but keep it to remind me if i need it for database users in the future
         questions: instrumentQuizQuestions
       },
       {
@@ -200,9 +200,9 @@ export const sections: Section[] = [
     icon: Users,
     color: 'bg-blue-100',
     lessons: [
-      { id: 'basic-steps', title: 'Basic Steps', progress: 90 },
-      { id: 'turns', title: 'Basic Turns', progress: 40 },
-      { id: 'combinations', title: 'Step Combinations', progress: 0 }
+      { id: 'basic-steps', title: 'Basic Steps', get progress() { return progressManager.getProgress('dance', 'basic-steps'); } },
+      { id: 'turns', title: 'Basic Turns', get progress() { return progressManager.getProgress('dance', 'turns'); } },
+      { id: 'combinations', title: 'Step Combinations', get progress() { return progressManager.getProgress('dance', 'combinations'); } }
     ],
     glossary: danceGlossary
   }
