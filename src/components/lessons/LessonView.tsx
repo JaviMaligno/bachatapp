@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Play } from 'lucide-react';
 import { Section, Lesson, LessonSummary } from '../../types/Lesson';
 import { BackButton } from '../common/BackButton';
@@ -21,6 +21,13 @@ const AUDIO_DISPLAY_NAMES: Record<string, string> = {
 };
 
 export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack }) => {
+  const [isCompleted, setIsCompleted] = useState(() => {
+    if (lesson && section) {
+      return progressManager.getProgress(section.id, lesson.id) === 100;
+    }
+    return false;
+  });
+
   const handleQuizAnswer = (isCorrect: boolean) => {
     console.log('Answer is:', isCorrect ? 'correct' : 'incorrect');
   };
@@ -152,8 +159,8 @@ export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack 
 
   const handleMarkComplete = () => {
     if (lesson && section) {
+      setIsCompleted(true);
       progressManager.setProgress(section.id, lesson.id, 100);
-      // Force a re-render of the parent component
       window.dispatchEvent(new Event('lessonProgressUpdated'));
     }
   };
@@ -203,9 +210,17 @@ export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack 
             <div className="mt-8 flex justify-center">
               <button
                 onClick={handleMarkComplete}
-                className="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-6 rounded-lg shadow-sm transition-colors"
+                disabled={isCompleted}
+                className={`
+                  transform transition-all duration-200 
+                  ${isCompleted 
+                    ? 'bg-gray-200 text-gray-600 cursor-default' 
+                    : 'bg-green-600 hover:bg-green-700 active:scale-95 hover:scale-105'
+                  }
+                  text-white font-semibold py-2 px-6 rounded-lg shadow-sm
+                `}
               >
-                Mark as Complete
+                {isCompleted ? '✓ Completed' : 'Mark as Complete'}
               </button>
             </div>
           </div>
