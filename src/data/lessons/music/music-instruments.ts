@@ -35,16 +35,16 @@ export const musicInstrumentsLesson: MusicLesson = {
       ],
       media: {
         image: {
-          src: '/public/assets/images/instruments/requinto.jpg',
+          src: '/assets/images/instruments/requinto.jpg',
           caption: 'A classical guitar (left) and a requinto guitar (right)'
         },
         audio: {
           samples: [{
             name: 'Requinto',
-            path: '/public/assets/audio/instruments/requinto.mp3'
+            path: '/assets/audio/instruments/requinto.mp3'
           }]
         },
-        video: '/public/assets/videos/instruments/requinto.mp4'
+        //video: '/assets/videos/instruments/requinto.mp4'
       }
     } as Section,
     {
@@ -70,16 +70,16 @@ export const musicInstrumentsLesson: MusicLesson = {
       ],
       media: {
         image: {
-          src: '/public/assets/images/instruments/segunda.png',
+          src: '/assets/images/instruments/segunda.png',
           caption: 'A guitar that can be used as a segunda'
         },
         audio: {
           samples: [{
             name: 'Segunda',
-            path: '/public/assets/audio/instruments/segunda.mp3'
+            path: '/assets/audio/instruments/segunda.mp3'
           }]
         },
-        video: '/public/assets/videos/instruments/segunda.mp4'
+        //video: '/assets/videos/instruments/segunda.mp4'
       }
     } as Section,
     {
@@ -105,16 +105,16 @@ export const musicInstrumentsLesson: MusicLesson = {
       ],
       media: {
         image: {
-          src: '/public/assets/images/instruments/bass.jpg',
+          src: '/assets/images/instruments/bass.jpg',
           caption: 'A bass guitar'
         },
         audio: {
           samples: [{
             name: 'Bass',
-            path: '/public/assets/audio/instruments/bass.mp3'
+            path: '/assets/audio/instruments/bass.mp3'
           }]
         },
-        video: '/public/assets/videos/instruments/bass.mp4'
+        //video: '/assets/videos/instruments/bass.mp4'
       }
     } as Section,
     {
@@ -140,16 +140,16 @@ export const musicInstrumentsLesson: MusicLesson = {
       ],
       media: {
         image: {
-          src: '/public/assets/images/instruments/guira.webp',
+          src: '/assets/images/instruments/guira.webp',
           caption: 'A güira'
         },
         audio: {
           samples: [{
             name: 'Güira',
-            path: '/public/assets/audio/instruments/guira.wav'
+            path: '/assets/audio/instruments/guira.wav'
           }]
         },
-        video: '/public/assets/videos/instruments/guira.mp4'
+        //video: '/assets/videos/instruments/guira.mp4'
       }
     } as Section,
     {
@@ -175,16 +175,16 @@ export const musicInstrumentsLesson: MusicLesson = {
       ],
       media: {
         image: {
-          src: '/public/assets/images/instruments/bongos.jpg',
+          src: '/assets/images/instruments/bongos.jpg',
           caption: 'A set of bongos'
         },
         audio: {
           samples: [{
             name: 'Bongos',
-            path: '/public/assets/audio/instruments/bongos.wav'
+            path: '/assets/audio/instruments/bongos.wav'
           }]
         },
-        video: '/public/assets/videos/instruments/bongos.mp4'
+        //video: '/assets/videos/instruments/bongos.mp4'
       }
     } as Section,
     {

@@ -124,12 +124,14 @@ export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack 
           )}
           
           {section.media.audio?.samples && (
-            <div className="bg-white rounded-lg p-6 shadow-sm">
-              <h3 className="text-lg font-semibold mb-4">Audio Samples</h3>
+            <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+              <h3 className="text-lg font-semibold mb-4 text-gray-800 dark:text-white">Audio Samples</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {section.media.audio.samples.map((sample, index) => (
-                  <div key={index} className="bg-gray-50 rounded-lg p-4">
-                    <p className="font-medium mb-2 text-gray-800">{AUDIO_DISPLAY_NAMES[sample.name] || sample.name}</p>
+                  <div key={index} className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
+                    <p className="font-medium mb-2 text-gray-800 dark:text-white">
+                      {AUDIO_DISPLAY_NAMES[sample.name] || sample.name}
+                    </p>
                     <audio 
                       controls 
                       src={sample.path} 
@@ -137,7 +139,7 @@ export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack 
                       onError={(e) => console.error(`Error loading audio ${sample.name}:`, e)}
                     />
                     {(sample.song || sample.artist) && (
-                      <p className="text-sm text-gray-600 mt-2 italic">
+                      <p className="text-sm text-gray-600 dark:text-gray-300 mt-2 italic">
                         {sample.song && `"${sample.song}"`}
                         {sample.song && sample.artist && " by "}
                         {sample.artist}
