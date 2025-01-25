@@ -43,23 +43,23 @@ export const SectionContent: React.FC<SectionContentProps> = ({
     <BackButton onClick={onBack} label="Back to Menu" />
     <h1 className="text-2xl font-bold text-gray-800 mb-6">{section.title}</h1>
     
-    <div className="space-y-8">
-      <LessonsList 
-        section={section} 
-        onSelectLesson={onSelectLesson} 
+    <div className="space-y-6">
+      <LessonsList
+        section={section}
+        onSelectLesson={onSelectLesson}
       />
       
       {section.quizzes && section.quizzes.length > 0 && (
-        <QuizList 
-          quizzes={section.quizzes} 
-          onSelectQuiz={onSelectQuiz} 
+        <QuizList
+          quizzes={section.quizzes}
+          onSelectQuiz={onSelectQuiz}
         />
       )}
 
       {section.glossary && (
-        <GlossaryPreview 
-          glossary={section.glossary} 
-          onClick={() => onSelectGlossary(section.glossary!)} 
+        <GlossaryPreview
+          glossary={section.glossary}
+          onClick={() => onSelectGlossary(section.glossary!)}
         />
       )}
     </div>
