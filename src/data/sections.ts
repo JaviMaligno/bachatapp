@@ -7,7 +7,6 @@ import { rhythmQuizQuestions } from './quizzes/rhythm-quiz';
 import { bachataPartsQuizQuestions } from './quizzes/bachata-parts-quiz';
 import { progressManager } from '../components/common/ProgressBar';
 
-// Update glossary entries to match GlossarySection interface
 const historyGlossary: GlossarySection[] = [
   {
     category: 'General Terms',

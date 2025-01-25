@@ -53,6 +53,7 @@ export interface Lesson {
   sections: Section[];
   note?: string;
   summary?: string;
+  video?: string;
 }
 
 export interface MusicLesson extends Lesson {
@@ -66,5 +67,6 @@ export interface LessonSummary {
   description?: string;
   progress?: number;
   comingSoon?: boolean;
+  video?: string;
 } 
 

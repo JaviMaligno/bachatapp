@@ -5,6 +5,7 @@ export const musicInstrumentsLesson: MusicLesson = {
   type: 'instruments',
   title: 'Bachata Instruments',
   description: 'Learn about the key instruments that create the distinctive sound of bachata music.',
+  video: 'https://www.youtube.com/watch?v=Ap7SYou1dnQ',
   sections: [
     {
       id: 'intro',
