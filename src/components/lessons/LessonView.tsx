@@ -207,21 +207,27 @@ export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack 
               </div>
             )}
 
-            <div className="mt-8 flex justify-center">
-              <button
-                onClick={handleMarkComplete}
-                disabled={isCompleted}
-                className={`
-                  transform transition-all duration-200 
-                  ${isCompleted 
-                    ? 'bg-gray-200 text-gray-600 cursor-default' 
-                    : 'bg-green-600 hover:bg-green-700 active:scale-95 hover:scale-105'
-                  }
-                  text-white font-semibold py-2 px-6 rounded-lg shadow-sm
-                `}
-              >
-                {isCompleted ? '✓ Completed' : 'Mark as Complete'}
-              </button>
+            <div className="mt-8 space-y-6">
+              <div className="flex justify-center">
+                <button
+                  onClick={handleMarkComplete}
+                  disabled={isCompleted}
+                  className={`
+                    transform transition-all duration-200 
+                    ${isCompleted 
+                      ? 'bg-gray-200 text-gray-600 cursor-default' 
+                      : 'bg-green-600 hover:bg-green-700 active:scale-95 hover:scale-105'
+                    }
+                    text-white font-semibold py-2 px-6 rounded-lg shadow-sm
+                  `}
+                >
+                  {isCompleted ? '✓ Completed' : 'Mark as Complete'}
+                </button>
+              </div>
+              
+              <div className="flex justify-center">
+                <BackButton onClick={onBack} label={`Back to ${section.title}`} />
+              </div>
             </div>
           </div>
         )}

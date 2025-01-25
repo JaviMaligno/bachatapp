@@ -66,6 +66,7 @@ export const SectionContent: React.FC<SectionContentProps> = ({
           <QuizList
             quizzes={section.quizzes}
             onSelectQuiz={onSelectQuiz}
+            sectionId={section.id}
           />
         )}
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Quiz } from '../../types';
 import { InstrumentQuiz } from '../lessons/InstrumentQuiz';
+import { progressManager } from '../common/ProgressBar';
 
 interface QuizContentProps {
   quiz: Quiz;
@@ -20,6 +21,20 @@ export const QuizContent: React.FC<QuizContentProps> = ({
   onBack,
   sectionTitle
 }) => {
+  const handleQuizComplete = (score: number) => {
+    const totalQuestions = quiz.questions.length;
+    const percentage = (score / totalQuestions) * 100;
+    
+    // Save both the score and progress
+    progressManager.setQuizScore(sectionTitle.toLowerCase(), quiz.id, score, totalQuestions);
+    
+    // Trigger the completion callback
+    onComplete(score);
+    
+    // Dispatch event to update UI
+    window.dispatchEvent(new Event('quizProgressUpdated'));
+  };
+
   if (!quiz || !quiz.type) {
     return null;
   }
@@ -27,7 +42,7 @@ export const QuizContent: React.FC<QuizContentProps> = ({
   return (
     <InstrumentQuiz 
       questions={quiz.questions} 
-      onComplete={onComplete} 
+      onComplete={handleQuizComplete} 
       mode={quiz.type}
       options={
         quiz.type === 'present' || quiz.type === 'missing' 
