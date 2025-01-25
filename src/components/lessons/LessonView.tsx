@@ -28,10 +28,6 @@ export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack 
     return false;
   });
 
-  const handleQuizAnswer = (isCorrect: boolean) => {
-    console.log('Answer is:', isCorrect ? 'correct' : 'incorrect');
-  };
-
   const getLessonContent = () => {
     if (!lesson) return null;
     if (section.id === 'music' && lesson.id === 'rhythm') {

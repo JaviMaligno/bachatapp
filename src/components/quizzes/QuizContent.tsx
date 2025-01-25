@@ -23,7 +23,6 @@ export const QuizContent: React.FC<QuizContentProps> = ({
 }) => {
   const handleQuizComplete = (score: number) => {
     const totalQuestions = quiz.questions.length;
-    const percentage = (score / totalQuestions) * 100;
     
     // Save both the score and progress
     progressManager.setQuizScore(sectionTitle.toLowerCase(), quiz.id, score, totalQuestions);
