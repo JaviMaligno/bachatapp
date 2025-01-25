@@ -35,6 +35,7 @@ export interface Section {
   content?: string;
   icon?: any;
   color?: string;
+  comingSoon?: boolean;
   lessons?: LessonSummary[];
   quizzes?: any[];
   sections?: Section[];
@@ -64,5 +65,6 @@ export interface LessonSummary {
   title: string;
   description?: string;
   progress?: number;
+  comingSoon?: boolean;
 } 
 

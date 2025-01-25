@@ -123,6 +123,7 @@ export const sections: Section[] = [
     description: 'Learn the history of Bachata',
     icon: BookOpen,
     color: 'bg-amber-100',
+    comingSoon: true,
     lessons: [
       {
         id: 'origins',
@@ -145,8 +146,18 @@ export const sections: Section[] = [
       { id: 'instruments', title: 'Key Instruments', get progress() { return progressManager.getProgress('music', 'instruments'); } },
       { id: 'rhythm', title: 'Basic Rhythms', get progress() { return progressManager.getProgress('music', 'rhythm'); } },
       { id: 'structure', title: 'Song Structure', get progress() { return progressManager.getProgress('music', 'structure'); } },
-      { id: 'artists', title: 'Influential Artists', get progress() { return progressManager.getProgress('music', 'artists'); } },
-      { id: 'theory', title: 'Music Theory (Additional)', get progress() { return progressManager.getProgress('music', 'theory'); } }
+      { 
+        id: 'artists', 
+        title: 'Influential Artists', 
+        comingSoon: true,
+        get progress() { return progressManager.getProgress('music', 'artists'); } 
+      },
+      { 
+        id: 'theory', 
+        title: 'Music Theory (Additional)', 
+        comingSoon: true,
+        get progress() { return progressManager.getProgress('music', 'theory'); } 
+      }
     ],
     quizzes: [
       {
@@ -198,6 +209,7 @@ export const sections: Section[] = [
     description: 'Learn the fundamentals of Bachata dance',
     icon: Users,
     color: 'bg-blue-100',
+    comingSoon: true,
     lessons: [
       { id: 'basic-steps', title: 'Basic Steps', get progress() { return progressManager.getProgress('dance', 'basic-steps'); } },
       { id: 'turns', title: 'Basic Turns', get progress() { return progressManager.getProgress('dance', 'turns'); } },
