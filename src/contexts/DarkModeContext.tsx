@@ -19,7 +19,6 @@ export const DarkModeProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   });
 
   useEffect(() => {
-    console.log('Dark mode is:', isDarkMode); // Debug log
     // Update classList and localStorage whenever isDarkMode changes
     if (isDarkMode) {
       document.documentElement.classList.add('dark');
@@ -30,7 +29,6 @@ export const DarkModeProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   }, [isDarkMode]);
 
   const toggleDarkMode = () => {
-    console.log('Toggling dark mode'); // Debug log
     setIsDarkMode(prev => !prev);
   };
 
