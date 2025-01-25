@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useParams, useNavigate } from 'react-router-dom';
 import { AppLayout } from './components/layout/AppLayout';
 import { MainMenu } from './components/main/MainMenu';
@@ -59,7 +59,7 @@ const QuizViewWrapper = () => {
   return (
     <QuizContent 
       quiz={quiz}
-      onComplete={(score) => {
+      onComplete={() => {
         navigate(`/section/${sectionId}`);
       }}
       onBack={() => navigate(`/section/${sectionId}`)}
