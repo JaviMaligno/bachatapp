@@ -20,6 +20,12 @@ const AUDIO_DISPLAY_NAMES: Record<string, string> = {
   // Add other mappings as needed
 };
 
+const getYouTubeId = (url: string) => {
+  const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+  const match = url.match(regExp);
+  return match && match[2].length === 11 ? match[2] : null;
+};
+
 export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack }) => {
   const [isCompleted, setIsCompleted] = useState(() => {
     if (lesson && section) {
@@ -169,9 +175,22 @@ export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack 
       <div className="max-w-3xl mx-auto">
         <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">{lesson.title}</h1>
         
-        <div className="aspect-video bg-gray-100 dark:bg-gray-800 rounded-lg mb-8 flex items-center justify-center">
-          <Play className="w-12 h-12 text-gray-400 dark:text-gray-500" />
-        </div>
+        {(lesson.video || lessonContent?.video) ? (
+          <div className="aspect-video mb-8">
+            <iframe
+              className="w-full h-full rounded-lg"
+              src={`https://www.youtube.com/embed/${getYouTubeId(lesson.video || lessonContent?.video || '')}`}
+              title={lesson.title}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        ) : (
+          <div className="aspect-video bg-gray-100 dark:bg-gray-800 rounded-lg mb-8 flex items-center justify-center">
+            <Play className="w-12 h-12 text-gray-400 dark:text-gray-500" />
+          </div>
+        )}
 
         {lessonContent && (
           <div className="prose dark:prose-invert max-w-none">
