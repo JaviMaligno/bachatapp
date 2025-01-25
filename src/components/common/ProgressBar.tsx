@@ -11,4 +11,18 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({ progress }) => (
       style={{ width: `${progress}%` }}
     />
   </div>
-); 
+);
+
+// Function to get a unique key for each lesson
+const getLessonKey = (sectionId: string, lessonId: string) => `lesson_progress_${sectionId}_${lessonId}`;
+
+export const progressManager = {
+  getProgress: (sectionId: string, lessonId: string): number => {
+    const stored = localStorage.getItem(getLessonKey(sectionId, lessonId));
+    return stored ? parseInt(stored, 10) : 0;
+  },
+
+  setProgress: (sectionId: string, lessonId: string, progress: number): void => {
+    localStorage.setItem(getLessonKey(sectionId, lessonId), progress.toString());
+  }
+}; 

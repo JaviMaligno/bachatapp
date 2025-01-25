@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Section } from '../../types';
 import { LessonsList } from '../lessons/LessonsList';
 import { QuizList } from '../quizzes/QuizList';
@@ -38,30 +38,44 @@ export const SectionContent: React.FC<SectionContentProps> = ({
   onSelectLesson,
   onSelectQuiz,
   onSelectGlossary
-}) => (
-  <div className="p-6">
-    <BackButton onClick={onBack} label="Back to Menu" />
-    <h1 className="text-2xl font-bold text-gray-800 mb-6">{section.title}</h1>
-    
-    <div className="space-y-6">
-      <LessonsList
-        section={section}
-        onSelectLesson={onSelectLesson}
-      />
-      
-      {section.quizzes && section.quizzes.length > 0 && (
-        <QuizList
-          quizzes={section.quizzes}
-          onSelectQuiz={onSelectQuiz}
-        />
-      )}
+}) => {
+  const [updateTrigger, setUpdateTrigger] = useState(0);
 
-      {section.glossary && (
-        <GlossaryPreview
-          glossary={section.glossary}
-          onClick={() => onSelectGlossary(section.glossary!)}
+  useEffect(() => {
+    const handleProgressUpdate = () => {
+      setUpdateTrigger(prev => prev + 1);
+    };
+    
+    window.addEventListener('lessonProgressUpdated', handleProgressUpdate);
+    return () => window.removeEventListener('lessonProgressUpdated', handleProgressUpdate);
+  }, []);
+
+  return (
+    <div className="p-6">
+      <BackButton onClick={onBack} label="Back to Menu" />
+      <h1 className="text-2xl font-bold text-gray-800 mb-6">{section.title}</h1>
+      
+      <div className="space-y-6">
+        <LessonsList
+          key={updateTrigger}
+          section={section}
+          onSelectLesson={onSelectLesson}
         />
-      )}
+        
+        {section.quizzes && section.quizzes.length > 0 && (
+          <QuizList
+            quizzes={section.quizzes}
+            onSelectQuiz={onSelectQuiz}
+          />
+        )}
+
+        {section.glossary && (
+          <GlossaryPreview
+            glossary={section.glossary}
+            onClick={() => onSelectGlossary(section.glossary!)}
+          />
+        )}
+      </div>
     </div>
-  </div>
-); 
+  );
+}; 

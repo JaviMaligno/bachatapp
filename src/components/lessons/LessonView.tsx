@@ -7,6 +7,7 @@ import { musicInstrumentsLesson } from '../../data/lessons/music/music-instrumen
 import { musicStructureLesson } from '../../data/lessons/music/music-structure';
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
+import { progressManager } from '../common/ProgressBar';
 
 interface LessonViewProps {
   section: Section;
@@ -149,6 +150,14 @@ export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack 
     </div>
   );
 
+  const handleMarkComplete = () => {
+    if (lesson && section) {
+      progressManager.setProgress(section.id, lesson.id, 100);
+      // Force a re-render of the parent component
+      window.dispatchEvent(new Event('lessonProgressUpdated'));
+    }
+  };
+
   if (!lesson) return null;
 
   return (
@@ -190,6 +199,15 @@ export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack 
                 </div>
               </div>
             )}
+
+            <div className="mt-8 flex justify-center">
+              <button
+                onClick={handleMarkComplete}
+                className="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-6 rounded-lg shadow-sm transition-colors"
+              >
+                Mark as Complete
+              </button>
+            </div>
           </div>
         )}
       </div>

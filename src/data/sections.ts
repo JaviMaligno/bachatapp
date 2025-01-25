@@ -5,6 +5,7 @@ import { missingInstrumentsQuizQuestions } from './quizzes/missing-instruments-q
 import { sectionQuizQuestions } from './quizzes/section-quiz';
 import { rhythmQuizQuestions } from './quizzes/rhythm-quiz';
 import { bachataPartsQuizQuestions } from './quizzes/bachata-parts-quiz';
+import { progressManager } from '../components/common/ProgressBar';
 
 // Update glossary entries to match GlossarySection interface
 const historyGlossary: GlossarySection[] = [
@@ -128,7 +129,7 @@ export const sections: Section[] = [
         id: 'origins',
         title: 'Origins of Bachata',
         description: 'Learn about the origins of Bachata music',
-        progress: 80
+        get progress() { return progressManager.getProgress('history', 'origins'); }
       } as LessonSummary,
       { id: 'evolution', title: 'Evolution Through Decades', progress: 30 },
       { id: 'modern', title: 'Modern Bachata', progress: 0 }
@@ -142,11 +143,11 @@ export const sections: Section[] = [
     icon: Music2,
     color: 'bg-rose-100',
     lessons: [
-      { id: 'rhythm', title: 'Basic Rhythms', progress: 100 },
-      { id: 'structure', title: 'Song Structure', progress: 40 },
-      { id: 'instruments', title: 'Key Instruments', progress: 60 },
-      { id: 'artists', title: 'Influential Artists', progress: 0 },
-      { id: 'theory', title: 'Music Theory (Additional)', progress: 0 }
+      { id: 'rhythm', title: 'Basic Rhythms', get progress() { return progressManager.getProgress('music', 'rhythm'); } },
+      { id: 'structure', title: 'Song Structure', get progress() { return progressManager.getProgress('music', 'structure'); } },
+      { id: 'instruments', title: 'Key Instruments', get progress() { return progressManager.getProgress('music', 'instruments'); } },
+      { id: 'artists', title: 'Influential Artists', get progress() { return progressManager.getProgress('music', 'artists'); } },
+      { id: 'theory', title: 'Music Theory (Additional)', get progress() { return progressManager.getProgress('music', 'theory'); } }
     ],
     quizzes: [
       {
