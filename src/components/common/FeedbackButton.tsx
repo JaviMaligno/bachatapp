@@ -6,10 +6,11 @@ export const FeedbackButton: React.FC = () => {
   const EMAIL = 'javiturco33@gmail.com';
 
   const handleSubmit = () => {
+    const email = encodeURIComponent(EMAIL);
     const subject = encodeURIComponent('App Feedback');
     const body = encodeURIComponent(feedback);
-    const mailtoLink = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
-    window.location.href = mailtoLink;
+    const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
+    window.open(mailtoLink, '_blank');
     setIsOpen(false);
     setFeedback('');
   };
