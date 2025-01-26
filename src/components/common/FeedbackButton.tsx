@@ -1,19 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 export const FeedbackButton: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [feedback, setFeedback] = useState('');
   const EMAIL = 'javiturco33@gmail.com';
+  const mailtoLinkRef = useRef<HTMLAnchorElement>(null);
 
   const handleSubmit = () => {
-    const mailtoLink = `mailto:${EMAIL}?subject=App Feedback&body=${feedback}`;
-    window.location.href = mailtoLink;
-    setIsOpen(false);
-    setFeedback('');
+    if (mailtoLinkRef.current) {
+      mailtoLinkRef.current.click();
+      setIsOpen(false);
+      setFeedback('');
+    }
   };
 
   return (
     <>
+      <a
+        ref={mailtoLinkRef}
+        href={`mailto:${EMAIL}?subject=App Feedback&body=${feedback}`}
+        className="hidden"
+      />
       <button
         onClick={() => setIsOpen(true)}
         className="fixed bottom-4 right-4 bg-blue-500 hover:bg-blue-600 text-white rounded-full p-3 shadow-lg transition-colors"
