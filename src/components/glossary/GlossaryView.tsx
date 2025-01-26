@@ -40,6 +40,10 @@ export const GlossaryView: React.FC<GlossaryViewProps> = ({
           </div>
         ))}
       </div>
+
+      <div className="mt-8">
+        <BackButton onClick={onBack} label={`Back to ${sectionTitle}`} />
+      </div>
     </div>
   );
 }; 
