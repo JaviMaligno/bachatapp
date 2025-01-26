@@ -1,5 +1,6 @@
 import React from 'react';
 import { DarkModeToggle } from '../common/DarkModeToggle';
+import { FeedbackButton } from '../common/FeedbackButton';
 
 interface AppLayoutProps {
   children: React.ReactNode;
@@ -12,6 +13,7 @@ export const AppLayout: React.FC<AppLayoutProps> = ({ children }) => (
         <DarkModeToggle />
       </div>
       {children}
+      <FeedbackButton />
     </div>
   </div>
 ); 
