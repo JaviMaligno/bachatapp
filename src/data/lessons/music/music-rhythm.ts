@@ -120,7 +120,7 @@ export const musicRhythmLesson: MusicLesson = {
     {
       id: 'mambo',
       title: '3. Mambo',
-      content: 'The **mambo** rhythm, not to be confused with the mambo section, is the most energetic and expressive rhythm in bachata. This rhythm is more commonly found in traditional bachata music rather than modern bachata, as it is heavily inspired by merengue.',
+      content: 'The **mambo** rhythm, not to be confused with the [mambo section](/section/music/lesson/structure#mambo), is the most energetic and expressive rhythm in bachata. This rhythm is more commonly found in traditional bachata music rather than modern bachata, as it is heavily inspired by merengue.',
       sections: [
         {
           id: 'mambo-instruments',

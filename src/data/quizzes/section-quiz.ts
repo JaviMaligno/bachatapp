@@ -37,7 +37,7 @@ export const sectionQuizQuestions = [
   {
     id: 8,
     audioUrl: '/assets/audio/sections/quiz/fake-mambo.mp3',
-    correctAnswer: ['Fake Mambo']
+    correctAnswer: ['Mambo']
   },
   {
     id: 9,

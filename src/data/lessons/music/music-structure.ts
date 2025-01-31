@@ -103,33 +103,36 @@ export const musicStructureLesson: MusicLesson = {
     {
       id: 'mambo',
       title: '4. Mambo Section',
-      content: 'The mambo section is an instrumental break and the most energetic part of the song. A guitar solo is a defining feature here, and the rhythm can be either **majao** or **mambo**. Most songs have only one mambo section, but some songs have multiple instances.',
+      content: 'The term **mambo** in bachata has three meanings. One of them is a rhythm as seen in the [Rhythms lesson](/section/music/lesson/rhythm#mambo). Generally, a *mambo* refers to any unique riff played by the lead guitar, which can occur at any point in a song (intro, verse, chorus, etc.).\n\n However, when discussing song structure, the *mambo section* specifically refers to an instrumental break where the singer takes a break and the lead guitarist performs a solo. While this section can use any of the three rhythmic frameworks (derecho, majao, or mambo), it is most commonly played over the majao rhythm.\n\nWhen the mambo section uses a **derecho rhythm**, some teachers refer to it as a "fake mambo" because they associate the mambo section with higher energy. This term is not standardized - most people would simply call it a mambo section or say it is derecho.',
       sections: [
-        {
-          id: 'fake-mambo',
-          title: 'Fake Mambo',
-          content: 'Usually precedes the actual mambo and mimics it instrumentally, but with a **derecho rhythm** for slightly lower energy. This term is not used by everyone. Some people would call it just mambo and some people would say it is derecho.'
-        },
         {
           id: 'mambo-characteristics',
           title: 'Key Characteristics',
-          content: '- High energy\n- Focus on instrumental solos (especially guitar)\n- Can be in **majao** or **mambo** rhythm. Singers often do ad libs in this section.'
+          content: '- Focus on instrumental solos (especially guitar)\n- Can use any rhythmic framework (derecho, majao, or mambo)\n- Typically high energy, though more moderate when using derecho rhythm\n- Singers often do ad libs in this section'
         }
       ],
       media: {
         audio: {
-          samples: [{
-            name: 'Mambo Example',
+          samples: [
+          {
+            name: 'Mambo Section in Derecho Rhythm',
+            path: '/assets/audio/sections/lesson/fake-mambo.mp3',
+            song: 'Besito a Besito',
+            artist: 'Luis Miguel del Amargue'
+          },
+          {
+            name: 'Mambo Section in Majao Rhythm',
             path: '/assets/audio/sections/lesson/mambo.mp3',
             song: 'Eso es Amor',
             artist: 'Jiory'
           },
           {
-            name: 'Fake Mambo Example',
-            path: '/assets/audio/sections/lesson/fake-mambo.mp3',
-            song: 'Besito a Besito',
-            artist: 'Luis Miguel del Amargue'
-          }]
+            name: 'Mambo Section in Mambo Rhythm',
+            path: '/assets/audio/sections/lesson/mambo-full.mp3',
+            song: 'Perdido',
+            artist: 'Yoskar Sarante'
+          }
+        ]
         }
       }
     },
