@@ -87,7 +87,7 @@ const musicGlossary: GlossarySection[] = [
       },
       {
         term: 'Mambo',
-        definition: 'A high-energy instrumental break featuring guitar solos and vocal ad libs. Can use either majao or mambo rhythm and is usually the most energetic part of the song.'
+        definition: 'An instrumental break featuring guitar solos and vocal ad libs. Can use either derecho, majao, or mambo rhythm and is usually the most energetic part of the song.'
       },
       {
         term: 'Interlude',
