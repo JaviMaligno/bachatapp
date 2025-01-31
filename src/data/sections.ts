@@ -145,6 +145,7 @@ export const sections: Section[] = [
       { id: 'instruments', title: 'Key Instruments', get progress() { return progressManager.getProgress('music', 'instruments'); } },
       { id: 'rhythm', title: 'Basic Rhythms', get progress() { return progressManager.getProgress('music', 'rhythm'); } },
       { id: 'structure', title: 'Song Structure', get progress() { return progressManager.getProgress('music', 'structure'); } },
+      { id: 'phrasing', title: 'Musical Phrasing', comingSoon: true, get progress() { return progressManager.getProgress('music', 'phrasing'); } },
       { 
         id: 'artists', 
         title: 'Influential Artists', 

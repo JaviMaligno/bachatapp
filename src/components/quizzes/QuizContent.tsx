@@ -11,7 +11,7 @@ interface QuizContentProps {
 }
 
 export const INSTRUMENT_OPTIONS = ['Requinto', 'Segunda', 'Bass', 'Güira', 'Bongos'];
-export const SECTION_OPTIONS = ['Verse', 'Chorus', 'Mambo', 'Fake Mambo', 'Intro', 'Outro'];
+export const SECTION_OPTIONS = ['Verse', 'Chorus', 'Mambo', 'Intro', 'Outro'];
 export const RHYTHM_OPTIONS = ['Derecho', 'Majao', 'Mambo', 'Non-Bachata'];
 export const BACHATA_PARTS_OPTIONS = ['Derecho', 'Majao', 'Mambo', 'Non-Bachata'];
 

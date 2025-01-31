@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Play } from 'lucide-react';
 import { Section, Lesson, LessonSummary } from '../../types/Lesson';
 import { BackButton } from '../common/BackButton';
@@ -50,8 +50,18 @@ export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack 
 
   const lessonContent = getLessonContent();
 
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const element = document.getElementById(hash.slice(1));
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, []);
+
   const renderSection = (section: Section) => (
-    <div key={section.id} className="mt-8 space-y-6">
+    <div key={section.id} id={section.id} className="mt-8 space-y-6">
       <h2 className="text-2xl font-semibold mb-6 text-gray-800 dark:text-white">{section.title}</h2>
       <div className="prose dark:prose-invert max-w-none bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
         <ReactMarkdown rehypePlugins={[rehypeRaw]}>{section.content}</ReactMarkdown>
