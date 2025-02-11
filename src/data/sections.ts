@@ -122,10 +122,10 @@ export const sections: Section[] = [
     description: 'Learn the history of Bachata',
     icon: BookOpen,
     color: 'bg-amber-100',
-    comingSoon: true,
+    comingSoon: false,
     lessons: [
       {
-        id: 'origins',
+        id: 'history-50-60',
         title: 'Origins of Bachata',
         description: 'Learn about the origins of Bachata music',
         get progress() { return progressManager.getProgress('history', 'origins'); }

@@ -5,6 +5,7 @@ import { BackButton } from '../common/BackButton';
 import { musicRhythmLesson } from '../../data/lessons/music/music-rhythm';
 import { musicInstrumentsLesson } from '../../data/lessons/music/music-instruments';
 import { musicStructureLesson } from '../../data/lessons/music/music-structure';
+import { musicHistory5060Lesson } from '../../data/lessons/music/history-50-60';
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
 import { progressManager } from '../common/ProgressBar';
@@ -44,6 +45,9 @@ export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack 
     }
     if (section.id === 'music' && lesson.id === 'structure') {
       return musicStructureLesson;
+    }
+    if (section.id === 'history' && lesson.id === 'history-50-60') {
+      return musicHistory5060Lesson;
     }
     return null;
   };

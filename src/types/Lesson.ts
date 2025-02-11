@@ -57,7 +57,7 @@ export interface Lesson {
 }
 
 export interface MusicLesson extends Lesson {
-  type: 'rhythm' | 'instruments' | 'structure';
+  type: 'rhythm' | 'instruments' | 'structure' | 'history';
 }
 
 // Add this new interface
