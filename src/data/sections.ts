@@ -16,8 +16,12 @@ const historyGlossary: GlossarySection[] = [
         definition: "A style of dancing and singing bachata characterized by a bitter, sorrowful expression of unrequited love"
       },
       {
-        term: "Bolero",
+        term: "Cuban Bolero",
         definition: "A Latin music genre that heavily influenced early bachata"
+      },
+      {
+        term: "Colmado",
+        definition: "A small corner store in the Dominican Republic that sells a variety of goods and serves as a social gathering place"
       },
       {
         term: "Guitar Music",
