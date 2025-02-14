@@ -54,6 +54,7 @@ export interface Lesson {
   note?: string;
   summary?: string;
   video?: string;
+  references?: string[];
 }
 
 export interface MusicLesson extends Lesson {

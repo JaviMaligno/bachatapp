@@ -238,6 +238,28 @@ export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack 
               </div>
             )}
 
+            {lessonContent.references && lessonContent.references.length > 0 && (
+              <div className="mt-8 bg-gray-50 dark:bg-gray-900/20 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+                <h2 className="text-xl font-semibold mb-4 text-gray-900 dark:text-gray-100 flex items-center">
+                  <span className="mr-2">📚</span> References
+                </h2>
+                <ul className="space-y-2 text-gray-600 dark:text-gray-300">
+                  {lessonContent.references.map((reference, index) => (
+                    <li key={index}>
+                      <a 
+                        href={reference} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="hover:text-blue-600 dark:hover:text-blue-400 underline"
+                      >
+                        {reference}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
             <div className="mt-8 space-y-6">
               <div className="flex justify-center">
                 <button
