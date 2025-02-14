@@ -245,12 +245,12 @@ export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack 
                 </h2>
                 <ul className="space-y-2 text-gray-600 dark:text-gray-300">
                   {lessonContent.references.map((reference, index) => (
-                    <li key={index}>
+                    <li key={index} className="break-words">
                       <a 
                         href={reference} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="hover:text-blue-600 dark:hover:text-blue-400 underline"
+                        className="hover:text-blue-600 dark:hover:text-blue-400 underline overflow-wrap-anywhere"
                       >
                         {reference}
                       </a>
