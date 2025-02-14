@@ -16,8 +16,12 @@ const historyGlossary: GlossarySection[] = [
         definition: "A style of dancing and singing bachata characterized by a bitter, sorrowful expression of unrequited love"
       },
       {
-        term: "Bolero",
+        term: "Cuban Bolero",
         definition: "A Latin music genre that heavily influenced early bachata"
+      },
+      {
+        term: "Colmado",
+        definition: "A small corner store in the Dominican Republic that sells a variety of goods and serves as a social gathering place"
       },
       {
         term: "Guitar Music",
@@ -122,10 +126,10 @@ export const sections: Section[] = [
     description: 'Learn the history of Bachata',
     icon: BookOpen,
     color: 'bg-amber-100',
-    comingSoon: true,
+    comingSoon: false,
     lessons: [
       {
-        id: 'origins',
+        id: 'history-50-60',
         title: 'Origins of Bachata',
         description: 'Learn about the origins of Bachata music',
         get progress() { return progressManager.getProgress('history', 'origins'); }

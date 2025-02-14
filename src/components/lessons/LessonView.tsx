@@ -5,6 +5,7 @@ import { BackButton } from '../common/BackButton';
 import { musicRhythmLesson } from '../../data/lessons/music/music-rhythm';
 import { musicInstrumentsLesson } from '../../data/lessons/music/music-instruments';
 import { musicStructureLesson } from '../../data/lessons/music/music-structure';
+import { musicHistory5060Lesson } from '../../data/lessons/music/history-50-60';
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
 import { progressManager } from '../common/ProgressBar';
@@ -44,6 +45,9 @@ export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack 
     }
     if (section.id === 'music' && lesson.id === 'structure') {
       return musicStructureLesson;
+    }
+    if (section.id === 'history' && lesson.id === 'history-50-60') {
+      return musicHistory5060Lesson;
     }
     return null;
   };
@@ -231,6 +235,28 @@ export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack 
                 <div className="text-emerald-900 dark:text-emerald-100">
                   <ReactMarkdown rehypePlugins={[rehypeRaw]}>{lessonContent.summary}</ReactMarkdown>
                 </div>
+              </div>
+            )}
+
+            {lessonContent.references && lessonContent.references.length > 0 && (
+              <div className="mt-8 bg-gray-50 dark:bg-gray-900/20 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
+                <h2 className="text-xl font-semibold mb-4 text-gray-900 dark:text-gray-100 flex items-center">
+                  <span className="mr-2">📚</span> References
+                </h2>
+                <ul className="space-y-2 text-gray-600 dark:text-gray-300">
+                  {lessonContent.references.map((reference, index) => (
+                    <li key={index} className="break-words">
+                      <a 
+                        href={reference} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="hover:text-blue-600 dark:hover:text-blue-400 underline overflow-wrap-anywhere"
+                      >
+                        {reference}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
               </div>
             )}
 
