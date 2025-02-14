@@ -134,8 +134,9 @@ export const sections: Section[] = [
         description: 'Learn about the origins of Bachata music',
         get progress() { return progressManager.getProgress('history', 'origins'); }
       } as LessonSummary,
-      { id: 'evolution', title: 'Evolution Through Decades', get progress() { return progressManager.getProgress('history', 'evolution'); } },
-      { id: 'modern', title: 'Modern Bachata', get progress() { return progressManager.getProgress('history', 'modern'); } }
+      { id: 'evolution', title: 'Consolidation of the genre', get progress() { return progressManager.getProgress('history', 'evolution'); }, comingSoon: true },
+      { id: 'international', title: 'International expansion', get progress() { return progressManager.getProgress('history', 'international'); }, comingSoon: true },
+      { id: 'fusion', title: 'Fusion of styles', get progress() { return progressManager.getProgress('history', 'fusion'); }, comingSoon: true }
     ],
     glossary: historyGlossary
   },
