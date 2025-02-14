@@ -1,26 +1,54 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
+
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
 
 export const FeedbackButton: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [feedback, setFeedback] = useState('');
-  const EMAIL = 'javiturco33@gmail.com';
-  const mailtoLinkRef = useRef<HTMLAnchorElement>(null);
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  const handleSubmit = () => {
-    if (mailtoLinkRef.current) {
-      mailtoLinkRef.current.click();
-      setIsOpen(false);
-      setFeedback('');
+  const handleSubmit = async () => {
+    try {
+      console.log('Attempting to send feedback:', { feedback, email });
+      setIsSubmitting(true);
+      const response = await fetch(`${API_URL}/api/feedback`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          message: feedback,
+          email: email,
+        }),
+      });
+
+      console.log('Response received:', response.status);
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        console.error('Error response:', errorData);
+        throw new Error(errorData.error || 'Failed to send feedback');
+      }
+
+      setSubmitStatus('success');
+      setTimeout(() => {
+        setIsOpen(false);
+        setFeedback('');
+        setEmail('');
+        setSubmitStatus('idle');
+      }, 2000);
+    } catch (error) {
+      console.error('Feedback error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
     <>
-      <a
-        ref={mailtoLinkRef}
-        href={`mailto:${EMAIL}?subject=App Feedback&body=${feedback}`}
-        className="hidden"
-      />
       <button
         onClick={() => setIsOpen(true)}
         className="fixed bottom-4 right-4 bg-blue-500 hover:bg-blue-600 text-white rounded-full p-3 shadow-lg transition-colors"
@@ -43,9 +71,16 @@ export const FeedbackButton: React.FC = () => {
       </button>
 
       {isOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
           <div className="bg-white dark:bg-gray-800 rounded-lg p-6 max-w-md w-full">
             <h2 className="text-xl font-semibold mb-4 dark:text-white">Send Feedback</h2>
+            <input
+              type="email"
+              className="w-full p-2 border rounded-lg mb-4 dark:bg-gray-700 dark:text-white dark:border-gray-600"
+              placeholder="Your email (optional)"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
             <textarea
               className="w-full h-32 p-2 border rounded-lg mb-4 dark:bg-gray-700 dark:text-white dark:border-gray-600"
               placeholder="Please enter your feedback here..."
@@ -56,17 +91,24 @@ export const FeedbackButton: React.FC = () => {
               <button
                 onClick={() => setIsOpen(false)}
                 className="px-4 py-2 text-gray-600 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white"
+                disabled={isSubmitting}
               >
                 Cancel
               </button>
               <button
                 onClick={handleSubmit}
-                className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-                disabled={!feedback.trim()}
+                className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed"
+                disabled={!feedback.trim() || isSubmitting}
               >
-                Send Feedback
+                {isSubmitting ? 'Sending...' : 'Send Feedback'}
               </button>
             </div>
+            {submitStatus === 'success' && (
+              <p className="text-green-500 mt-2">Feedback sent successfully!</p>
+            )}
+            {submitStatus === 'error' && (
+              <p className="text-red-500 mt-2">Failed to send feedback. Please try again.</p>
+            )}
           </div>
         </div>
       )}
