@@ -132,11 +132,11 @@ export const sections: Section[] = [
         id: 'history-50-60',
         title: 'Origins of Bachata',
         description: 'Learn about the origins of Bachata music',
-        get progress() { return progressManager.getProgress('history', 'origins'); }
+        get progress() { return progressManager.getProgress('history', 'history-50-60'); }
       } as LessonSummary,
-      { id: 'evolution', title: 'Consolidation of the genre', get progress() { return progressManager.getProgress('history', 'evolution'); }, comingSoon: true },
-      { id: 'international', title: 'International expansion', get progress() { return progressManager.getProgress('history', 'international'); }, comingSoon: true },
-      { id: 'fusion', title: 'Fusion of styles', get progress() { return progressManager.getProgress('history', 'fusion'); }, comingSoon: true }
+      { id: 'history-60-70', title: 'Consolidation of the genre', get progress() { return progressManager.getProgress('history', 'history-60-70'); }, comingSoon: true },
+      { id: 'history-70-80', title: 'International expansion', get progress() { return progressManager.getProgress('history', 'history-70-80'); }, comingSoon: true },
+      { id: 'history-80-90', title: 'Fusion of styles', get progress() { return progressManager.getProgress('history', 'history-80-90'); }, comingSoon: true }
     ],
     glossary: historyGlossary
   },

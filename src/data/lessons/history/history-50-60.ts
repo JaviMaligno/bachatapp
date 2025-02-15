@@ -6,7 +6,7 @@ export const musicHistory5060Lesson: MusicLesson = {
   title: 'The Origins of Bachata (1950s-1960s)',
   description: 'Understanding the historical roots and early development of bachata music in the Dominican Republic',
   introduction: 'Bachata is a uniquely Dominican musical and dance expression that emerged from the rural and working-class communities of the country. Although its roots stretch back into a mix of diverse Latin American musical traditions, the first decades—especially the 1950s and 1960s—were formative for the style that would later capture the world\'s imagination.\n\n"Bachata was once the music of the marginalized—a sound that expressed sorrow, longing, and the bittersweet realities of everyday life."',
-  video: 'https://www.youtube.com/watch?v=EXAMPLE', // Replace with actual video
+  image: '/assets/images/history/map.jpeg', 
   sections: [
     {
       id: 'historical-context',
@@ -46,11 +46,21 @@ export const musicHistory5060Lesson: MusicLesson = {
       id: 'pioneers',
       title: 'Key Artists and Precursors',
       content: 'As the genre began to flourish after 1961, a number of pioneering artists laid the groundwork for what would become a major musical export of the Dominican Republic.\n\n## The First Bachateros\n- **José Manuel Calderón** is widely credited with recording the first official bachata songs in 1962, setting the stage for the genre\'s development. However, some debate exists regarding whether Calderón\'s "Borracho de Amor" qualifies as a true bachata song, given that it follows a vals (waltz) rhythm.\n\n- **Luis Segura\'s** "Cariñito de mi Vida" is sometimes cited as an early bachata, though it remains closer to a bolero, as confirmed by his son Edward Segura. Despite this, it showcased early hints of a groovier take on bolero that would later develop into bachata\'s characteristic sound.\n\n- **Other Pioneers:** Artists such as Rodobaldo Duartes, Rafael Encarnación, and Ramoncito Cabrera emerged in the following years, each adding their own nuances to the sound and helping bachata evolve from an underground style into a distinctive musical form.',
+      artists: [
+        {
+          name: 'José Manuel Calderón',
+          spotifyLink: 'https://open.spotify.com/embed/track/52e7wksTZ2Os9EsFkYulSK?utm_source=generator'
+        },
+        {
+          name: 'Luis Segura',
+          spotifyLink: 'https://open.spotify.com/embed/track/1Q82tRGS6L5uA0xGmzzl71?utm_source=generator'
+        }
+      ],
       sections: [
         {
           id: 'first-artists',
           title: 'Notable Pioneers',
-          content: '- **José Manuel Calderón:** Popularly credited with recording the first official bachata songs in 1962\n- **Luis Segura:** Early influential artist with bolero-style recordings\n- **Other Pioneers:** Rodobaldo Duartes, Rafael Encarnación, and Ramoncito Cabrera'
+          content: '- **José Manuel Calderón:** Popularly credited with recording the first official bachata songs in 1962\n\n- **Luis Segura:** Early influential artist with bolero-style recordings\n\n- **Other Pioneers:** Rodobaldo Duartes, Rafael Encarnación, and Ramoncito Cabrera'
         }
       ]
     }
