@@ -6,7 +6,7 @@ export const musicHistory5060Lesson: MusicLesson = {
   title: 'The Origins of Bachata (1950s-1960s)',
   description: 'Understanding the historical roots and early development of bachata music in the Dominican Republic',
   introduction: 'Bachata is a uniquely Dominican musical and dance expression that emerged from the rural and working-class communities of the country. Although its roots stretch back into a mix of diverse Latin American musical traditions, the first decades—especially the 1950s and 1960s—were formative for the style that would later capture the world\'s imagination.\n\n"Bachata was once the music of the marginalized—a sound that expressed sorrow, longing, and the bittersweet realities of everyday life."',
-  image: '/assets/images/history/map.jpeg', 
+  image: '/assets/images/history/map.png', 
   sections: [
     {
       id: 'historical-context',
