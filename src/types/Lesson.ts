@@ -27,6 +27,11 @@ export interface GlossarySection {
   }[];
 }
 
+interface Artist {
+  name: string;
+  spotifyLink?: string;
+}
+
 // Base section interface
 export interface Section {
   id: string;
@@ -41,6 +46,7 @@ export interface Section {
   sections?: Section[];
   media?: Media;
   glossary?: GlossarySection[];
+  artists?: Artist[];
 }
 
 // Core lesson structure
@@ -55,6 +61,7 @@ export interface Lesson {
   summary?: string;
   video?: string;
   references?: string[];
+  image?: string;
 }
 
 export interface MusicLesson extends Lesson {
@@ -69,5 +76,6 @@ export interface LessonSummary {
   progress?: number;
   comingSoon?: boolean;
   video?: string;
+  image?: string;
 } 
 
