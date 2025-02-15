@@ -2,6 +2,7 @@ import React from 'react';
 import { Quiz } from '../../types';
 import { InstrumentQuiz } from '../lessons/InstrumentQuiz';
 import { progressManager } from '../common/ProgressBar';
+import { HistoryQuiz } from '../lessons/HistoryQuiz';
 
 interface QuizContentProps {
   quiz: Quiz;
@@ -36,6 +37,17 @@ export const QuizContent: React.FC<QuizContentProps> = ({
 
   if (!quiz || !quiz.type) {
     return null;
+  }
+
+  if (quiz.type === 'history') {
+    return (
+      <HistoryQuiz
+        questions={quiz.questions}
+        onComplete={handleQuizComplete}
+        onBack={onBack}
+        sectionTitle={sectionTitle}
+      />
+    );
   }
 
   return (

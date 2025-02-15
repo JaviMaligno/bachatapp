@@ -6,6 +6,7 @@ import { sectionQuizQuestions } from './quizzes/section-quiz';
 import { rhythmQuizQuestions } from './quizzes/rhythm-quiz';
 import { bachataPartsQuizQuestions } from './quizzes/bachata-parts-quiz';
 import { progressManager } from '../components/common/ProgressBar';
+import { historyQuiz } from './quizzes/history-quiz';
 
 const historyGlossary: GlossarySection[] = [
   {
@@ -137,6 +138,9 @@ export const sections: Section[] = [
       { id: 'history-60-70', title: 'Consolidation of the genre', get progress() { return progressManager.getProgress('history', 'history-60-70'); }, comingSoon: true },
       { id: 'history-70-80', title: 'International expansion', get progress() { return progressManager.getProgress('history', 'history-70-80'); }, comingSoon: true },
       { id: 'history-80-90', title: 'Fusion of styles', get progress() { return progressManager.getProgress('history', 'history-80-90'); }, comingSoon: true }
+    ],
+    quizzes: [
+      historyQuiz
     ],
     glossary: historyGlossary
   },

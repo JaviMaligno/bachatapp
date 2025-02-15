@@ -2,13 +2,17 @@ export interface Quiz {
   id: string;
   title: string;
   description: string;
-  progress: number;
-  type: 'present' | 'missing' | 'sections' | 'rhythms' | 'parts';
+  progress?: number;
+  type: 'present' | 'missing' | 'sections' | 'rhythms' | 'parts' | 'history';
   sectionTitle: string;
   questions: {
     id: number;
-    audioUrl: string;
-    correctAnswer: string[];
+    question: string;
+    options: {
+      id: string;
+      text: string;
+    }[];
+    correctAnswer: string | string[];
   }[];
 }
 
