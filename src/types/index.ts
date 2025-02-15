@@ -1,10 +1,13 @@
-export interface Quiz {
+export interface BaseQuiz {
   id: string;
   title: string;
   description: string;
   progress?: number;
-  type: 'present' | 'missing' | 'sections' | 'rhythms' | 'parts' | 'history';
   sectionTitle: string;
+}
+
+export interface HistoryQuiz extends BaseQuiz {
+  type: 'history';
   questions: {
     id: number;
     question: string;
@@ -12,9 +15,20 @@ export interface Quiz {
       id: string;
       text: string;
     }[];
-    correctAnswer: string | string[];
+    correctAnswer: string;
   }[];
 }
+
+export interface InstrumentQuiz extends BaseQuiz {
+  type: 'present' | 'missing' | 'sections' | 'rhythms' | 'parts';
+  questions: {
+    id: number;
+    audioUrl: string;
+    correctAnswer: string[];
+  }[];
+}
+
+export type Quiz = HistoryQuiz | InstrumentQuiz;
 
 export type { 
   Section,
