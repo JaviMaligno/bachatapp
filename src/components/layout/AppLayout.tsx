@@ -12,7 +12,7 @@ export const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
       {/* Main content area */}
       <main className="flex-1">
         <div className="bg-gray-50 dark:bg-gray-900">
-          <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800 shadow-sm relative">
+          <div className="max-w-5xl mx-auto bg-white dark:bg-gray-800 shadow-sm relative">
             <div className="absolute top-4 right-4 flex items-center gap-4">
               <a
                 href="https://www.paypal.me/javieraguilarmartin"

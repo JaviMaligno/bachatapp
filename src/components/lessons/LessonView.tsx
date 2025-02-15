@@ -5,7 +5,7 @@ import { BackButton } from '../common/BackButton';
 import { musicRhythmLesson } from '../../data/lessons/music/music-rhythm';
 import { musicInstrumentsLesson } from '../../data/lessons/music/music-instruments';
 import { musicStructureLesson } from '../../data/lessons/music/music-structure';
-import { musicHistory5060Lesson } from '../../data/lessons/music/history-50-60';
+import { musicHistory5060Lesson } from '../../data/lessons/history/history-50-60';
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
 import { progressManager } from '../common/ProgressBar';
@@ -64,116 +64,171 @@ export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack 
     }
   }, []);
 
-  const renderSection = (section: Section) => (
-    <div key={section.id} id={section.id} className="mt-8 space-y-6">
-      <h2 className="text-2xl font-semibold mb-6 text-gray-800 dark:text-white">{section.title}</h2>
-      <div className="prose dark:prose-invert max-w-none bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
-        <ReactMarkdown rehypePlugins={[rehypeRaw]}>{section.content}</ReactMarkdown>
-      </div>
-
-      {/* Key Points Section */}
-      {section.sections && (
-        <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6">
-          <h3 className="text-lg font-semibold mb-4 text-blue-900 dark:text-blue-100 flex items-center">
-            <span className="mr-2">🔑</span> Key Points to Remember
-          </h3>
-          <div className="space-y-4">
-            {section.sections.map((subSection) => (
-              <div key={subSection.id} className="space-y-3">
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 mt-6">
-                    <svg className="w-5 h-5 text-blue-500 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
+  const renderSection = (section: Section) => {
+    console.log('Section artists:', section.artists);
+    
+    return (
+      <div key={section.id} id={section.id} className="mt-8 space-y-6">
+        <h2 className="text-2xl font-semibold mb-6 text-gray-800 dark:text-white">{section.title}</h2>
+        <div className="prose dark:prose-invert max-w-none bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+          <ReactMarkdown rehypePlugins={[rehypeRaw]}>{section.content}</ReactMarkdown>
+          
+          {/* Add Spotify Embeds if artists are present */}
+          {section.artists && section.artists.length > 0 && (
+            <div className="mt-4 space-y-4">
+              {section.artists.map((artist, index) => (
+                artist.spotifyLink && (
+                  <div key={index} className="space-y-2">
+                    <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                      {artist.name}:
+                    </span>
+                    <iframe 
+                      style={{ borderRadius: '12px' }}
+                      src={artist.spotifyLink}
+                      width="100%" 
+                      height="152" 
+                      frameBorder="0" 
+                      allowFullScreen={true}
+                      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                      loading="lazy"
+                    ></iframe>
                   </div>
-                  <div className="ml-3">
-                    <h4 className="font-medium text-gray-900 dark:text-white">{subSection.title}</h4>
-                    {subSection.content && (
-                      <div className="mt-1 text-gray-600 dark:text-gray-300">
-                        <ReactMarkdown rehypePlugins={[rehypeRaw]}>{subSection.content}</ReactMarkdown>
-                      </div>
-                    )}
-                    {/* Render nested sections */}
-                    {subSection.sections && (
-                      <div className="mt-2 ml-4 space-y-2">
-                        {subSection.sections.map((nestedSection) => (
-                          <div key={nestedSection.id} className="flex items-start">
-                            <div className="flex-shrink-0 mt-2.5">
-                              <div className="w-2 h-2 bg-blue-400 dark:bg-blue-500 rounded-full"></div>
-                            </div>
-                            <div className="ml-3">
-                              <h5 className="font-medium text-gray-800 dark:text-white">{nestedSection.title}</h5>
-                              <div className="mt-1 text-gray-600 dark:text-gray-300">
-                                <ReactMarkdown rehypePlugins={[rehypeRaw]}>{nestedSection.content}</ReactMarkdown>
+                )
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Key Points Section */}
+        {section.sections && (
+          <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6">
+            <h3 className="text-lg font-semibold mb-4 text-blue-900 dark:text-blue-100 flex items-center">
+              <span className="mr-2">🔑</span> Key Points to Remember
+            </h3>
+            <div className="space-y-4">
+              {section.sections.map((subSection) => (
+                <div key={subSection.id} className="space-y-3">
+                  <div className="flex items-start">
+                    <div className="flex-shrink-0 mt-6">
+                      <svg className="w-5 h-5 text-blue-500 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <div className="ml-3">
+                      <h4 className="font-medium text-gray-900 dark:text-white">{subSection.title}</h4>
+                      {subSection.content && (
+                        <div className="mt-1 text-gray-600 dark:text-gray-300">
+                          <ReactMarkdown rehypePlugins={[rehypeRaw]}>{subSection.content}</ReactMarkdown>
+                        </div>
+                      )}
+                      
+                      {/* Add Spotify Embeds if artists are present in subsection */}
+                      {subSection.artists && subSection.artists.length > 0 && (
+                        <div className="mt-4 space-y-4">
+                          {subSection.artists.map((artist, index) => (
+                            artist.spotifyLink && (
+                              <div key={index} className="space-y-2">
+                                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                                  {artist.name}:
+                                </span>
+                                <iframe 
+                                  style={{ borderRadius: '12px' }}
+                                  src={artist.spotifyLink}
+                                  width="100%" 
+                                  height="152" 
+                                  frameBorder="0" 
+                                  allowFullScreen={true}
+                                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                                  loading="lazy"
+                                ></iframe>
+                              </div>
+                            )
+                          ))}
+                        </div>
+                      )}
+                      
+                      {/* Render nested sections */}
+                      {subSection.sections && (
+                        <div className="mt-2 ml-4 space-y-2">
+                          {subSection.sections.map((nestedSection) => (
+                            <div key={nestedSection.id} className="flex items-start">
+                              <div className="flex-shrink-0 mt-2.5">
+                                <div className="w-2 h-2 bg-blue-400 dark:bg-blue-500 rounded-full"></div>
+                              </div>
+                              <div className="ml-3">
+                                <h5 className="font-medium text-gray-800 dark:text-white">{nestedSection.title}</h5>
+                                <div className="mt-1 text-gray-600 dark:text-gray-300">
+                                  <ReactMarkdown rehypePlugins={[rehypeRaw]}>{nestedSection.content}</ReactMarkdown>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        ))}
-                      </div>
-                    )}
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {/* Media Section with improved styling */}
-      {section.media && (
-        <div className="mt-6 space-y-6">
-          {section.media.image && (
-            <div className="bg-white rounded-lg overflow-hidden shadow-sm">
-              <img 
-                src={section.media.image.src} 
-                alt={section.media.image.caption || section.title} 
-                className="w-full h-auto object-contain max-h-[600px]" 
-              />
-              {section.media.image.caption && (
-                <div className="p-4 bg-gray-50 text-sm text-gray-600 italic text-center">
-                  {section.media.image.caption}
-                </div>
-              )}
-            </div>
-          )}
-          
-          {section.media.audio?.samples && (
-            <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
-              <h3 className="text-lg font-semibold mb-4 text-gray-800 dark:text-white">Audio Samples</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {section.media.audio.samples.map((sample, index) => (
-                  <div key={index} className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
-                    <p className="font-medium mb-2 text-gray-800 dark:text-white">
-                      {AUDIO_DISPLAY_NAMES[sample.name] || sample.name}
-                    </p>
-                    <audio 
-                      controls 
-                      src={sample.path} 
-                      className="w-full" 
-                      onError={(e) => console.error(`Error loading audio ${sample.name}:`, e)}
-                    />
-                    {(sample.song || sample.artist) && (
-                      <p className="text-sm text-gray-600 dark:text-gray-300 mt-2 italic">
-                        {sample.song && `"${sample.song}"`}
-                        {sample.song && sample.artist && " by "}
-                        {sample.artist}
-                      </p>
-                    )}
+        {/* Media Section with improved styling */}
+        {section.media && (
+          <div className="mt-6 space-y-6">
+            {section.media.image && (
+              <div className="bg-white rounded-lg overflow-hidden shadow-sm">
+                <img 
+                  src={section.media.image.src} 
+                  alt={section.media.image.caption || section.title} 
+                  className="w-full h-auto object-contain max-h-[600px]" 
+                />
+                {section.media.image.caption && (
+                  <div className="p-4 bg-gray-50 text-sm text-gray-600 italic text-center">
+                    {section.media.image.caption}
                   </div>
-                ))}
+                )}
               </div>
-            </div>
-          )}
+            )}
+            
+            {section.media.audio?.samples && (
+              <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+                <h3 className="text-lg font-semibold mb-4 text-gray-800 dark:text-white">Audio Samples</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {section.media.audio.samples.map((sample, index) => (
+                    <div key={index} className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
+                      <p className="font-medium mb-2 text-gray-800 dark:text-white">
+                        {AUDIO_DISPLAY_NAMES[sample.name] || sample.name}
+                      </p>
+                      <audio 
+                        controls 
+                        src={sample.path} 
+                        className="w-full" 
+                        onError={(e) => console.error(`Error loading audio ${sample.name}:`, e)}
+                      />
+                      {(sample.song || sample.artist) && (
+                        <p className="text-sm text-gray-600 dark:text-gray-300 mt-2 italic">
+                          {sample.song && `"${sample.song}"`}
+                          {sample.song && sample.artist && " by "}
+                          {sample.artist}
+                        </p>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
 
-          {section.media.video && (
-            <div className="bg-white rounded-lg overflow-hidden shadow-sm">
-              <video controls src={section.media.video} className="w-full" />
-            </div>
-          )}
-        </div>
-      )}
-    </div>
-  );
+            {section.media.video && (
+              <div className="bg-white rounded-lg overflow-hidden shadow-sm">
+                <video controls src={section.media.video} className="w-full" />
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+    );
+  };
 
   const handleMarkComplete = () => {
     if (lesson && section) {
@@ -197,9 +252,16 @@ export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack 
               className="w-full h-full rounded-lg"
               src={`https://www.youtube.com/embed/${getYouTubeId(lesson.video || lessonContent?.video || '')}`}
               title={lesson.title}
-              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
+            />
+          </div>
+        ) : (lesson.image || lessonContent?.image) ? (
+          <div className="mb-8">
+            <img
+              src={lesson.image || lessonContent?.image}
+              alt={lesson.title}
+              className="w-full h-auto rounded-lg object-cover max-h-[400px]"
             />
           </div>
         ) : (
