@@ -6,6 +6,7 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import path from 'path';
 
+// Load environment variables for local development
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
@@ -19,14 +20,6 @@ app.use(express.json());
 app.use((req, res, next) => {
   console.log(`${new Date().toISOString()} - ${req.method} ${req.path}`);
   next();
-});
-
-// Log environment variables (excluding sensitive data)
-console.log('Environment check:', {
-  host: process.env.SMTP_HOST,
-  port: process.env.SMTP_PORT,
-  user: process.env.SMTP_USER?.substring(0, 3) + '***',
-  hasPassword: !!process.env.SMTP_PASSWORD
 });
 
 const transporter = nodemailer.createTransport({
@@ -63,14 +56,14 @@ app.post('/api/feedback', async (req, res) => {
 
     console.log('Attempting to send email with:', {
       from: process.env.SMTP_USER,
-      to: 'javiecija96@gmail.com',
+      to: process.env.SMTP_TO,
       message,
       emailFrom: email
     });
 
     const result = await transporter.sendMail({
       from: process.env.SMTP_USER,
-      to: 'javiecija96@gmail.com',
+      to: process.env.SMTP_TO,
       subject: 'New App Feedback',
       text: `
         New feedback received:
