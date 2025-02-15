@@ -56,20 +56,28 @@ export const InstrumentQuiz: React.FC<InstrumentQuizProps> = ({
   };
 
   const checkAnswer = (selected: string[], correct: string[]) => {
-    return selected.length === correct.length &&
+    const isExactMatch = selected.length === correct.length &&
       selected.every(instrument => correct.includes(instrument)) &&
       correct.every(instrument => selected.includes(instrument));
+    
+    const isSubset = selected.length < correct.length &&
+      selected.every(instrument => correct.includes(instrument));
+
+    return {
+      isCorrect: isExactMatch,
+      isPartiallyCorrect: isSubset
+    };
   };
 
   const handleSubmit = () => {
     if (!isSubmitted) {
-      const correct = checkAnswer(
+      const result = checkAnswer(
         selectedInstruments, 
         questions[currentQuestion].correctAnswer
       );
 
-      setIsCorrect(correct);
-      if (correct) {
+      setIsCorrect(result.isCorrect);
+      if (result.isCorrect) {
         setScore(prev => prev + 1);
       }
       setIsSubmitted(true);
@@ -172,9 +180,23 @@ export const InstrumentQuiz: React.FC<InstrumentQuizProps> = ({
         ))}
       </div>
 
-      {isSubmitted && !showSolution && isCorrect && (
-        <div className="mt-4 p-4 bg-green-50 text-green-700 rounded-lg">
-          Well done! That's correct! 🎉
+      {isSubmitted && !showSolution && (
+        <div className="mt-4 p-4 rounded-lg">
+          {isCorrect ? (
+            <div className="bg-green-50 text-green-700">
+              Well done! That's correct! 🎉
+            </div>
+          ) : (
+            <div className="bg-orange-50 text-orange-700">
+              {selectedInstruments.every(instrument => 
+                questions[currentQuestion].correctAnswer.includes(instrument)
+              ) ? (
+                "You're on the right track, but there are answers to identify!"
+              ) : (
+                "That's not quite right. Try again!"
+              )}
+            </div>
+          )}
         </div>
       )}
 
