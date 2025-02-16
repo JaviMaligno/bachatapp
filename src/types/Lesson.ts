@@ -39,6 +39,7 @@ export interface Section {
   description?: string;
   content?: string;
   content2?: string;
+  content3?: string;
   icon?: any;
   color?: string;
   comingSoon?: boolean;
@@ -46,6 +47,8 @@ export interface Section {
   quizzes?: any[];
   sections?: Section[];
   media?: Media;
+  media2?: Media;
+  media3?: Media;
   glossary?: GlossarySection[];
   artists?: Artist[];
 }
