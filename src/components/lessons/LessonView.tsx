@@ -73,6 +73,65 @@ export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack 
         <div className="prose dark:prose-invert max-w-none bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
           <ReactMarkdown rehypePlugins={[rehypeRaw]}>{section.content}</ReactMarkdown>
           
+          {/* Add media if present */}
+          {section.media && (
+            <div className="-mt-4 mb-2">
+              {section.media.image && (
+                <div className="bg-white rounded-lg overflow-hidden shadow-sm">
+                  <img 
+                    src={section.media.image.src} 
+                    alt={section.media.image.caption || section.title} 
+                    className="w-full h-auto object-contain max-h-[600px]" 
+                  />
+                  {section.media.image.caption && (
+                    <div className="p-4 bg-gray-50 text-sm text-gray-600 italic text-center">
+                      {section.media.image.caption}
+                    </div>
+                  )}
+                </div>
+              )}
+              
+              {section.media.audio?.samples && (
+                <div className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm">
+                  <h3 className="text-lg font-semibold mb-3 text-gray-800 dark:text-white">Audio Samples</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {section.media.audio.samples.map((sample, index) => (
+                      <div key={index} className="bg-gray-50 dark:bg-gray-700 rounded-lg p-3">
+                        <p className="font-medium mb-2 text-gray-800 dark:text-white">
+                          {AUDIO_DISPLAY_NAMES[sample.name] || sample.name}
+                        </p>
+                        <audio 
+                          controls 
+                          src={sample.path} 
+                          className="w-full" 
+                          onError={(e) => console.error(`Error loading audio ${sample.name}:`, e)}
+                        />
+                        {(sample.song || sample.artist) && (
+                          <p className="text-sm text-gray-600 dark:text-gray-300 mt-2 italic">
+                            {sample.song && `"${sample.song}"`}
+                            {sample.song && sample.artist && " by "}
+                            {sample.artist}
+                          </p>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {section.media.video && (
+                <div className="bg-white rounded-lg overflow-hidden shadow-sm">
+                  <video controls src={section.media.video} className="w-full" />
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Add second content block if present */}
+          {section.content2 && (
+            <ReactMarkdown rehypePlugins={[rehypeRaw]}>{section.content2}</ReactMarkdown>
+          )}
+
           {/* Add Spotify Embeds if artists are present */}
           {section.artists && section.artists.length > 0 && (
             <div className="mt-4 space-y-4">
@@ -170,60 +229,6 @@ export const LessonView: React.FC<LessonViewProps> = ({ section, lesson, onBack 
                 </div>
               ))}
             </div>
-          </div>
-        )}
-
-        {/* Media Section with improved styling */}
-        {section.media && (
-          <div className="mt-6 space-y-6">
-            {section.media.image && (
-              <div className="bg-white rounded-lg overflow-hidden shadow-sm">
-                <img 
-                  src={section.media.image.src} 
-                  alt={section.media.image.caption || section.title} 
-                  className="w-full h-auto object-contain max-h-[600px]" 
-                />
-                {section.media.image.caption && (
-                  <div className="p-4 bg-gray-50 text-sm text-gray-600 italic text-center">
-                    {section.media.image.caption}
-                  </div>
-                )}
-              </div>
-            )}
-            
-            {section.media.audio?.samples && (
-              <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
-                <h3 className="text-lg font-semibold mb-4 text-gray-800 dark:text-white">Audio Samples</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {section.media.audio.samples.map((sample, index) => (
-                    <div key={index} className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
-                      <p className="font-medium mb-2 text-gray-800 dark:text-white">
-                        {AUDIO_DISPLAY_NAMES[sample.name] || sample.name}
-                      </p>
-                      <audio 
-                        controls 
-                        src={sample.path} 
-                        className="w-full" 
-                        onError={(e) => console.error(`Error loading audio ${sample.name}:`, e)}
-                      />
-                      {(sample.song || sample.artist) && (
-                        <p className="text-sm text-gray-600 dark:text-gray-300 mt-2 italic">
-                          {sample.song && `"${sample.song}"`}
-                          {sample.song && sample.artist && " by "}
-                          {sample.artist}
-                        </p>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {section.media.video && (
-              <div className="bg-white rounded-lg overflow-hidden shadow-sm">
-                <video controls src={section.media.video} className="w-full" />
-              </div>
-            )}
           </div>
         )}
       </div>

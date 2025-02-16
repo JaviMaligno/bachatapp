@@ -38,6 +38,7 @@ export interface Section {
   title: string;
   description?: string;
   content?: string;
+  content2?: string;
   icon?: any;
   color?: string;
   comingSoon?: boolean;
