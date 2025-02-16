@@ -38,6 +38,8 @@ export interface Section {
   title: string;
   description?: string;
   content?: string;
+  content2?: string;
+  content3?: string;
   icon?: any;
   color?: string;
   comingSoon?: boolean;
@@ -45,28 +47,57 @@ export interface Section {
   quizzes?: any[];
   sections?: Section[];
   media?: Media;
+  media2?: Media;
+  media3?: Media;
   glossary?: GlossarySection[];
   artists?: Artist[];
 }
 
-// Core lesson structure
-export interface Lesson {
+// Base lesson interface
+export interface BaseLesson {
   id: string;
   title: string;
   description: string;
-  progress?: number;
-  introduction?: string;
-  sections: Section[];
   note?: string;
   summary?: string;
-  video?: string;
   references?: string[];
+  progress?: number;
+  video?: string;
   image?: string;
+  type?: string;
 }
 
-export interface MusicLesson extends Lesson {
-  type: 'rhythm' | 'instruments' | 'structure' | 'history';
+// Content block for history lessons
+export interface ContentBlock {
+  content: string;
+  media?: Media;
 }
+
+// History lesson specific section
+export interface HistorySection extends Section {
+  contentBlocks?: ContentBlock[];
+}
+
+// History lesson structure
+export interface HistoryLesson extends BaseLesson {
+  type: 'history';
+  introduction?: string;
+  sections: HistorySection[];
+  summary?: string;
+  references?: string[];
+}
+
+// Music lesson structure
+export interface MusicLesson extends BaseLesson {
+  type: 'rhythm' | 'instruments' | 'structure';
+  introduction?: string;
+  sections: Section[];
+  summary?: string;
+  note?: string;
+}
+
+// Combined lesson type
+export type Lesson = MusicLesson | HistoryLesson;
 
 // Add this new interface
 export interface LessonSummary {
