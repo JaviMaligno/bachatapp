@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import { Section, HistoryLesson, ContentBlock, LessonSummary } from '../../types/Lesson';
 import { BackButton } from '../common/BackButton';
 import ReactMarkdown from 'react-markdown';
@@ -12,52 +12,56 @@ interface HistoryLessonViewProps {
   onBack: () => void;
 }
 
-const renderContentBlock = (block: ContentBlock) => (
-  <div className="mt-4">
-    <div className="prose dark:prose-invert max-w-none">
-      <ReactMarkdown rehypePlugins={[rehypeRaw]}>{block.content}</ReactMarkdown>
-    </div>
-    
-    {block.media && (
-      <div className="mt-4">
-        {block.media.image && (
-          <div className="bg-white rounded-lg overflow-hidden shadow-sm">
-            <img 
-              src={block.media.image.src} 
-              alt={block.media.image.caption || ''} 
-              className="w-full h-auto object-contain max-h-[600px]" 
-            />
-            {block.media.image.caption && (
-              <div className="p-4 bg-gray-50 text-sm text-gray-600 italic text-center">
-                {block.media.image.caption}
-              </div>
-            )}
-          </div>
-        )}
-        
-        {block.media.audio?.samples && (
-          <div className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm mt-4">
-            <h3 className="text-lg font-semibold mb-3 text-gray-800 dark:text-white">Audio Samples</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {block.media.audio.samples.map((sample, index) => (
-                <div key={index} className="bg-gray-50 dark:bg-gray-700 rounded-lg p-3">
-                  <p className="font-medium mb-2 text-gray-800 dark:text-white">
-                    {sample.name}
-                  </p>
-                  <audio 
-                    controls 
-                    src={sample.path} 
-                    className="w-full" 
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
+const renderContentBlock = (block: ContentBlock) => {
+  if (!block.media?.images?.length) {
+    return null;
+  }
+
+  return (
+    <div className="mt-4">
+      <div className="prose dark:prose-invert max-w-none">
+        <ReactMarkdown rehypePlugins={[rehypeRaw]}>{block.content}</ReactMarkdown>
       </div>
-    )}
-  </div>
-);
+      
+      <div className="mt-4">
+        <div className="grid grid-cols-2 gap-4">
+          {block.media.images.map((image, index) => (
+            <div key={index} className="text-center">
+              <img
+                src={image.src}
+                alt={image.caption || ''}
+                className="w-full h-auto rounded-lg object-cover max-h-[400px]"
+              />
+              <p className="mt-2 text-gray-600 dark:text-gray-400 italic">
+                {image.caption}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      {block.media?.audio?.samples && (
+        <div className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm mt-4">
+          <h3 className="text-lg font-semibold mb-3 text-gray-800 dark:text-white">Audio Samples</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {block.media.audio.samples.map((sample, index) => (
+              <div key={index} className="bg-gray-50 dark:bg-gray-700 rounded-lg p-3">
+                <p className="font-medium mb-2 text-gray-800 dark:text-white">
+                  {sample.name}
+                </p>
+                <audio 
+                  controls 
+                  src={sample.path} 
+                  className="w-full" 
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
 
 export const HistoryLessonView: React.FC<HistoryLessonViewProps> = ({ section, lesson, onBack }) => {
   const [isCompleted, setIsCompleted] = useState(() => {

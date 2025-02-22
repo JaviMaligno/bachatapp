@@ -11,7 +11,11 @@ export const history5060Lesson: HistoryLesson = {
     {
       id: 'historical-context',
       title: 'Historical and Socioeconomic Context',
-      content: 'During the 1950s and 1960s, bachata was not yet the polished, internationally acclaimed genre it is today. Instead, it was an informal expression of everyday hardship, affectionately (or disparagingly) called *amargue* ("bitterness"). Musicians in rural areas and urban shantytowns played guitar-based songs in small gatherings, bars and stores called \'Colmados\', and even brothels. These venues—far from the high-society ballrooms—became the cradle of bachata.\n\n## Social Impact\nBecause it was rooted in poverty and the lower classes, bachata was looked down upon by the Dominican elite. It was often dismissed as crude or vulgar music, a cultural "black sheep" that many in higher social circles would neither record nor publicly celebrate.\n\nFor the people who created and embraced it, however, bachata was a powerful way to share stories of love, heartbreak, and social struggle—a musical diary of the everyday life of Dominicans.\n\n## Political Environment\nUnder the authoritarian rule of Rafael Trujillo (1930–1961), the Dominican government tightly controlled the music industry. Trujillo\'s censorship policies marginalized local genres that were associated with rural life or "low culture." After Trujillo\'s assassination in 1961, restrictions eased, allowing musicians from the countryside to migrate to Santo Domingo, leading to the first official recordings of bachata.',
+      contentBlocks: [
+        {
+          content: 'During the 1950s and 1960s, bachata was not yet the polished, internationally acclaimed genre it is today. Instead, it was an informal expression of everyday hardship, affectionately (or disparagingly) called *amargue* ("bitterness"). Musicians in rural areas and urban shantytowns played guitar-based songs in small gatherings, bars and stores called \'Colmados\', and even brothels. These venues—far from the high-society ballrooms—became the cradle of bachata.\n\n## Social Status and Cultural Identity\n- **Origins in Working Class:** Bachata emerged from the poorest sectors of Dominican society\n- **Performance Venues:** Music was played in:\n  - Small informal gatherings\n  - Local bars and colmados\n  - Urban shantytowns\n  - Rural communities\n\n## Social Impact\n- **Social Stigma:**\n  - Looked down upon by Dominican elite\n  - Dismissed as crude or vulgar music\n  - Considered a cultural "black sheep"\n  - Excluded from mainstream recording and celebration\n\n- **Cultural Expression:**\n  - Powerful medium for storytelling\n  - Chronicles of love and heartbreak\n  - Documentation of social struggles\n  - Authentic voice of everyday Dominican life\n\n## Political Environment and Evolution\n- **Under Trujillo\'s Rule (1930-1961):**\n  - Strict government control of music industry\n  - Censorship of rural and "low culture" genres\n  - Bachata banned from mainstream media\n  - Marginalization of local musical expressions\n\n- **Post-Trujillo Period:**\n  - Easing of cultural restrictions\n  - Rural-to-urban musician migration\n  - Emergence of first official recordings\n  - Growth of bachata in Santo Domingo\n\n'
+        }
+      ],
       sections: [
         {
           id: 'social-aspects',
@@ -64,7 +68,17 @@ export const history5060Lesson: HistoryLesson = {
                   song: ''
                 }
               ]
-            }
+            },
+            images: [
+              {
+                src: '/assets/images/history/maracas.jpg',
+                caption: 'Maracas'
+              },
+              {
+                src: '/assets/images/history/guira.webp',
+                caption: 'Güira'
+              }
+            ]
           }
         },
         {

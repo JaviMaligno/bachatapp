@@ -3,6 +3,10 @@ export interface Media {
     src: string;
     caption?: string;
   };
+  images?: {
+    src: string;
+    caption?: string;
+  }[];
   audio?: {
     samples: {
       name: string;
