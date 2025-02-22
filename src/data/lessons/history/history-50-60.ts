@@ -34,7 +34,7 @@ export const history5060Lesson: HistoryLesson = {
       title: 'Musical Influences and Instrumentation',
       contentBlocks: [
         {
-          content: 'Early bachata was not born in isolation. It drew heavily from various Latin American genres, reflecting the island\'s diverse cultural heritage.\n\n## A Fusion of Sounds\n- **Cuban Bolero and Son:** The melodic structures and romantic themes of the Cuban bolero deeply influenced the guitar work in early bachata. Similarly, the syncopated rhythms found in Cuban son provided a rhythmic backbone that bachata musicians would adapt for their own style.\n\n- **Puerto Rican Jíbaro Music:** Traditional folk songs from Puerto Rico, often associated with the countryside (jíbaro music), also contributed to the lyrical and melodic content of bachata. One of the most well-known figures in jíbaro music, El Jibarito de Lares (Odilio González), played a crucial role in popularizing the style that influenced early bachateros.\n\n- **Dominican Merengue:** Although merengue is now seen as a separate and equally vital genre in the Dominican Republic, its lively percussion and basic rhythmic elements influenced how bachata would eventually be danced and structured.\n\n## Instrumentation: The Building Blocks\n- The 1960s saw key innovations in bachata instrumentation that shaped its distinctive sound. One of the most significant changes was the introduction of the **requinto guitar**, a smaller, high-pitched instrument that carried the lead melody, allowing for intricate and expressive solos. This change helped emphasize the emotional storytelling aspect of bachata, making its melodies more pronounced.',
+          content: 'Early bachata was not born in isolation. It drew heavily from various Latin American genres, reflecting the island\'s diverse cultural heritage.\n\n## A Fusion of Sounds\n- **Cuban Bolero and Son:** The melodic structures and romantic themes of the Cuban bolero deeply influenced the guitar work in early bachata. Similarly, the syncopated rhythms found in Cuban son provided a rhythmic backbone that bachata musicians would adapt for their own style.\n\n- **Puerto Rican Jíbaro Music:** Traditional folk songs from Puerto Rico, often associated with the countryside (jíbaro music), also contributed to the lyrical and melodic content of bachata. One of the most well-known figures in jíbaro music, El Jibarito de Lares (Odilio González), played a crucial role in popularizing the style that influenced early bachateros.\n\n- **Dominican Merengue:** Although merengue is now seen as a separate and equally vital genre in the Dominican Republic, its lively percussion and basic rhythmic elements influenced how bachata would eventually be danced and structured.\n\n## Instrumentation: The Building Blocks\n- The 1960s saw key innovations in bachata instrumentation that shaped its distinctive sound.\n\n- One of the most significant changes was the introduction of the **requinto guitar**, a smaller, high-pitched instrument that carried the lead melody, allowing for intricate and expressive solos. This change helped emphasize the emotional storytelling aspect of bachata, making its melodies more pronounced.',
           media: {
             audio: {
               samples: [
@@ -53,7 +53,32 @@ export const history5060Lesson: HistoryLesson = {
           }
         },
         {
-          content: '- The **segunda guitar** was inherited from bolero, but a new way of playing it was developed by consistently using a thumb pick, contributing to the sharper sound of bachata compared to bolero.\n\n- The **bongos** were directly inherited from bolero, maintaining similar rhythmic patterns that would become characteristic of bachata. These distinctive percussion patterns helped preserve the connection to bachata\'s bolero roots while contributing to its unique sound.\n\n- The **bass guitar** was gradually incorporated as the instrument became more widely available, paralleling its adoption in bolero. However, bachata developed its own distinctive syncopated bass patterns that would become a defining characteristic of the genre.\n\n- Additionally, the **maracas**, which were traditionally used in bolero, were gradually replaced by the **güira**, a metal scraper. The güira provided a sharper, more percussive sound that better suited the danceable rhythms of bachata, giving the genre a more defined and infectious groove. These shifts in instrumentation refined the genre\'s sound, enhanced its danceability, and contributed to its eventual mainstream acceptance.',
+          content: '- The **segunda guitar** was inherited from bolero, but a new way of playing it was developed by consistently using a thumb pick, contributing to the sharper sound of bachata compared to bolero.',
+          media: {
+            images: [
+              {
+                src: '/assets/images/history/thumb-pick.jpg',
+                caption: 'Thumb Pick'
+              }
+            ],
+            audio: {
+              samples: [
+                {
+                  name: 'Bare fingers',
+                  path: '/assets/audio/history/segunda.wav',
+                  song: ''
+                },
+                {
+                  name: 'Thumb pick',
+                  path: '/assets/audio/history/segunda.wav',
+                  song: ''
+                }
+              ]
+            }
+          }
+        },
+        {
+          content: '- The **bongos** were directly inherited from bolero, maintaining similar rhythmic patterns that would become characteristic of bachata. These distinctive percussion patterns helped preserve the connection to bachata\'s bolero roots while contributing to its unique sound.\n\n- The **bass guitar** was gradually incorporated as the instrument became more widely available, paralleling its adoption in bolero. However, bachata developed its own distinctive syncopated bass patterns that would become a defining characteristic of the genre.\n\n- Additionally, the **maracas**, which were traditionally used in bolero, were gradually replaced by the **güira**, a metal scraper. The güira provided a sharper, more percussive sound that better suited the danceable rhythms of bachata, giving the genre a more defined and infectious groove. These shifts in instrumentation refined the genre\'s sound, enhanced its danceability, and contributed to its eventual mainstream acceptance.',
           media: {
             audio: {
               samples: [

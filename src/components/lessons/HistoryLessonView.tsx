@@ -13,32 +13,30 @@ interface HistoryLessonViewProps {
 }
 
 const renderContentBlock = (block: ContentBlock) => {
-  if (!block.media?.images?.length) {
-    return null;
-  }
-
   return (
     <div className="mt-4">
       <div className="prose dark:prose-invert max-w-none">
         <ReactMarkdown rehypePlugins={[rehypeRaw]}>{block.content}</ReactMarkdown>
       </div>
       
-      <div className="mt-4">
-        <div className="grid grid-cols-2 gap-4">
-          {block.media.images.map((image, index) => (
-            <div key={index} className="text-center">
-              <img
-                src={image.src}
-                alt={image.caption || ''}
-                className="w-full h-auto rounded-lg object-cover max-h-[400px]"
-              />
-              <p className="mt-2 text-gray-600 dark:text-gray-400 italic">
-                {image.caption}
-              </p>
-            </div>
-          ))}
+      {block.media?.images && (
+        <div className="mt-4">
+          <div className={`${block.media.images.length === 1 ? 'flex justify-center' : 'grid grid-cols-2 gap-4'}`}>
+            {block.media.images.map((image, index) => (
+              <div key={index} className="text-center">
+                <img
+                  src={image.src}
+                  alt={image.caption || ''}
+                  className="w-full h-auto rounded-lg object-cover max-h-[400px]"
+                />
+                <p className="mt-2 text-gray-600 dark:text-gray-400 italic">
+                  {image.caption}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
       
       {block.media?.audio?.samples && (
         <div className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm mt-4">
