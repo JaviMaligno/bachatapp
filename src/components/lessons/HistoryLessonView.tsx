@@ -112,6 +112,33 @@ export const HistoryLessonView: React.FC<HistoryLessonViewProps> = ({ section, l
               </div>
             ))}
 
+            {/* Add Spotify embeds if section has artists */}
+            {section.artists && section.artists.length > 0 && (
+              <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm mt-4">
+                <h3 className="text-lg font-semibold mb-4 text-gray-800 dark:text-white">Featured Artists</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {section.artists.map((artist, index) => (
+                    <div key={index} className="space-y-2">
+                      <p className="font-medium text-gray-800 dark:text-white">{artist.name}</p>
+                      <div className="w-full h-[80px]">
+                        <iframe 
+                          src={artist.spotifyLink} 
+                          width="100%" 
+                          height="80" 
+                          frameBorder="0" 
+                          allowFullScreen 
+                          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                          loading="lazy"
+                          title={`${artist.name} on Spotify`}
+                          className="rounded-md"
+                        ></iframe>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {/* Render subsections */}
             {section.sections && (
               <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6">

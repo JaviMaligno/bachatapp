@@ -65,12 +65,12 @@ export const history5060Lesson: HistoryLesson = {
               samples: [
                 {
                   name: 'Bare fingers',
-                  path: '/assets/audio/history/segunda.wav',
+                  path: '/assets/audio/history/finger.mp3',
                   song: ''
                 },
                 {
                   name: 'Thumb pick',
-                  path: '/assets/audio/history/segunda.wav',
+                  path: '/assets/audio/history/thumbpick.mp3',
                   song: ''
                 }
               ]
