@@ -5,6 +5,7 @@ import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import { progressManager } from '../common/ProgressBar';
 import { history5060Lesson } from '../../data/lessons/history/history-50-60';
+import { history7080Lesson } from '../../data/lessons/history/history-70-80';
 
 interface HistoryLessonViewProps {
   section: Section;
@@ -70,6 +71,8 @@ export const HistoryLessonView: React.FC<HistoryLessonViewProps> = ({ section, l
   let fullLesson: HistoryLesson | null = null;
   if (lesson.id === 'history-50-60') {
     fullLesson = history5060Lesson;
+  } else if (lesson.id === 'history-70-80') {
+    fullLesson = history7080Lesson;
   }
 
   if (!fullLesson) return null;
@@ -107,7 +110,7 @@ export const HistoryLessonView: React.FC<HistoryLessonViewProps> = ({ section, l
             <h2 className="text-2xl font-semibold mb-6 text-gray-800 dark:text-white">{section.title}</h2>
             
             {section.contentBlocks?.map((block, index) => (
-              <div key={index} className="prose dark:prose-invert max-w-none bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+              <div key={`${section.id}-block-${index}`} className="prose dark:prose-invert max-w-none bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
                 {renderContentBlock(block)}
               </div>
             ))}
@@ -118,7 +121,7 @@ export const HistoryLessonView: React.FC<HistoryLessonViewProps> = ({ section, l
                 <h3 className="text-lg font-semibold mb-4 text-gray-800 dark:text-white">Featured Artists</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {section.artists.map((artist, index) => (
-                    <div key={index} className="space-y-2">
+                    <div key={`${section.id}-artist-${index}`} className="space-y-2">
                       <p className="font-medium text-gray-800 dark:text-white">{artist.name}</p>
                       <div className="w-full h-[80px]">
                         <iframe 
@@ -147,7 +150,7 @@ export const HistoryLessonView: React.FC<HistoryLessonViewProps> = ({ section, l
                 </h3>
                 <div className="space-y-4">
                   {section.sections.map((subSection) => (
-                    <div key={subSection.id} className="space-y-3">
+                    <div key={`${section.id}-subsection-${subSection.id}`} className="space-y-3">
                       <div className="flex items-start">
                         <div className="flex-shrink-0 mt-1">
                           <svg className="w-5 h-5 text-blue-500 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
