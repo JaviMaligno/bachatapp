@@ -113,30 +113,6 @@ export const history7080Lesson: HistoryLesson = {
           content: '- From stigmatized "low-class" music to cultural pride\n- Reflection of Dominican working-class experience\n- Foundation for later international recognition'
         }
       ]
-    },
-    {
-      id: 'curiosities',
-      title: 'Curiosities and Interesting Facts',
-      contentBlocks: [
-        {
-          content: '## Name Evolution\n- The word "bachata" originally referred to an informal, sometimes rowdy, party held in rural backyards. Over time, it came to denote the very music played at these gatherings—a transformation from a term of derision to one of cultural pride.\n\n## Comparisons to the Blues\n- Much like the blues in the United States, early bachata was a musical expression of life\'s hardships. Despite its melancholy themes, the music often maintained a "sweet" and danceable quality, creating a unique juxtaposition that resonated deeply with its audience.\n\n## Cultural Censorship\n- For decades, bachata was banned on Dominican radio and television due to its associations with poverty and immorality. Its survival and eventual flourishing are testaments to the resilience of art under censorship.',
-          media: {
-            images: [
-              {
-                src: '/assets/images/history/bachata-censorship.jpg',
-                caption: 'Representation of bachata\'s cultural censorship'
-              }
-            ]
-          }
-        }
-      ],
-      sections: [
-        {
-          id: 'interesting-facts',
-          title: 'Fascinating Details',
-          content: '- "Bachata" term evolved from meaning "rustic party" to describing the music itself\n- Parallels with American blues as expression of hardship\n- Survived despite being banned from mainstream Dominican media'
-        }
-      ]
     }
   ],
   summary: 'The 1970s and 1980s were critical decades in the evolution of bachata—a time when a once-marginalized, rural sound was transformed through technological innovation, urban migration, and cultural resistance into a genre on the verge of international acclaim. From its early days as "amargue" or rustic bolero campesino to the modern electric-infused beats introduced by pioneers like Blas Durán, bachata\'s journey mirrors the socioeconomic transformations of the Dominican Republic itself. This evolution is a powerful reminder that music born from struggle can become a vibrant expression of national pride and global art.',
