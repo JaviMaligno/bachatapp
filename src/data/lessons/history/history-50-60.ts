@@ -126,7 +126,11 @@ export const history5060Lesson: HistoryLesson = {
     {
       id: 'pioneers',
       title: 'Key Artists and Precursors',
-      content: 'As the genre began to flourish after 1961, a number of pioneering artists laid the groundwork for what would become a major musical export of the Dominican Republic.\n\n## The First Bachateros\n- **José Manuel Calderón** is widely credited with recording the first official bachata songs in 1962, setting the stage for the genre\'s development. However, some debate exists regarding whether Calderón\'s "Borracho de Amor" qualifies as a true bachata song, given that it follows a vals (waltz) rhythm.\n\n- **Luis Segura\'s** "Cariñito de mi Vida" is sometimes cited as an early bachata, though it remains closer to a bolero, as confirmed by his son Edward Segura. Despite this, it showcased early hints of a groovier take on bolero that would later develop into bachata\'s characteristic sound.\n\n- **Other Pioneers:** Artists such as Rodobaldo Duartes, Rafael Encarnación, and Ramoncito Cabrera emerged in the following years, each adding their own nuances to the sound and helping bachata evolve from an underground style into a distinctive musical form.',
+      contentBlocks: [
+        {
+          content: 'As the genre began to flourish after 1961, a number of pioneering artists laid the groundwork for what would become a major musical export of the Dominican Republic.\n\n## The First Bachateros\n- **José Manuel Calderón** is widely credited with recording the first official bachata songs in 1962, setting the stage for the genre\'s development. However, some debate exists regarding whether Calderón\'s "Borracho de Amor" qualifies as a true bachata song, given that it follows a vals (waltz) rhythm.\n\n- **Luis Segura\'s** "Cariñito de mi Vida" is sometimes cited as an early bachata, though it remains closer to a bolero, as confirmed by his son Edward Segura. Despite this, it showcased early hints of a groovier take on bolero that would later develop into bachata\'s characteristic sound.\n\n- **Other Pioneers:** Artists such as Rodobaldo Duartes, Rafael Encarnación, and Ramoncito Cabrera emerged in the following years, each adding their own nuances to the sound and helping bachata evolve from an underground style into a distinctive musical form.'
+        }
+      ],
       artists: [
         {
           name: 'José Manuel Calderón',
