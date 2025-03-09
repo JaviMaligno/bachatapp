@@ -7,6 +7,7 @@ import { rhythmQuizQuestions } from './quizzes/rhythm-quiz';
 import { bachataPartsQuizQuestions } from './quizzes/bachata-parts-quiz';
 import { progressManager } from '../components/common/ProgressBar';
 import { historyQuiz } from './quizzes/history-quiz';
+import { history7080Quiz } from './quizzes/history-70-80-quiz';
 
 const historyGlossary: GlossarySection[] = [
   {
@@ -140,7 +141,8 @@ export const sections: Section[] = [
       { id: 'history-90-00', title: 'Fusion of styles', get progress() { return progressManager.getProgress('history', 'history-80-90'); }, comingSoon: true }
     ],
     quizzes: [
-      historyQuiz
+      historyQuiz,
+      history7080Quiz
     ],
     glossary: historyGlossary
   },
