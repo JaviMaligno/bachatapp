@@ -48,11 +48,26 @@ const renderContentBlock = (block: ContentBlock) => {
                 <p className="font-medium mb-2 text-gray-800 dark:text-white">
                   {sample.name}
                 </p>
-                <audio 
-                  controls 
-                  src={sample.path} 
-                  className="w-full" 
-                />
+                {sample.spotifyLink ? (
+                  <div className="w-full h-[80px]">
+                    <iframe 
+                      src={sample.spotifyLink} 
+                      width="100%" 
+                      height="80" 
+                      allowFullScreen 
+                      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                      loading="lazy"
+                      title={sample.name}
+                      className="rounded-md"
+                    ></iframe>
+                  </div>
+                ) : sample.path ? (
+                  <audio 
+                    controls 
+                    src={sample.path} 
+                    className="w-full" 
+                  />
+                ) : null}
               </div>
             ))}
           </div>

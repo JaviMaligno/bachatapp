@@ -6,7 +6,7 @@ export const history7080Lesson: HistoryLesson = {
   title: 'The Evolution of Bachata (1970s-1980s)',
   description: 'Exploring how bachata evolved from a marginalized rural expression to the beginnings of mainstream recognition',
   introduction: ' The 1970s and 1980s were pivotal decades in defining bachata as we know it today as it evolved from a marginalized rural expression to the beginnings of mainstream recognition.',
-  image: '/assets/images/history/bachata-70s.jpg', // You'll need to add this image
+  image: '/assets/images/history/bachata7080.png', 
   sections: [
     {
       id: 'seventies',
@@ -17,14 +17,14 @@ export const history7080Lesson: HistoryLesson = {
         },
         {
           content: '## Key Artists\nWhile some pioneers like José Manuel Calderón had begun recording as early as 1962, the 1970s saw a new generation of bachateros emerging—artists who would record in local studios and perform in the very venues where bachata had been stigmatized. Vocalists and groups from this period (including early recordings by figures such as Rafael Encarnación and Ramoncito Cabrera) laid the groundwork for future evolution.',
-          media: {
-            images: [
-              {
-                src: '/assets/images/history/70s-bachateros.jpg',
-                caption: 'Bachateros performing in the 1970s'
-              }
-            ]
-          }
+          //media: {
+            //images: [
+              //{
+                //src: '/assets/images/history/70s-bachateros.jpg',
+                //caption: 'Bachateros performing in the 1970s'
+              //}
+            //]
+          //}
         }
       ],
       sections: [
@@ -51,13 +51,13 @@ export const history7080Lesson: HistoryLesson = {
               samples: [
                 {
                   name: 'Traditional Acoustic Bachata (1970s)',
-                  path: '/assets/audio/history/acoustic-bachata.mp3',
+                  spotifyLink: 'https://open.spotify.com/embed/track/16Ln0eqJETrfwBf8RbqmWw?utm_source=generator',
                   song: 'Sample from early recordings'
                 },
                 {
                   name: 'Electric Bachata (1980s)',
-                  path: '/assets/audio/history/electric-bachata.mp3',
-                  song: 'Sample from Blas Durán era'
+                  spotifyLink: 'https://open.spotify.com/embed/track/4wGhnh1XWu5LnmAbNqOSaO?utm_source=generator',
+                  song: 'Mujeres Hembras - Blas Durán'
                 }
               ]
             }
@@ -67,19 +67,35 @@ export const history7080Lesson: HistoryLesson = {
           content: '## Changing Social Perceptions\n- **Growing Acceptance:** With these sonic innovations, bachata began to gain more airplay on radio stations and even made appearances on television. Although still looked down upon by some segments of society, its growing popularity among urban and working-class listeners began to challenge previous prejudices.\n\n- **Urban Migration Impact:** The modernization of bachata coincided with urban migration; as rural workers moved into cities like Santo Domingo, their music adapted to the urban soundscape.'
         },
         {
-          content: '## Key Artists and Songs\n- **Luis Vargas and Antony Santos:** Emerging in the late 1980s and early 1990s, they incorporated the new electric elements and helped shift bachata into a pop format.\n\n- **Blas Durán:** His revolutionary recordings (like "Mujeres hembras") redefined the genre\'s sound.\n\n- **Marino Perez:** Known as "The Father of Bitter Bachata," his songs such as *Ay Mami* and *La Espero Bebiendo* resonated with listeners for their raw depiction of everyday struggles.\n\n## International Reach\n- **Early Migration:** Even in the 1980s, bachata began to cross borders. Although still largely confined to local radio and clubs in the Dominican Republic, the seeds were planted for its eventual migration to the United States. Many Dominicans who migrated during this period took their music with them, particularly to New York City\'s vibrant Latin music scene.'
+          content: '## Key Artists and Songs\n- **Luis Vargas and Antony Santos:** Emerging in the late 1980s and early 1990s, they incorporated the new electric elements and helped shift bachata into a pop format.\n\n- **Blas Durán:** His revolutionary recordings (like "Mujeres hembras") redefined the genre\'s sound.\n\n- **Marino Perez:** Known as "The Father of Bitter Bachata," his songs such as *Ay Mami* and *La Espero Bebiendo* resonated with listeners for their raw depiction of everyday struggles.\n\n## International Reach\n- **Early Migration:** Even in the 1980s, bachata began to cross borders. Although still largely confined to local radio and clubs in the Dominican Republic, the seeds were planted for its eventual migration to the United States. Many Dominicans who migrated during this period took their music with them, particularly to New York City\'s vibrant Latin music scene.',
+          media: {
+            audio: {
+              samples: [
+                {
+                  name: 'Luis Vargas - Volvio el dolor',
+                  spotifyLink: 'https://open.spotify.com/embed/track/0NnwEPjfSBJ9lHnck0g1Up?utm_source=generator',
+                  song: 'Volvio el dolor - Luis Vargas'
+                },
+                {
+                  name: 'Marino Perez - Ay Mami',
+                  spotifyLink: 'https://open.spotify.com/embed/track/7EwZvAArDJQ1cxG0ZOajsL?utm_source=generator',
+                  song: 'Ay Mami - Marino Perez'
+                }
+              ]
+            }
+          }
         }
       ],
-      artists: [
-        {
-          name: 'Blas Durán - Mujeres Hembras',
-          spotifyLink: 'https://open.spotify.com/embed/track/0Iu3jQzUiIQEenson9xzZP?utm_source=generator'
-        },
-        {
-          name: 'Marino Perez - Ay Mami',
-          spotifyLink: 'https://open.spotify.com/embed/track/5Oi3ZmfYt4JVZVrZiIbmkf?utm_source=generator'
-        }
-      ],
+      //artists: [
+        //{
+          //name: 'Blas Durán - Mujeres Hembras',
+          //spotifyLink: 'https://open.spotify.com/embed/track/0Iu3jQzUiIQEenson9xzZP?utm_source=generator'
+        //},
+        //{
+          //name: 'Marino Perez - Ay Mami',
+          //spotifyLink: 'https://open.spotify.com/embed/track/5Oi3ZmfYt4JVZVrZiIbmkf?utm_source=generator'
+        //}
+      //],
       sections: [
         {
           id: 'technological-evolution',
