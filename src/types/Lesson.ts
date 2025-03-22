@@ -10,9 +10,10 @@ export interface Media {
   audio?: {
     samples: {
       name: string;
-      path: string;
+      path?: string;
       song?: string;
       artist?: string;
+      spotifyLink?: string;
     }[];
   };
   video?: string;

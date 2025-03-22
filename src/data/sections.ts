@@ -7,6 +7,7 @@ import { rhythmQuizQuestions } from './quizzes/rhythm-quiz';
 import { bachataPartsQuizQuestions } from './quizzes/bachata-parts-quiz';
 import { progressManager } from '../components/common/ProgressBar';
 import { historyQuiz } from './quizzes/history-quiz';
+import { history7080Quiz } from './quizzes/history-70-80-quiz';
 
 const historyGlossary: GlossarySection[] = [
   {
@@ -135,12 +136,13 @@ export const sections: Section[] = [
         description: 'Learn about the origins of Bachata music',
         get progress() { return progressManager.getProgress('history', 'history-50-60'); }
       } as LessonSummary,
-      { id: 'history-60-70', title: 'Consolidation of the genre', get progress() { return progressManager.getProgress('history', 'history-60-70'); }, comingSoon: true },
-      { id: 'history-70-80', title: 'International expansion', get progress() { return progressManager.getProgress('history', 'history-70-80'); }, comingSoon: true },
-      { id: 'history-80-90', title: 'Fusion of styles', get progress() { return progressManager.getProgress('history', 'history-80-90'); }, comingSoon: true }
+      { id: 'history-70-80', title: 'Consolidation of the genre', get progress() { return progressManager.getProgress('history', 'history-60-70'); }, comingSoon: false },
+      { id: 'history-80-90', title: 'International expansion', get progress() { return progressManager.getProgress('history', 'history-70-80'); }, comingSoon: true },
+      { id: 'history-90-00', title: 'Fusion of styles', get progress() { return progressManager.getProgress('history', 'history-80-90'); }, comingSoon: true }
     ],
     quizzes: [
-      historyQuiz
+      historyQuiz,
+      history7080Quiz
     ],
     glossary: historyGlossary
   },
