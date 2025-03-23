@@ -1,0 +1,9 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Reglas
+
+- Siempre que hagas una implementación de código, revisa y modifica el archivo [project_summary.md](mdc:project_summary.md)
