@@ -6,6 +6,7 @@ import rehypeRaw from 'rehype-raw';
 import { progressManager } from '../common/ProgressBar';
 import { history5060Lesson } from '../../data/lessons/history/history-50-60';
 import { history7080Lesson } from '../../data/lessons/history/history-70-80';
+import { history9000Lesson } from '../../data/lessons/history/history-90-00';
 
 interface HistoryLessonViewProps {
   section: Section;
@@ -88,6 +89,8 @@ export const HistoryLessonView: React.FC<HistoryLessonViewProps> = ({ section, l
     fullLesson = history5060Lesson;
   } else if (lesson.id === 'history-70-80') {
     fullLesson = history7080Lesson;
+  } else if (lesson.id === 'history-90-00') {
+    fullLesson = history9000Lesson;
   }
 
   if (!fullLesson) return null;
