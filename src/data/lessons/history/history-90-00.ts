@@ -19,12 +19,12 @@ export const history9000Lesson: HistoryLesson = {
               samples: [
                 {
                   name: 'Juan Luis Guerra - Bachata Rosa',
-                  spotifyLink: 'https://open.spotify.com/embed/track/1JKLPlKrt3xMYTf1NKHfQv?utm_source=generator',
+                  spotifyLink: 'https://open.spotify.com/embed/track/3H9GcHKKJyZ9TEOLKlJ1U5?utm_source=generator',
                   song: 'Bachata Rosa - Juan Luis Guerra'
                 },
                 {
                   name: 'Raulín Rodríguez - Medicina de Amor',
-                  spotifyLink: 'https://open.spotify.com/embed/track/6DLnwNQ0jHawZG6BfQrgad?utm_source=generator',
+                  spotifyLink: 'https://open.spotify.com/embed/track/0OgX5NA7KFx8FCr5W0HYl9?utm_source=generator',
                   song: 'Medicina de Amor - Raulín Rodríguez'
                 }
               ]
@@ -58,26 +58,26 @@ export const history9000Lesson: HistoryLesson = {
       title: 'The 2000s: Urban Bachata and Global Fusion',
       contentBlocks: [
         {
-          content: '## Rise of Urban Bachata and Aventura\n\nIn the early 2000s, bachata underwent another major transformation with the emergence of urban bachata. Groups like Aventura, led by Romeo Santos, infused the traditional sound with elements of R&B, hip-hop, pop, and even rock. Albums such as *We Broke the Rules* (2002) showcased electric guitar lines, bilingual (Spanish–English) lyrics, and a smoother, more polished production that resonated with younger, urban audiences worldwide.\n\n## New Sounds and Dance Innovations\n\nAlong with its musical evolution, the dance form itself diversified. While traditional Dominican bachata emphasized simple, close-hold footwork rooted in its rustic origins, international variations—often labeled as "sensual" or "urban" bachata—incorporated intricate body isolations, fluid turns, and influences from contemporary dance styles. These changes reflected not only musical fusion but also a broader cultural reimagining of what bachata could be outside its original context.',
+          content: '## Rise of Urban Bachata and Aventura\n\nIn the early 2000s, bachata underwent another major transformation with the emergence of urban bachata. Groups like Aventura, led by Romeo Santos, infused the traditional sound with elements of R&B, hip-hop, pop, and even rock. Albums such as *We Broke the Rules* (2002) showcased electric guitar lines, bilingual (Spanish–English) lyrics, and a smoother, more polished production that resonated with younger, urban audiences worldwide.\n\n## New Sounds and Dance Innovations\n\nAlong with its musical evolution, the dance form itself diversified. While traditional Dominican bachata emphasized simple, close-hold footwork rooted in its rustic origins, international variations—often labeled as "modern" or "urban" (later "sensual") bachata—incorporated body isolations, fluid turns, and influences from salsa and other contemporary dance styles. These changes reflected not only musical fusion but also a broader cultural reimagining of what bachata could be outside its original context.',
           media: {
             audio: {
               samples: [
                 {
                   name: 'Aventura - Obsesión',
-                  spotifyLink: 'https://open.spotify.com/embed/track/4rOoJ6Egrf8YLNca5Czkh0?utm_source=generator',
+                  spotifyLink: 'https://open.spotify.com/embed/track/65H6t1WQBim6q93yM8fEwn?utm_source=generator',
                   song: 'Obsesión - Aventura'
                 },
                 {
-                  name: 'Prince Royce - Stand By Me',
-                  spotifyLink: 'https://open.spotify.com/embed/track/2BBCCvpuUf7hVlYmJ5QR7R?utm_source=generator',
-                  song: 'Stand By Me - Prince Royce'
+                  name: 'Monchy & Alexandra - Hoja En Blanco',
+                  spotifyLink: 'https://open.spotify.com/embed/track/0wDEs6WvqDHq4XJZC0dHhO?utm_source=generator',
+                  song: 'Hoja En Blanco - Monchy & Alexandra'
                 }
               ]
             }
           }
         },
         {
-          content: '## Other Influential Acts\n\nBesides Aventura, acts like Monchy & Alexandra and later artists such as Prince Royce further popularized the new bachata sound internationally. Their catchy singles and modern visual styles helped cement bachata\'s presence on global charts and dance floors, extending its reach well beyond the Dominican Republic.\n\n## Global Commercial Success\n\nBy the late 2000s, bachata had achieved unprecedented global commercial success. Aventura\'s sold-out concerts at major venues like Madison Square Garden demonstrated the genre\'s widespread appeal. Songs like "Obsesión" became international hits, reaching audiences that had previously had no exposure to bachata. This commercial breakthrough signaled bachata\'s complete transition from marginalized rural music to global cultural phenomenon.'
+          content: '## Other Influential Acts\n\nBesides Aventura, acts like Monchy & Alexandra further popularized the new bachata sound internationally. Their catchy singles and modern visual styles helped cement bachata\'s presence on global charts and dance floors, extending its reach well beyond the Dominican Republic.\n\n## Global Commercial Success\n\nBy the late 2000s, bachata had achieved unprecedented global commercial success. Aventura\'s sold-out concerts at major venues like Madison Square Garden demonstrated the genre\'s widespread appeal. Songs like "Obsesión" became international hits, reaching audiences that had previously had no exposure to bachata. This commercial breakthrough signaled bachata\'s complete transition from marginalized rural music to global cultural phenomenon.'
         }
       ],
       sections: [
@@ -89,7 +89,7 @@ export const history9000Lesson: HistoryLesson = {
         {
           id: 'dance-evolution',
           title: 'Dance Evolution',
-          content: '- Traditional Dominican bachata vs. international styles\n- Development of "sensual" and "urban" bachata variations\n- Incorporation of contemporary dance elements'
+          content: '- Traditional Dominican bachata vs. international styles\n- Development of "modern" and "fusion" bachata variations\n- Incorporation of salsa techniques and contemporary dance elements'
         },
         {
           id: 'commercial-breakthrough',
@@ -103,7 +103,19 @@ export const history9000Lesson: HistoryLesson = {
       title: 'Bachata: Tradition at Home vs. Transformation Abroad',
       contentBlocks: [
         {
-          content: 'Bachata\'s global journey reveals a fascinating dichotomy: while bachata in the Dominican Republic has maintained its authentic, raw expression of rural and working-class life, its evolution abroad has been shaped by new social contexts and formal dance education. This contrast provides insight into how culture can both remain resiliently authentic and adapt to new environments.\n\n## In the Dominican Republic: The Unchanged Soul\n\n**Authentic Roots and Informal Settings:**  \nIn the Dominican Republic, bachata remains closely tied to its origins in rural communities and working-class neighborhoods. It is primarily performed at informal gatherings—whether in local bars, street parties, or family events—where the focus is on spontaneity and raw emotion rather than technical perfection. The dance steps, as passed down orally from generation to generation, have remained largely unchanged. Traditional bachata keeps its simple side-to-side footwork and close partner connection, preserving the music\'s rustic and heartfelt character.\n\n**Cultural Continuity and Resistance to Formalization:**  \nBecause bachata in its homeland is more than a dance or music style—it\'s an everyday cultural practice—it hasn\'t been subjected to institutionalization. The environment in the Dominican Republic favors its natural, communal evolution over academic reinterpretation. This means that while newer genres and dance forms may experience rapid changes through formalized teaching and media, bachata there remains an organic expression of local life and emotion.'
+          content: 'Bachata\'s global journey reveals a fascinating dichotomy: while bachata in the Dominican Republic has maintained its authentic, raw expression of rural and working-class life, its evolution abroad has been shaped by new social contexts and formal dance education. This contrast provides insight into how culture can both remain resiliently authentic and adapt to new environments.\n\n## In the Dominican Republic: The Unchanged Soul\n\n**Authentic Roots and Informal Settings:**  \nIn the Dominican Republic, bachata remains closely tied to its origins in rural communities and working-class neighborhoods. It is primarily performed at informal gatherings—whether in local bars, street parties, or family events—where the focus is on spontaneity and raw emotion rather than technical perfection. The dance steps, as passed down orally from generation to generation, have remained largely unchanged. Traditional bachata keeps its simple side-to-side footwork and close partner connection, preserving the music\'s rustic and heartfelt character.\n\n**Cultural Continuity and Resistance to Formalization:**  \nBecause bachata in its homeland is more than a dance or music style—it\'s an everyday cultural practice—it hasn\'t been subjected to institutionalization. The environment in the Dominican Republic favors its natural, communal evolution over academic reinterpretation. This means that while newer genres and dance forms may experience rapid changes through formalized teaching and media, bachata there remains an organic expression of local life and emotion.',
+          media: {
+            images: [
+              {
+                src: '/assets/images/history/street.jpg',
+                caption: 'Bachata danced informally in the Dominican Republic streets.'
+              },
+              {
+                src: '/assets/images/history/class.jpg',
+                caption: 'Structured bachata class in a Western dance studio.'
+              }
+            ]
+          }
         },
         {
           content: '## In the Diaspora: Academic Structuring and Innovation\n\n**Transformation Through Formal Dance Education:**  \nIn contrast, in America and Europe bachata was introduced into a formal dance-learning context. Dance studios, often already teaching salsa and other established Latin dances, began to offer structured bachata classes. Here, the dance was dissected, codified, and sometimes even modified—resulting in what many now refer to as "sensual" or "urban" bachata. These styles often incorporate elements like intricate turns, body isolations, and a more polished, fluid presentation. The emphasis on technique and alignment makes the dance more "academic" in nature compared to its free-form practice in the Dominican Republic.\n\n**Middle-Class Adoption and Cultural Fusion:**  \nThe primary audience in these settings tends to be middle-class individuals who seek the refinement and structure associated with studio learning. For many, learning bachata in a formal class is not only a way to enjoy Latin music and dance but also a social activity that aligns with a more cosmopolitan lifestyle. In these environments, bachata evolves by absorbing influences from other urban genres like R&B, hip-hop, and even ballroom dance elements. This fusion not only differentiates the international version from its rural Dominican roots but also caters to an audience that values technique, aesthetics, and a "modern" twist on traditional forms.\n\n**Cultural and Socioeconomic Context:**  \nWhile bachata in the Dominican Republic is deeply intertwined with the hardships and raw expressions of the lower classes, the version taught in the diaspora becomes part of a cultural curriculum. Middle-class dancers in the U.S. and Europe approach the dance academically, often comparing it with salsa or merengue in terms of technique and structure. This academic setting not only enhances the technical execution of the dance but also transforms its social function—turning it from an organic communal activity into a socially acceptable, structured form of art and exercise.'
@@ -114,14 +126,14 @@ export const history9000Lesson: HistoryLesson = {
             audio: {
               samples: [
                 {
-                  name: 'Traditional Dominican Bachata - Raulín Rodriguez',
-                  spotifyLink: 'https://open.spotify.com/embed/track/1vWPiEHqyFd3rw9hBCtEFJ?utm_source=generator',
-                  song: 'Medicina de Amor - Raulín Rodriguez'
+                  name: 'Traditional Bachata - Raulín Rodriguez',
+                  spotifyLink: 'https://open.spotify.com/embed/track/4GqF1OeM18jaUiCs56JR5s?utm_source=generator',
+                  song: 'Nereyda - Raulín Rodriguez'
                 },
                 {
-                  name: 'Modern Fusion Bachata - Prince Royce',
-                  spotifyLink: 'https://open.spotify.com/embed/track/2BBCCvpuUf7hVlYmJ5QR7R?utm_source=generator',
-                  song: 'Stand By Me - Prince Royce'
+                  name: 'Modern Bachata - Aventura',
+                  spotifyLink: 'https://open.spotify.com/embed/track/5I76YtdZkFQReVgKppRd78?utm_source=generator',
+                  song: 'Mi Corazoncito - Aventura'
                 }
               ]
             }
