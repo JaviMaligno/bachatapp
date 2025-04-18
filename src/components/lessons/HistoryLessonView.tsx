@@ -7,7 +7,7 @@ import { progressManager } from '../common/ProgressBar';
 import { history5060Lesson } from '../../data/lessons/history/history-50-60';
 import { history7080Lesson } from '../../data/lessons/history/history-70-80';
 import { history9000Lesson } from '../../data/lessons/history/history-90-00';
-
+import { history1020Lesson } from '../../data/lessons/history/history-10-20';
 interface HistoryLessonViewProps {
   section: Section;
   lesson: HistoryLesson | LessonSummary;
@@ -91,6 +91,8 @@ export const HistoryLessonView: React.FC<HistoryLessonViewProps> = ({ section, l
     fullLesson = history7080Lesson;
   } else if (lesson.id === 'history-90-00') {
     fullLesson = history9000Lesson;
+  } else if (lesson.id === 'history-10-20') {
+    fullLesson = history1020Lesson;
   }
 
   if (!fullLesson) return null;
