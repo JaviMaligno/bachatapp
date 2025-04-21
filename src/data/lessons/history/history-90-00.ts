@@ -77,6 +77,12 @@ export const history9000Lesson: HistoryLesson = {
           }
         },
         {
+          content: '## Emergence of Bachata Moderna (Late 2000s)\n\nTowards the end of the 2000s, as bachata\'s popularity spread internationally, particularly through the influence of urban styles like Aventura\'s, a new dance variation began to take shape outside the Dominican Republic. This style, later termed "Bachata Moderna," emerged as dancers, often with backgrounds in salsa or tango, started incorporating elements from these dances into the basic bachata structure. This happened partly in parallel to the evolution within the Dominican Republic, often due to limited access or understanding of the traditional, more footwork-focused Dominican way of dancing at the time.\n\nBachata Moderna maintained the core side-to-side step but enriched it with more complex turn patterns, spins, and figures similar to those found in salsa, adapted to bachata\'s rhythm. The embrace often opened up to facilitate these turns, and gentle body movements like basic torso waves began to appear. Instructors like Jorge Elizondo played a role in systematizing these patterns for studio teaching in the late 2000s. This style represented a bridge, making the dance more visually dynamic and appealing to dancers trained in other Latin styles, setting the groundwork for further innovations in the following decade.'
+        },
+        {
+          content: '## Birth of Bachata Sensual (Mid-Late 2000s)\n\nBuilding upon the innovations of Bachata Moderna, another influential style began developing in Spain around 2005, pioneered by dancers Korke Escalona and Judith Cordero. Known as Bachata Sensual, this style took the body movement aspect further, emphasizing fluidity, isolations, and a close partner connection. Key characteristics include full-body waves, chest and hip isolations, head rolls, and dramatic dips, often drawing inspiration from Brazilian Zouk and contemporary dance. The focus shifted towards interpreting the music\'s melody and emotional nuances through body expression, sometimes prioritizing this over complex footwork. While originating in the mid-to-late 2000s, Bachata Sensual would truly explode in popularity—and attract criticism—in the 2010s, becoming arguably the most widespread international style taught in studios worldwide.'
+        },
+        {
           content: '## Other Influential Acts\n\nBesides Aventura, acts like Monchy & Alexandra further popularized the new bachata sound internationally. Their catchy singles and modern visual styles helped cement bachata\'s presence on global charts and dance floors, extending its reach well beyond the Dominican Republic.\n\n## Global Commercial Success\n\nBy the late 2000s, bachata had achieved unprecedented global commercial success. Aventura\'s sold-out concerts at major venues like Madison Square Garden demonstrated the genre\'s widespread appeal. Songs like "Obsesión" became international hits, reaching audiences that had previously had no exposure to bachata. This commercial breakthrough signaled bachata\'s complete transition from marginalized rural music to global cultural phenomenon.'
         }
       ],
@@ -90,6 +96,16 @@ export const history9000Lesson: HistoryLesson = {
           id: 'dance-evolution',
           title: 'Dance Evolution',
           content: '- Traditional Dominican bachata vs. international styles\n- Development of "modern" and "fusion" bachata variations\n- Incorporation of salsa techniques and contemporary dance elements'
+        },
+        {
+          id: 'bachata-moderna',
+          title: 'Bachata Moderna (Late 2000s)',
+          content: '- Emerged internationally, blending bachata basics with salsa/tango turns.\n- Developed partly due to lack of direct access to traditional Dominican style.\n- More turns, open embrace, early body waves.\n- Systematized for studio teaching (e.g., Jorge Elizondo).'
+        },
+        {
+          id: 'bachata-sensual',
+          title: 'Bachata Sensual (Mid-Late 2000s)',
+          content: '- Originated in Spain (Korke & Judith) around 2005, evolving from Moderna.\n- Emphasizes body waves, isolations, close connection, inspired by Zouk/Contemporary.\n- Focus on musicality through body expression.\n- Gained massive global popularity (and controversy) in the next decade.'
         },
         {
           id: 'commercial-breakthrough',
@@ -166,7 +182,7 @@ export const history9000Lesson: HistoryLesson = {
           content: '## Reflecting Social Change\n\nThe evolution of bachata mirrors broader social and economic shifts. Initially a voice for the marginalized, its transformation in the 1990s and 2000s was deeply intertwined with changes in Dominican society and the aspirations of its diaspora. As Dominican immigrants adapted to life in cities like New York, they reinterpreted bachata not only as a musical style but also as a marker of cultural identity—a symbol of resilience and transformation.\n\n## Changing Perceptions\n\nOnce derided as music for brothels and the impoverished, bachata\'s rebranding through polished production and urban influences allowed it to shed its stigma. This reappropriation is a testament to how music can be reimagined to bridge class divides and offer a voice to previously silenced communities.\n\n## From Censorship to Celebration\n\nFor many years, bachata was officially censored and restricted in the Dominican Republic due to its association with the lower classes. Today, however, it is celebrated as an essential part of the country\'s cultural heritage and even recognized as an intangible cultural asset. This dramatic shift in perception reflects broader changes in how traditional cultural expressions are valued in the era of global cultural exchange.'
         },
         {
-          content: '## Curiosities and Interesting Facts\n\n### Name Origins\n\nThe word "bachata" originally referred to a lively, informal party—a celebration of music, dance, food, and camaraderie—rather than a specific musical style. Over time, the term came to define the distinctive sound and dance form associated with Dominican popular culture.\n\n### Dance Styles\n\nModern bachata dancing now encompasses several styles—traditional, sensual, and urban—each with unique characteristics. This diversity allows dancers to choose the style that best suits their personality and artistic expression.\n\n### Industrial Impact\n\nBeyond music and dance, the bachata boom of the 2000s created a substantial industry including dance schools, festivals, specialized clothing, and tourism. International bachata congresses and festivals now attract thousands of participants from around the world, creating new economic opportunities built around this once-marginalized cultural form.'
+          content: '## Curiosities and Interesting Facts\n\n### Dance Styles\n\nModern bachata dancing now encompasses several styles—traditional, sensual, and urban—each with unique characteristics. This diversity allows dancers to choose the style that best suits their personality and artistic expression.\n\n### Industrial Impact\n\nBeyond music and dance, the bachata boom of the 2000s created a substantial industry including dance schools, festivals, specialized clothing, and tourism. International bachata congresses and festivals now attract thousands of participants from around the world, creating new economic opportunities built around this once-marginalized cultural form.'
         }
       ],
       sections: [
@@ -197,6 +213,8 @@ export const history9000Lesson: HistoryLesson = {
     'https://en.wikipedia.org/wiki/Bachata_Rosa',
     'https://en.wikipedia.org/wiki/Monchy_%26_Alexandra',
     'https://en.wikipedia.org/wiki/We_Broke_the_Rules',
-    'https://en.wikipedia.org/wiki/Raul%C3%ADn_Rodr%C3%ADguez'
+    'https://en.wikipedia.org/wiki/Raul%C3%ADn_Rodr%C3%ADguez',
+    'https://www.bachatiamo.com/history/#:~:text=was%20possible%20to%20see%20the,dance%20root%20of%20local%20people',
+    'https://www.dancesportdupont.com/post/what-is-bachata-sensual-a-deep-dive-into-its-origins-and-unique-style?srsltid=AfmBOopYzDRp1lcZElpzbU4wTpC0Vj30RH976u9NRD_PPusJypZF7wjv#:~:text=,close%20connection%20with%20your%20partner'
   ]
 }; 

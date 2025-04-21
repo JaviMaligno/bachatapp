@@ -73,3 +73,9 @@ The application is configured for:
 - **Linting**: `npm run lint`
 
 This educational platform provides an accessible way to learn about bachata's rich musical heritage, instrumentation, and dance techniques with an interactive and engaging user experience.
+
+## Change Log
+- **[Date of Edit]**: Added details about Bachata Moderna in the `history-90-00` lesson.
+- **[Date of Edit]**: Restructured `history-90-00` lesson to separate Bachata Moderna content into its own block for better rendering.
+- **[Date of Edit]**: Corrected markdown escaping issues in `history-90-00` lesson content.
+- **[Date of Edit]**: Added details about Bachata Sensual in the `history-90-00` lesson.
