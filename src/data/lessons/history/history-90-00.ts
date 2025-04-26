@@ -179,27 +179,7 @@ export const history9000Lesson: HistoryLesson = {
       title: 'Socioeconomic and Cultural Context',
       contentBlocks: [
         {
-          content: '## Reflecting Social Change\n\nThe evolution of bachata mirrors broader social and economic shifts. Initially a voice for the marginalized, its transformation in the 1990s and 2000s was deeply intertwined with changes in Dominican society and the aspirations of its diaspora. As Dominican immigrants adapted to life in cities like New York, they reinterpreted bachata not only as a musical style but also as a marker of cultural identity—a symbol of resilience and transformation.\n\n## Changing Perceptions\n\nOnce derided as music for brothels and the impoverished, bachata\'s rebranding through polished production and urban influences allowed it to shed its stigma. This reappropriation is a testament to how music can be reimagined to bridge class divides and offer a voice to previously silenced communities.\n\n## From Censorship to Celebration\n\nFor many years, bachata was officially censored and restricted in the Dominican Republic due to its association with the lower classes. Today, however, it is celebrated as an essential part of the country\'s cultural heritage and even recognized as an intangible cultural asset. This dramatic shift in perception reflects broader changes in how traditional cultural expressions are valued in the era of global cultural exchange.'
-        },
-        {
-          content: '## Curiosities and Interesting Facts\n\n### Dance Styles\n\nModern bachata dancing now encompasses several styles—traditional, sensual, and urban—each with unique characteristics. This diversity allows dancers to choose the style that best suits their personality and artistic expression.\n\n### Industrial Impact\n\nBeyond music and dance, the bachata boom of the 2000s created a substantial industry including dance schools, festivals, specialized clothing, and tourism. International bachata congresses and festivals now attract thousands of participants from around the world, creating new economic opportunities built around this once-marginalized cultural form.'
-        }
-      ],
-      sections: [
-        {
-          id: 'cultural-identity',
-          title: 'Cultural Identity',
-          content: '- Transition from marginalized music to cultural pride\n- Symbol of Dominican identity in diaspora communities\n- Representation of social mobility and transformation'
-        },
-        {
-          id: 'perception-shift',
-          title: 'Perception Shift',
-          content: '- From censorship to official celebration\n- Shedding of class-based stigma\n- Recognition as valuable cultural heritage'
-        },
-        {
-          id: 'global-impact',
-          title: 'Global Impact',
-          content: '- Creation of international bachata industry\n- Worldwide festivals and dance congresses\n- Cultural tourism centered around bachata'
+          content: '## Reflecting Social Change\n\nThe evolution of bachata mirrors broader social and economic shifts. Its transformation in the 1990s and 2000s was deeply intertwined with changes in Dominican society and the aspirations of its diaspora. As Dominican immigrants adapted to life in cities like New York, they reinterpreted bachata not only as a musical style but also as a marker of cultural identity—a symbol of resilience and transformation.\n\n## Industrial Impact\n\nBeyond music and dance, the bachata boom of the 2000s created a substantial industry including dance schools, festivals, specialized clothing, and tourism. International bachata congresses and festivals now attract thousands of participants from around the world, creating new economic opportunities built around this once-marginalized cultural form.## Changing Perceptions'
         }
       ]
     }
