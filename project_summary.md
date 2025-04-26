@@ -7,7 +7,7 @@ Bachata App is an educational web application designed to teach users about bach
 - **Frontend**: React with TypeScript
 - **Styling**: Tailwind CSS with typography plugin
 - **Routing**: React Router DOM
-- **Markdown Rendering**: React Markdown with rehype-raw
+- **Markdown Rendering**: React Markdown with rehype-raw and remark-gfm
 - **Icons**: Lucide React
 - **Build Tool**: Vite
 - **Backend**: Express.js (Node.js)
@@ -79,3 +79,13 @@ This educational platform provides an accessible way to learn about bachata's ri
 - **[Date of Edit]**: Restructured `history-90-00` lesson to separate Bachata Moderna content into its own block for better rendering.
 - **[Date of Edit]**: Corrected markdown escaping issues in `history-90-00` lesson content.
 - **[Date of Edit]**: Added details about Bachata Sensual in the `history-90-00` lesson.
+
+## Frontend
+
+*   **Framework:** React + TypeScript + Vite
+*   **Styling:** Tailwind CSS
+*   **State Management:** (Implicit via component state, consider Zustand/Jotai if needed)
+*   **Routing:** `react-router-dom`
+*   **Markdown Rendering:** `react-markdown` with `rehype-raw` (for HTML) and `remark-gfm` (for tables, etc.).
+*   **UI Components:**
+    *   `LessonCard`: Displays lesson overview.

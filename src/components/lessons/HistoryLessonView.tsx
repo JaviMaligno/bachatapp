@@ -3,6 +3,7 @@ import { Section, HistoryLesson, ContentBlock, LessonSummary } from '../../types
 import { BackButton } from '../common/BackButton';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
+import remarkGfm from 'remark-gfm';
 import { progressManager } from '../common/ProgressBar';
 import { history5060Lesson } from '../../data/lessons/history/history-50-60';
 import { history7080Lesson } from '../../data/lessons/history/history-70-80';
@@ -18,7 +19,7 @@ const renderContentBlock = (block: ContentBlock) => {
   return (
     <div className="mt-4">
       <div className="prose dark:prose-invert max-w-none">
-        <ReactMarkdown rehypePlugins={[rehypeRaw]}>{block.content}</ReactMarkdown>
+        <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>{block.content}</ReactMarkdown>
       </div>
       
       {block.media?.images && (
@@ -121,7 +122,7 @@ export const HistoryLessonView: React.FC<HistoryLessonViewProps> = ({ section, l
 
         {fullLesson.introduction && (
           <div className="prose dark:prose-invert max-w-none mb-8">
-            <ReactMarkdown rehypePlugins={[rehypeRaw]}>{fullLesson.introduction}</ReactMarkdown>
+            <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>{fullLesson.introduction}</ReactMarkdown>
           </div>
         )}
 
@@ -181,7 +182,7 @@ export const HistoryLessonView: React.FC<HistoryLessonViewProps> = ({ section, l
                           <h4 className="font-medium text-gray-900 dark:text-white">{subSection.title}</h4>
                           {subSection.content && (
                             <div className="mt-1 text-gray-600 dark:text-gray-300">
-                              <ReactMarkdown rehypePlugins={[rehypeRaw]}>{subSection.content}</ReactMarkdown>
+                              <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>{subSection.content}</ReactMarkdown>
                             </div>
                           )}
                         </div>
@@ -200,7 +201,7 @@ export const HistoryLessonView: React.FC<HistoryLessonViewProps> = ({ section, l
               <span className="mr-2">📌</span> Summary
             </h2>
             <div className="text-emerald-900 dark:text-emerald-100">
-              <ReactMarkdown rehypePlugins={[rehypeRaw]}>{fullLesson.summary}</ReactMarkdown>
+              <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>{fullLesson.summary}</ReactMarkdown>
             </div>
           </div>
         )}
