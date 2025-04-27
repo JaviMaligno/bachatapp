@@ -22,4 +22,36 @@
 body {
   background-color: var(--background-color);
   color: var(--text-color);
+  @apply bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for dark mode */
+}
+
+/* Fix for markdown table vertical alignment when containing tall elements like iframes */
+.markdown-table-v-align table td,
+.markdown-table-v-align table th {
+  vertical-align: middle !important; 
+}
+
+/* Ensure full height for the application */
+html, body, #root {
+    height: 100%;
+}
+
+/* Custom scrollbar styling (optional, for Webkit browsers) */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 } 

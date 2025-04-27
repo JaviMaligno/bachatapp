@@ -139,7 +139,7 @@ export const sections: Section[] = [
       } as LessonSummary,
       { id: 'history-70-80', title: 'Consolidation of the genre', get progress() { return progressManager.getProgress('history', 'history-70-80'); }, comingSoon: false },
       { id: 'history-90-00', title: 'International expansion', get progress() { return progressManager.getProgress('history', 'history-90-00'); }, comingSoon: false },
-      { id: 'history-00-10', title: 'Fusion of styles', get progress() { return progressManager.getProgress('history', 'history-00-10'); }, comingSoon: true }
+      { id: 'history-10-20', title: 'Fusion of styles', get progress() { return progressManager.getProgress('history', 'history-10-20'); }, comingSoon: false }
     ],
     quizzes: [
       historyQuiz,
