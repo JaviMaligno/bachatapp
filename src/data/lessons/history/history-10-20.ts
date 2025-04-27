@@ -5,21 +5,21 @@ export const history1020Lesson: HistoryLesson = {
   type: 'history',
   title: 'Bachata in the Digital Age: Global Boom & Diversification (2010s-2020s)',
   description: "Tracking bachata's explosion in popularity through streaming, social media, new dance styles, and global recognition.",
-  introduction: 'Before the streaming era, bachata had already travelled far beyond the Dominican colmados (corner bars). "Urban bachata"—pioneered by Aventura in the Bronx—was blending R&B hooks with guitar licks, while artists such as Anthony Santos and Luis Vargas kept the more percussive, footwork-friendly **Dominican style** alive at home. By 2010 the stage was set for a tug-of-war (and later a joyful fusion) between **roots** and **reinvention**.',
-  image: '/assets/images/history/bachata1020.png', // Placeholder image
+  introduction: 'Before the streaming era, bachata had already travelled far beyond the Dominican colmados. "Urban bachata"—pioneered by Aventura in the Bronx—was blending R&B hooks with guitar licks, while artists such as Anthony Santos and Luis Vargas kept the more percussive, footwork-friendly **Dominican style** alive at home. By 2010 the stage was set for a tug-of-war (and later a joyful fusion) between **roots** and **reinvention**.',
+  image: '/assets/images/history/bachata1020.jpg', // Placeholder image
   sections: [
     {
       id: 'digital-breakout',
       title: '2010-2015: Digital Break-Out & New Idols',
       contentBlocks: [
         {
-          content: `Streaming platforms and YouTube suddenly gave guitar-driven songs arena-sized audiences. Romeo Santos' debut solo LPs **Formula Vol. 1 & 2** and later **Utopía** (2019) dominated tropical charts for a full decade, while Prince Royce's *Alter Ego* (2020) showed the format could survive a double-disc pop experiment.
+          content: `Streaming platforms and YouTube suddenly gave bachata songs arena-sized audiences. Romeo Santos' debut solo LPs **Formula Vol. 1 & 2** (2011 and 2014) dominated tropical charts for a full decade, while Prince Royce's *Alter Ego* (2020) showed the format could survive a double-disc pop experiment.
 
 | Milestone                        | Why it mattered                                                                   | Key tracks             |
 |----------------------------------|-----------------------------------------------------------------------------------|------------------------|
-| **2011 · "Promise" (Romeo & Usher)** | First bachata single to crack Billboard's Hot 100 top-40, signalling U.S. crossover. | "Promise"              |
-| **2013 · "Propuesta Indecente" (Romeo)** | 2 B+ YouTube views → proof of global appetite for bilingual sensual bachata.      | "Propuesta Indecente" |
-| **2014-15 · Rise of Prince Royce** | Pop-polished bachata saturated Latin radio, especially after smash "Darte un Beso". | "Darte un Beso"        |
+| **2011 · "Promise" (Romeo & Usher)** | First bachata single to crack Billboard's Hot 100 top-40, signalling U.S. crossover. | <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0jr6tT2vc4cIFPHb6wufG3?utm_source=generator" width="150%" height="145" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>|
+| **2013 · "Propuesta Indecente" (Romeo)** | 2 B+ YouTube views → proof of global appetite for bilingual sensual bachata.      | <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5PycBIeabfvX3n9ILG7Vrv?utm_source=generator" width="150%" height="145" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> |
+| **2014-15 · Rise of Prince Royce** | Pop-polished bachata saturated Latin radio, especially after smash "Darte un Beso". | <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/28trZhiy1YvlfDkG1bwNAz?utm_source=generator" width="150%" height="145" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> |
 
 **Dance explosion:** At the same time, Florida-based duo **Ataca y La Alemana** uploaded simple yet magnetic partnerwork videos that racked up tens of millions of views, turning social-media virality into sold-out international workshops.`
         }
@@ -31,7 +31,9 @@ export const history1020Lesson: HistoryLesson = {
       contentBlocks: [
         {
           content: `### Bachata Sensual
-Spanish dancers **Korke & Judith** formalised the circular body-wave vocabulary they had been refining since mid-2000s Cádiz, launching a certification program and the *Bachata Sensual World Congress*—all fuelled by Instagram clips under 60 seconds.
+Spanish dancers **Korke & Judith** formalised the circular body-wave vocabulary they had been refining since mid-2000s Cádiz, launching a certification program and the *Bachata Sensual World Congress*.
+
+The term "Sensual Bachata" is credited to Tony Lara who used it in 2009 at his "Sexy & Sensual Latin Festival" in London.
 
 ### Bachata Moderna
 Texan educator **Jorge Elizondo** mixed salsa turn-patterns into the basic. His "boot-camp" DVDs travelled to 190+ cities, showing how e-commerce could spread a style without a single record label.
@@ -75,7 +77,7 @@ The hashtag **#bachatachallenge** sailed past *1.5 billion* views by early 2024,
       title: 'The Remix Debate',
       contentBlocks: [
         {
-          content: 'Platforms like SoundCloud and services such as **LatinRemixes.com** let DJs (DJ Soltrix, DJ Tronky, DJ Khalid) transform Drake, Adele or Shakira into 128 BPM bachata covers overnight. Dancers credit these edits for filling club floors; purists argue they eclipse guitar-based originals and exist in a copyright grey-zone.'
+          content: 'Platforms like SoundCloud and services such as **LatinRemixes.com** let DJs (DJ Soltrix, DJ Tronky, DJ Khalid) transform Drake, Adele or Shakira into 128 BPM bachata covers overnight. Dancers credit these edits for filling club floors; purists argue they eclipse guitar-based originals and exist in a copyright grey-zone.\n\n### Examples of Remixes:\n\n<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1dmVpPmddUDvqelBTBrHt0?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>\n\n<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/5TwFlzyCgSH3IBR2TK5JnD?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>'
         }
       ]
     },
@@ -91,20 +93,6 @@ The hashtag **#bachatachallenge** sailed past *1.5 billion* views by early 2024,
 | **Fusion / Zouk**            | **Chesco Leveratto & community** – formalised BachaZouk brand and events.                                                               |
 | **Dominican footwork advocates** | **Alex & Desiree**, **Demetrio & Nicole** – YouTube series teaching syncopated "zapateo" shines to keep roots visible in clubs.       |
 | **Culture-bearers**          | **Areíto Arts collective** – online history primers tying Afro-Dominican identity to traditional steps.                               |`
-        }
-      ]
-    },
-    {
-      id: 'style-glossary',
-      title: 'Quick Style Glossary (2025)',
-      contentBlocks: [
-        {
-          content: `- **Dominican Bachata** – playful footwork, rapid guitar picking, bongó fills.
-- **Bachata Moderna** – cross-body salsa turns grafted onto basic.
-- **Bachata Sensual** – circular body rolls, zouk influences, slower tempo.
-- **Urban / R&B Bachata** – Bronx-born mix of English lyrics & hip-hop beats (e.g., Toby Love's *crunk-chata*).
-- **BachaZouk / Fusion** – extended head-rolls and counter-body-leads borrowed from Brazilian Zouk.
-- **Influence / Experimental** – flamenco hybrids (Rosalía & Romeo's "El Pañuelo"), EDM-tinged drops.`
         }
       ]
     }

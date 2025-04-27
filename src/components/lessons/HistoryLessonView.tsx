@@ -131,7 +131,7 @@ export const HistoryLessonView: React.FC<HistoryLessonViewProps> = ({ section, l
             <h2 className="text-2xl font-semibold mb-6 text-gray-800 dark:text-white">{section.title}</h2>
             
             {section.contentBlocks?.map((block, index) => (
-              <div key={`${section.id}-block-${index}`} className="prose dark:prose-invert max-w-none bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+              <div key={`${section.id}-block-${index}`} className="prose dark:prose-invert max-w-none bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm markdown-table-v-align">
                 {renderContentBlock(block)}
               </div>
             ))}
