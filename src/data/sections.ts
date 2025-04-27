@@ -9,7 +9,7 @@ import { progressManager } from '../components/common/ProgressBar';
 import { historyQuiz } from './quizzes/history-quiz';
 import { history7080Quiz } from './quizzes/history-70-80-quiz';
 import { history9000Quiz } from './quizzes/history-90-00-quiz';
-
+import { history1020Quiz } from './quizzes/history-10-20-quiz';
 const historyGlossary: GlossarySection[] = [
   {
     category: 'General Terms',
@@ -144,7 +144,8 @@ export const sections: Section[] = [
     quizzes: [
       historyQuiz,
       history7080Quiz,
-      history9000Quiz
+      history9000Quiz,
+      history1020Quiz
     ],
     glossary: historyGlossary
   },

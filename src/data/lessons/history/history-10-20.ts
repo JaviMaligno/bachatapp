@@ -31,17 +31,35 @@ export const history1020Lesson: HistoryLesson = {
       contentBlocks: [
         {
           content: `### Bachata Sensual
-Spanish dancers **Korke & Judith** formalised the circular body-wave vocabulary they had been refining since mid-2000s Cádiz, launching a certification program and the *Bachata Sensual World Congress*.
+Spanish dancers **Korke & Judith** formalised the circular body-wave vocabulary they had been refining since the mid-2000s in Cádiz, launching a certification program and the *Bachata Sensual World Congress*.
 
-The term "Sensual Bachata" is credited to Tony Lara who used it in 2009 at his "Sexy & Sensual Latin Festival" in London.
+The term "Sensual Bachata" is credited to Tony Lara, who used it in 2009 at his "Sexy & Sensual Latin Festival" in London.
 
 ### Bachata Moderna
-Texan educator **Jorge Elizondo** mixed salsa turn-patterns into the basic. His "boot-camp" DVDs travelled to 190+ cities, showing how e-commerce could spread a style without a single record label.
+Texan educator **Jorge Elizondo** mixed salsa turn-patterns into the basic. His "boot-camp" DVDs traveled to 190+ cities, showing how e-commerce could spread a style without a single record label.
 
-### Bachazouk & other fusions
-In 2014 dancers began blending Brazilian Zouk head-rolls with bachata rhythms; by 2022 the community had re-branded the style as **BachaZouk**, with purpose-built weekender festivals.
+### Fusion Styles: The Creative Melting Pot
+Beyond Sensual and Moderna, the 2010s saw an explosion of "Fusion Bachata," where dancers blended elements from other dance genres with bachata steps and rhythms, prioritizing personal expression and innovation.
 
-> **Curiosity:** Many Latin-dance congresses now schedule three separate rooms—Dominican, Sensual/Moderna, and Fusion—so DJs can tailor energy without genre-switching whiplash.`
+#### Bachazouk (Bachata + Brazilian Zouk)
+In 2014, dancers began blending Brazilian Zouk's distinctive head-rolls, upper body isolations, and deep leans with bachata rhythms. By 2022, the community had largely adopted the term **BachaZouk**, establishing dedicated festivals and practica sessions globally to explore this fluid and intricate fusion.
+
+#### Bachatango (Bachata + Tango)
+This style infuses the dramatic flair of Argentine Tango into bachata. It incorporates tango's characteristic leg hooks, flicks, close embrace variations, and theatrical pauses, often seen in showcases and competitions.
+
+#### Urban Fusion (Bachata + Hip-Hop/Street Dance)
+Emerging from urban dance studios, this fusion incorporates hip-hop grooves, footwork patterns, body pops, and isolations into bachata partnerwork. It often features syncopated rhythms and is danced to R&B-inflected bachata remixes.
+
+#### Flamenco Fusion (Bachata + Flamenco)
+Dancers borrow from Flamenco's expressive arm styling (braceo), hand gestures, rhythmic footwork (zapateado), and proud posture, adding a percussive and dramatic element to bachata routines.
+
+#### Reggaetona (Bachata + Reggaeton)
+Driven by club trends and TikTok challenges, this fusion blends bachata steps with Reggaeton's characteristic dembow rhythm, body rolls, and attitude, often performed to electronic bachata remixes.
+
+#### Kizata (Bachata + Kizomba)
+Merging the smooth, grounded connection and subtle hip movements of Kizomba with bachata timing, **Kizata** became popular in African and European social dance scenes, emphasizing a close embrace and shared rhythm.
+
+> **Curiosity:** Many Latin-dance congresses now schedule three separate rooms—Dominican, Sensual/Moderna, and Fusion—so DJs can tailor energy without genre-switching whiplash, reflecting the diversification of the dance.`
         }
       ]
     },
