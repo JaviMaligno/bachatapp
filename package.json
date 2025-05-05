@@ -26,6 +26,7 @@
         "nodemailer": "^6.10.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
+        "react-helmet-async": "^2.0.5",
         "react-markdown": "^9.0.1",
         "react-router-dom": "^6.22.3",
         "rehype-raw": "^7.0.0",
@@ -45,7 +46,8 @@
         "postcss": "^8.4.35",
         "tailwindcss": "^3.4.1",
         "typescript": "^5.3.3",
-        "vite": "^5.1.0"
+        "vite": "^5.1.0",
+        "vite-plugin-sitemap": "^0.7.1"
     },
     "engines": {
         "node": ">=18.0.0"

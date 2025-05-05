@@ -86,6 +86,12 @@ The application is configured for:
 - **Server**: `npm run server`
 - **Linting**: `npm run lint`
 
+## SEO
+
+- Initial setup includes `public/robots.txt`, basic meta tags and canonical link in `index.html` (using placeholder URLs).
+- Sitemap generation and dynamic meta tag updates are pending implementation.
+- A detailed plan is available in `seo_plan.md`.
+
 This educational platform provides an accessible way to learn about bachata's rich musical heritage, instrumentation, and dance techniques with an interactive and engaging user experience.
 
 ## Change Log
