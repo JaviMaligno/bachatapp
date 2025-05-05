@@ -164,20 +164,32 @@ Optimise images (next-gen formats, lazy-load), bundle size (code-splitting), and
 
 - [ ] Custom domain live and HTTPS-only  
 - [ ] No `noindex` in headers or meta tags on production  
-- [ ] `robots.txt` & `sitemap.xml` accessible  
-- [ ] Canonical tag set site-wide  
-- [ ] Meta titles & descriptions unique per route  
-- [ ] Structured data validated (<https://search.google.com/test/rich-results>)  
+- [x] `robots.txt` & `sitemap.xml` accessible  
+- [x] Canonical tag set site-wide  
+- [x] Meta titles & descriptions unique per route  
+- [x] Structured data validated (<https://search.google.com/test/rich-results>)  
 - [ ] Domain verified in Search Console & sitemap submitted  
 - [ ] Core Web Vitals within target thresholds  
 
 ## Work In Progress
 
-- **Canonical Tag:** Added to `index.html` using the current Vercel URL. _(Step 1)_ 
-- **Robots.txt:** Created in `/public` with placeholder sitemap URL. _(Step 3)_
-- **Basic Meta Tags:** Added default title, description, and OG tags to `index.html` using current Vercel URL. _(Step 4)_
-- **Sitemap Generation:** Still pending implementation. _(Step 3)_
-- **Dynamic Meta Tags:** Need to implement logic to update title/description per route. _(Step 4)_
-- **Structured Data:** Needs implementation. _(Step 5)_
+- **Canonical Tag:** Implemented via `react-helmet-async` in the `SEO` component and added to all page routes. _(Step 1 ✅)_ 
+- **Robots.txt:** Created in `/public`. Points to `/sitemap.xml`. _(Step 3 ✅)_
+- **Sitemap Generation:** Implemented using `vite-plugin-sitemap`. Generates `sitemap.xml` in `dist` folder during `npm run build`. Includes dynamic routes based on `src/data/sections.ts`, excluding `comingSoon` items. _(Step 3 ✅)_
+- **Basic Meta Tags:** Implemented across all routes using the `SEO` component powered by `react-helmet-async`. _(Step 4 ✅)_
+- **Dynamic Meta Tags:** Route-specific meta tags implemented in each wrapper component using the `SEO` component, with appropriate titles and descriptions based on content. _(Step 4 ✅)_
+- **Structured Data:** Implemented using `StructuredData` component with JSON-LD schema for different page types:
+  - Home page: WebSite schema
+  - Section page: ItemList schema
+  - Lesson page: Article schema
+  - Quiz page: Quiz schema (Educational content)
+  - Glossary page: FAQPage schema
+  _(Step 5 ✅)_
+- **HTTPS Enforcement:** Added redirects and security headers to `vercel.json`. _(Step 1 ✅)_
+
+**Remaining Tasks:**
+1. Configure custom domain in Vercel (if desired)
+2. Verify site in Google Search Console and submit sitemap
+3. Run Lighthouse to check Core Web Vitals
 
 **Once all checkmarks are green, Google can crawl, index, and rank your site. 🚀**
