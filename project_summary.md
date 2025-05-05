@@ -86,6 +86,15 @@ The application is configured for:
 - **Server**: `npm run server`
 - **Linting**: `npm run lint`
 
+## SEO
+
+- Initial setup includes `public/robots.txt`, basic meta tags and canonical link in `index.html` (using placeholder URLs).
+- Dynamic meta tags implemented with `react-helmet-async` via custom `SEO` component on all routes.
+- Schema.org structured data implemented via `StructuredData` component with JSON-LD for all page types.
+- Sitemap generation (`sitemap.xml`) is handled automatically during build (`npm run build`) via `vite-plugin-sitemap`, including dynamic routes.
+- Security headers and `www` to non-`www` redirects configured in `vercel.json`.
+- A detailed plan is available in `seo_plan.md`.
+
 This educational platform provides an accessible way to learn about bachata's rich musical heritage, instrumentation, and dance techniques with an interactive and engaging user experience.
 
 ## Change Log

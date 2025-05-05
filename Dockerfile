@@ -4,12 +4,16 @@ FROM node:18
 # Set the working directory in the container
 WORKDIR /app
 
-# Copy package.json and package-lock.json
-COPY package*.json ./
-
-# Install project dependencies
+# Install pnpm globally first
 RUN npm install -g pnpm
-RUN pnpm install
+
+# Copy package.json AND the lock file
+COPY package.json pnpm-lock.yaml ./
+
+# Install dependencies using the lock file
+# Use --frozen-lockfile for deterministic builds in CI/Docker
+# Add -ddd for maximum verbose logging
+RUN pnpm install --frozen-lockfile -ddd
 
 # Copy the rest of the application files
 COPY . .
