@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bachatapp.vercel.app/sitemap.xml

@@ -48,7 +48,7 @@ export default defineConfig({
   plugins: [
     react(),
     viteSitemap({
-      hostname: 'https://relationships-tests.vercel.app/', // Replace if using custom domain
+      hostname: 'https://bachatapp.vercel.app/', // Replace if using custom domain
       dynamicRoutes: generateDynamicRoutes(),
       // Optional: You can add filename: 'sitemap.xml' if needed, but it's the default
       // filename: 'sitemap.xml', 
