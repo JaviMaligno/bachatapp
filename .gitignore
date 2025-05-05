@@ -12,7 +12,7 @@ package-lock.json
 #*.jpg
 #*.jpeg
 *.gif
-*.txt
+#*.txt
 .env.local
 ./cursor
 
@@ -152,7 +152,7 @@ build/
 public/build/
 
 # Astro build output
-dist/
+#dist/
 
 # MKDocs build output
 site/
