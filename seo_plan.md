@@ -169,7 +169,7 @@ Optimise images (next-gen formats, lazy-load), bundle size (code-splitting), and
 - [X] Canonical tag set site-wide
 - [X] Meta titles & descriptions unique per route
 - [X] Structured data validated ([https://search.google.com/test/rich-results](https://search.google.com/test/rich-results))
-- [ ] Domain verified in Search Console & sitemap submitted
+- [X] Domain verified in Search Console & sitemap submitted
 - [ ] Core Web Vitals within target thresholds
 
 ## Work In Progress
@@ -191,7 +191,7 @@ Optimise images (next-gen formats, lazy-load), bundle size (code-splitting), and
 **Remaining Tasks:**
 
 1. Configure custom domain in Vercel (if desired)
-2. Verify site in Google Search Console and submit sitemap
+2. ~~Verify site in Google Search Console and submit sitemap~~
 3. Run Lighthouse to check Core Web Vitals
 
 **Once all checkmarks are green, Google can crawl, index, and rank your site. 🚀**
