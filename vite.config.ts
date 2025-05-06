@@ -58,6 +58,36 @@ export default defineConfig({
       // changefreq: 'weekly',
       // priority: 0.7,
     }),
+    // Custom plugin to inject CSS preload link
+    {
+      name: 'inject-css-preload',
+      enforce: 'post', // Run after asset handling
+      apply: 'build', // Only run plugin during build
+      transformIndexHtml(html, ctx) {
+        // ctx.bundle is only available during build
+        if (!ctx.bundle) return html;
+
+        let cssLink = '';
+        // Find the main CSS bundle file
+        for (const assetName in ctx.bundle) {
+          const asset = ctx.bundle[assetName];
+          // Check if it's a CSS asset chunk and likely the main entry CSS
+          if (asset.type === 'asset' && asset.fileName.endsWith('.css')) { 
+             // Basic assumption: first CSS chunk is the main one.
+             // May need adjustment if code splitting CSS or using CSS modules extensively.
+             cssLink = `<link rel="preload" href="/${asset.fileName}" as="style">
+    `; // Added newline and indentation for readability in <head>
+             break; // Found the CSS file
+          }
+        }
+
+        // Inject the link tag into the head before the closing </head> tag
+        if (cssLink) {
+          return html.replace('</head>', `${cssLink}</head>`);
+        }
+        return html;
+      }
+    }
   ],
   server: {
     host: '0.0.0.0',
