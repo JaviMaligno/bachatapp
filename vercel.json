@@ -7,6 +7,17 @@
   ],
   "redirects": [
     {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "bachatapp.vercel.app"
+        }
+      ],
+      "destination": "https://bachatapp.org/$1",
+      "permanent": true
+    },
+    {
       "source": "/",
       "has": [
         {
