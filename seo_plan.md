@@ -1,6 +1,6 @@
 # SEO & Indexing Plan
 
-_Target site: https://bachatapp.vercel.app/_
+_Target site: https://bachatapp.org/_
 
 > Goal: Make the site crawlable, indexable, and ultimately rank for relevant queries in Google Search.
 
@@ -25,7 +25,7 @@ Vercel automatically sets `x-robots-tag: noindex` **for preview deployments**.
 Production deployments _on the main branch_ are not affected, but double-check:
 
 ```bash
-curl -I https://bachatapp.vercel.app/
+curl -I https://bachatapp.org/
 # Ensure there is NO `x-robots-tag: noindex`
 ```
 
@@ -170,7 +170,7 @@ Optimise images (next-gen formats, lazy-load), bundle size (code-splitting), and
 - [X] Meta titles & descriptions unique per route
 - [X] Structured data validated ([https://search.google.com/test/rich-results](https://search.google.com/test/rich-results))
 - [X] Domain verified in Search Console & sitemap submitted
-- [ ] Core Web Vitals within target thresholds
+- [X] Core Web Vitals within target thresholds
 
 ## Work In Progress
 

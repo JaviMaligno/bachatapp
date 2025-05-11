@@ -104,7 +104,6 @@ out
 
 # Nuxt.js build / generate output
 .nuxt
-dist
 
 # Gatsby files
 .cache/
@@ -162,5 +161,6 @@ site/
 
 # ignore declaration files
 *.d.ts
-
-
+index-*.css
+index-*.js
+dist/robots.txt

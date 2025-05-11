@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 // Base URL for links in structured data
-const baseUrl = 'https://bachatapp.vercel.app';
+const baseUrl = 'https://bachatapp.org';
 
 interface StructuredDataProps {
   type: 'home' | 'section' | 'lesson' | 'quiz' | 'glossary';
