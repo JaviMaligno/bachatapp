@@ -8,11 +8,11 @@ _Target site: https://bachatapp.vercel.app/_
 
 ## 1. Choose & Configure a Canonical Production Domain (Highly recommended)
 
-| Task                                                                                                      | Who   | How                                                                                                            |
-| --------------------------------------------------------------------------------------------------------- | ----- | -------------------------------------------------------------------------------------------------------------- |
-| Buy/choose a custom domain (e.g.**relationships.app**)                                              | Owner | Registrar of choice                                                                                            |
-| Add the domain in**Vercel → Settings → Domains**                                                  | Owner | Automatic DNS records if using Vercel nameservers; otherwise add the provided `CNAME`/`A` records manually |
-| Enforce HTTPS and redirect all `www.`/`http` traffic to the canonical URL                             | Dev   | Add redirects in `vercel.json` (see Appendix A)                                                              |
+| Task                                                                                                | Who   | How                                                                                                            |
+| --------------------------------------------------------------------------------------------------- | ----- | -------------------------------------------------------------------------------------------------------------- |
+| Buy/choose a custom domain (e.g.**bachatapp**)                                                | Owner | Registrar of choice                                                                                            |
+| Add the domain in**Vercel → Settings → Domains**                                            | Owner | Automatic DNS records if using Vercel nameservers; otherwise add the provided `CNAME`/`A` records manually |
+| Enforce HTTPS and redirect all `www.`/`http` traffic to the canonical URL                       | Dev   | Add redirects in `vercel.json` (see Appendix A)                                                              |
 | Insert a**`<link rel="canonical">`** tag in every page's `<head>` pointing to the preferred URL | Dev   | For a single-page app, add once in `index.html`; for multiple routes add programmatically                    |
 
 *Why?* A single canonical URL avoids duplicate-content penalties and ensures Google references the right version.
