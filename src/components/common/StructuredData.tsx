@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 // Base URL for links in structured data
-const baseUrl = 'https://relationships-tests.vercel.app';
+const baseUrl = 'https://bachatapp.vercel.app';
 
 interface StructuredDataProps {
   type: 'home' | 'section' | 'lesson' | 'quiz' | 'glossary';
