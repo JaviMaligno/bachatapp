@@ -11,10 +11,10 @@
       "has": [
         {
           "type": "host",
-          "value": "www.relationships-tests.vercel.app"
+          "value": "www.bachatapp.vercel.app"
         }
       ],
-      "destination": "https://relationships-tests.vercel.app",
+      "destination": "https://bachatapp.vercel.app",
       "permanent": true
     }
   ],

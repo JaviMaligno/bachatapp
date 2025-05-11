@@ -25,7 +25,7 @@ Vercel automatically sets `x-robots-tag: noindex` **for preview deployments**.
 Production deployments _on the main branch_ are not affected, but double-check:
 
 ```bash
-curl -I https://relationships-tests.vercel.app/
+curl -I https://bachatapp.vercel.app/
 # Ensure there is NO `x-robots-tag: noindex`
 ```
 
@@ -192,6 +192,6 @@ Optimise images (next-gen formats, lazy-load), bundle size (code-splitting), and
 
 1. Configure custom domain in Vercel (if desired)
 2. ~~Verify site in Google Search Console and submit sitemap~~
-3. Run Lighthouse to check Core Web Vitals
+3. ~~Run Lighthouse to check Core Web Vitals~~
 
 **Once all checkmarks are green, Google can crawl, index, and rank your site. 🚀**
