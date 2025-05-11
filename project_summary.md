@@ -122,3 +122,47 @@ This educational platform provides an accessible way to learn about bachata's ri
 * **Markdown Rendering:** `react-markdown` with `rehype-raw` (for HTML) and `remark-gfm` (for tables, etc.).
 * **UI Components:**
   * `LessonCard`: Displays lesson overview.
+
+## Setting Up Gmail SMTP
+
+To use Gmail's SMTP server for sending emails from the application, you'll need to configure it with an "App Password". Regular Gmail passwords will not work due to security measures.
+
+Here's how to set it up:
+
+1.  **Enable 2-Step Verification for Your Google Account:**
+    *   Go to your Google Account settings: [https://myaccount.google.com/](https://myaccount.google.com/)
+    *   Navigate to the "Security" tab.
+    *   Under "Signing in to Google," click on "2-Step Verification."
+    *   Follow the on-screen instructions to enable it. This is a prerequisite for generating App Passwords.
+
+2.  **Generate an App Password:**
+    *   Once 2-Step Verification is enabled, go back to the "Security" tab in your Google Account settings.
+    *   Under "Signing in to Google," click on "App passwords." You might be asked to sign in again.
+    *   If you don't see this option, it might be because:
+        *   2-Step Verification is not set up for your account.
+        *   2-Step Verification is only set up for security keys.
+        *   Your account is through work, school, or other organization that manages these settings.
+        *   You've turned on Advanced Protection for your account.
+    *   At the bottom, click "Select app" and choose "Mail."
+    *   Click "Select device" and choose "Other (Custom name)."
+    *   Enter a name for the app (e.g., "BachataApp Server") and click "Generate."
+    *   The generated App Password is the 16-character code in the yellow bar. **Copy this password immediately.** This is the `SMTP_PASSWORD` you will use in your `.env.local` file. It will not be shown again.
+    *   Click "Done."
+
+3.  **Configure Environment Variables:**
+    *   In your `server/.env.local` file (create it if it doesn't exist, you can copy from `.env.local.sample`), add or update the following variables:
+        ```env
+        SMTP_HOST=smtp.gmail.com
+        SMTP_PORT=465
+        SMTP_USER=your-gmail-address@gmail.com
+        SMTP_PASSWORD=your-16-character-app-password
+        SMTP_TO=your-receiving-email-address@example.com
+        ```
+    *   Replace `your-gmail-address@gmail.com` with the Gmail account you used to generate the App Password.
+    *   Replace `your-16-character-app-password` with the App Password you generated in the previous step.
+    *   Replace `your-receiving-email-address@example.com` with the email address where you want to receive the feedback emails.
+
+4.  **Restart Your Server:**
+    *   If your Node.js server is running, restart it to apply the new environment variable settings.
+
+After these steps, your application should be able to send emails using Gmail's SMTP server. Remember to keep your App Password secure and do not commit it directly into your version control system. Use environment variables as shown.
