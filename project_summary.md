@@ -70,7 +70,7 @@ Key data models include:
 - **Section** - Top-level content categories
 - **Lesson** - Educational content with various media
 - **Quiz** - Assessment questions and answers
-- **Glossary** - Dictionary of terms organized by category
+- **Glossary** - Dictionary of terms organized by category. Glossary data is now stored in `src/data/glossaries.ts`.
 
 ## Deployment
 
@@ -99,6 +99,7 @@ This educational platform provides an accessible way to learn about bachata's ri
 
 ## Change Log
 
+- **[Date of Edit]**: Expanded `historyGlossary` in `src/data/glossaries.ts` with detailed terms and new categories related to bachata history, styles (Dominican, Urban, Moderna, Sensual, Fusion), and specific fusion types (Bachazouk, Bachatango, etc.), based on content from history lessons.
 - **[Date of Edit]**: Added details about Bachata Moderna in the `history-90-00` lesson.
 - **[Date of Edit]**: Restructured `history-90-00` lesson to separate Bachata Moderna content into its own block for better rendering.
 - **[Date of Edit]**: Corrected markdown escaping issues in `history-90-00` lesson content.
@@ -110,6 +111,7 @@ This educational platform provides an accessible way to learn about bachata's ri
 - **[Date of Edit]**: Added Spotify remix examples to the history-10-20 lesson.
 - **[Date of Edit]**: Expanded and restructured the Fusion Styles section in the `history-10-20` lesson to include Bachazouk, Bachatango, Urban Fusion, Flamenco Fusion, Reggaetona, and Kizata examples under a general heading.
 - **[Date of Edit]**: Created the quiz file `src/data/quizzes/history-10-20-quiz.ts` covering the 2010s-2020s history lesson.
+- **[Date of Edit]**: Extracted glossary definitions from `src/data/sections.ts` into a new file `src/data/glossaries.ts` for better organization.
 
 ## Frontend
 
