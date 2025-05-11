@@ -11,10 +11,10 @@
       "has": [
         {
           "type": "host",
-          "value": "www.bachatapp.vercel.app"
+          "value": "www.bachatapp.org"
         }
       ],
-      "destination": "https://bachatapp.vercel.app",
+      "destination": "https://bachatapp.org",
       "permanent": true
     }
   ],

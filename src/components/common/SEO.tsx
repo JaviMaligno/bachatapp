@@ -11,7 +11,7 @@ interface SEOProps {
 }
 
 // Base domain for canonical URLs and OG tags
-const baseUrl = 'https://bachatapp.vercel.app';
+const baseUrl = 'https://bachatapp.org';
 
 export const SEO: React.FC<SEOProps> = ({
   title = 'Bachata App - Learn Bachata History, Music & Dance',
