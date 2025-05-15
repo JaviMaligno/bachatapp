@@ -33,14 +33,14 @@ export const history1020Lesson: HistoryLesson = {
           content: `### Bachata Sensual
 Spanish dancers **Korke & Judith** formalised the circular body-wave vocabulary they had been refining since the mid-2000s in Cádiz, launching a certification program and the *Bachata Sensual World Congress*.
 
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/z2xO8VyQ0i8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" style="border-radius:12px; margin-top: 1rem; margin-bottom: 1rem;"></iframe>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/m73tKVaGUTY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" style="border-radius:12px; margin-top: 1rem; margin-bottom: 1rem;"></iframe>
 
 The term "Sensual Bachata" is credited to Tony Lara, who used it in 2009 at his "Sexy & Sensual Latin Festival" in London.
 
 Since then, many other couples such as **Daniel y Desiree** have followed in their footsteps, creating a new wave of Sensual dancers.
 
 ### Bachata Moderna
-Texan educator **Jorge Elizondo** mixed salsa turn-patterns into the basic. His "boot-camp" DVDs traveled to 190+ cities, showing how e-commerce could spread a style without a single record label.
+Texan educator **Jorge Elizondo** mixed salsa turn-patterns into the basic. His ["boot-camp"](https://dancefreak.com/product/jorge-elizondo-bachata-beginning-leading-and-following-techniques/) DVDs traveled to 190+ cities, showing how e-commerce could spread a style without a single record label.
 After that, Ataca y La Alemana started to upload their videos to YouTube, and became arguably the most representative bachata moderna couple in the world.
 
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/5rCBIPLW76A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" style="border-radius:12px; margin-top: 1rem; margin-bottom: 1rem;"></iframe>
@@ -121,9 +121,9 @@ The hashtag **#bachatachallenge** sailed past *1.5 billion* views by early 2024,
         {
           content: `| Style                        | Pioneering couples & why they matter                                                                                  |
 |------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| **Sensual**                  | **Daniel y Desiree** (Spain) – viral show pieces ("Don't Let Me Down"), master-course platform, 2× Bachata World Champions.           |
+| **Sensual**                  | **Korke y Judith** (Spain) - Created the style; **Daniel y Desiree** (Spain) – master-course platform, 2× Bachata World Champions.           |
 | **Moderna**                  | **Ataca y La Alemana** (USA) – earliest million-view tutorials; emphasised accessible patterns.                                         |
-| **Fusion / Zouk**            | **Carlos y Paz** – founders of BachaZouk.                                                               |
+| **Fusion / Zouk**            | **Carlos y Paz** (Spain) – founders of BachaZouk.                                                               |
 | **Dominican footwork advocates** | **Alex & Desiree**, **Demetrio & Nicole** – YouTube series teaching syncopated "zapateo" shines to keep roots visible in clubs.       |
 | **Culture-bearers**          | **Areíto Arts collective** – online history primers tying Afro-Dominican identity to traditional steps.                               |`
         }
