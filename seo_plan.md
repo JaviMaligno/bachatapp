@@ -163,7 +163,7 @@ Optimise images (next-gen formats, lazy-load), bundle size (code-splitting), and
 
 ## Checklist Before Launch
 
-- [ ] Custom domain live and HTTPS-only
+- [X] Custom domain live and HTTPS-only
 - [X] No `noindex` in headers or meta tags on production
 - [X] `robots.txt` & `sitemap.xml` accessible
 - [X] Canonical tag set site-wide
@@ -188,10 +188,10 @@ Optimise images (next-gen formats, lazy-load), bundle size (code-splitting), and
     _(Step 5 ✅)_
 - **HTTPS Enforcement:** Added redirects and security headers to `vercel.json`. _(Step 1 ✅)_
 
-**Remaining Tasks:**
+Remaining Tasks:
 
-1. Configure custom domain in Vercel (if desired)
-2. ~~Verify site in Google Search Console and submit sitemap~~
-3. ~~Run Lighthouse to check Core Web Vitals~~
+1. ~~Configure custom domain in Vercel (if desired)~~ (Covered by custom domain live)
+2. ~~Verify site in Google Search Console and submit sitemap~~ (Done)
+3. ~~Run Lighthouse to check Core Web Vitals (Periodically)~~
 
 **Once all checkmarks are green, Google can crawl, index, and rank your site. 🚀**

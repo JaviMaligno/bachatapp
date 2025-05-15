@@ -95,6 +95,19 @@ The application is configured for:
 - Security headers and `www` to non-`www` redirects configured in `vercel.json`.
 - A detailed plan is available in `seo_plan.md`.
 
+## SEO Status
+
+- The homepage (`https://bachatapp.org/`) is now **indexed** by Google. The previous "Page with redirect" issue appears resolved.
+- The lesson page `https://bachatapp.org/section/history/lesson/history-70-80` is currently **"Crawled - currently not indexed."**
+    - Key reasons identified from Google Search Console:
+        - **Missing user-declared canonical tag** on the page.
+        - A **"Temporary processing error"** for this URL when processed via the sitemap.
+- All items in the `seo_plan.md` "Checklist Before Launch" are now marked as complete by the user.
+- Next steps for the unindexed lesson page:
+    1. Implement a self-referencing canonical tag.
+    2. Monitor sitemap status in GSC.
+    3. Request re-indexing after implementing the canonical tag.
+
 This educational platform provides an accessible way to learn about bachata's rich musical heritage, instrumentation, and dance techniques with an interactive and engaging user experience.
 
 ## Change Log
@@ -112,6 +125,8 @@ This educational platform provides an accessible way to learn about bachata's ri
 - **[Date of Edit]**: Expanded and restructured the Fusion Styles section in the `history-10-20` lesson to include Bachazouk, Bachatango, Urban Fusion, Flamenco Fusion, Reggaetona, and Kizata examples under a general heading.
 - **[Date of Edit]**: Created the quiz file `src/data/quizzes/history-10-20-quiz.ts` covering the 2010s-2020s history lesson.
 - **[Date of Edit]**: Extracted glossary definitions from `src/data/sections.ts` into a new file `src/data/glossaries.ts` for better organization.
+- **[Date of Edit]**: Added a YouTube video link for Ataca y La Alemana in `src/data/lessons/history/history-10-20.ts`.
+- **[Date of Edit]**: Embedded a YouTube video for Bachata Sensual in `src/data/lessons/history/history-10-20.ts`.
 
 ## Frontend
 
