@@ -21,7 +21,7 @@ export const history1020Lesson: HistoryLesson = {
 | **2013 · "Propuesta Indecente" (Romeo)** | 2 B+ YouTube views → proof of global appetite for bilingual sensual bachata.      | <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5PycBIeabfvX3n9ILG7Vrv?utm_source=generator" width="150%" height="145" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> |
 | **2014-15 · Rise of Prince Royce** | Pop-polished bachata saturated Latin radio, especially after smash "Darte un Beso". | <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/28trZhiy1YvlfDkG1bwNAz?utm_source=generator" width="150%" height="145" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> |
 
-**Dance explosion:** At the same time, Florida-based duo **Ataca y La Alemana** uploaded simple yet magnetic partnerwork videos that racked up tens of millions of views, turning social-media virality into sold-out international workshops.`
+**Dance explosion:** At the same time, Florida-based duo **Ataca y La Alemana** uploaded simple yet magnetic [partnerwork videos](https://www.youtube.com/watch?v=2cehkSxOLNA) that racked up tens of millions of views, turning social-media virality into sold-out international workshops.`
         }
       ]
     },
@@ -33,22 +33,37 @@ export const history1020Lesson: HistoryLesson = {
           content: `### Bachata Sensual
 Spanish dancers **Korke & Judith** formalised the circular body-wave vocabulary they had been refining since the mid-2000s in Cádiz, launching a certification program and the *Bachata Sensual World Congress*.
 
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/m73tKVaGUTY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" style="border-radius:12px; margin-top: 1rem; margin-bottom: 1rem;"></iframe>
+
 The term "Sensual Bachata" is credited to Tony Lara, who used it in 2009 at his "Sexy & Sensual Latin Festival" in London.
 
+Since then, many other couples such as **Daniel y Desiree** have followed in their footsteps, creating a new wave of Sensual dancers.
+
 ### Bachata Moderna
-Texan educator **Jorge Elizondo** mixed salsa turn-patterns into the basic. His "boot-camp" DVDs traveled to 190+ cities, showing how e-commerce could spread a style without a single record label.
+Texan educator **Jorge Elizondo** mixed salsa turn-patterns into the basic. His ["boot-camp"](https://dancefreak.com/product/jorge-elizondo-bachata-beginning-leading-and-following-techniques/) DVDs traveled to 190+ cities, showing how e-commerce could spread a style without a single record label.
+After that, Ataca y La Alemana started to upload their videos to YouTube, and became arguably the most representative bachata moderna couple in the world.
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/5rCBIPLW76A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" style="border-radius:12px; margin-top: 1rem; margin-bottom: 1rem;"></iframe>
 
 ### Fusion Styles: The Creative Melting Pot
 Beyond Sensual and Moderna, the 2010s saw an explosion of "Fusion Bachata," where dancers blended elements from other dance genres with bachata steps and rhythms, prioritizing personal expression and innovation.
 
 #### Bachazouk (Bachata + Brazilian Zouk)
-In 2014, dancers began blending Brazilian Zouk's distinctive head-rolls, upper body isolations, and deep leans with bachata rhythms. By 2022, the community had largely adopted the term **BachaZouk**, establishing dedicated festivals and practica sessions globally to explore this fluid and intricate fusion.
+In 2014, dancers began blending Brazilian Zouk's distinctive head-rolls, upper body isolations, and deep leans with bachata rhythms. Carlos and Paz are the artistic and technical founders of the Bachazouk dance style-they originated and defined the way it is danced.  By 2022, the community had largely adopted the term **BachaZouk**, thanks to the efforts of Chesco Leveratto to build the organizational structure, establishing dedicated festivals and practica sessions globally to explore this fluid and intricate fusion.
 
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/z4bMRdOWbJA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" style="border-radius:12px; margin-top: 1rem; margin-bottom: 1rem;"></iframe>
+
+As the above video shows, this style is often danced to non bachata songs that suits the flow coming from the zouk influence.
 #### Bachatango (Bachata + Tango)
 This style infuses the dramatic flair of Argentine Tango into bachata. It incorporates tango's characteristic leg hooks, flicks, close embrace variations, and theatrical pauses, often seen in showcases and competitions.
 
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/3_5ZFt4tizk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" style="border-radius:12px; margin-top: 1rem; margin-bottom: 1rem;"></iframe>
+
 #### Urban Fusion (Bachata + Hip-Hop/Street Dance)
 Emerging from urban dance studios, this fusion incorporates hip-hop grooves, footwork patterns, body pops, and isolations into bachata partnerwork. It often features syncopated rhythms and is danced to R&B-inflected bachata remixes.
+Representing this style we find Cornell and Rithika.
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/a1x4AIPGK-M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" style="border-radius:12px; margin-top: 1rem; margin-bottom: 1rem;"></iframe>
 
 #### Flamenco Fusion (Bachata + Flamenco)
 Dancers borrow from Flamenco's expressive arm styling (braceo), hand gestures, rhythmic footwork (zapateado), and proud posture, adding a percussive and dramatic element to bachata routines.
@@ -106,9 +121,9 @@ The hashtag **#bachatachallenge** sailed past *1.5 billion* views by early 2024,
         {
           content: `| Style                        | Pioneering couples & why they matter                                                                                  |
 |------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| **Sensual**                  | **Daniel y Desiree** (Spain) – viral show pieces ("Don't Let Me Down"), master-course platform, 2× Bachata World Champions.           |
+| **Sensual**                  | **Korke y Judith** (Spain) - Created the style; **Daniel y Desiree** (Spain) – master-course platform, 2× Bachata World Champions.           |
 | **Moderna**                  | **Ataca y La Alemana** (USA) – earliest million-view tutorials; emphasised accessible patterns.                                         |
-| **Fusion / Zouk**            | **Chesco Leveratto & community** – formalised BachaZouk brand and events.                                                               |
+| **Fusion / Zouk**            | **Carlos y Paz** (Spain) – founders of BachaZouk.                                                               |
 | **Dominican footwork advocates** | **Alex & Desiree**, **Demetrio & Nicole** – YouTube series teaching syncopated "zapateo" shines to keep roots visible in clubs.       |
 | **Culture-bearers**          | **Areíto Arts collective** – online history primers tying Afro-Dominican identity to traditional steps.                               |`
         }
@@ -118,9 +133,16 @@ The hashtag **#bachatachallenge** sailed past *1.5 billion* views by early 2024,
   summary: "The 2010s and 2020s saw bachata transform into a global phenomenon, fueled by streaming platforms, social media virality, and innovative artists and dancers. While Romeo Santos and Prince Royce achieved massive crossover success with polished urban/pop bachata, new dance styles like Sensual, Moderna, and Fusion emerged and spread rapidly through online tutorials and international workshops. Despite this global diversification and the rise of remixes, traditional Dominican bachata maintained its cultural significance at home, even gaining UNESCO recognition. This era highlights the dynamic interplay between maintaining roots and exploring new routes, solidifying bachata's place on the world stage.",
   references: [
     // Add relevant references if available, e.g.:
-    // 'https://www.billboard.com/charts/year-end/2011/latin-songs',
-    // 'https://www.unesco.org/en/intangible-heritage/music-and-dance-dominican-bachata',
-    // 'https://www.youtube.com/@atacaylaalemanaofficial',
-    // 'https://www.bachatasensual.com/'
+    'https://www.billboard.com/charts/year-end/2011/latin-songs',
+    'https://www.bachatasensual.com/',
+    'https://en.wikipedia.org/wiki/Prince_Royce',
+    'https://www.salsadancela.com/post/bachata-through-the-ages-a-tale-of-traditional-roots-and-modern-grooves-with-salsa-dance-la',
+    'https://www.iq-mag.net/2019/09/romeo-santos-breaks-records-at-80k-metlife-stadium',
+    'https://en.wikipedia.org/wiki/Romeo_Santos',
+    'https://dr1.com/news/2025/01/02/aventura-sets-new-attendance-record-at-olympic-stadium',
+    'https://worldmusiccentral.org/2019/12/13/dominican-bachata-inscribed-in-the-representative-list-of-intangible-cultural-heritage-of-humanity',
+    'https://www.bachazouk.com/',
+    'https://www.bachazoukoficial.com/',
+    
   ]
 }; 
