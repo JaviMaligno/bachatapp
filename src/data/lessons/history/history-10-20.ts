@@ -65,6 +65,11 @@ Representing this style we find Cornell and Rithika.
 
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/a1x4AIPGK-M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" style="border-radius:12px; margin-top: 1rem; margin-bottom: 1rem;"></iframe>
 
+#### Bachata Elegante (Bachata + Classical Dance)
+"Bachata Elegante" (sometimes promoted as Bachata Elegancia) is a contemporary fusion branch of bachata that grafts clean lines, upright posture and arm styling drawn from classical partner-dance disciplines—ballroom, ballet and contemporary—onto the familiar four-step Dominican rhythm. Leandro (Spain) and Jomante (Lithuania) are representatives of this style.
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/182-u9Fj6oM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" style="border-radius:12px; margin-top: 1rem; margin-bottom: 1rem;"></iframe>
+
 #### Flamenco Fusion (Bachata + Flamenco)
 Dancers borrow from Flamenco's expressive arm styling (braceo), hand gestures, rhythmic footwork (zapateado), and proud posture, adding a percussive and dramatic element to bachata routines.
 

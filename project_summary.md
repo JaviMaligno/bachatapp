@@ -129,6 +129,7 @@ This educational platform provides an accessible way to learn about bachata's ri
 - **[Date of Edit]**: Embedded a YouTube video for Bachata Sensual in `src/data/lessons/history/history-10-20.ts`.
 - **[Date of Edit]**: Embedded a YouTube video for Jorge Elizondo in `src/data/lessons/history/history-90-00.ts`.
 - **[Date of Edit]**: Embedded a YouTube video for Bachata Sensual (Korke y Judith) in `src/data/lessons/history/history-90-00.ts`.
+- **[Date of Edit]**: Added a "Bachata Elegante" fusion style with video to `src/data/lessons/history/history-10-20.ts`.
 
 ## Frontend
 
