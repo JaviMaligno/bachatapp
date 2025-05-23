@@ -77,14 +77,6 @@ export const historyGlossary: GlossarySection[] = [
       {
         term: "Flamenco Fusion (Bachata)",
         definition: "A bachata fusion style where dancers borrow expressive arm styling (braceo), intricate hand gestures (floreo), rhythmic footwork (zapateado), and proud posture from Flamenco, adding a percussive and dramatic element to bachata routines."
-      },
-      {
-        term: "Reggaetona (Dance)",
-        definition: "A fusion dance style, often popularized through club trends and social media, that blends bachata steps with Reggaeton's characteristic dembow rhythm, body rolls, and attitude. It is frequently performed to electronic bachata remixes with reggaeton beats."
-      },
-      {
-        term: "Kizata",
-        definition: "A fusion dance style merging the smooth, grounded connection, subtle hip movements, and close embrace of Kizomba with bachata timing and basic steps. It emphasizes a shared rhythm and flow between partners."
       }
     ]
   },

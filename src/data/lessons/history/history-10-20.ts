@@ -71,13 +71,12 @@ Representing this style we find Cornell and Rithika.
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/182-u9Fj6oM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" style="border-radius:12px; margin-top: 1rem; margin-bottom: 1rem;"></iframe>
 
 #### Flamenco Fusion (Bachata + Flamenco)
-Dancers borrow from Flamenco's expressive arm styling (braceo), hand gestures, rhythmic footwork (zapateado), and proud posture, adding a percussive and dramatic element to bachata routines.
+Dancers borrow from Flamenco's expressive arm styling (braceo), hand gestures, rhythmic footwork (zapateado), and proud posture, adding a percussive and dramatic element to bachata routines. Bachata songs with flamenco elements are also common, particularly in andalusian socials, where flamenco is a cultural element of the society. For instance, the next song features a flamenco style singer.
 
-#### Reggaetona (Bachata + Reggaeton)
-Driven by club trends and TikTok challenges, this fusion blends bachata steps with Reggaeton's characteristic dembow rhythm, body rolls, and attitude, often performed to electronic bachata remixes.
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7n12wwP15l3KhIKgMoUiZY?utm_source=generator" width="80%" height="200" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
-#### Kizata (Bachata + Kizomba)
-Merging the smooth, grounded connection and subtle hip movements of Kizomba with bachata timing, **Kizata** became popular in African and European social dance scenes, emphasizing a close embrace and shared rhythm.
+#### Other fusion styles
+es, this fusion blends bachata steps with Reggaeton's characteristic dembow rhythm, body rolls, and attitude. Some dancers extract elements from other dances such as kizomba, from which leg tricks are commonly incorporated. Remember that dance is an art, and as such, it is not limited to a single style. Artists will always be able to find their own style and express themselves through it.Many other fusions exist and develop all the time. For instance, a fussion with reggaeton is driven by club trends and TikTok challeng
 
 > **Curiosity:** Many Latin-dance congresses now schedule three separate rooms—Dominican, Sensual/Moderna, and Fusion—so DJs can tailor energy without genre-switching whiplash, reflecting the diversification of the dance.`
         }
@@ -102,7 +101,22 @@ The hashtag **#bachatachallenge** sailed past *1.5 billion* views by early 2024,
       title: 'Roots vs. Routes: Dominican Scene ↔ International Market',
       contentBlocks: [
         {
-          content: `| **Inside the D.R.**                                                                                        | **Global Circuit**                                                                                                                               |
+          content: `### Traditional Dominican Bachata in Practice
+
+To understand the contrast between Dominican and international bachata styles, it's essential to see traditional bachata as it's still danced today. The following video from Alex and Desiree (2023) demonstrates authentic Dominican bachata technique, showcasing the intricate footwork ("zapateo"), syncopated rhythms, and close-hold partner connection that characterizes the traditional style:
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/psoOUM8V_7A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" style="border-radius:12px; margin-top: 1rem; margin-bottom: 1rem;"></iframe>
+
+Notice how this style emphasizes:
+- **Complex footwork patterns** that interpret the music's percussion
+- **Minimal upper body movement** compared to international styles
+- **Close partner connection** throughout the dance
+- **Syncopated steps** that showcase the dancers' musical interpretation
+- **Grounded, earthy movement** that reflects bachata's rural origins
+
+### The Two Worlds of Bachata
+
+| **Inside the D.R.**                                                                                        | **Global Circuit**                                                                                                                               |
 |------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Bachata remains ubiquitous in colmados, backyard parties and political rallies; guitar combos are still hired more than DJs. | Festivals in Europe & Asia rely on remixed English-language covers to entice non-Spanish-speaking crowds.                                          |
 | 2023 tourism campaign "Two Cities, One Destination" markets Puerto Plata & Santiago as the *world capital of bachata*.  | Streaming and TikTok make songs trend before they're even pressed to radio; remixers drop unofficial versions within 24 hours of a chart debut.         |
