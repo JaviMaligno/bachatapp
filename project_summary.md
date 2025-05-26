@@ -133,6 +133,7 @@ This educational platform provides an accessible way to learn about bachata's ri
 - **[Date of Edit]**: Added a Spotify embed for flamenco bachata song in `src/data/lessons/history/history-10-20.ts`.
 - **[Date of Edit]**: Added Alex and Desiree traditional Dominican bachata demonstration video to the "Roots vs. Routes" section in `src/data/lessons/history/history-10-20.ts` with explanatory text highlighting key characteristics of traditional Dominican bachata style.
 - **[Date of Edit]**: Added El Tiguere traditional Dominican bachata video from the 2000s to the "Tradition at Home vs. Transformation Abroad" section in `src/data/lessons/history/history-90-00.ts` with explanatory text showing how authentic bachata was preserved in the DR during the international evolution period.
+- **[Date of Edit]**: Updated the Flamenco Fusion section in `src/data/lessons/history/history-10-20.ts` to replace the Spotify embed with a better example track that contains flamenco style singing, guitar patterns, and traditional claps, providing a more comprehensive demonstration of flamenco elements in bachata.
 
 ## Frontend
 
