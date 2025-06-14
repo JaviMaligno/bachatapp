@@ -1,4 +1,5 @@
 import { HistoryLesson } from '../../../types/Lesson';
+import { createQuiz } from '../../../utils/quizHelpers';
 
 export const history5060Lesson: HistoryLesson = {
   id: 'history-50-60',
@@ -18,18 +19,17 @@ export const history5060Lesson: HistoryLesson = {
             {
               kind: 'quiz',
               id: 'bachata-origins-q1',
-              data: {
-                id: 'bachata-origins-q1',
-                question: 'What was bachata originally called due to its expression of everyday hardship?',
-                options: [
-                  { id: 'a', text: 'Bolero' },
-                  { id: 'b', text: 'Amargue (bitterness)' },
-                  { id: 'c', text: 'Merengue' },
-                  { id: 'd', text: 'Son' }
+              data: createQuiz(
+                'bachata-origins-q1',
+                'What was bachata originally called due to its expression of everyday hardship?',
+                [
+                  { text: 'Bolero' },
+                  { text: 'Amargue (bitterness)', isCorrect: true },
+                  { text: 'Merengue' },
+                  { text: 'Son' }
                 ],
-                correctAnswer: 'b',
-                explanation: 'Bachata was originally called "amargue" which means "bitterness" in Spanish, reflecting its themes of hardship and sorrow.'
-              }
+                'Bachata was originally called "amargue" which means "bitterness" in Spanish, reflecting its themes of hardship and sorrow.'
+              )
             }
           ]
         }
@@ -73,18 +73,17 @@ export const history5060Lesson: HistoryLesson = {
             {
               kind: 'quiz',
               id: 'bachata-influences-q1',
-              data: {
-                id: 'bachata-influences-q1',
-                question: 'Which instrument was introduced in the 1960s to carry the lead melody in bachata?',
-                options: [
-                  { id: 'a', text: 'Bass Guitar' },
-                  { id: 'b', text: 'Bongos' },
-                  { id: 'c', text: 'Requinto Guitar' },
-                  { id: 'd', text: 'Güira' }
+              data: createQuiz(
+                'bachata-influences-q1',
+                'Which instrument was introduced in the 1960s to carry the lead melody in bachata?',
+                [
+                  { text: 'Bass Guitar' },
+                  { text: 'Bongos' },
+                  { text: 'Requinto Guitar', isCorrect: true },
+                  { text: 'Güira' }
                 ],
-                correctAnswer: 'c',
-                explanation: 'The requinto guitar, a smaller high-pitched instrument, was introduced in the 1960s to carry the lead melody and allowed for intricate, expressive solos that emphasized bachata\'s emotional storytelling.'
-              }
+                'The requinto guitar, a smaller high-pitched instrument, was introduced in the 1960s to carry the lead melody and allowed for intricate, expressive solos that emphasized bachata\'s emotional storytelling.'
+              )
             }
           ]
         },
@@ -169,18 +168,17 @@ export const history5060Lesson: HistoryLesson = {
             {
               kind: 'quiz',
               id: 'bachata-pioneers-q1',
-              data: {
-                id: 'bachata-pioneers-q1',
-                question: 'Who is widely credited with recording the first official bachata songs in 1962?',
-                options: [
-                  { id: 'a', text: 'Luis Segura' },
-                  { id: 'b', text: 'José Manuel Calderón' },
-                  { id: 'c', text: 'Rodobaldo Duartes' },
-                  { id: 'd', text: 'Rafael Encarnación' }
+              data: createQuiz(
+                'bachata-pioneers-q1',
+                'Who is widely credited with recording the first official bachata songs in 1962?',
+                [
+                  { text: 'Luis Segura' },
+                  { text: 'José Manuel Calderón', isCorrect: true },
+                  { text: 'Rodobaldo Duartes' },
+                  { text: 'Rafael Encarnación' }
                 ],
-                correctAnswer: 'b',
-                explanation: 'José Manuel Calderón is widely credited with recording the first official bachata songs in 1962, though there is some debate about whether his "Borracho de Amor" was a true bachata due to its waltz rhythm.'
-              }
+                'José Manuel Calderón is widely credited with recording the first official bachata songs in 1962, though there is some debate about whether his "Borracho de Amor" was a true bachata due to its waltz rhythm.'
+              )
             }
           ]
         }

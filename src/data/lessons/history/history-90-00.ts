@@ -1,4 +1,5 @@
 import { HistoryLesson } from '../../../types/Lesson';
+import { createQuiz } from '../../../utils/quizHelpers';
 
 export const history9000Lesson: HistoryLesson = {
   id: 'history-90-00',
@@ -29,7 +30,24 @@ export const history9000Lesson: HistoryLesson = {
                 }
               ]
             }
-          }
+          },
+          interactiveBlocks: [
+            {
+              kind: 'quiz',
+              id: 'bachata-90s-q1',
+              data: createQuiz(
+                'bachata-90s-q1',
+                'What was unique about Juan Luis Guerra\'s "Bachata Rosa" album?',
+                [
+                  { text: 'It was the first bachata album ever recorded' },
+                  { text: 'It was primarily a bolero album despite its name', isCorrect: true },
+                  { text: 'It featured only traditional bachata songs' },
+                  { text: 'It was recorded entirely in English' }
+                ],
+                'Despite its name and influence on bachata\'s popularity, "Bachata Rosa" was primarily a bolero album with refined production that helped transform bachata\'s perception among middle and upper-class audiences.'
+              )
+            }
+          ]
         },
         {
           content: '## International Reach Through Migration\n\nThe 1990s also witnessed a significant Dominican diaspora to the United States and Europe. Immigrant communities began to adopt bachata as a nostalgic link to their homeland. This migration played a key role in introducing bachata to international audiences and helped catalyze its evolution beyond its rural origins.\n\n## Production and Recording Enhancements\n\nTechnological advancements in recording and production during the 1990s allowed bachata to evolve sonically. Studios began incorporating better equipment and techniques, which gave bachata a more polished, commercial sound while preserving its distinctive characteristics. This cleaner production value helped the genre cross over to broader audiences both in the Dominican Republic and abroad.'
@@ -74,7 +92,24 @@ export const history9000Lesson: HistoryLesson = {
                 }
               ]
             }
-          }
+          },
+          interactiveBlocks: [
+            {
+              kind: 'quiz',
+              id: 'urban-bachata-q1',
+              data: createQuiz(
+                'urban-bachata-q1',
+                'What musical elements did Aventura incorporate into traditional bachata to create urban bachata?',
+                [
+                  { text: 'Classical music and opera' },
+                  { text: 'R&B, hip-hop, pop, and rock', isCorrect: true },
+                  { text: 'Jazz and blues only' },
+                  { text: 'Electronic dance music' }
+                ],
+                'Aventura revolutionized bachata by infusing it with R&B, hip-hop, pop, and rock elements, creating urban bachata with bilingual lyrics and polished production that appealed to younger, global audiences.'
+              )
+            }
+          ]
         },
         {
           content: '## Emergence of Bachata Moderna (Late 2000s)\n\nTowards the end of the 2000s, as bachata\'s popularity spread internationally, particularly through the influence of urban styles like Aventura\'s, a new dance variation began to take shape outside the Dominican Republic. This style, later termed "Bachata Moderna," emerged as dancers, often with backgrounds in salsa or tango, started incorporating elements from these dances into the basic bachata structure. This happened partly in parallel to the evolution within the Dominican Republic, often due to limited access or understanding of the traditional, more footwork-focused Dominican way of dancing at the time.\n\nBachata Moderna maintained the core side-to-side step but enriched it with more complex turn patterns, spins, and figures similar to those found in salsa, adapted to bachata\'s rhythm. The embrace often opened up to facilitate these turns, and gentle body movements like basic torso waves began to appear. Instructors like Jorge Elizondo played a role in systematizing these patterns for studio teaching in the late 2000s. This style represented a bridge, making the dance more visually dynamic and appealing to dancers trained in other Latin styles, setting the groundwork for further innovations in the following decade.\n\n<iframe width="100%" height="315" src="https://www.youtube.com/embed/nHxjnSjaxdE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" style="border-radius:12px; margin-top: 1rem; margin-bottom: 1rem;"></iframe>'
@@ -137,7 +172,24 @@ export const history9000Lesson: HistoryLesson = {
           content: '### Traditional Dominican Bachata in the 2000s\n\nTo understand how bachata remained authentic in the Dominican Republic during this transformative period, this video from El Tiguere demonstrates traditional Dominican bachata as it was danced in the 2000s. Notice the characteristic elements that were preserved at home while international styles were developing abroad:\n\n<iframe width="100%" height="315" src="https://www.youtube.com/embed/Krw7kg7cRDg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" style="border-radius:12px; margin-top: 1rem; margin-bottom: 1rem;"></iframe>\n\nKey characteristics of this traditional 2000s style:\n- **Grounded footwork** focused on rhythm interpretation\n- **Close partner connection** maintained throughout\n- **Simple, authentic movement** without elaborate choreography\n- **Emphasis on musicality** over visual complexity\n- **Community-based learning** rather than formal instruction\n\nThis represents the "unchanged soul" of bachata that persisted in the Dominican Republic even as urban and modern variations were emerging internationally.',
         },
         {
-          content: '## In the Diaspora: Academic Structuring and Innovation\n\n**Transformation Through Formal Dance Education:**  \nIn contrast, in America and Europe bachata was introduced into a formal dance-learning context. Dance studios, often already teaching salsa and other established Latin dances, began to offer structured bachata classes. Here, the dance was dissected, codified, and sometimes even modified—resulting in what many now refer to as "sensual" or "urban" bachata. These styles often incorporate elements like intricate turns, body isolations, and a more polished, fluid presentation. The emphasis on technique and alignment makes the dance more "academic" in nature compared to its free-form practice in the Dominican Republic.\n\n**Middle-Class Adoption and Cultural Fusion:**  \nThe primary audience in these settings tends to be middle-class individuals who seek the refinement and structure associated with studio learning. For many, learning bachata in a formal class is not only a way to enjoy Latin music and dance but also a social activity that aligns with a more cosmopolitan lifestyle. In these environments, bachata evolves by absorbing influences from other urban genres like R&B, hip-hop, and even ballroom dance elements. This fusion not only differentiates the international version from its rural Dominican roots but also caters to an audience that values technique, aesthetics, and a "modern" twist on traditional forms.\n\n**Cultural and Socioeconomic Context:**  \nWhile bachata in the Dominican Republic is deeply intertwined with the hardships and raw expressions of the lower classes, the version taught in the diaspora becomes part of a cultural curriculum. Middle-class dancers in the U.S. and Europe approach the dance academically, often comparing it with salsa or merengue in terms of technique and structure. This academic setting not only enhances the technical execution of the dance but also transforms its social function—turning it from an organic communal activity into a socially acceptable, structured form of art and exercise.'
+          content: '## In the Diaspora: Academic Structuring and Innovation\n\n**Transformation Through Formal Dance Education:**  \nIn contrast, in America and Europe bachata was introduced into a formal dance-learning context. Dance studios, often already teaching salsa and other established Latin dances, began to offer structured bachata classes. Here, the dance was dissected, codified, and sometimes even modified—resulting in what many now refer to as "sensual" or "urban" bachata. These styles often incorporate elements like intricate turns, body isolations, and a more polished, fluid presentation. The emphasis on technique and alignment makes the dance more "academic" in nature compared to its free-form practice in the Dominican Republic.\n\n**Middle-Class Adoption and Cultural Fusion:**  \nThe primary audience in these settings tends to be middle-class individuals who seek the refinement and structure associated with studio learning. For many, learning bachata in a formal class is not only a way to enjoy Latin music and dance but also a social activity that aligns with a more cosmopolitan lifestyle. In these environments, bachata evolves by absorbing influences from other urban genres like R&B, hip-hop, and even ballroom dance elements. This fusion not only differentiates the international version from its rural Dominican roots but also caters to an audience that values technique, aesthetics, and a "modern" twist on traditional forms.\n\n**Cultural and Socioeconomic Context:**  \nWhile bachata in the Dominican Republic is deeply intertwined with the hardships and raw expressions of the lower classes, the version taught in the diaspora becomes part of a cultural curriculum. Middle-class dancers in the U.S. and Europe approach the dance academically, often comparing it with salsa or merengue in terms of technique and structure. This academic setting not only enhances the technical execution of the dance but also transforms its social function—turning it from an organic communal activity into a socially acceptable, structured form of art and exercise.',
+          interactiveBlocks: [
+            {
+              kind: 'quiz',
+              id: 'bachata-diaspora-q1',
+              data: createQuiz(
+                'bachata-diaspora-q1',
+                'How did bachata primarily spread in the United States and Europe compared to the Dominican Republic?',
+                [
+                  { text: 'Through street parties and informal gatherings' },
+                  { text: 'Through formal dance studios and structured classes', isCorrect: true },
+                  { text: 'Through radio stations only' },
+                  { text: 'Through government cultural programs' }
+                ],
+                'In the diaspora, bachata was introduced through formal dance studios offering structured classes, creating an "academic" approach that contrasted with the organic, communal practice in the Dominican Republic.'
+              )
+            }
+          ]
         },
         {
           content: '## The Contrast: Preservation Versus Innovation\n\n**Preservation at Home:**  \nIn the Dominican Republic, bachata\'s unchanged nature is a point of pride—seen as a living tradition that resists over-commercialization. Its resilience is maintained through informal transmission, community gatherings, and a cultural context where music is experienced as part of daily life rather than as a commodified product.\n\n**Innovation Abroad:**  \nMeanwhile, in the diaspora, bachata\'s evolution has been driven by formal training, media exposure, and the desire of immigrants to reinterpret their cultural heritage for new audiences. The middle-class milieu—with its emphasis on structured learning—has pushed bachata to adopt a more refined and hybrid character. This innovation, while perhaps diluting some of the "raw" authenticity of its origins, also demonstrates the adaptability and universality of bachata as it interacts with other global musical and dance traditions.',

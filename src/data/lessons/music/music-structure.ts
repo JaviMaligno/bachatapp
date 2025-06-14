@@ -1,4 +1,5 @@
 import { MusicLesson } from '../../../types/Lesson';
+import { createQuiz } from '../../../utils/quizHelpers';
 
 export const musicStructureLesson: MusicLesson = {
   id: 'music-structure',
@@ -67,7 +68,24 @@ export const musicStructureLesson: MusicLesson = {
             artist: 'Romeo Santos'
           }]
         }
-      }
+      },
+      interactiveBlocks: [
+        {
+          kind: 'quiz',
+          id: 'verse-q1',
+          data: createQuiz(
+            'verse-q1',
+            'What rhythm is typically used in the verse section of a bachata song?',
+            [
+              { text: 'Mambo rhythm' },
+              { text: 'Derecho rhythm', isCorrect: true },
+              { text: 'Majao rhythm' },
+              { text: 'Salsa rhythm' }
+            ],
+            'The verse typically employs a derecho rhythm, maintaining a relatively low energy level to allow the narrative and story-driven lyrics to take center stage.'
+          )
+        }
+      ]
     },
     {
       id: 'pre-chorus-chorus',
@@ -134,7 +152,24 @@ export const musicStructureLesson: MusicLesson = {
           }
         ]
         }
-      }
+      },
+      interactiveBlocks: [
+        {
+          kind: 'quiz',
+          id: 'mambo-section-q1',
+          data: createQuiz(
+            'mambo-section-q1',
+            'What is the main characteristic of the mambo section in bachata song structure?',
+            [
+              { text: 'The singer performs a vocal solo' },
+              { text: 'It\'s an instrumental break with guitar solo', isCorrect: true },
+              { text: 'It always uses the mambo rhythm' },
+              { text: 'It\'s the slowest part of the song' }
+            ],
+            'The mambo section is an instrumental break where the singer takes a break and the lead guitarist performs a solo. While it can use any rhythm (derecho, majao, or mambo), it\'s characterized by the instrumental focus.'
+          )
+        }
+      ]
     },
     {
       id: 'interlude',

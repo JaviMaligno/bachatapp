@@ -1,4 +1,5 @@
 import { HistoryLesson } from '../../../types/Lesson';
+import { createQuiz } from '../../../utils/quizHelpers';
 
 export const history1020Lesson: HistoryLesson = {
   id: 'history-10-20',
@@ -21,7 +22,24 @@ export const history1020Lesson: HistoryLesson = {
 | **2013 · "Propuesta Indecente" (Romeo)** | 2 B+ YouTube views → proof of global appetite for bilingual sensual bachata.      | <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5PycBIeabfvX3n9ILG7Vrv?utm_source=generator" width="150%" height="145" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> |
 | **2014-15 · Rise of Prince Royce** | Pop-polished bachata saturated Latin radio, especially after smash "Darte un Beso". | <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/28trZhiy1YvlfDkG1bwNAz?utm_source=generator" width="150%" height="145" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> |
 
-**Dance explosion:** At the same time, Florida-based duo **Ataca y La Alemana** uploaded simple yet magnetic [partnerwork videos](https://www.youtube.com/watch?v=2cehkSxOLNA) that racked up tens of millions of views, turning social-media virality into sold-out international workshops.`
+**Dance explosion:** At the same time, Florida-based duo **Ataca y La Alemana** uploaded simple yet magnetic [partnerwork videos](https://www.youtube.com/watch?v=2cehkSxOLNA) that racked up tens of millions of views, turning social-media virality into sold-out international workshops.`,
+          interactiveBlocks: [
+            {
+              kind: 'quiz',
+              id: 'bachata-digital-q1',
+              data: createQuiz(
+                'bachata-digital-q1',
+                'Which Romeo Santos song became the first bachata single to crack Billboard\'s Hot 100 top-40?',
+                [
+                  { text: 'Propuesta Indecente' },
+                  { text: 'Promise (featuring Usher)', isCorrect: true },
+                  { text: 'Obsesión' },
+                  { text: 'Eres Mía' }
+                ],
+                '"Promise" featuring Usher (2011) was the first bachata single to crack Billboard\'s Hot 100 top-40, marking a significant U.S. crossover moment for the genre.'
+              )
+            }
+          ]
         }
       ]
     },
@@ -78,7 +96,24 @@ Dancers borrow from Flamenco's expressive arm styling (braceo), hand gestures, r
 #### Other fusion styles
 es, this fusion blends bachata steps with Reggaeton's characteristic dembow rhythm, body rolls, and attitude. Some dancers extract elements from other dances such as kizomba, from which leg tricks are commonly incorporated. Remember that dance is an art, and as such, it is not limited to a single style. Artists will always be able to find their own style and express themselves through it.Many other fusions exist and develop all the time. For instance, a fussion with reggaeton is driven by club trends and TikTok challeng
 
-> **Curiosity:** Many Latin-dance congresses now schedule three separate rooms—Dominican, Sensual/Moderna, and Fusion—so DJs can tailor energy without genre-switching whiplash, reflecting the diversification of the dance.`
+> **Curiosity:** Many Latin-dance congresses now schedule three separate rooms—Dominican, Sensual/Moderna, and Fusion—so DJs can tailor energy without genre-switching whiplash, reflecting the diversification of the dance.`,
+          interactiveBlocks: [
+            {
+              kind: 'quiz',
+              id: 'bachata-styles-q1',
+              data: createQuiz(
+                'bachata-styles-q1',
+                'Who is credited with coining the term "Sensual Bachata"?',
+                [
+                  { text: 'Korke & Judith' },
+                  { text: 'Tony Lara', isCorrect: true },
+                  { text: 'Jorge Elizondo' },
+                  { text: 'Romeo Santos' }
+                ],
+                'Tony Lara is credited with coining the term "Sensual Bachata" in 2009 at his "Sexy & Sensual Latin Festival" in London, though Korke & Judith developed and formalized the style.'
+              )
+            }
+          ]
         }
       ]
     },
@@ -92,7 +127,24 @@ es, this fusion blends bachata steps with Reggaeton's characteristic dembow rhyt
 - Colombian singer **Manuel Turizo** surprised purists with the synth-driven hit "La Bachata" (2022), peaking at #6 on Billboard's Global 200 and dominating Argentina's chart for 15 weeks.
 
 ### TikTok effect
-The hashtag **#bachatachallenge** sailed past *1.5 billion* views by early 2024, turning short tutorials into highway-on-ramps for new dancers and boosting streams for whichever remix happened to soundtrack the trend.`
+The hashtag **#bachatachallenge** sailed past *1.5 billion* views by early 2024, turning short tutorials into highway-on-ramps for new dancers and boosting streams for whichever remix happened to soundtrack the trend.`,
+          interactiveBlocks: [
+            {
+              kind: 'quiz',
+              id: 'bachata-unesco-q1',
+              data: createQuiz(
+                'bachata-unesco-q1',
+                'In what year did UNESCO declare "Music and Dance of Dominican Bachata" an Intangible Cultural Heritage of Humanity?',
+                [
+                  { text: '2017' },
+                  { text: '2018' },
+                  { text: '2019', isCorrect: true },
+                  { text: '2020' }
+                ],
+                'UNESCO declared "Music and Dance of Dominican Bachata" an Intangible Cultural Heritage of Humanity in December 2019, providing international recognition and legitimacy to the genre.'
+              )
+            }
+          ]
         }
       ]
     },

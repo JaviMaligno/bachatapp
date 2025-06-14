@@ -1,4 +1,5 @@
 import { MusicLesson } from '../../../types/Lesson';
+import { createQuiz } from '../../../utils/quizHelpers';
 
 export const musicRhythmLesson: MusicLesson = {
   id: 'music-rhythm',
@@ -11,7 +12,24 @@ export const musicRhythmLesson: MusicLesson = {
     {
       id: 'intro',
       title: 'Introduction',
-      content: 'In this section, we\'ll explore the three main rhythms of bachata and how they influence the dance.'
+      content: 'In this section, we\'ll explore the three main rhythms of bachata and how they influence the dance.',
+      interactiveBlocks: [
+        {
+          kind: 'quiz',
+          id: 'rhythm-intro-q1',
+          data: createQuiz(
+            'rhythm-intro-q1',
+            'How many main rhythms define bachata music?',
+            [
+              { text: 'Two (fast and slow)' },
+              { text: 'Three (derecho, majao, and mambo)', isCorrect: true },
+              { text: 'Four (including salsa rhythm)' },
+              { text: 'Five (one for each instrument)' }
+            ],
+            'Bachata music is defined by three main rhythms: derecho (calm and grounded), majao (vibrant and upbeat), and mambo (energetic and expressive).'
+          )
+        }
+      ]
     },
     {
       id: 'derecho',
@@ -63,7 +81,24 @@ export const musicRhythmLesson: MusicLesson = {
             }
           ]
         }
-      }
+      },
+      interactiveBlocks: [
+        {
+          kind: 'quiz',
+          id: 'derecho-q1',
+          data: createQuiz(
+            'derecho-q1',
+            'Where in a bachata song is the derecho rhythm most commonly found?',
+            [
+              { text: 'During the climax' },
+              { text: 'In the verses or introduction', isCorrect: true },
+              { text: 'Only in the chorus' },
+              { text: 'At the very end' }
+            ],
+            'The derecho rhythm is most commonly found in the verses or introduction sections of a bachata song, creating a calm, grounded feel ideal for smooth dancing.'
+          )
+        }
+      ]
     },
     {
       id: 'majao',
@@ -165,7 +200,24 @@ export const musicRhythmLesson: MusicLesson = {
             }
           ]
         }
-      }
+      },
+      interactiveBlocks: [
+        {
+          kind: 'quiz',
+          id: 'mambo-rhythm-q1',
+          data: createQuiz(
+            'mambo-rhythm-q1',
+            'What is the "a caballo" rhythm in the güira associated with?',
+            [
+              { text: 'The derecho rhythm' },
+              { text: 'The majao rhythm' },
+              { text: 'The mambo rhythm', isCorrect: true },
+              { text: 'All bachata rhythms equally' }
+            ],
+            'The "a caballo" (horse-like) rhythm in the güira is characteristic of the mambo rhythm, consisting of rapid eighth notes in groups of 3 that drive the high energy of this rhythm.'
+          )
+        }
+      ]
     }
   ],
   note: 'Across all rhythms in bachata, the bongos and guíra may play rolls and other ad libs, particularly at the end of a phrase and anticipating the "1" of each bar. These embellishments add texture, subtle variety, and excitement to the music, enhancing its expressiveness and providing cues for dancers to interpret dynamically. Dramatic breaks are also used accross the songs to add more variety and excitement to the music.',
