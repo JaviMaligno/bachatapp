@@ -135,6 +135,12 @@ This educational platform provides an accessible way to learn about bachata's ri
 - **[Date of Edit]**: Added El Tiguere traditional Dominican bachata video from the 2000s to the "Tradition at Home vs. Transformation Abroad" section in `src/data/lessons/history/history-90-00.ts` with explanatory text showing how authentic bachata was preserved in the DR during the international evolution period.
 - **[Date of Edit]**: Updated the Flamenco Fusion section in `src/data/lessons/history/history-10-20.ts` to replace the Spotify embed with a better example track that contains flamenco style singing, guitar patterns, and traditional claps, providing a more comprehensive demonstration of flamenco elements in bachata.
 - **[Date of Edit]**: Added `interactive_lessons_plan.md` detailing a roadmap for introducing interactive blocks (inline quizzes, audio challenges, timelines, flash-cards, gamification, etc.) and updated content/schema changes to support these features.
+- **[2024-12-XX]**: Implemented Phase 1 of interactive lessons plan:
+  - Extended TypeScript types with `InteractiveBlock` discriminated union supporting quiz blocks
+  - Created `InlineQuiz` component with confetti celebration on correct answers
+  - Added interactive quiz support to `HistoryLessonView` component
+  - Integrated 3 interactive quiz questions into `history-50-60` lesson covering key concepts about bachata origins, musical influences, and pioneering artists
+  - Quiz features include instant feedback, explanations, and celebratory animations
 
 ## Frontend
 
