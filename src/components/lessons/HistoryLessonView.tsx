@@ -9,6 +9,7 @@ import { history5060Lesson } from '../../data/lessons/history/history-50-60';
 import { history7080Lesson } from '../../data/lessons/history/history-70-80';
 import { history9000Lesson } from '../../data/lessons/history/history-90-00';
 import { history1020Lesson } from '../../data/lessons/history/history-10-20';
+import { InlineQuiz } from './InlineQuiz';
 
 import { SEO } from '../common/SEO';
 
@@ -19,11 +20,31 @@ interface HistoryLessonViewProps {
 }
 
 const renderContentBlock = (block: ContentBlock) => {
+  const handleQuizComplete = (isCorrect: boolean) => {
+    // Handle quiz completion - could be used for progress tracking
+    console.log('Quiz completed:', isCorrect);
+  };
+
   return (
     <div className="mt-4">
       <div className="prose dark:prose-invert max-w-none">
         <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>{block.content}</ReactMarkdown>
       </div>
+      
+      {/* Render interactive blocks */}
+      {block.interactiveBlocks && block.interactiveBlocks.map((interactiveBlock, index) => {
+        if (interactiveBlock.kind === 'quiz') {
+          return (
+            <InlineQuiz
+              key={`${interactiveBlock.id}-${index}`}
+              quizData={interactiveBlock.data}
+              onComplete={handleQuizComplete}
+            />
+          );
+        }
+        // Other interactive block types can be added here in the future
+        return null;
+      })}
       
       {block.media?.images && (
         <div className="mt-4">

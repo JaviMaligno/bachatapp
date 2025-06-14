@@ -56,6 +56,7 @@ export interface Section {
   media3?: Media;
   glossary?: GlossarySection[];
   artists?: Artist[];
+  interactiveBlocks?: InteractiveBlock[];
 }
 
 // Base lesson interface
@@ -76,6 +77,7 @@ export interface BaseLesson {
 export interface ContentBlock {
   content: string;
   media?: Media;
+  interactiveBlocks?: InteractiveBlock[];
 }
 
 // History lesson specific section
@@ -113,5 +115,26 @@ export interface LessonSummary {
   comingSoon?: boolean;
   video?: string;
   image?: string;
-} 
+}
 
+// Interactive block types as specified in the plan
+export interface QuizOption {
+  id: string;
+  text: string;
+}
+
+export interface InlineQuizData {
+  id: string;
+  question: string;
+  options: QuizOption[];
+  correctAnswer: string;
+  explanation?: string;
+}
+
+export type InteractiveBlock =
+  | { kind: 'quiz'; id: string; data: InlineQuizData }
+  | { kind: 'audio-layer'; tracks: any[] } // Placeholder for future implementation
+  | { kind: 'drag-labels'; image: string; labels: any[] } // Placeholder for future implementation
+  | { kind: 'timeline'; events: any[] } // Placeholder for future implementation
+  | { kind: 'flashcard'; termIds: string[] }; // Placeholder for future implementation
+ 

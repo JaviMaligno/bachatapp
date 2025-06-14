@@ -1,4 +1,5 @@
 import { MusicLesson, Section } from '../../../types/Lesson';
+import { createQuiz } from '../../../utils/quizHelpers';
 
 export const musicInstrumentsLesson: MusicLesson = {
   id: 'music-instruments',
@@ -10,7 +11,24 @@ export const musicInstrumentsLesson: MusicLesson = {
     {
       id: 'intro',
       title: 'Introduction',
-      content: 'In this section, we will explore the key instruments that define the sound of bachata music. Each instrument plays a unique role in creating the rhythmic and melodic richness that makes bachata so distinctive. While these are the core instruments that define traditional bachata, additional instruments are often added, particularly in more modern and fusion styles of bachata.'
+      content: 'In this section, we will explore the key instruments that define the sound of bachata music. Each instrument plays a unique role in creating the rhythmic and melodic richness that makes bachata so distinctive. While these are the core instruments that define traditional bachata, additional instruments are often added, particularly in more modern and fusion styles of bachata.',
+      interactiveBlocks: [
+        {
+          kind: 'quiz',
+          id: 'instruments-intro-q1',
+          data: createQuiz(
+            'instruments-intro-q1',
+            'How many core instruments typically define traditional bachata music?',
+            [
+              { text: 'Three (guitar, bass, drums)' },
+              { text: 'Five (requinto, segunda, bass, güira, bongos)', isCorrect: true },
+              { text: 'Seven (including piano and saxophone)' },
+              { text: 'Two (just guitars)' }
+            ],
+            'Traditional bachata is defined by five core instruments: requinto (lead guitar), segunda (rhythm guitar), bass guitar, güira (metal scraper), and bongos.'
+          )
+        }
+      ]
     },
     {
       id: 'requinto',
@@ -45,7 +63,24 @@ export const musicInstrumentsLesson: MusicLesson = {
           }]
         },
         //video: '/assets/videos/instruments/requinto.mp4'
-      }
+      },
+      interactiveBlocks: [
+        {
+          kind: 'quiz',
+          id: 'requinto-q1',
+          data: createQuiz(
+            'requinto-q1',
+            'What distinguishes a requinto from a standard guitar?',
+            [
+              { text: 'It has more strings' },
+              { text: 'It is smaller and produces a higher pitch', isCorrect: true },
+              { text: 'It is played with a bow' },
+              { text: 'It has metal strings instead of nylon' }
+            ],
+            'The requinto is smaller than a standard guitar and produces a higher pitch, allowing it to stand out prominently in the mix and carry the main melody of bachata songs.'
+          )
+        }
+      ]
     } as Section,
     {
       id: 'segunda',
@@ -115,7 +150,24 @@ export const musicInstrumentsLesson: MusicLesson = {
           }]
         },
         //video: '/assets/videos/instruments/bass.mp4'
-      }
+      },
+      interactiveBlocks: [
+        {
+          kind: 'quiz',
+          id: 'bass-pattern-q1',
+          data: createQuiz(
+            'bass-pattern-q1',
+            'What is characteristic about the bachata bass pattern between beats 2 and 3?',
+            [
+              { text: 'It plays a continuous note' },
+              { text: 'It has syncopation', isCorrect: true },
+              { text: 'It stops completely' },
+              { text: 'It plays double time' }
+            ],
+            'The syncopation between beats 2 and 3 is very characteristic of bachata bass patterns, adding a unique and dynamic rhythm that distinguishes bachata from other Latin genres.'
+          )
+        }
+      ]
     } as Section,
     {
       id: 'guira',

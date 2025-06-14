@@ -1,4 +1,5 @@
 import { HistoryLesson } from '../../../types/Lesson';
+import { createQuiz } from '../../../utils/quizHelpers';
 
 export const history5060Lesson: HistoryLesson = {
   id: 'history-50-60',
@@ -13,7 +14,24 @@ export const history5060Lesson: HistoryLesson = {
       title: 'Historical and Socioeconomic Context',
       contentBlocks: [
         {
-          content: 'During the 1950s and 1960s, bachata was not yet the polished, internationally acclaimed genre it is today. Instead, it was an informal expression of everyday hardship, affectionately (or disparagingly) called *amargue* ("bitterness"). Musicians in rural areas and urban shantytowns played guitar-based songs in small gatherings, bars and stores called \'Colmados\', and even brothels. These venues—far from the high-society ballrooms—became the cradle of bachata.\n\n## Social Status and Cultural Identity\n- **Origins in Working Class:** Bachata emerged from the poorest sectors of Dominican society\n- **Performance Venues:** Music was played in:\n  - Small informal gatherings\n  - Local bars and colmados\n  - Urban shantytowns\n  - Rural communities\n\n## Social Impact\n- **Social Stigma:**\n  - Looked down upon by Dominican elite\n  - Dismissed as crude or vulgar music\n  - Considered a cultural "black sheep"\n  - Excluded from mainstream recording and celebration\n\n- **Cultural Expression:**\n  - Powerful medium for storytelling\n  - Chronicles of love and heartbreak\n  - Documentation of social struggles\n  - Authentic voice of everyday Dominican life\n\n## Political Environment and Evolution\n- **Under Trujillo\'s Rule (1930-1961):**\n  - Strict government control of music industry\n  - Censorship of rural and "low culture" genres\n  - Bachata banned from mainstream media\n  - Marginalization of local musical expressions\n\n- **Post-Trujillo Period:**\n  - Easing of cultural restrictions\n  - Rural-to-urban musician migration\n  - Emergence of first official recordings\n  - Growth of bachata in Santo Domingo\n\n'
+          content: 'During the 1950s and 1960s, bachata was not yet the polished, internationally acclaimed genre it is today. Instead, it was an informal expression of everyday hardship, affectionately (or disparagingly) called *amargue* ("bitterness"). Musicians in rural areas and urban shantytowns played guitar-based songs in small gatherings, bars and stores called \'Colmados\', and even brothels. These venues—far from the high-society ballrooms—became the cradle of bachata.\n\n## Social Status and Cultural Identity\n- **Origins in Working Class:** Bachata emerged from the poorest sectors of Dominican society\n- **Performance Venues:** Music was played in:\n  - Small informal gatherings\n  - Local bars and colmados\n  - Urban shantytowns\n  - Rural communities\n\n## Social Impact\n- **Social Stigma:**\n  - Looked down upon by Dominican elite\n  - Dismissed as crude or vulgar music\n  - Considered a cultural "black sheep"\n  - Excluded from mainstream recording and celebration\n\n- **Cultural Expression:**\n  - Powerful medium for storytelling\n  - Chronicles of love and heartbreak\n  - Documentation of social struggles\n  - Authentic voice of everyday Dominican life\n\n## Political Environment and Evolution\n- **Under Trujillo\'s Rule (1930-1961):**\n  - Strict government control of music industry\n  - Censorship of rural and "low culture" genres\n  - Bachata banned from mainstream media\n  - Marginalization of local musical expressions\n\n- **Post-Trujillo Period:**\n  - Easing of cultural restrictions\n  - Rural-to-urban musician migration\n  - Emergence of first official recordings\n  - Growth of bachata in Santo Domingo\n\n',
+          interactiveBlocks: [
+            {
+              kind: 'quiz',
+              id: 'bachata-origins-q1',
+              data: createQuiz(
+                'bachata-origins-q1',
+                'What was bachata originally called due to its expression of everyday hardship?',
+                [
+                  { text: 'Bolero' },
+                  { text: 'Amargue (bitterness)', isCorrect: true },
+                  { text: 'Merengue' },
+                  { text: 'Son' }
+                ],
+                'Bachata was originally called "amargue" which means "bitterness" in Spanish, reflecting its themes of hardship and sorrow.'
+              )
+            }
+          ]
         }
       ],
       sections: [
@@ -50,7 +68,24 @@ export const history5060Lesson: HistoryLesson = {
                 }
               ]
             }
-          }
+          },
+          interactiveBlocks: [
+            {
+              kind: 'quiz',
+              id: 'bachata-influences-q1',
+              data: createQuiz(
+                'bachata-influences-q1',
+                'Which instrument was introduced in the 1960s to carry the lead melody in bachata?',
+                [
+                  { text: 'Bass Guitar' },
+                  { text: 'Bongos' },
+                  { text: 'Requinto Guitar', isCorrect: true },
+                  { text: 'Güira' }
+                ],
+                'The requinto guitar, a smaller high-pitched instrument, was introduced in the 1960s to carry the lead melody and allowed for intricate, expressive solos that emphasized bachata\'s emotional storytelling.'
+              )
+            }
+          ]
         },
         {
           content: '- The **segunda guitar** was inherited from bolero, but a new way of playing it was developed by consistently using a thumb pick, contributing to the sharper sound of bachata compared to bolero.',
@@ -128,7 +163,24 @@ export const history5060Lesson: HistoryLesson = {
       title: 'Key Artists and Precursors',
       contentBlocks: [
         {
-          content: 'As the genre began to flourish after 1961, a number of pioneering artists laid the groundwork for what would become a major musical export of the Dominican Republic.\n\n## The First Bachateros\n- **José Manuel Calderón** is widely credited with recording the first official bachata songs in 1962, setting the stage for the genre\'s development. However, some debate exists regarding whether Calderón\'s "Borracho de Amor" qualifies as a true bachata song, given that it follows a vals (waltz) rhythm.\n\n- **Luis Segura\'s** "Cariñito de mi Vida" is sometimes cited as an early bachata, though it remains closer to a bolero, as confirmed by his son Edward Segura. Despite this, it showcased early hints of a groovier take on bolero that would later develop into bachata\'s characteristic sound.\n\n- **Other Pioneers:** Artists such as Rodobaldo Duartes, Rafael Encarnación, and Ramoncito Cabrera emerged in the following years, each adding their own nuances to the sound and helping bachata evolve from an underground style into a distinctive musical form.'
+          content: 'As the genre began to flourish after 1961, a number of pioneering artists laid the groundwork for what would become a major musical export of the Dominican Republic.\n\n## The First Bachateros\n- **José Manuel Calderón** is widely credited with recording the first official bachata songs in 1962, setting the stage for the genre\'s development. However, some debate exists regarding whether Calderón\'s "Borracho de Amor" qualifies as a true bachata song, given that it follows a vals (waltz) rhythm.\n\n- **Luis Segura\'s** "Cariñito de mi Vida" is sometimes cited as an early bachata, though it remains closer to a bolero, as confirmed by his son Edward Segura. Despite this, it showcased early hints of a groovier take on bolero that would later develop into bachata\'s characteristic sound.\n\n- **Other Pioneers:** Artists such as Rodobaldo Duartes, Rafael Encarnación, and Ramoncito Cabrera emerged in the following years, each adding their own nuances to the sound and helping bachata evolve from an underground style into a distinctive musical form.',
+          interactiveBlocks: [
+            {
+              kind: 'quiz',
+              id: 'bachata-pioneers-q1',
+              data: createQuiz(
+                'bachata-pioneers-q1',
+                'Who is widely credited with recording the first official bachata songs in 1962?',
+                [
+                  { text: 'Luis Segura' },
+                  { text: 'José Manuel Calderón', isCorrect: true },
+                  { text: 'Rodobaldo Duartes' },
+                  { text: 'Rafael Encarnación' }
+                ],
+                'José Manuel Calderón is widely credited with recording the first official bachata songs in 1962, though there is some debate about whether his "Borracho de Amor" was a true bachata due to its waltz rhythm.'
+              )
+            }
+          ]
         }
       ],
       artists: [

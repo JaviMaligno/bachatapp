@@ -9,6 +9,7 @@ import { history5060Lesson } from '../../data/lessons/history/history-50-60';
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
 import { progressManager } from '../common/ProgressBar';
+import { InlineQuiz } from './InlineQuiz';
 
 interface LessonViewProps {
     section: Section;
@@ -67,11 +68,31 @@ interface LessonViewProps {
     const renderSection = (section: Section) => {
       console.log('Section artists:', section.artists);
       
+      const handleQuizComplete = (isCorrect: boolean) => {
+        // Handle quiz completion - could be used for progress tracking
+        console.log('Quiz completed:', isCorrect);
+      };
+      
       return (
         <div key={section.id} id={section.id} className="mt-8 space-y-6">
           <h2 className="text-2xl font-semibold mb-6 text-gray-800 dark:text-white">{section.title}</h2>
           <div className="prose dark:prose-invert max-w-none bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
             <ReactMarkdown rehypePlugins={[rehypeRaw]}>{section.content}</ReactMarkdown>
+            
+            {/* Render interactive blocks */}
+            {section.interactiveBlocks && section.interactiveBlocks.map((interactiveBlock, index) => {
+              if (interactiveBlock.kind === 'quiz') {
+                return (
+                  <InlineQuiz
+                    key={`${interactiveBlock.id}-${index}`}
+                    quizData={interactiveBlock.data}
+                    onComplete={handleQuizComplete}
+                  />
+                );
+              }
+              // Other interactive block types can be added here in the future
+              return null;
+            })}
             
             {/* Add media if present */}
             {section.media && (
