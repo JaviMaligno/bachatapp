@@ -78,6 +78,7 @@ This document outlines a comprehensive strategy to transform the current, primar
 **Completed:**
 - ✅ Build-a-Clave: Implemented as an interactive click-based grid (not drag-and-drop) with Web Audio API synthesis, real-time playback, pattern validation, and confetti celebration. Successfully integrated into the music-rhythm lesson after the derecho section.
 - ✅ Build-Mambo-Pattern: Created specialized component for mambo rhythm with sixteenth note subdivisions, featuring authentic "a caballo" pattern with proper "1 e & a" beat labeling and rapid triplet-like groupings.
+- ✅ Build-the-Rhythms Quiz: Implemented as a standalone quiz in the Music section, combining all three rhythm building exercises (derecho, majao, mambo) into a comprehensive assessment with progress tracking and completion celebration.
 
 ### 🚧 **Next Phases - Planned**
 - **Phase 3**: Interactive timelines for history lessons

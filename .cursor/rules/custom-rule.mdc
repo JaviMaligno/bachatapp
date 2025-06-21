@@ -8,4 +8,5 @@ alwaysApply: true
 
 - Siempre que hagas una implementación de código, revisa y modifica el archivo [project_summary.md](mdc:project_summary.md)
 - Gestiona las dependencias con pnpm, como referencia [pnpm-lock.yaml](mdc:pnpm-lock.yaml)
-- Cuando quieras probar la app usa [docker-compose.yaml](mdc:docker-compose.yaml) para ejecutarla
+- Cuando quieras probar la app usa [docker-compose.yaml](mdc:docker-compose.yaml) para ejecutarla si no esta ya corriendo en docker. Comprueba si lo esta.
+- Puedes utilizar tus mcp tools para interactuar con la aplicacion.

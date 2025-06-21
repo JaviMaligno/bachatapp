@@ -13,9 +13,10 @@ interface BuildMamboData {
 
 interface BuildMamboPatternProps {
   data: BuildMamboData;
+  onComplete?: () => void;
 }
 
-export const BuildMamboPattern: React.FC<BuildMamboPatternProps> = ({ data }) => {
+export const BuildMamboPattern: React.FC<BuildMamboPatternProps> = ({ data, onComplete }) => {
   const [userPattern, setUserPattern] = useState<BeatState[]>(new Array(16).fill(0));
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentBeat, setCurrentBeat] = useState<number | null>(null);
@@ -129,6 +130,7 @@ export const BuildMamboPattern: React.FC<BuildMamboPatternProps> = ({ data }) =>
         origin: { y: 0.6 }
       });
       playPattern(); // Play the correct pattern
+      onComplete?.(); // Call completion callback if provided
     }
   };
 

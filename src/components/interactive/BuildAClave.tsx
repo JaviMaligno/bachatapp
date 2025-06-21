@@ -4,9 +4,10 @@ import confetti from 'canvas-confetti';
 
 interface BuildAClaveProps {
   data: BuildAClaveData;
+  onComplete?: () => void;
 }
 
-export const BuildAClave: React.FC<BuildAClaveProps> = ({ data }) => {
+export const BuildAClave: React.FC<BuildAClaveProps> = ({ data, onComplete }) => {
   const [userPattern, setUserPattern] = useState<BeatState[]>(new Array(data.pattern.length).fill(0));
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentBeat, setCurrentBeat] = useState<number | null>(null);
@@ -120,6 +121,7 @@ export const BuildAClave: React.FC<BuildAClaveProps> = ({ data }) => {
         origin: { y: 0.6 }
       });
       playPattern(); // Play the correct pattern
+      onComplete?.(); // Call completion callback if provided
     }
   };
 

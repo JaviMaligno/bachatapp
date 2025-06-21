@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ChevronRight } from 'lucide-react';
 import { BackButton } from '../common/BackButton';
 import { QuizSection } from './QuizSection';
+import { QuestionDisplay } from '../quizzes/QuestionDisplay';
 
 interface HistoryQuizProps {
   questions: {
@@ -48,9 +49,12 @@ export const HistoryQuiz: React.FC<HistoryQuizProps> = ({
     <div className="mt-8 p-6 bg-gray-50 dark:bg-gray-900 rounded-xl">
       <BackButton onClick={onBack} label={`Back to ${sectionTitle} Section`} />
       
-      <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
-        Question {currentQuestion + 1} of {questions.length}
-      </h3>
+      <QuestionDisplay
+        questionNumber={currentQuestion + 1}
+        totalQuestions={questions.length}
+        question={questions[currentQuestion].question}
+        className="mb-6"
+      />
 
       <QuizSection
         key={currentQuestion}
@@ -61,22 +65,27 @@ export const HistoryQuiz: React.FC<HistoryQuizProps> = ({
       />
 
       {showNext && (
-        <div className="mt-6">
+        <div className="mt-6 animate-slideIn">
           {isCorrect && (
-            <div className="mb-4 p-4 bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 rounded-lg">
-              Well done! That's correct! 🎉
+            <div className="mb-4 p-5 bg-gradient-to-r from-green-400 to-green-600 text-white rounded-xl shadow-xl flex items-center gap-3">
+              <span className="text-3xl">🎉</span>
+              <div>
+                <h4 className="font-bold text-lg">Excellent!</h4>
+                <p>You got it right! Well done!</p>
+              </div>
             </div>
           )}
           
           {currentQuestion === questions.length - 1 && (
-            <div className="mb-4 p-4 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-lg">
-              Final Score: {score} out of {questions.length} questions
+            <div className="mb-4 p-5 bg-gradient-to-r from-blue-400 to-purple-600 text-white rounded-xl shadow-xl">
+              <h4 className="font-bold text-xl mb-1">Quiz Complete! 🏆</h4>
+              <p className="text-lg">Final Score: {score} out of {questions.length} questions</p>
             </div>
           )}
 
           <button
             onClick={handleNext}
-            className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+            className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg shadow-lg hover:shadow-xl transform transition-all duration-200 hover:scale-105"
           >
             {currentQuestion < questions.length - 1 ? (
               <>
