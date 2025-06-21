@@ -10,3 +10,4 @@ alwaysApply: true
 - Gestiona las dependencias con pnpm, como referencia [pnpm-lock.yaml](mdc:pnpm-lock.yaml)
 - Cuando quieras probar la app usa [docker-compose.yaml](mdc:docker-compose.yaml) para ejecutarla si no esta ya corriendo en docker. Comprueba si lo esta.
 - Puedes utilizar tus mcp tools para interactuar con la aplicacion.
+- Asegurate de solucionar todos los linter errors

@@ -32,7 +32,7 @@ export const RhythmBuildingQuizComponent: React.FC<RhythmBuildingQuizProps> = ({
 
     // Update progress
     const progress = (newCompleted.size / totalChallenges) * 100;
-    progressManager.updateQuizScore(sectionId, quiz.id, newCompleted.size, totalChallenges);
+    progressManager.setQuizScore(sectionId, quiz.id, newCompleted.size, totalChallenges);
 
     // If all challenges completed, show results
     if (newCompleted.size === totalChallenges) {
@@ -56,7 +56,7 @@ export const RhythmBuildingQuizComponent: React.FC<RhythmBuildingQuizProps> = ({
     setCurrentChallengeIndex(0);
     setCompletedChallenges(new Set());
     setShowResults(false);
-    progressManager.updateQuizScore(sectionId, quiz.id, 0, totalChallenges);
+    progressManager.setQuizScore(sectionId, quiz.id, 0, totalChallenges);
   };
 
   const renderRhythmComponent = (challenge: typeof currentChallenge) => {

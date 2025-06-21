@@ -14,7 +14,6 @@ interface QuizSectionProps {
 }
 
 export const QuizSection: React.FC<QuizSectionProps> = ({
-  question,
   options,
   correctAnswer,
   onComplete,
