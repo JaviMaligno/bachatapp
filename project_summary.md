@@ -152,6 +152,34 @@ This educational platform provides an accessible way to learn about bachata's ri
   - Successfully tested all implementations with Docker Compose, confirming proper rendering and interaction
   - Quiz features include instant feedback, explanations, and celebratory animations
 
+- **[2025-06-15]**: Started Phase 2 of interactive lessons plan - Audio/Rhythm Challenges:
+  - Extended `InteractiveBlock` type to support `build-a-clave` interactive element
+  - Created `BuildAClave` component in `src/components/interactive/BuildAClave.tsx`:
+    - Interactive 8-beat grid where users can click to create rhythm patterns
+    - Web Audio API integration for real-time audio feedback with synthesized clicks
+    - Visual feedback with animated beat indicators and current playback position
+    - Controls for Play/Stop, Check pattern, Reset, and Show Solution
+    - Confetti celebration on correct pattern completion
+    - Responsive design with touch support for mobile devices
+  - Updated `MusicLessonView` to render the new `build-a-clave` interactive blocks
+  - Added Build-a-Clave exercise to the `music-rhythm` lesson after the derecho section
+  - Installed dependencies: `canvas-confetti` and `@types/canvas-confetti`
+  - Successfully tested with Docker Compose - users can create, play, and verify rhythm patterns
+  - This marks the first implementation of Phase 2's drag-and-drop/interactive audio features
+
+- **[2025-12-14]**: Enhanced Phase 2 with specialized mambo pattern component:
+  - Created `BuildMamboPattern` component in `src/components/interactive/BuildMamboPattern.tsx`:
+    - Specialized component for mambo rhythm with sixteenth note subdivisions (16 beats per bar)
+    - Two-row layout showing beats 1-2 (top) and 3-4 (bottom) with proper "1 e & a" labeling
+    - Authentic "a caballo" (horse-like) pattern implementation with rapid triplet-like groupings
+    - Same Web Audio API integration and controls as BuildAClave but optimized for complex rhythms
+    - Visual feedback distinguishing between regular and accented sixteenth notes
+  - Extended TypeScript types with `BuildMamboData` interface and `build-mambo` InteractiveBlock type
+  - Updated `MusicLessonView` to render `build-mambo` interactive blocks
+  - Replaced the mambo practice section in `music-rhythm` lesson with the new specialized component
+  - Pattern demonstrates authentic mambo "a caballo" rhythm: [1,0,2,1,0,1,2,0,1,0,2,1,0,1,2,0]
+  - Successfully tested - users can now experience the true complexity of mambo rhythm with proper sixteenth note timing
+
 ## Frontend
 
 * **Framework:** React + TypeScript + Vite

@@ -131,10 +131,32 @@ export interface InlineQuizData {
   explanation?: string;
 }
 
+export type BeatState = 0 | 1 | 2; // 0: off, 1: normal, 2: accent
+
+export interface BuildAClaveData {
+  id: string;
+  title: string;
+  instructions: string;
+  pattern: BeatState[]; // 0: off, 1: normal, 2: accent
+  bpm: number;
+  explanation?: string;
+}
+
+export interface BuildMamboData {
+  id: string;
+  title: string;
+  instructions: string;
+  pattern: BeatState[]; // 16 sixteenth notes for one bar
+  bpm: number;
+  explanation?: string;
+}
+
 export type InteractiveBlock =
   | { kind: 'quiz'; id: string; data: InlineQuizData }
   | { kind: 'audio-layer'; tracks: any[] } // Placeholder for future implementation
   | { kind: 'drag-labels'; image: string; labels: any[] } // Placeholder for future implementation
   | { kind: 'timeline'; events: any[] } // Placeholder for future implementation
-  | { kind: 'flashcard'; termIds: string[] }; // Placeholder for future implementation
+  | { kind: 'flashcard'; termIds: string[] } // Placeholder for future implementation
+  | { kind: 'build-a-clave'; id: string; data: BuildAClaveData }
+  | { kind: 'build-mambo'; id: string; data: BuildMamboData };
  

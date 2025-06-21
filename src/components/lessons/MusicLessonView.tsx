@@ -10,6 +10,8 @@ import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
 import { progressManager } from '../common/ProgressBar';
 import { InlineQuiz } from './InlineQuiz';
+import { BuildAClave } from '../interactive/BuildAClave';
+import { BuildMamboPattern } from '../interactive/BuildMamboPattern';
 
 interface LessonViewProps {
     section: Section;
@@ -87,6 +89,22 @@ interface LessonViewProps {
                     key={`${interactiveBlock.id}-${index}`}
                     quizData={interactiveBlock.data}
                     onComplete={handleQuizComplete}
+                  />
+                );
+              }
+              if (interactiveBlock.kind === 'build-a-clave') {
+                return (
+                  <BuildAClave
+                    key={`${interactiveBlock.id}-${index}`}
+                    data={interactiveBlock.data}
+                  />
+                );
+              }
+              if (interactiveBlock.kind === 'build-mambo') {
+                return (
+                  <BuildMamboPattern
+                    key={`${interactiveBlock.id}-${index}`}
+                    data={interactiveBlock.data}
                   />
                 );
               }
