@@ -152,6 +152,51 @@ This educational platform provides an accessible way to learn about bachata's ri
   - Successfully tested all implementations with Docker Compose, confirming proper rendering and interaction
   - Quiz features include instant feedback, explanations, and celebratory animations
 
+- **[2025-06-15]**: Started Phase 2 of interactive lessons plan - Audio/Rhythm Challenges:
+  - Extended `InteractiveBlock` type to support `build-a-clave` interactive element
+  - Created `BuildAClave` component in `src/components/interactive/BuildAClave.tsx`:
+    - Interactive 8-beat grid where users can click to create rhythm patterns
+    - Web Audio API integration for real-time audio feedback with synthesized clicks
+    - Visual feedback with animated beat indicators and current playback position
+    - Controls for Play/Stop, Check pattern, Reset, and Show Solution
+    - Confetti celebration on correct pattern completion
+    - Responsive design with touch support for mobile devices
+  - Updated `MusicLessonView` to render the new `build-a-clave` interactive blocks
+  - Added Build-a-Clave exercise to the `music-rhythm` lesson after the derecho section
+  - Installed dependencies: `canvas-confetti` and `@types/canvas-confetti`
+  - Successfully tested with Docker Compose - users can create, play, and verify rhythm patterns
+  - This marks the first implementation of Phase 2's drag-and-drop/interactive audio features
+
+- **[2025-12-14]**: Enhanced Phase 2 with specialized mambo pattern component:
+  - Created `BuildMamboPattern` component in `src/components/interactive/BuildMamboPattern.tsx`:
+    - Specialized component for mambo rhythm with sixteenth note subdivisions (16 beats per bar)
+    - Two-row layout showing beats 1-2 (top) and 3-4 (bottom) with proper "1 e & a" labeling
+    - Authentic "a caballo" (horse-like) pattern implementation with rapid triplet-like groupings
+    - Same Web Audio API integration and controls as BuildAClave but optimized for complex rhythms
+    - Visual feedback distinguishing between regular and accented sixteenth notes
+  - Extended TypeScript types with `BuildMamboData` interface and `build-mambo` InteractiveBlock type
+  - Updated `MusicLessonView` to render `build-mambo` interactive blocks
+  - Replaced the mambo practice section in `music-rhythm` lesson with the new specialized component
+  - Pattern demonstrates authentic mambo "a caballo" rhythm: [1,0,2,1,0,1,2,0,1,0,2,1,0,1,2,0]
+  - Successfully tested - users can now experience the true complexity of mambo rhythm with proper sixteenth note timing
+
+- **[2025-12-14]**: Implemented standalone "Build the Rhythms" quiz:
+  - Created new `RhythmBuildingQuiz` type in TypeScript with specialized challenge structure
+  - Built `RhythmBuildingQuizComponent` in `src/components/quizzes/RhythmBuildingQuiz.tsx`:
+    - Multi-challenge quiz interface with progress tracking and navigation
+    - Uses existing `BuildAClave` and `BuildMamboPattern` components for interactive rhythm building
+    - Challenge status indicators showing completion status for each rhythm
+    - Celebratory completion screen with perfect score display
+    - Progress persistence using existing progressManager system
+  - Created `rhythm-building-quiz.ts` data file with all three bachata rhythms:
+    - Derecho: 16 eighth notes with accents on beats 4 and 8
+    - Majao: Main beats only with accents, no off-beats
+    - Mambo: Complex sixteenth note "a caballo" pattern
+  - Updated `QuizContent` component to handle rhythm-building quiz type
+  - Added rhythm building quiz to music section in `src/data/sections.ts`
+  - Enhanced interactive components with `onComplete` callbacks for quiz integration
+  - Successfully tested - users can now take a comprehensive rhythm building quiz that tests all three bachata rhythms
+
 ## Frontend
 
 * **Framework:** React + TypeScript + Vite
@@ -271,3 +316,51 @@ After thorough exploration of the application, the following observations were m
 - Improve performance with lazy loading
 - Enhance accessibility features
 - Set up A/B testing framework
+
+## Recent Updates
+
+### Quiz Question Visual Enhancements (Latest Update)
+Based on user feedback requesting more standout quiz questions, the following improvements were implemented:
+
+1. **New QuestionDisplay Component** (`src/components/quizzes/QuestionDisplay.tsx`)
+   - Created a dedicated component for displaying quiz questions with enhanced visual styling
+   - Features include:
+     - Animated question number badge with gradient background
+     - Large, bold question text (2xl font size)
+     - Gradient background decoration for visual interest
+     - Shadow effects and hover animations
+     - Optional instruction text with emoji indicator
+     - Progress indicator showing current question number
+
+2. **Enhanced Quiz Components**
+   - Updated `InstrumentQuiz` to use the new QuestionDisplay component
+   - Updated `HistoryQuiz` to use the new QuestionDisplay component
+   - Improved button styling with:
+     - Gradient backgrounds for selected states
+     - Shadow effects and hover animations
+     - Larger text and better visual hierarchy
+     - Transform effects on interaction
+
+3. **Improved Visual Feedback**
+   - Enhanced success/error messages with:
+     - Gradient backgrounds and white text
+     - Emoji indicators for better visual communication
+     - Structured layout with title and description
+     - Slide-in animations for smooth appearance
+
+4. **Animation Support**
+   - Added CSS animations in `globals.css`:
+     - `slideIn` animation for feedback messages
+     - `fadeIn` animation for smooth transitions
+     - `pulse` animation for the question number badge
+
+5. **Button Styling Improvements**
+   - All quiz buttons now feature:
+     - Gradient backgrounds with shadow effects
+     - Hover scale transformations
+     - Better disabled states
+     - Consistent color scheme throughout
+
+These changes make quiz questions significantly more prominent and engaging, addressing the user feedback about questions needing to be more standout.
+
+### History Feature with Timeline (December 2024)

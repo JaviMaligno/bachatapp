@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { QuestionDisplay } from '../quizzes/QuestionDisplay';
 
 interface QuizOption {
   id: string;
@@ -13,7 +14,6 @@ interface QuizSectionProps {
 }
 
 export const QuizSection: React.FC<QuizSectionProps> = ({
-  question,
   options,
   correctAnswer,
   onComplete,
@@ -26,23 +26,26 @@ export const QuizSection: React.FC<QuizSectionProps> = ({
   };
 
   return (
-    <div className="mt-4 p-4 bg-gray-50 dark:bg-gray-800/50 rounded-lg">
-      <h4 className="font-medium mb-3 text-gray-900 dark:text-white">{question}</h4>
-      <div className="space-y-2">
+    <div className="mt-4">
+      <div className="space-y-3">
+        <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider">
+          Select your answer:
+        </h4>
         {options.map((option) => (
           <button
             key={option.id}
             onClick={() => handleSubmit(option.id)}
             disabled={selectedAnswer !== null}
-            className={`w-full p-3 text-left rounded border transition-colors
+            className={`w-full p-4 text-left rounded-lg border-2 transition-all transform hover:scale-[1.02] shadow-md hover:shadow-lg
               ${selectedAnswer === option.id 
                 ? selectedAnswer === correctAnswer
-                  ? 'bg-green-50 dark:bg-green-900/20 border-green-500 text-gray-900 dark:text-white'
-                  : 'bg-red-50 dark:bg-red-900/20 border-red-500 text-gray-900 dark:text-white'
-                : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 text-gray-700 dark:text-gray-200'
-              }`}
+                  ? 'bg-green-50 dark:bg-green-900/20 border-green-500 text-gray-900 dark:text-white scale-[1.02]'
+                  : 'bg-red-50 dark:bg-red-900/20 border-red-500 text-gray-900 dark:text-white scale-[1.02]'
+                : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-600 text-gray-700 dark:text-gray-200'
+              }
+              ${selectedAnswer !== null ? 'cursor-not-allowed' : 'cursor-pointer'}`}
           >
-            {option.text}
+            <span className="font-medium text-lg">{option.text}</span>
           </button>
         ))}
       </div>

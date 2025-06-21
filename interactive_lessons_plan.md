@@ -62,8 +62,25 @@ This document outlines a comprehensive strategy to transform the current, primar
 - Celebratory confetti animations on correct answers
 - Seamless integration within lesson content flow
 
+### 🚧 **Phase 2 - Audio/Rhythm Challenges & Drag-and-Drop Exercises**
+**Audio/Rhythm Challenges:**
+- ☐ Solo-Mute Mixer in music-instruments lesson (4-stem audio player with solo/mute buttons)
+- ☐ Pin-the-Accent inline in music-rhythm lesson (waveform with draggable accent markers)
+- ☐ Tap-the-Tempo quiz in Music section (circular tap button for tempo matching)
+- ☐ Fill-the-Gap Audio Cloze (identify missing instrument from audio loop)
+
+**Drag-and-Drop Exercises:**
+- ☐ Label-the-Band inline in music-instruments lesson (drag instrument names onto stage silhouettes)
+- ☐ Arrange-the-Sections quiz in Music section (drag song structure cards into correct order)
+- ☑ Build-a-Clave inline in music-rhythm lesson (interactive beat grid with audio playback)
+- ☐ Decade Timeline Scramble quiz in History section (drag historical events onto timeline)
+
+**Completed:**
+- ✅ Build-a-Clave: Implemented as an interactive click-based grid (not drag-and-drop) with Web Audio API synthesis, real-time playback, pattern validation, and confetti celebration. Successfully integrated into the music-rhythm lesson after the derecho section.
+- ✅ Build-Mambo-Pattern: Created specialized component for mambo rhythm with sixteenth note subdivisions, featuring authentic "a caballo" pattern with proper "1 e & a" beat labeling and rapid triplet-like groupings.
+- ✅ Build-the-Rhythms Quiz: Implemented as a standalone quiz in the Music section, combining all three rhythm building exercises (derecho, majao, mambo) into a comprehensive assessment with progress tracking and completion celebration.
+
 ### 🚧 **Next Phases - Planned**
-- **Phase 2**: Audio/rhythm challenges, drag-and-drop exercises
 - **Phase 3**: Interactive timelines for history lessons
 - **Phase 4**: Gamification and community features
 
@@ -164,6 +181,23 @@ pnpm add wavesurfer.js react-dnd react-dnd-html5-backend react-horizontal-timeli
 * Improvement in quiz accuracy between first & second attempt
 * % users completing ≥ 1 interactive block per session
 * Qualitative feedback on "How engaging was this lesson?" (target > 4 / 5)
+
+---
+## 8. Future Experiments and A/B Testing
+
+### Quiz Placement Strategy
+- **Hypothesis**: The timing and placement of quizzes significantly impact user engagement, comprehension, and lesson completion rates.
+- **Current Approach**: Quizzes are currently placed *before* the detailed content they test, acting as a "priming" mechanism.
+- **Alternative Approach**: Place quizzes *after* the relevant content to act as a knowledge check and reinforcement tool.
+- **Proposed Test**:
+  - **A/B Test**: Implement functionality to serve two versions of a lesson to different user segments.
+    - **Group A (Control)**: Receives the current implementation (quiz before content).
+    - **Group B (Variant)**: Receives the modified version (quiz after content).
+  - **Metrics to Collect**:
+    - **Engagement**: Time spent on page, lesson completion rate.
+    - **Learning Efficacy**: First-try answer accuracy on quizzes.
+    - **Qualitative Feedback**: Add a simple "Was this helpful?" survey after each interactive block.
+- **Goal**: Use data from this experiment to determine the optimal quiz placement strategy for maximizing learning and engagement across the app.
 
 ---
 *Last updated: December 14, 2024*  

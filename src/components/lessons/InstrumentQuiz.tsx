@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Play, Pause, RotateCcw, ChevronRight } from 'lucide-react';
 import { BackButton } from '../common/BackButton';
+import { QuestionDisplay } from '../quizzes/QuestionDisplay';
 
 interface QuizQuestion {
   id: number;
@@ -122,8 +123,8 @@ export const InstrumentQuiz: React.FC<InstrumentQuizProps> = ({
   const getButtonClass = (instrument: string) => {
     if (!isSubmitted) {
       return selectedInstruments.includes(instrument)
-        ? 'bg-orange-100 dark:bg-orange-900/20 border-orange-500 dark:border-orange-400'
-        : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600';
+        ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white border-transparent shadow-lg scale-[1.02]'
+        : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-600 hover:shadow-md';
     }
 
     if (showSolution || selectedInstruments.includes(instrument)) {
@@ -131,27 +132,27 @@ export const InstrumentQuiz: React.FC<InstrumentQuizProps> = ({
       const wasSelected = selectedInstruments.includes(instrument);
 
       if (isCorrect) {
-        return 'bg-green-50 dark:bg-green-900 border-green-500';
+        return 'bg-gradient-to-r from-green-400 to-green-600 text-white border-transparent shadow-lg scale-[1.02]';
       }
       if (wasSelected) {
-        return 'bg-red-50 dark:bg-red-900 border-red-500';
+        return 'bg-gradient-to-r from-red-400 to-red-600 text-white border-transparent shadow-lg scale-[1.02]';
       }
     }
 
-    return 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700';
+    return 'bg-gray-100 dark:bg-gray-800 border-gray-200 dark:border-gray-700 opacity-50';
   };
 
   return (
     <div className="mt-8 p-6 bg-gray-50 dark:bg-gray-900 rounded-xl">
       <BackButton onClick={onBack} label={`Back to ${sectionTitle} Section`} />
       
-      <h3 className="text-lg font-semibold mb-4">
-        Question {currentQuestion + 1} of {questions.length}
-      </h3>
-      
-      <p className="mb-4 text-gray-600">
-        {getInstructions()}
-      </p>
+      <QuestionDisplay
+        questionNumber={currentQuestion + 1}
+        totalQuestions={questions.length}
+        question={`Question ${currentQuestion + 1}`}
+        instructions={getInstructions()}
+        className="mb-6"
+      />
 
       <div className="mb-6">
         <audio
@@ -161,48 +162,62 @@ export const InstrumentQuiz: React.FC<InstrumentQuizProps> = ({
         />
         <button
           onClick={togglePlay}
-          className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600"
+          className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg shadow-lg hover:shadow-xl transform transition-all duration-200 hover:scale-105"
         >
-          {isPlaying ? <Pause className="w-4 h-4 text-gray-600 dark:text-gray-300" /> : <Play className="w-4 h-4 text-gray-600 dark:text-gray-300" />}
-          <span className="text-gray-600 dark:text-gray-300">{isPlaying ? 'Pause' : 'Play'} Audio</span>
+          {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
+          <span className="font-medium">{isPlaying ? 'Pause' : 'Play'} Audio</span>
         </button>
       </div>
 
       <div className="space-y-3">
+        <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider">
+          Select your answer{mode === 'present' || mode === 'missing' ? '(s)' : ''}:
+        </h4>
         {options.map((option) => (
           <button
             key={option}
             onClick={() => toggleInstrument(option)}
-            className={`w-full p-4 text-left rounded-lg border transition-all ${getButtonClass(option)}`}
+            className={`w-full p-4 text-left rounded-lg border-2 transition-all transform hover:scale-[1.02] ${getButtonClass(option)}`}
           >
-            <span className="font-medium">{option}</span>
+            <span className="font-medium text-lg">{option}</span>
           </button>
         ))}
       </div>
 
       {isSubmitted && !showSolution && (
-        <div className="mt-4 p-4 rounded-lg">
+        <div className="mt-6 animate-slideIn">
           {isCorrect ? (
-            <div className="bg-green-50 text-green-700">
-              Well done! That's correct! 🎉
+            <div className="bg-gradient-to-r from-green-400 to-green-600 text-white p-5 rounded-xl shadow-xl flex items-center gap-3">
+              <span className="text-3xl">🎉</span>
+              <div>
+                <h4 className="font-bold text-lg">Excellent!</h4>
+                <p>You got it right! Well done!</p>
+              </div>
             </div>
           ) : (
-            <div className="bg-orange-50 text-orange-700">
-              {selectedInstruments.every(instrument => 
-                questions[currentQuestion].correctAnswer.includes(instrument)
-              ) ? (
-                "You're on the right track, but there are answers to identify!"
-              ) : (
-                "That's not quite right. Try again!"
-              )}
+            <div className="bg-gradient-to-r from-orange-400 to-orange-600 text-white p-5 rounded-xl shadow-xl flex items-center gap-3">
+              <span className="text-3xl">💪</span>
+              <div>
+                <h4 className="font-bold text-lg">Keep trying!</h4>
+                <p>
+                  {selectedInstruments.every(instrument => 
+                    questions[currentQuestion].correctAnswer.includes(instrument)
+                  ) ? (
+                    "You're on the right track, but there are more answers to identify!"
+                  ) : (
+                    "That's not quite right. Give it another shot!"
+                  )}
+                </p>
+              </div>
             </div>
           )}
         </div>
       )}
 
       {currentQuestion === questions.length - 1 && isSubmitted && (showSolution || isCorrect) && (
-        <div className="mt-4 p-4 bg-blue-50 text-blue-700 rounded-lg">
-          Final Score: {score} out of {questions.length} questions
+        <div className="mt-6 p-5 bg-gradient-to-r from-blue-400 to-purple-600 text-white rounded-xl shadow-xl animate-slideIn">
+          <h4 className="font-bold text-xl mb-1">Quiz Complete! 🏆</h4>
+          <p className="text-lg">Final Score: {score} out of {questions.length} questions</p>
         </div>
       )}
 
@@ -211,9 +226,9 @@ export const InstrumentQuiz: React.FC<InstrumentQuizProps> = ({
           <button
             onClick={handleSubmit}
             disabled={selectedInstruments.length === 0}
-            className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg shadow-lg hover:shadow-xl transform transition-all duration-200 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
           >
-            Submit
+            Submit Answer
           </button>
         )}
         
@@ -221,14 +236,14 @@ export const InstrumentQuiz: React.FC<InstrumentQuizProps> = ({
           <>
             <button
               onClick={handleRetry}
-              className="px-6 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600"
+              className="px-6 py-3 bg-gradient-to-r from-gray-500 to-gray-700 text-white rounded-lg shadow-lg hover:shadow-xl transform transition-all duration-200 hover:scale-105"
             >
               <RotateCcw className="w-4 h-4 inline mr-2" />
-              Retry
+              Try Again
             </button>
             <button
               onClick={() => setShowSolution(true)}
-              className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+              className="px-6 py-3 bg-gradient-to-r from-amber-500 to-orange-600 text-white rounded-lg shadow-lg hover:shadow-xl transform transition-all duration-200 hover:scale-105"
             >
               Show Solution
             </button>
@@ -238,15 +253,15 @@ export const InstrumentQuiz: React.FC<InstrumentQuizProps> = ({
         {isSubmitted && (isCorrect || showSolution) && (
           <button
             onClick={handleNext}
-            className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+            className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg shadow-lg hover:shadow-xl transform transition-all duration-200 hover:scale-105"
           >
             {currentQuestion < questions.length - 1 ? (
               <>
-                Next
+                Next Question
                 <ChevronRight className="w-4 h-4 inline ml-2" />
               </>
             ) : (
-              'Finish'
+              'Complete Quiz'
             )}
           </button>
         )}

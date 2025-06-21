@@ -97,6 +97,26 @@ export const musicRhythmLesson: MusicLesson = {
             ],
             'The derecho rhythm is most commonly found in the verses or introduction sections of a bachata song, creating a calm, grounded feel ideal for smooth dancing.'
           )
+        },
+
+      ]
+    },
+    {
+      id: 'derecho-practice',
+      title: 'Practice: Build the Derecho Pattern',
+      content: 'Now that you understand the derecho rhythm, try building it yourself!',
+      interactiveBlocks: [
+        {
+          kind: 'build-a-clave',
+          id: 'build-derecho-pattern',
+          data: {
+            id: 'build-derecho-pattern',
+            title: 'Build the Derecho Pattern',
+            instructions: 'Create the basic derecho rhythm. Click once for a regular eighth note, twice for an accented (lower-pitch) eighth note, and a third time to clear it. The derecho plays steady eighth notes with accents on beats 4 and 8.',
+            pattern: [1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 2, 1], // 16 eighth notes, accents on 8th and 16th
+            bpm: 105,
+            explanation: 'The derecho pattern consists of steady eighth notes (two per beat) with lower-pitched accents on the 4th and 8th beats (positions 8 and 16). This creates the characteristic "martillo" (hammer) pattern that forms the backbone of bachata.'
+          }
         }
       ]
     },
@@ -151,6 +171,25 @@ export const musicRhythmLesson: MusicLesson = {
           ]
         }
       }
+    },
+    {
+      id: 'majao-practice',
+      title: 'Practice: Build the Majao Pattern',
+      content: 'Now practice creating the majao rhythm! Remember, majao plays directly on the beat with accents on beats 4 and 8.',
+      interactiveBlocks: [
+        {
+          kind: 'build-a-clave',
+          id: 'build-majao-pattern',
+          data: {
+            id: 'build-majao-pattern',
+            title: 'Build the Majao Pattern',
+            instructions: 'Create the majao rhythm. Click once for a regular eighth note, twice for an accented eighth note, and a third time to clear it. Majao plays only on the main beats (not the off-beats), with accents on beats 4 and 8.',
+            pattern: [1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1], // 16 eighth notes, only on main beats, accents on 4th and 8th
+            bpm: 105,
+            explanation: 'The majao pattern plays directly on the beat with steady quarter notes, emphasizing beats 4 and 8 with lower-pitched accents. This creates the metronomic feel that drives the chorus sections.'
+          }
+        }
+      ]
     },
     {
       id: 'mambo',
@@ -216,6 +255,25 @@ export const musicRhythmLesson: MusicLesson = {
             ],
             'The "a caballo" (horse-like) rhythm in the güira is characteristic of the mambo rhythm, consisting of rapid eighth notes in groups of 3 that drive the high energy of this rhythm.'
           )
+        }
+      ]
+    },
+    {
+      id: 'mambo-practice',
+      title: 'Practice: Build the Mambo Pattern',
+      content: 'Experience the energetic mambo rhythm! This pattern shows the characteristic "a caballo" feel with sixteenth note subdivisions that create the rapid, horse-like galloping rhythm.',
+      interactiveBlocks: [
+        {
+          kind: 'build-mambo',
+          id: 'build-mambo-pattern',
+          data: {
+            id: 'build-mambo-pattern',
+            title: 'Build the Mambo "A Caballo" Pattern',
+            instructions: 'Create the mambo rhythm with sixteenth note subdivisions. The "a caballo" pattern features rapid triplet-like groupings within the sixteenth note grid. Click once for a regular sixteenth note, twice for an accented one, and a third time to clear it.',
+            pattern: [1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1], // 16 sixteenth notes showing "a caballo" pattern
+            bpm: 105,
+            explanation: 'The mambo "a caballo" pattern uses rapid sixteenth note sequences that create a galloping, horse-like rhythm. The pattern groups notes in threes within the sixteenth note subdivisions, giving mambo its characteristic high-energy, driving feel that distinguishes it from derecho and majao rhythms.'
+          }
         }
       ]
     }

@@ -1,8 +1,9 @@
 import React from 'react';
-import { Quiz } from '../../types';
+import { Quiz, RhythmBuildingQuiz } from '../../types';
 import { InstrumentQuiz } from '../lessons/InstrumentQuiz';
 import { progressManager } from '../common/ProgressBar';
 import { HistoryQuiz } from '../lessons/HistoryQuiz';
+import { RhythmBuildingQuizComponent } from './RhythmBuildingQuiz';
 
 interface QuizContentProps {
   quiz: Quiz;
@@ -23,7 +24,9 @@ export const QuizContent: React.FC<QuizContentProps> = ({
   sectionTitle
 }) => {
   const handleQuizComplete = (score: number) => {
-    const totalQuestions = quiz.questions.length;
+    const totalQuestions = quiz.type === 'rhythm-building' 
+      ? (quiz as RhythmBuildingQuiz).challenges.length 
+      : quiz.questions.length;
     
     // Save both the score and progress
     progressManager.setQuizScore(sectionTitle.toLowerCase(), quiz.id, score, totalQuestions);
@@ -46,6 +49,16 @@ export const QuizContent: React.FC<QuizContentProps> = ({
         onComplete={handleQuizComplete}
         onBack={onBack}
         sectionTitle={sectionTitle}
+      />
+    );
+  }
+
+  if (quiz.type === 'rhythm-building') {
+    return (
+      <RhythmBuildingQuizComponent
+        quiz={quiz as RhythmBuildingQuiz}
+        onBack={onBack}
+        sectionId={sectionTitle.toLowerCase()}
       />
     );
   }

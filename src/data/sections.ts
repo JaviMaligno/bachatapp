@@ -5,6 +5,7 @@ import { missingInstrumentsQuizQuestions } from './quizzes/missing-instruments-q
 import { sectionQuizQuestions } from './quizzes/section-quiz';
 import { rhythmQuizQuestions } from './quizzes/rhythm-quiz';
 import { bachataPartsQuizQuestions } from './quizzes/bachata-parts-quiz';
+import { rhythmBuildingQuiz } from './quizzes/rhythm-building-quiz';
 import { progressManager } from '../components/common/ProgressBar';
 import { historyQuiz } from './quizzes/history-quiz';
 import { history7080Quiz } from './quizzes/history-70-80-quiz';
@@ -103,7 +104,8 @@ export const sections: Section[] = [
         type: 'parts',
         progress: 0,
         questions: bachataPartsQuizQuestions
-      }
+      },
+      rhythmBuildingQuiz
     ],
     glossary: musicGlossary
   },

@@ -28,7 +28,20 @@ export interface InstrumentQuiz extends BaseQuiz {
   }[];
 }
 
-export type Quiz = HistoryQuiz | InstrumentQuiz;
+export interface RhythmBuildingQuiz extends BaseQuiz {
+  type: 'rhythm-building';
+  challenges: {
+    id: string;
+    title: string;
+    instructions: string;
+    rhythmType: 'derecho' | 'majao' | 'mambo';
+    pattern: (0 | 1 | 2)[];
+    bpm: number;
+    explanation: string;
+  }[];
+}
+
+export type Quiz = HistoryQuiz | InstrumentQuiz | RhythmBuildingQuiz;
 
 export type { 
   Section,
