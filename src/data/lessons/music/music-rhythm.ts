@@ -184,7 +184,7 @@ export const musicRhythmLesson: MusicLesson = {
             id: 'build-majao-pattern',
             title: 'Build the Majao Pattern',
             instructions: 'Create the majao rhythm. Click once for a regular eighth note, twice for an accented eighth note, and a third time to clear it. Majao plays only on the main beats (not the off-beats), with accents on beats 4 and 8.',
-            pattern: [1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1], // 16 eighth notes, only on main beats, accents on 4th and 8th
+            pattern: [1, 0, 1, 0, 1, 0, 2, 0, 1, 0, 1, 0, 1, 0, 2, 0], // 16 eighth notes, only on main beats, accents on 4th and 8th
             bpm: 105,
             explanation: 'The majao pattern plays directly on the beat with steady quarter notes, emphasizing beats 4 and 8 with lower-pitched accents. This creates the metronomic feel that drives the chorus sections.'
           }
