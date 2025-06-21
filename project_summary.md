@@ -271,3 +271,51 @@ After thorough exploration of the application, the following observations were m
 - Improve performance with lazy loading
 - Enhance accessibility features
 - Set up A/B testing framework
+
+## Recent Updates
+
+### Quiz Question Visual Enhancements (Latest Update)
+Based on user feedback requesting more standout quiz questions, the following improvements were implemented:
+
+1. **New QuestionDisplay Component** (`src/components/quizzes/QuestionDisplay.tsx`)
+   - Created a dedicated component for displaying quiz questions with enhanced visual styling
+   - Features include:
+     - Animated question number badge with gradient background
+     - Large, bold question text (2xl font size)
+     - Gradient background decoration for visual interest
+     - Shadow effects and hover animations
+     - Optional instruction text with emoji indicator
+     - Progress indicator showing current question number
+
+2. **Enhanced Quiz Components**
+   - Updated `InstrumentQuiz` to use the new QuestionDisplay component
+   - Updated `HistoryQuiz` to use the new QuestionDisplay component
+   - Improved button styling with:
+     - Gradient backgrounds for selected states
+     - Shadow effects and hover animations
+     - Larger text and better visual hierarchy
+     - Transform effects on interaction
+
+3. **Improved Visual Feedback**
+   - Enhanced success/error messages with:
+     - Gradient backgrounds and white text
+     - Emoji indicators for better visual communication
+     - Structured layout with title and description
+     - Slide-in animations for smooth appearance
+
+4. **Animation Support**
+   - Added CSS animations in `globals.css`:
+     - `slideIn` animation for feedback messages
+     - `fadeIn` animation for smooth transitions
+     - `pulse` animation for the question number badge
+
+5. **Button Styling Improvements**
+   - All quiz buttons now feature:
+     - Gradient backgrounds with shadow effects
+     - Hover scale transformations
+     - Better disabled states
+     - Consistent color scheme throughout
+
+These changes make quiz questions significantly more prominent and engaging, addressing the user feedback about questions needing to be more standout.
+
+### History Feature with Timeline (December 2024)
