@@ -112,6 +112,12 @@ This educational platform provides an accessible way to learn about bachata's ri
 
 ## Change Log
 
+- **[2024-12-XX]**: Enhanced quiz UI to make questions more prominent based on user feedback:
+  - Updated `QuizSection` component with larger text (text-xl), gradient background cards, decorative icons, and shadow effects
+  - Enhanced `InstrumentQuiz` component with standout question cards featuring mode-specific icons and improved visual hierarchy
+  - Improved button styling across all quiz types with hover effects, better spacing, and transform animations
+  - Maintained consistent styling across `HistoryQuiz` component with larger, bolder question counters
+  - Overall improved visual distinction of quiz questions with better typography, spacing, and eye-catching design elements
 - **[Date of Edit]**: Expanded `historyGlossary` in `src/data/glossaries.ts` with detailed terms and new categories related to bachata history, styles (Dominican, Urban, Moderna, Sensual, Fusion), and specific fusion types (Bachazouk, Bachatango, etc.), based on content from history lessons.
 - **[Date of Edit]**: Added details about Bachata Moderna in the `history-90-00` lesson.
 - **[Date of Edit]**: Restructured `history-90-00` lesson to separate Bachata Moderna content into its own block for better rendering.

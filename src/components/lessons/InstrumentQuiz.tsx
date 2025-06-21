@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Play, Pause, RotateCcw, ChevronRight } from 'lucide-react';
+import { Play, Pause, RotateCcw, ChevronRight, Headphones, HelpCircle } from 'lucide-react';
 import { BackButton } from '../common/BackButton';
 
 interface QuizQuestion {
@@ -53,6 +53,17 @@ export const InstrumentQuiz: React.FC<InstrumentQuizProps> = ({
       rhythms: 'Listen to the audio and identify the rhythm pattern.'
     };
     return instructions[mode] || instructions.present;
+  };
+
+  const getQuestionIcon = () => {
+    const icons = {
+      present: <Headphones className="w-20 h-20 text-orange-500 dark:text-orange-400" />,
+      missing: <HelpCircle className="w-20 h-20 text-purple-500 dark:text-purple-400" />,
+      sections: <Play className="w-20 h-20 text-blue-500 dark:text-blue-400" />,
+      parts: <Play className="w-20 h-20 text-green-500 dark:text-green-400" />,
+      rhythms: <Headphones className="w-20 h-20 text-indigo-500 dark:text-indigo-400" />
+    };
+    return icons[mode] || icons.present;
   };
 
   const checkAnswer = (selected: string[], correct: string[]) => {
@@ -145,13 +156,22 @@ export const InstrumentQuiz: React.FC<InstrumentQuizProps> = ({
     <div className="mt-8 p-6 bg-gray-50 dark:bg-gray-900 rounded-xl">
       <BackButton onClick={onBack} label={`Back to ${sectionTitle} Section`} />
       
-      <h3 className="text-lg font-semibold mb-4">
+      <h3 className="text-xl font-bold mb-6 text-gray-900 dark:text-white">
         Question {currentQuestion + 1} of {questions.length}
       </h3>
       
-      <p className="mb-4 text-gray-600">
-        {getInstructions()}
-      </p>
+      <div className="bg-gradient-to-br from-orange-50 to-yellow-50 dark:from-orange-900/20 dark:to-yellow-900/20 
+                      border-2 border-orange-200 dark:border-orange-700 rounded-xl p-6 mb-6 
+                      shadow-lg relative overflow-hidden">
+        <div className="absolute top-4 right-4 opacity-10">
+          {getQuestionIcon()}
+        </div>
+        
+        <p className="text-xl font-semibold text-gray-800 dark:text-gray-100 relative z-10 
+                      leading-relaxed">
+          {getInstructions()}
+        </p>
+      </div>
 
       <div className="mb-6">
         <audio
@@ -161,10 +181,12 @@ export const InstrumentQuiz: React.FC<InstrumentQuizProps> = ({
         />
         <button
           onClick={togglePlay}
-          className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600"
+          className="flex items-center gap-3 px-6 py-3 bg-white dark:bg-gray-800 rounded-lg border-2 
+                     border-gray-200 dark:border-gray-700 hover:border-orange-300 dark:hover:border-orange-600
+                     hover:shadow-md transition-all transform hover:scale-[1.02] active:scale-[0.98]"
         >
-          {isPlaying ? <Pause className="w-4 h-4 text-gray-600 dark:text-gray-300" /> : <Play className="w-4 h-4 text-gray-600 dark:text-gray-300" />}
-          <span className="text-gray-600 dark:text-gray-300">{isPlaying ? 'Pause' : 'Play'} Audio</span>
+          {isPlaying ? <Pause className="w-5 h-5 text-orange-600 dark:text-orange-400" /> : <Play className="w-5 h-5 text-orange-600 dark:text-orange-400" />}
+          <span className="text-gray-700 dark:text-gray-300 font-medium">{isPlaying ? 'Pause' : 'Play'} Audio</span>
         </button>
       </div>
 
@@ -173,9 +195,10 @@ export const InstrumentQuiz: React.FC<InstrumentQuizProps> = ({
           <button
             key={option}
             onClick={() => toggleInstrument(option)}
-            className={`w-full p-4 text-left rounded-lg border transition-all ${getButtonClass(option)}`}
+            className={`w-full p-4 text-left rounded-lg border-2 transition-all transform 
+                        hover:scale-[1.02] active:scale-[0.98] ${getButtonClass(option)}`}
           >
-            <span className="font-medium">{option}</span>
+            <span className="font-medium text-lg">{option}</span>
           </button>
         ))}
       </div>

@@ -48,7 +48,7 @@ export const HistoryQuiz: React.FC<HistoryQuizProps> = ({
     <div className="mt-8 p-6 bg-gray-50 dark:bg-gray-900 rounded-xl">
       <BackButton onClick={onBack} label={`Back to ${sectionTitle} Section`} />
       
-      <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
+      <h3 className="text-xl font-bold mb-6 text-gray-900 dark:text-white">
         Question {currentQuestion + 1} of {questions.length}
       </h3>
 
