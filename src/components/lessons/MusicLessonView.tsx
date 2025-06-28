@@ -12,6 +12,7 @@ import { progressManager } from '../common/ProgressBar';
 import { InlineQuiz } from './InlineQuiz';
 import { BuildAClave } from '../interactive/BuildAClave';
 import { BuildMamboPattern } from '../interactive/BuildMamboPattern';
+import { LabelTheBand } from '../interactive/LabelTheBand';
 
 interface LessonViewProps {
     section: Section;
@@ -103,6 +104,14 @@ interface LessonViewProps {
               if (interactiveBlock.kind === 'build-mambo') {
                 return (
                   <BuildMamboPattern
+                    key={`${interactiveBlock.id}-${index}`}
+                    data={interactiveBlock.data}
+                  />
+                );
+              }
+              if (interactiveBlock.kind === 'label-the-band') {
+                return (
+                  <LabelTheBand
                     key={`${interactiveBlock.id}-${index}`}
                     data={interactiveBlock.data}
                   />

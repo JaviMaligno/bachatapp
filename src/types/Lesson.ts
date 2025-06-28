@@ -151,10 +151,32 @@ export interface BuildMamboData {
   explanation?: string;
 }
 
+export interface LabelTheBandData {
+  id: string;
+  title: string;
+  instructions: string;
+  instruments: {
+    id: string;
+    name: string;
+    audioPath: string;
+    color?: string;
+  }[];
+  positions: {
+    id: string;
+    x: number; // percentage from left
+    y: number; // percentage from top
+    width: number; // percentage
+    height: number; // percentage
+    label: string; // which instrument should go here
+    description?: string;
+  }[];
+  explanation?: string;
+}
+
 export type InteractiveBlock =
   | { kind: 'quiz'; id: string; data: InlineQuizData }
   | { kind: 'audio-layer'; tracks: any[] } // Placeholder for future implementation
-  | { kind: 'drag-labels'; image: string; labels: any[] } // Placeholder for future implementation
+  | { kind: 'label-the-band'; id: string; data: LabelTheBandData }
   | { kind: 'timeline'; events: any[] } // Placeholder for future implementation
   | { kind: 'flashcard'; termIds: string[] } // Placeholder for future implementation
   | { kind: 'build-a-clave'; id: string; data: BuildAClaveData }

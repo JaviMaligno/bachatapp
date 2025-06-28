@@ -197,6 +197,85 @@ This educational platform provides an accessible way to learn about bachata's ri
   - Enhanced interactive components with `onComplete` callbacks for quiz integration
   - Successfully tested - users can now take a comprehensive rhythm building quiz that tests all three bachata rhythms
 
+- **[2024-12-15]**: Implemented Label-the-Band drag-and-drop exercise with audio-visual learning:
+  - Extended `InteractiveBlock` type to support `label-the-band` with proper `LabelTheBandData` interface
+  - Created enhanced `LabelTheBand` component in `src/components/interactive/LabelTheBand.tsx`:
+    - Interactive audio players as draggable items (not text labels) using Web Audio API
+    - Hand-crafted SVG instrument silhouettes as drop zones (requinto, segunda, bass, güira, bongos)
+    - Drag-and-drop functionality using `react-dnd` and `react-dnd-html5-backend` libraries
+    - Code-based SVG stage layout with beautiful gradient background, stage platform, and lighting effects
+    - Play/pause controls for each instrument audio sample with visual feedback
+    - Real-time visual feedback showing correct/incorrect placements on silhouettes
+    - Confetti celebration on successful completion
+    - Educational challenge requiring both auditory instrument identification and visual shape recognition
+    - Responsive design working on both desktop and mobile devices
+  - Updated `MusicLessonView` to render `label-the-band` interactive blocks
+  - Added enhanced label-the-band exercise to the `music-instruments` lesson conclusion section
+  - Updated lesson data with actual audio file paths for all five core bachata instruments
+  - Installed dependencies: `react-dnd` and `react-dnd-html5-backend`
+  - Updated `interactive_lessons_plan.md` to mark Label-the-Band task as completed
+  - Successfully tested with Docker Compose - users must listen to audio samples and match them to instrument silhouettes
+  - This represents a significant step forward in Phase 2's audio-visual interactive learning features
+
+### Enhanced Label-the-Band Interactive Exercise
+
+A sophisticated drag-and-drop exercise for the `music-instruments` lesson that combines audio learning with visual recognition:
+
+#### Audio Learning Features:
+- Interactive audio players as draggable items (not text labels)
+- Uses existing instrument audio files: `requinto.mp3`, `segunda.mp3`, `bass.mp3`, `guira.wav`, `bongos.wav`
+- Web Audio API integration with play/pause controls
+- Visual feedback showing play/pause states
+
+#### Visual Recognition Features:
+- **Highly detailed, research-based SVG silhouettes** for each instrument:
+  - **Requinto**: Smaller classical guitar (4/5 size) with proper figure-8 shape, 4 tuning pegs
+  - **Segunda**: Full-size classical guitar with 6 tuning pegs (3 per side), larger proportions
+  - **Bass**: Longer neck, angular body, 4 tuning pegs in line, distinctive bass proportions with pickups
+  - **Güira**: Cylindrical metal tube with ridged surface texture, handle, and prominent scraper stick
+  - **Bongos**: Two connected drums (macho/hembra) with proper size difference and hardware details
+- Each silhouette includes authentic details like tuning pegs, strings, hardware, and surface textures
+- Research-informed designs based on actual instrument specifications and visual references
+- **[2024-12-28 Update]**: Significantly enhanced silhouette visibility and accuracy:
+  - Increased silhouette display size from 48px to 80px (78% larger for better instrument recognition)
+  - Expanded drop zone dimensions from 12-15% to 20-22% width and 15-20% to 20-25% height → **[Update 2]** Further increased to 30% height and 25% height for percussion to prevent cutoff
+  - Improved positioning to prevent overlap while maximizing visibility
+  - Enhanced text sizing and spacing for better user experience
+  - Made segunda clearly distinguishable from requinto through size differentiation
+  - **[Update 2]** Completely redesigned bass guitar with unmistakable electric bass features:
+    - Modern Fender-style body shape with distinctive upper horn cutaway
+    - Much longer neck (16px width vs 8px) with extended scale length
+    - Large bass headstock with 4 tuning machines on one side
+    - Multiple prominent pickups with visible pole pieces
+    - Control knobs section and bass bridge
+    - Thick bass strings (1.2px vs 0.4px) and proper fret markers
+  - **[Update 3]** Final bass guitar redesign for maximum clarity:
+    - Simplified to clean geometric shapes (ellipses and curves) for instant recognition
+    - Distinctive elongated body (35px radius, 90px height) that clearly differentiates from guitars
+    - Prominent upper and lower horn cutaways typical of electric bass guitars
+    - Waist contours that create the characteristic bass guitar silhouette
+  - **[Update 2 & 3]** Extended güira scraper stick dramatically:
+    - **Final version**: Increased scraper length from 50px to 120px (140% longer!)
+    - Enhanced visibility with much thicker design (8px vs 5px width)
+    - Very extended metal scraper part with enhanced detail
+    - 35 texture lines (vs original 15) for realistic metal scraper appearance
+    - Multiple motion lines showing vigorous scraping action
+    - Added scraper tip detail for authentic appearance
+
+#### Learning Challenge:
+Creates a true multi-sensory learning experience requiring:
+- **Auditory identification**: Students must listen to and recognize instrument sounds
+- **Visual recognition**: Match audio to accurate instrument silhouettes
+- **Spatial understanding**: Learn proper band positioning and instrument roles
+- **Active learning**: Drag-and-drop interaction vs passive text matching
+
+#### Technical Implementation:
+- Uses `react-dnd` and `react-dnd-html5-backend` for smooth drag-and-drop
+- TypeScript `LabelTheBandData` interface with `audioPath` property
+- Beautiful stage background with gradient and lighting effects
+- Real-time visual feedback for correct/incorrect placements
+- Confetti celebration on completion
+
 ## Frontend
 
 * **Framework:** React + TypeScript + Vite
