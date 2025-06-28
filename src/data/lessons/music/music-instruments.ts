@@ -261,12 +261,12 @@ export const musicInstrumentsLesson: MusicLesson = {
             positions: [
               {
                 id: 'lead-position',
-                x: 8,
-                y: 38,
+                x: 39,
+                y: 58,
                 width: 22,
                 height: 30,
                 label: 'Requinto',
-                description: 'Lead guitar position - front and center for solos'
+                description: 'Lead guitar position - center stage for solos'
               },
               {
                 id: 'rhythm-position',
@@ -279,12 +279,12 @@ export const musicInstrumentsLesson: MusicLesson = {
               },
               {
                 id: 'bass-position',
-                x: 39,
-                y: 58,
+                x: 8,
+                y: 38,
                 width: 22,
                 height: 30,
                 label: 'Bass',
-                description: 'Bass guitar - anchors the low end'
+                description: 'Bass guitar - anchors the low end from stage left'
               },
               {
                 id: 'percussion-left',

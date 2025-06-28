@@ -504,7 +504,7 @@ const StageLayout: React.FC = () => {
       <circle cx="200" cy="160" r="8" fill="#333" />
       
       {/* Stage Text - better positioned with more space */}
-      <text x="200" y="315" textAnchor="middle" fill="white" fontSize="18" fontWeight="bold" fontFamily="Arial, sans-serif">
+      <text x="200" y="325" textAnchor="middle" fill="white" fontSize="18" fontWeight="bold" fontFamily="Arial, sans-serif">
         Bachata Band Stage
       </text>
     </svg>
