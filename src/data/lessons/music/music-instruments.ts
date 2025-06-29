@@ -242,7 +242,73 @@ export const musicInstrumentsLesson: MusicLesson = {
     {
       id: 'conclusion',
       title: 'Conclusion',
-      content: 'These instruments together form the core of bachata\'s unique sound. Each has a vital role, contributing to the genre\'s emotional depth and rhythmic vibrancy.'
+      content: 'These instruments together form the core of bachata\'s unique sound. Each has a vital role, contributing to the genre\'s emotional depth and rhythmic vibrancy.',
+      interactiveBlocks: [
+        {
+          kind: 'label-the-band',
+          id: 'label-bachata-band',
+          data: {
+            id: 'label-bachata-band',
+            title: 'Match Instruments to Their Stage Positions',
+            instructions: 'Listen to each audio sample to identify the instrument, then drag it to the correct position on stage. Use both the sound and the instrument silhouette to make your match.',
+            instruments: [
+              { id: 'requinto', name: 'Requinto', audioPath: '/assets/audio/instruments/requinto.mp3', color: '#3B82F6' },
+              { id: 'segunda', name: 'Segunda', audioPath: '/assets/audio/instruments/segunda.mp3', color: '#8B5CF6' },
+              { id: 'bass', name: 'Bass', audioPath: '/assets/audio/instruments/bass.mp3', color: '#EF4444' },
+              { id: 'guira', name: 'Güira', audioPath: '/assets/audio/instruments/guira.wav', color: '#F59E0B' },
+              { id: 'bongos', name: 'Bongos', audioPath: '/assets/audio/instruments/bongos.wav', color: '#10B981' }
+            ],
+            positions: [
+              {
+                id: 'lead-position',
+                x: 39,
+                y: 58,
+                width: 22,
+                height: 30,
+                label: 'Requinto',
+                description: 'Lead guitar position - center stage for solos'
+              },
+              {
+                id: 'rhythm-position',
+                x: 70,
+                y: 38,
+                width: 22,
+                height: 30,
+                label: 'Segunda',
+                description: 'Rhythm guitar - provides harmonic foundation'
+              },
+              {
+                id: 'bass-position',
+                x: 8,
+                y: 38,
+                width: 22,
+                height: 30,
+                label: 'Bass',
+                description: 'Bass guitar - anchors the low end from stage left'
+              },
+              {
+                id: 'percussion-left',
+                x: 15,
+                y: 12,
+                width: 20,
+                height: 25,
+                label: 'Bongos',
+                description: 'Hand percussion for rhythm and accents'
+              },
+              {
+                id: 'percussion-right',
+                x: 65,
+                y: 12,
+                width: 20,
+                height: 25,
+                label: 'Güira',
+                description: 'Metal scraper for steady timekeeping'
+              }
+            ],
+            explanation: 'In a traditional bachata band setup, the requinto (lead guitar) is prominently positioned for solos and melodies, while the segunda (rhythm guitar) provides harmonic support. The bass anchors the low frequencies, and the percussion instruments (bongos and güira) drive the rhythm from elevated positions where they can be clearly heard. By listening to each instrument\'s unique sound and recognizing their visual characteristics, you can better understand how they work together in the bachata ensemble.'
+          }
+        }
+      ]
     },
     {
       id: 'note',

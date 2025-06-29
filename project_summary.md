@@ -197,6 +197,85 @@ This educational platform provides an accessible way to learn about bachata's ri
   - Enhanced interactive components with `onComplete` callbacks for quiz integration
   - Successfully tested - users can now take a comprehensive rhythm building quiz that tests all three bachata rhythms
 
+- **[2024-12-15]**: Implemented Label-the-Band drag-and-drop exercise with audio-visual learning:
+  - Extended `InteractiveBlock` type to support `label-the-band` with proper `LabelTheBandData` interface
+  - Created enhanced `LabelTheBand` component in `src/components/interactive/LabelTheBand.tsx`:
+    - Interactive audio players as draggable items (not text labels) using Web Audio API
+    - Hand-crafted SVG instrument silhouettes as drop zones (requinto, segunda, bass, güira, bongos)
+    - Drag-and-drop functionality using `react-dnd` and `react-dnd-html5-backend` libraries
+    - Code-based SVG stage layout with beautiful gradient background, stage platform, and lighting effects
+    - Play/pause controls for each instrument audio sample with visual feedback
+    - Real-time visual feedback showing correct/incorrect placements on silhouettes
+    - Confetti celebration on successful completion
+    - Educational challenge requiring both auditory instrument identification and visual shape recognition
+    - Responsive design working on both desktop and mobile devices
+  - Updated `MusicLessonView` to render `label-the-band` interactive blocks
+  - Added enhanced label-the-band exercise to the `music-instruments` lesson conclusion section
+  - Updated lesson data with actual audio file paths for all five core bachata instruments
+  - Installed dependencies: `react-dnd` and `react-dnd-html5-backend`
+  - Updated `interactive_lessons_plan.md` to mark Label-the-Band task as completed
+  - Successfully tested with Docker Compose - users must listen to audio samples and match them to instrument silhouettes
+  - This represents a significant step forward in Phase 2's audio-visual interactive learning features
+
+### Enhanced Label-the-Band Interactive Exercise
+
+A sophisticated drag-and-drop exercise for the `music-instruments` lesson that combines audio learning with visual recognition:
+
+#### Audio Learning Features:
+- Interactive audio players as draggable items (not text labels)
+- Uses existing instrument audio files: `requinto.mp3`, `segunda.mp3`, `bass.mp3`, `guira.wav`, `bongos.wav`
+- Web Audio API integration with play/pause controls
+- Visual feedback showing play/pause states
+
+#### Visual Recognition Features:
+- **Highly detailed, research-based SVG silhouettes** for each instrument:
+  - **Requinto**: Smaller classical guitar (4/5 size) with proper figure-8 shape, 4 tuning pegs
+  - **Segunda**: Full-size classical guitar with 6 tuning pegs (3 per side), larger proportions
+  - **Bass**: Longer neck, angular body, 4 tuning pegs in line, distinctive bass proportions with pickups
+  - **Güira**: Cylindrical metal tube with ridged surface texture, handle, and prominent scraper stick
+  - **Bongos**: Two connected drums (macho/hembra) with proper size difference and hardware details
+- Each silhouette includes authentic details like tuning pegs, strings, hardware, and surface textures
+- Research-informed designs based on actual instrument specifications and visual references
+- **[2024-12-28 Update]**: Significantly enhanced silhouette visibility and accuracy:
+  - Increased silhouette display size from 48px to 80px (78% larger for better instrument recognition)
+  - Expanded drop zone dimensions from 12-15% to 20-22% width and 15-20% to 20-25% height → **[Update 2]** Further increased to 30% height and 25% height for percussion to prevent cutoff
+  - Improved positioning to prevent overlap while maximizing visibility
+  - Enhanced text sizing and spacing for better user experience
+  - Made segunda clearly distinguishable from requinto through size differentiation
+  - **[Update 2]** Completely redesigned bass guitar with unmistakable electric bass features:
+    - Modern Fender-style body shape with distinctive upper horn cutaway
+    - Much longer neck (16px width vs 8px) with extended scale length
+    - Large bass headstock with 4 tuning machines on one side
+    - Multiple prominent pickups with visible pole pieces
+    - Control knobs section and bass bridge
+    - Thick bass strings (1.2px vs 0.4px) and proper fret markers
+  - **[Update 3]** Final bass guitar redesign for maximum clarity:
+    - Simplified to clean geometric shapes (ellipses and curves) for instant recognition
+    - Distinctive elongated body (35px radius, 90px height) that clearly differentiates from guitars
+    - Prominent upper and lower horn cutaways typical of electric bass guitars
+    - Waist contours that create the characteristic bass guitar silhouette
+  - **[Update 2 & 3]** Extended güira scraper stick dramatically:
+    - **Final version**: Increased scraper length from 50px to 120px (140% longer!)
+    - Enhanced visibility with much thicker design (8px vs 5px width)
+    - Very extended metal scraper part with enhanced detail
+    - 35 texture lines (vs original 15) for realistic metal scraper appearance
+    - Multiple motion lines showing vigorous scraping action
+    - Added scraper tip detail for authentic appearance
+
+#### Learning Challenge:
+Creates a true multi-sensory learning experience requiring:
+- **Auditory identification**: Students must listen to and recognize instrument sounds
+- **Visual recognition**: Match audio to accurate instrument silhouettes
+- **Spatial understanding**: Learn proper band positioning and instrument roles
+- **Active learning**: Drag-and-drop interaction vs passive text matching
+
+#### Technical Implementation:
+- Uses `react-dnd` and `react-dnd-html5-backend` for smooth drag-and-drop
+- TypeScript `LabelTheBandData` interface with `audioPath` property
+- Beautiful stage background with gradient and lighting effects
+- Real-time visual feedback for correct/incorrect placements
+- Confetti celebration on completion
+
 ## Frontend
 
 * **Framework:** React + TypeScript + Vite
@@ -364,3 +443,220 @@ Based on user feedback requesting more standout quiz questions, the following im
 These changes make quiz questions significantly more prominent and engaging, addressing the user feedback about questions needing to be more standout.
 
 ### History Feature with Timeline (December 2024)
+
+### Label-the-Band Quiz Variations Implementation (December 2024)
+- **Implemented three distinct quiz variations for the label-the-band exercise**:
+  1. **Audio to Silhouette Quiz**: Drag audio samples to matching instrument silhouettes on stage
+  2. **Name to Silhouette Quiz**: Drag instrument names to matching instrument silhouettes on stage  
+  3. **Audio to Name Quiz**: Drag audio samples to matching instrument names in drop zones
+
+#### Technical Implementation
+- **Shared Components Architecture**: Created `LabelTheBandShared.tsx` with reusable components:
+  - `DraggableAudio`: Audio player components with play/pause functionality
+  - `DraggableName`: Text-based draggable instrument names
+  - `SilhouetteDropZone`: Stage-positioned drop zones with instrument silhouettes
+  - `NameDropZone`: Instrument name drop zones for audio matching
+  - **SVG Silhouettes**: Detailed instrument silhouettes (Requinto, Segunda, Bass, Güira, Bongos)
+  - `StageLayout`: Interactive stage background with lighting and platform
+
+- **Quiz Components**: Created `LabelTheBandVariations.tsx` with three quiz implementations:
+  - `AudioToSilhouetteQuiz`: Original drag-audio-to-silhouette functionality
+  - `NameToSilhouetteQuiz`: Drag instrument names to stage positions
+  - `AudioToNameQuiz`: Match audio samples to instrument names
+
+- **Type System Enhancement**: Extended `LabelTheBandQuiz` interface with three quiz types:
+  - `label-audio-to-silhouette`
+  - `label-name-to-silhouette` 
+  - `label-audio-to-name`
+
+- **Quiz Data**: Created `label-the-band-quizzes.ts` with shared instrument and position data
+- **Integration**: Updated `QuizContent.tsx` to handle new quiz types
+- **Music Section**: Added all three quiz variations to the music section quizzes
+
+#### Features
+- **Drag & Drop Functionality**: Full HTML5 drag-and-drop support using `react-dnd`
+- **Audio Integration**: Play/pause functionality for all instrument samples
+- **Progress Tracking**: Quiz completion scoring and progress management
+- **Visual Feedback**: Color-coded feedback for correct/incorrect placements
+- **Responsive Design**: Works across different screen sizes
+- **Confetti Effects**: Celebration animations on quiz completion
+
+#### Educational Value
+- **Multi-Modal Learning**: Combines visual, auditory, and kinesthetic learning approaches
+- **Progressive Difficulty**: Three different challenge types for comprehensive understanding
+- **Instrument Recognition**: Develops audio identification skills for bachata instruments
+- **Stage Positioning**: Teaches traditional bachata band setup and positioning
+
+## Architecture
+
+### Frontend Stack
+- **React 18** with TypeScript for type safety
+- **Vite** for fast development and building
+- **Tailwind CSS** for responsive styling
+- **React DnD** for drag-and-drop interactions
+- **Canvas Confetti** for celebration effects
+- **Lucide React** for consistent iconography
+
+### Project Structure
+```
+src/
+├── components/
+│   ├── common/           # Shared UI components
+│   ├── interactive/      # Interactive learning components
+│   ├── lessons/          # Lesson display components
+│   │   ├── shared/       # Shared quiz components
+│   │   └── LabelTheBandVariations.tsx
+│   └── layout/           # Layout components
+├── data/
+│   ├── lessons/          # Lesson content data
+│   ├── quizzes/          # Quiz data including label-the-band-quizzes.ts
+│   └── sections.ts       # Section configuration
+├── types/                # TypeScript type definitions
+├── utils/                # Helper functions
+└── styles/               # Global styles
+```
+
+### Key Components
+
+#### Interactive Learning Tools
+- **Label-the-Band Quizzes**: Three variations for comprehensive instrument learning
+- **Build-a-Clave**: Interactive rhythm pattern builder
+- **Build-Mambo-Pattern**: Mambo rhythm construction tool
+- **Audio Layers**: Multi-track audio learning
+- **Inline Quizzes**: Embedded knowledge checks
+
+#### Quiz System
+- **Multiple Question Types**: History, instrument recognition, rhythm identification
+- **Label-the-Band Variations**: Audio-to-silhouette, name-to-silhouette, audio-to-name
+- **Progress Tracking**: Individual quiz scoring and overall progress
+- **Visual Feedback**: Immediate feedback on quiz performance
+
+#### Audio System
+- **Instrument Samples**: Individual bachata instrument recordings
+- **Section Examples**: Verse, chorus, mambo, intro, outro samples
+- **Rhythm Patterns**: Derecho, majao, mambo rhythm examples
+- **Interactive Players**: Play/pause controls with visual feedback
+
+## Content Structure
+
+### Music Section
+- **Instruments Lesson**: Comprehensive guide to bachata instruments
+  - Requinto (lead guitar)
+  - Segunda (rhythm guitar) 
+  - Bass guitar
+  - Güira (metal scraper)
+  - Bongos (hand drums)
+- **Rhythm Lesson**: Three main bachata rhythms
+- **Structure Lesson**: Song sections and their characteristics
+- **Interactive Label-the-Band**: Three quiz variations in lessons and quizzes
+
+### History Section
+- **Origins (1950s-1960s)**: Rural beginnings and early pioneers
+- **Consolidation (1970s-1980s)**: Genre establishment
+- **International Expansion (1990s-2000s)**: Global recognition
+- **Modern Fusion (2010s-2020s)**: Contemporary evolution
+
+### Quiz Categories
+- **Instrument Recognition**: Identify playing instruments
+- **Missing Instruments**: Detect absent instruments
+- **Section Recognition**: Identify song sections
+- **Rhythm Recognition**: Distinguish rhythm patterns
+- **Bachata Parts**: Recognize bachata vs non-bachata
+- **Rhythm Building**: Interactive pattern construction
+- **Label-the-Band Variations**: Three different instrument matching approaches
+
+## Technical Features
+
+### Performance Optimizations
+- **Lazy Loading**: Components loaded on demand
+- **Audio Preloading**: Strategic audio file preloading
+- **Image Optimization**: Optimized images for web delivery
+- **Bundle Splitting**: Efficient code splitting strategies
+
+### Accessibility
+- **Keyboard Navigation**: Full keyboard accessibility
+- **Screen Reader Support**: ARIA labels and semantic HTML
+- **Color Contrast**: WCAG compliant color schemes
+- **Focus Management**: Proper focus handling
+
+### Responsive Design
+- **Mobile First**: Designed for mobile devices
+- **Tablet Optimization**: Optimized for tablet interactions
+- **Desktop Enhancement**: Enhanced desktop experience
+- **Touch Interactions**: Optimized for touch devices
+
+## Development Workflow
+
+### Setup and Installation
+```bash
+# Install dependencies
+pnpm install
+
+# Development server
+pnpm run dev
+
+# Production build
+pnpm run build
+
+# Docker development
+docker-compose up -d
+```
+
+### Testing Strategy
+- **Component Testing**: Unit tests for individual components
+- **Integration Testing**: End-to-end user flow testing
+- **Audio Testing**: Audio playback and interaction testing
+- **Drag-and-Drop Testing**: Interactive element testing
+
+## Future Enhancements
+
+### Planned Features
+- **Dance Section**: Basic steps, turns, and techniques
+- **Advanced Quizzes**: More complex interactive assessments
+- **User Accounts**: Progress persistence and social features
+- **Mobile App**: Native mobile application
+- **Offline Mode**: Downloadable content for offline learning
+
+### Technical Improvements
+- **Performance Monitoring**: Real-time performance tracking
+- **Analytics Integration**: User behavior analytics
+- **A/B Testing**: Feature and content optimization
+- **Internationalization**: Multi-language support
+
+## Asset Management
+
+### Audio Files
+- **Instrument Samples**: `/public/assets/audio/instruments/`
+- **Section Examples**: `/public/assets/audio/sections/`
+- **Rhythm Patterns**: `/public/assets/audio/rhythms/`
+- **Quiz Audio**: Organized by quiz type and purpose
+
+### Images
+- **Instrument Photos**: High-quality instrument photography
+- **Historical Images**: Period-appropriate historical photos
+- **Diagrams**: Educational diagrams and illustrations
+- **Icons**: Consistent iconography throughout
+
+## SEO and Metadata
+- **Structured Data**: Schema.org markup for rich snippets
+- **Meta Tags**: Comprehensive meta tag optimization
+- **Open Graph**: Social media sharing optimization
+- **Sitemap**: XML sitemap for search engines
+
+## Deployment
+
+### Production Environment
+- **Vercel Hosting**: Serverless deployment platform
+- **CDN Integration**: Global content delivery
+- **Environment Variables**: Secure configuration management
+- **CI/CD Pipeline**: Automated deployment workflows
+
+### Monitoring
+- **Error Tracking**: Real-time error monitoring
+- **Performance Metrics**: Core web vitals tracking
+- **Uptime Monitoring**: Service availability tracking
+- **User Analytics**: Comprehensive user behavior insights
+
+---
+
+This platform represents a comprehensive approach to bachata education, combining traditional learning methods with modern interactive technology. The recent addition of the three label-the-band quiz variations significantly enhances the learning experience by providing multiple pathways for instrument recognition and understanding.

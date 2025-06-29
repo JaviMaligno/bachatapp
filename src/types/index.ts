@@ -41,7 +41,28 @@ export interface RhythmBuildingQuiz extends BaseQuiz {
   }[];
 }
 
-export type Quiz = HistoryQuiz | InstrumentQuiz | RhythmBuildingQuiz;
+export interface LabelTheBandQuiz extends BaseQuiz {
+  type: 'label-audio-to-silhouette' | 'label-name-to-silhouette' | 'label-audio-to-name';
+  instructions: string;
+  instruments: {
+    id: string;
+    name: string;
+    audioPath: string;
+    color?: string;
+  }[];
+  positions: {
+    id: string;
+    x: number; // percentage from left
+    y: number; // percentage from top
+    width: number; // percentage
+    height: number; // percentage
+    label: string; // which instrument should go here
+    description?: string;
+  }[];
+  explanation?: string;
+}
+
+export type Quiz = HistoryQuiz | InstrumentQuiz | RhythmBuildingQuiz | LabelTheBandQuiz;
 
 export type { 
   Section,

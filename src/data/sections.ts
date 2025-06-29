@@ -6,6 +6,7 @@ import { sectionQuizQuestions } from './quizzes/section-quiz';
 import { rhythmQuizQuestions } from './quizzes/rhythm-quiz';
 import { bachataPartsQuizQuestions } from './quizzes/bachata-parts-quiz';
 import { rhythmBuildingQuiz } from './quizzes/rhythm-building-quiz';
+import { audioToSilhouetteQuiz, nameToSilhouetteQuiz, audioToNameQuiz } from './quizzes/label-the-band-quizzes';
 import { progressManager } from '../components/common/ProgressBar';
 import { historyQuiz } from './quizzes/history-quiz';
 import { history7080Quiz } from './quizzes/history-70-80-quiz';
@@ -105,7 +106,10 @@ export const sections: Section[] = [
         progress: 0,
         questions: bachataPartsQuizQuestions
       },
-      rhythmBuildingQuiz
+      rhythmBuildingQuiz,
+      audioToNameQuiz,
+      nameToSilhouetteQuiz,
+      audioToSilhouetteQuiz
     ],
     glossary: musicGlossary
   },

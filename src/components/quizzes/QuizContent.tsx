@@ -1,9 +1,10 @@
 import React from 'react';
-import { Quiz, RhythmBuildingQuiz } from '../../types';
+import { Quiz, RhythmBuildingQuiz, LabelTheBandQuiz } from '../../types';
 import { InstrumentQuiz } from '../lessons/InstrumentQuiz';
 import { progressManager } from '../common/ProgressBar';
 import { HistoryQuiz } from '../lessons/HistoryQuiz';
 import { RhythmBuildingQuizComponent } from './RhythmBuildingQuiz';
+import { AudioToSilhouetteQuiz, NameToSilhouetteQuiz, AudioToNameQuiz } from './LabelTheBandVariations';
 
 interface QuizContentProps {
   quiz: Quiz;
@@ -26,7 +27,11 @@ export const QuizContent: React.FC<QuizContentProps> = ({
   const handleQuizComplete = (score: number) => {
     const totalQuestions = quiz.type === 'rhythm-building' 
       ? (quiz as RhythmBuildingQuiz).challenges.length 
-      : quiz.questions.length;
+      : quiz.type === 'label-audio-to-silhouette' || quiz.type === 'label-name-to-silhouette'
+      ? (quiz as LabelTheBandQuiz).positions.length
+      : quiz.type === 'label-audio-to-name'
+      ? (quiz as LabelTheBandQuiz).instruments.length
+      : (quiz as any).questions.length;
     
     // Save both the score and progress
     progressManager.setQuizScore(sectionTitle.toLowerCase(), quiz.id, score, totalQuestions);
@@ -63,9 +68,40 @@ export const QuizContent: React.FC<QuizContentProps> = ({
     );
   }
 
+  // Handle Label the Band quiz variations
+  if (quiz.type === 'label-audio-to-silhouette') {
+    return (
+      <AudioToSilhouetteQuiz
+        quiz={quiz as LabelTheBandQuiz}
+        onBack={onBack}
+        sectionId={sectionTitle.toLowerCase()}
+      />
+    );
+  }
+
+  if (quiz.type === 'label-name-to-silhouette') {
+    return (
+      <NameToSilhouetteQuiz
+        quiz={quiz as LabelTheBandQuiz}
+        onBack={onBack}
+        sectionId={sectionTitle.toLowerCase()}
+      />
+    );
+  }
+
+  if (quiz.type === 'label-audio-to-name') {
+    return (
+      <AudioToNameQuiz
+        quiz={quiz as LabelTheBandQuiz}
+        onBack={onBack}
+        sectionId={sectionTitle.toLowerCase()}
+      />
+    );
+  }
+
   return (
     <InstrumentQuiz 
-      questions={quiz.questions} 
+      questions={(quiz as any).questions} 
       onComplete={handleQuizComplete} 
       mode={quiz.type}
       options={
