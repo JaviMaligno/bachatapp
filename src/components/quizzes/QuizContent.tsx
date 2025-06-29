@@ -31,7 +31,7 @@ export const QuizContent: React.FC<QuizContentProps> = ({
       ? (quiz as LabelTheBandQuiz).positions.length
       : quiz.type === 'label-audio-to-name'
       ? (quiz as LabelTheBandQuiz).instruments.length
-      : quiz.questions.length;
+      : (quiz as any).questions.length;
     
     // Save both the score and progress
     progressManager.setQuizScore(sectionTitle.toLowerCase(), quiz.id, score, totalQuestions);
@@ -101,7 +101,7 @@ export const QuizContent: React.FC<QuizContentProps> = ({
 
   return (
     <InstrumentQuiz 
-      questions={quiz.questions} 
+      questions={(quiz as any).questions} 
       onComplete={handleQuizComplete} 
       mode={quiz.type}
       options={
