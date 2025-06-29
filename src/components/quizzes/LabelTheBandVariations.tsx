@@ -97,7 +97,7 @@ const QuizLayout: React.FC<{
 };
 
 // 1. Audio to Silhouette Quiz (existing LabelTheBand functionality)
-export const AudioToSilhouetteQuiz: React.FC<LabelTheBandVariationProps> = ({ quiz, onBack, sectionId }) => {
+export const AudioToSilhouetteQuiz: React.FC<LabelTheBandVariationProps> = ({ quiz, sectionId }) => {
   const [placements, setPlacements] = useState<Record<string, string>>({});
   const [showResults, setShowResults] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
@@ -238,7 +238,7 @@ export const AudioToSilhouetteQuiz: React.FC<LabelTheBandVariationProps> = ({ qu
 };
 
 // 2. Name to Silhouette Quiz
-export const NameToSilhouetteQuiz: React.FC<LabelTheBandVariationProps> = ({ quiz, onBack, sectionId }) => {
+export const NameToSilhouetteQuiz: React.FC<LabelTheBandVariationProps> = ({ quiz, sectionId }) => {
   const [placements, setPlacements] = useState<Record<string, string>>({});
   const [showResults, setShowResults] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
@@ -379,7 +379,7 @@ export const NameToSilhouetteQuiz: React.FC<LabelTheBandVariationProps> = ({ qui
 };
 
 // 3. Audio to Name Quiz
-export const AudioToNameQuiz: React.FC<LabelTheBandVariationProps> = ({ quiz, onBack, sectionId }) => {
+export const AudioToNameQuiz: React.FC<LabelTheBandVariationProps> = ({ quiz, sectionId }) => {
   const [placements, setPlacements] = useState<Record<string, string>>({});
   const [showResults, setShowResults] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
