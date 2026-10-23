@@ -1,0 +1,41 @@
+name: Source compatibility
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Identify changed source paths
+        id: scope
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          changed=$(git diff --name-only "$BASE_SHA" "$HEAD_SHA")
+          if printf '%s\n' "$changed" | grep -Eq '^(src/|server/|tests/|public/|package\.json$|pnpm-lock\.yaml$|.*config\.[^/]+$|Dockerfile|\.dockerignore$|\.github/workflows/)'; then echo "source=true" >> "$GITHUB_OUTPUT"; fi
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.22.1'
+      - run: npm install --global pnpm@10.34.5 --ignore-scripts --no-audit --no-fund
+      - run: pnpm install --frozen-lockfile --ignore-scripts
+      - run: pnpm build
+      - name: Offline router, email and CSS contracts
+        if: github.event.pull_request.draft == false && steps.scope.outputs.source == 'true'
+        run: node --test --test-concurrency=2 tests/dependency-contracts.test.mjs
+      - name: Validate frontend and backend containers
+        if: github.event.pull_request.draft == false && steps.scope.outputs.source == 'true'
+        run: |
+          docker build -t bachata-web-security .
+          docker build -t bachata-mail-security -f Dockerfile.backend .
