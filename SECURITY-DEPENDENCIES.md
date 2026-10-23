@@ -10,6 +10,20 @@ Compose starts the installed mail server directly rather than requiring developm
 
 ## Current advisory scope and residuals
 
-Fresh exact-name public OSV comparison of the final lock retains `braces` 3.0.3 (GHSA-vfj7-8cjw-p6xm, no fixed release recorded) and `postcss-selector-parser` 6.0.10/6.1.5 (GHSA-rj75-hqrm-r3gf, corrected in 7.1.6). Tailwind 3 and its typography plugin constrain selector-parser 6; moving those parents requires a separate tested CSS migration rather than forcing parser 7. YAML now resolves to compatible 2.9.1. These residuals remain unresolved.
+The raw public OSV findings include `braces` 3.0.3 (GHSA-vfj7-8cjw-p6xm, no fixed release recorded) and selector-parser 6.1.5. The latter is an upstream advisory-range discrepancy: the official 6.1.5 release backports the security fix to major 6. YAML resolves to compatible 2.9.1. No parser major upgrade is needed.
 
 Public OSV queries transmit only public registry package names and versions, with exact package matching; no source, repository identifiers or private dependency edges are uploaded. The earlier cached 317-record comparison is supplemental and does not replace these current queries.
+
+The maintainer's [selector-parser 6.1.5 release](https://raw.githubusercontent.com/postcss/postcss-selector-parser/6.1.5/CHANGELOG.md)
+backports CVE-2026-104844 without changing the parser major. The scoped Typography
+override changes only its exact 6.0.10 dependency to 6.1.5; Tailwind and application
+versions stay unchanged. The official tarball integrity matches the installed
+backport. OSV still reports the older `<7.1.6` range, so its raw finding is retained.
+
+Before/after actual repository CSS was byte-identical, including ordered selectors,
+declarations, variants, nested output and major-6 AST iteration behavior. Frozen
+installs disable lifecycle scripts. The persistent ordinary compatibility command
+is `node security/css-selector.contract.cjs`; it preloads I/O denial before the
+actual Typography/Tailwind consumers. No stress or exploit input is part of it.
+This build-tool patch does not change source features or deployed bundle references.
+Fresh final-lock public OSV results and hosted CI remain separate publication gates.
